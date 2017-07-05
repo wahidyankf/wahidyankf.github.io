@@ -54,10 +54,15 @@ gulp.task('cleanMaster', function(){
     return del(['css/', 'js/', 'img/', 'audio/', 'video/', 'index.html']);
 });
 
+gulp.task('cleanAll', function(){
+    gulp.start('clean');
+    gulp.start('cleanMaster');
+})
+
 gulp.task('html', function(){
     gulp.src(options.src + '/index.html')
         .pipe(useref())
-        //.pipe(iff('*.js', uglify()))
+        .pipe(iff('*.js', uglify()))
         .pipe(iff('*.css', csso()))
         .pipe(gulp.dest(options.dist));
 });
@@ -89,9 +94,7 @@ gulp.task('build', ['html'], function(){
     gulp.start('copyVideo');
 });
 
-
-
-gulp.task('deployMaster', ['build', 'cleanMaster'], function(){
+gulp.task('deployMaster', function(){
     return gulp.src(options.dist + '/**')
         .pipe(gulp.dest(''));
 });
