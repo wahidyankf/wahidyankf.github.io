@@ -85,6 +85,11 @@ gulp.task('build', ['html'], function(){
     gulp.start('copyVideo');
 });
 
+gulp.task('deployMaster', function(){
+    return gulp.src(options.dist + '/**')
+        .pipe(gulp.dest(''));
+});
+
 gulp.task('default', ['clean'], function(){
     gulp.start('build');
 });
