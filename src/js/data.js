@@ -14,7 +14,7 @@ var dataCV = {
       twitter: "https://twitter.com/wahidyankf",
       teamtreehouse: "https://teamtreehouse.com/wahidyankresnafridayoka",
       blog: "https://wahidyankf.wordpress.com"
-    },
+    }
   },
   skills: {
     language: [{
@@ -58,7 +58,7 @@ var dataCV = {
       },
       toolsAndFrameworks: ["gulp", "markdown", "moment.js", "LaTeX", "vim", "TMUX", "git"],
       operatingSystem: ["ubuntu", "osx", "windows"]
-    },
+    }
   },
   formalEducation: {
     bachelor: {
@@ -293,8 +293,8 @@ var dataCV = {
         start: "2011/07",
         end: "2011/12",
         grade: null
-      },
-    ],
+      }
+    ]
   },
   workExperience: [{
     jobTitle: "Internship",
@@ -317,5 +317,5 @@ var dataCV = {
       start: "",
       end: ""
     }
-  ],
+  ]
 };
