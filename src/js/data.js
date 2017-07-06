@@ -76,7 +76,7 @@ var dataCV = {
       start: "",
       end: "",
       description: " the description here",
-      screenshot: "",
+      image: "",
       skillSetUsed: [],
       difficulty: "",
       link: ""
@@ -86,7 +86,7 @@ var dataCV = {
       start: "",
       end: "",
       description: " the description here",
-      screenshot: "",
+      image: "",
       skillSetUsed: [],
       difficulty: "",
       link: ""
@@ -96,7 +96,7 @@ var dataCV = {
       start: "",
       end: "",
       description: " the description here",
-      screenshot: "",
+      image: "",
       skillSetUsed: [],
       difficulty: "",
       link: ""
@@ -106,7 +106,7 @@ var dataCV = {
       start: "",
       end: "",
       description: " the description here",
-      screenshot: "",
+      image: "",
       skillSetUsed: [],
       difficulty: "",
       link: ""
@@ -116,7 +116,7 @@ var dataCV = {
       start: "",
       end: "",
       description: " the description here",
-      screenshot: "",
+      image: "",
       skillSetUsed: [],
       difficulty: "",
       link: ""
@@ -126,7 +126,7 @@ var dataCV = {
       start: "",
       end: "",
       description: " the description here",
-      screenshot: "",
+      image: "",
       skillSetUsed: [],
       difficulty: "",
       link: ""
@@ -136,7 +136,7 @@ var dataCV = {
       start: "",
       end: "",
       description: " the description here",
-      screenshot: "",
+      image: "",
       skillSetUsed: [],
       difficulty: "",
       link: ""
@@ -146,7 +146,7 @@ var dataCV = {
       start: "",
       end: "",
       description: " the description here",
-      screenshot: "",
+      image: "",
       skillSetUsed: [],
       difficulty: "",
       link: ""
@@ -156,7 +156,7 @@ var dataCV = {
       start: "",
       end: "",
       description: " the description here",
-      screenshot: "",
+      image: "",
       skillSetUsed: [],
       difficulty: "",
       link: ""
@@ -166,7 +166,7 @@ var dataCV = {
       start: "",
       end: "",
       description: " the description here",
-      screenshot: "",
+      image: "",
       skillSetUsed: [],
       difficulty: "",
       link: ""
