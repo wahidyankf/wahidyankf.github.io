@@ -72,14 +72,106 @@ var dataCV = {
     }
   },
   portfolio: [{
-    name: "name",
-    start: "start",
-    end: "end",
-    description: "put the description here",
-    screenshot: "filename",
-    skillSetUsed: [],
-    difficulty: 5
-  }],
+      name: "",
+      start: "",
+      end: "",
+      description: " the description here",
+      screenshot: "",
+      skillSetUsed: [],
+      difficulty: "",
+      link: ""
+    },
+    {
+      name: "",
+      start: "",
+      end: "",
+      description: " the description here",
+      screenshot: "",
+      skillSetUsed: [],
+      difficulty: "",
+      link: ""
+    },
+    {
+      name: "",
+      start: "",
+      end: "",
+      description: " the description here",
+      screenshot: "",
+      skillSetUsed: [],
+      difficulty: "",
+      link: ""
+    },
+    {
+      name: "",
+      start: "",
+      end: "",
+      description: " the description here",
+      screenshot: "",
+      skillSetUsed: [],
+      difficulty: "",
+      link: ""
+    },
+    {
+      name: "",
+      start: "",
+      end: "",
+      description: " the description here",
+      screenshot: "",
+      skillSetUsed: [],
+      difficulty: "",
+      link: ""
+    },
+    {
+      name: "",
+      start: "",
+      end: "",
+      description: " the description here",
+      screenshot: "",
+      skillSetUsed: [],
+      difficulty: "",
+      link: ""
+    },
+    {
+      name: "",
+      start: "",
+      end: "",
+      description: " the description here",
+      screenshot: "",
+      skillSetUsed: [],
+      difficulty: "",
+      link: ""
+    },
+    {
+      name: "",
+      start: "",
+      end: "",
+      description: " the description here",
+      screenshot: "",
+      skillSetUsed: [],
+      difficulty: "",
+      link: ""
+    },
+    {
+      name: "",
+      start: "",
+      end: "",
+      description: " the description here",
+      screenshot: "",
+      skillSetUsed: [],
+      difficulty: "",
+      link: ""
+    },
+    {
+      name: "",
+      start: "",
+      end: "",
+      description: " the description here",
+      screenshot: "",
+      skillSetUsed: [],
+      difficulty: "",
+      link: ""
+    }
+  ],
   courses: {
     engineeringCourse: [{
         name: "",
@@ -212,17 +304,18 @@ var dataCV = {
     end: "2011/03"
   }],
   additionalActivities: [{
-    jobtitle: "",
-    institution: "",
-    description: "",
-    start: "",
-    end: ""
-  },
-  {
-    jobtitle: "",
-    institution: "",
-    description: "",
-    start: "",
-    end: ""
-  }],
+      jobtitle: "",
+      institution: "",
+      description: "",
+      start: "",
+      end: ""
+    },
+    {
+      jobtitle: "",
+      institution: "",
+      description: "",
+      start: "",
+      end: ""
+    }
+  ],
 };
