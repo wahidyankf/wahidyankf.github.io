@@ -13,7 +13,8 @@ var gulp = require('gulp'),
     postcss = require('gulp-postcss'),
     autoprefixer = require('autoprefixer'),
     plumber = require('gulp-plumber'),
-    ghPages = require('gulp-gh-pages');
+    ghPages = require('gulp-gh-pages'),
+    gutil = require('gulp-util');
 
 var options = {
     src: 'src', 
@@ -40,7 +41,6 @@ gulp.task('serve', ['compileSass'], function(){
     browserSync.init({
         server: "./src"
     });
-    
     gulp.watch(options.src + '/scss/**/*.scss', ['compileSass']);
     gulp.watch(options.src + '**/*.html').on('change', browserSync.reload);
     gulp.watch(options.src + '/js/**/*.js').on('change', browserSync.reload);
@@ -57,12 +57,13 @@ gulp.task('cleanMaster', function(){
 gulp.task('cleanAll', function(){
     gulp.start('clean');
     gulp.start('cleanMaster');
-})
+});
 
 gulp.task('html', function(){
     gulp.src(options.src + '/index.html')
         .pipe(useref())
         // .pipe(iff('*.js', uglify()))
+        // .on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
         .pipe(iff('*.css', csso()))
         .pipe(gulp.dest(options.dist));
 });
