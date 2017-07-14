@@ -4,7 +4,7 @@ var dataCV = {
     shortdesc: "Frontend Web Developer",
     photos: "img/profile/profilepicture.jpeg",
     email: "wahidyankf@gmail.com",
-    summary: "Self-taught JavaScript Programmer with diverse front-end web development portfolio and past experience with PHP and MySQL. Can also code python when necessary. Polyglot that speaks 3+ languages and has more than 3 years experience of living overseas. Has successfully organized nationwide entrepreneurship competition",
+    summary: "Self-taught JavaScript Programmer with diverse front-end web development portfolio and large exposure to computer science/engineering in general. Has past experience with PHP and MySQL, and can also code in Python when necessary. Polyglot that speaks 3+ languages and has more than 3 years experience of living overseas. Has successfully organized nationwide entrepreneurship competition",
     address: "Jakarta, Indonesia",
     socialHub: {
       website: "https://wahidyankf.github.io/",
@@ -122,7 +122,7 @@ var dataCV = {
     },
     {
       name: "Movie Trailer Website",
-      description: "In this project, I created a movie trailer website using python",
+      description: "In this project, I created a movie trailer website using Python",
       skillSetUsed: ["Python"],
       start: "03/2017",
       end: "03/2017",
@@ -131,6 +131,54 @@ var dataCV = {
   ],
   courses: {
     engineeringCourse: [{
+        name: "Importing Data in Python (Part 2)",
+        institution: "Data Camp",
+        location: "datacamp.com",
+        description: "This course teaches about ways to import data in Python. The type of data that was learned to be imported in this course are data from the web and APIs.",
+        start: "03/2017",
+        end: "03/2017"
+      },
+      {
+        name: "Importing Data in Python (Part 1)",
+        institution: "Data Camp",
+        location: "datacamp.com",
+        description: "This course teaches about ways to import data in Python. The type of data that was learned to be imported in this course are flat files (e.g. .txts and .csvs), files native to other software (e.g. excel, Stata, SAS, Matlab), and files from relational databases such as SQLite & PostgreSQL.",
+        start: "03/2017",
+        end: "03/2017"
+      },
+      {
+        name: "Python for Data Science Toolbox (Part 2)",
+        institution: "Data Camp",
+        location: "datacamp.com",
+        description: "This course teaches about iterators in Python, including how to use list comprehensions in real life scenarios.",
+        start: "03/2017",
+        end: "03/2017"
+      },
+      {
+        name: "Python for Data Science Toolbox (Part 1)",
+        institution: "Data Camp",
+        location: "datacamp.com",
+        description: "This course teaches about how to write functions in Python, including functions with multiple parameters, functions with multiple return value, and lambda functions. This course alose teaches about ways to handle errors in Python.",
+        start: "03/2017",
+        end: "03/2017"
+      },
+      {
+        name: "Intermediate Python for Data Science",
+        institution: "Data Camp",
+        location: "datacamp.com",
+        description: "This course teaches about ways to visualize real data using matplotlib's functions and different kinds of data structures such as dictionary and the Pandas dataframe.",
+        start: "03/2017",
+        end: "03/2017"
+      },
+      {
+        name: "Intro to Python for Data Science",
+        institution: "Data Camp",
+        location: "datacamp.com",
+        description: "This introduction to Python course focuses on Python specifically for data science. In this course, student will learn about ways to store and manipulate data as well as data science tools to start the analyses.",
+        start: "03/2017",
+        end: "03/2017"
+      },
+      {
         name: "Topics in System Engineering - Test and Fault Tolerance",
         institution: "University of Paderborn",
         location: "Paderborn, Germany",
