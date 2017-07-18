@@ -1,0 +1,67 @@
+.name {
+  font-family: 'Cinzel', serif;
+  font-size: 1.7em;
+  text-align: center;
+  @media screen and (min-width: $break-medium){
+    font-size: 1.8em;
+    text-align: left;
+  }
+  @media screen and (min-width: $break-large){
+    font-size: 2em;
+  }
+}
+
+.name-job {
+  font-size: 1em;
+  @media screen and (min-width: $break-medium){
+    font-size: 1.1em;
+  }
+  @media screen and (min-width: $break-large){
+    font-size: 1.2em;
+  }
+}
+
+.contact {
+  font-size: 1em;
+  @media screen and (min-width: $break-medium){
+    text-align: right;
+    font-size: 0.9em;
+  }
+}
+
+.contact-type {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 0.85em;
+}
+
+.list-title {
+  font-family: 'Cinzel', serif;
+}
+
+.list-bullet-point {
+  list-style: disc;
+  font-style: italic;
+}
+
+.skills {
+  p {
+    font-size: 1em;
+    @media screen and (min-width: $break-medium) {
+      font-size: 0.9em;
+    }
+  }
+  .skill-item {
+    font-family: monospace;
+    font-size: 1.25em;
+  }
+}
+
+.list-title {
+  font-weight: 700;
+  font-size: 1.1em;
+}
+
+.list-bullet-point {
+  line-height: 1.75em;
+}
