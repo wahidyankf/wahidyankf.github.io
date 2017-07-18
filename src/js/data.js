@@ -30,7 +30,7 @@ var dataCV = {
       }
     ],
     language: [{
-        name: "Bahasa Indonesia",
+        name: "Bahasa",
         proficiency: "Native"
       },
       {
@@ -44,7 +44,7 @@ var dataCV = {
         info: "Goethe ZD (B1): Befriedigend (228/300)"
       }
     ],
-    toolsAndLibraries: ["gulp.js", "markdown", "moment.js", "LaTeX", "vim", "TMUX", "git", "CSS post processing", "foundation for sites"],
+    toolsAndLibraries: ["gulp.js", "markdown", "moment.js", "LaTeX", "vim", "TMUX", "Git", "CSS post processing", "foundation for sites"],
     pastExperience: ["Matlab", "C++", "Assembly (AT Mega 8051)", "SQL", "PHP", "Gnokii SMS Daemon"],
     operatingSystem: ["Ubuntu", "Mac", "Windows"]
   },
