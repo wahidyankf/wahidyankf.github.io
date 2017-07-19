@@ -1,10 +1,10 @@
 var dataCV = {
-  personaldata: {
+  personalData: {
     name: "Wahidyan Kresna Fridayoka",
-    shortdesc: "Frontend Web Developer",
+    shortDesc: "Front-end Web / JavaScript Developer",
     photos: "img/profile/profilepicture.jpeg",
     email: "wahidyankf@gmail.com",
-    summary: "Self-taught JavaScript Programmer with diverse front-end web development portfolio and large exposure to computer science/engineering in general. Has past experience with PHP and MySQL, and can also code in Python when necessary. Polyglot that speaks 3+ languages and has more than 3 years experience of living overseas. Has successfully organized nationwide entrepreneurship competition",
+    summary: "Self-taught JavaScript Programmer with diverse front-end web development portfolio and large exposure to computer science/engineering in general. Has past experience with PHP and MySQL, and can also code in Python when necessary. Polyglot that speaks 3+ languages and has more than 3 years experience of living overseas. Has successfully organized nationwide entrepreneurship competition.",
     address: "Jakarta, Indonesia",
     socialHub: {
       website: "https://wahidyankf.github.io/",
@@ -36,15 +36,15 @@ var dataCV = {
       {
         name: "English",
         proficiency: "C1",
-        info: "TOEFL PBT (ETS/AMINEF): 627, IELTS: 7.0"
+        info: "TOEFL: 627, IELTS: 7.0"
       },
       {
         name: "German",
         proficiency: "B1",
-        info: "Goethe ZD (B1): Befriedigend (228/300)"
+        info: "Goethe ZD: 228/300"
       }
     ],
-    toolsAndLibraries: ["gulp.js", "markdown", "moment.js", "LaTeX", "vim", "TMUX", "Git", "CSS post processing", "foundation for sites"],
+    toolsAndLibraries: ["CSS post processing", "gulp.js", "moment.js", "PrayTimes.js", "Git", "foundation for sites", "vim", "TMUX", "Markdown", "LaTeX"],
     pastExperience: ["Matlab", "C++", "Assembly (AT Mega 8051)", "SQL", "PHP", "Gnokii SMS Daemon"],
     operatingSystem: ["Ubuntu", "Mac", "Windows"]
   },
@@ -52,6 +52,7 @@ var dataCV = {
     major: "Electrical Engineering",
     type: "Bachelor",
     institution: "Institut Teknologi Bandung",
+    location: "Indonesia",
     start: "08/2005",
     end: "06/2011",
     info: "GPA: 3.0/4.0. Bachelor thesis: Design and implementation of SMS One Time Password (SMS-OTP) Based Web Authentication System. Supervisor: Ir. Budi Rahardjo M.Sc., Ph.D."
@@ -272,6 +273,7 @@ var dataCV = {
   workExperience: [{
     jobTitle: "Internship",
     institution: "P2 TELIMEK-LIPI",
+    location: "Bandung, Indonesia",
     description: "Taking part on the documentation of PLT Bayu (wind power plant) 100 KW project's supervisory control.",
     start: "01/2011",
     end: "03/2011"
@@ -279,6 +281,7 @@ var dataCV = {
   additionalActivities: [{
       jobtitle: "Freelance Writer/Moderator",
       institution: "media.kelasnusantara.com",
+      location: "online",
       description: "Writing articles and moderating a blog about education and learning in general. Best month's view average: 575 views/day.",
       start: "12/2013",
       end: "12/2015"
@@ -286,6 +289,7 @@ var dataCV = {
     {
       jobtitle: "Freelance Writer/Moderator",
       institution: "jermandes.kelasnusantara.com",
+      location: "online",
       description: "Writing articles and moderating a blog about how to prepare for studying in Germany. During that time, this site was one of the pioneers in its niche and always shown on google search's first page. Best month's view average: 609 views/day.",
       start: "12/2011",
       end: "12/2013"
@@ -303,7 +307,9 @@ var dataCV = {
       jobtitle: "Head of Public Relation Division",
       institution: "Palapa 1, ITB's Electrical Engineering's Student Org.",
       location: "Bandung, Indonesia",
-      description: "An Insititut Teknologi Bandung's student organization's charity project. I successfully managed the relationship between the student organization and the targeting area's native. Resulting a smooth process of pico hydro power plant installation in a relatively remote area in Garut (west java, Indonesia."
+      description: "An Insititut Teknologi Bandung's student organization's charity project. I successfully managed the relationship between the student organization and the targeting area's native. Resulting a smooth process of pico hydro power plant installation in a relatively remote area in Garut (west java, Indonesia).",
+      start: "2008",
+      end: "2008"
     }
   ]
 };
