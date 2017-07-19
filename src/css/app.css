@@ -369,4 +369,271 @@ template {
 [hidden] {
   display: none; }
 
+body {
+  padding-top: 0.5em;
+  margin: auto;
+  margin-left: 0.75em;
+  margin-right: 0.75em;
+  max-width: 960px;
+  color: black;
+  font-size: 0.85em; }
+  @media screen and (min-width: 768px) {
+    body {
+      font-size: 1em;
+      margin-left: 2em;
+      margin-right: 2em; } }
+  @media screen and (min-width: 960px) {
+    body {
+      font-size: 1.25em;
+      margin: auto; } }
+
+header {
+  margin-top: 0.75em;
+  margin-bottom: 2em; }
+  @media screen and (min-width: 768px) {
+    header {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; } }
+
+p {
+  line-height: 1.75em; }
+
+hr {
+  margin: 0;
+  padding: 0;
+  margin-top: 0.2em; }
+
+h2 {
+  margin-bottom: 0;
+  margin-top: 1em; }
+
+h3 {
+  margin-bottom: 0.3em;
+  margin-top: 0.75em;
+  font-weight: 700;
+  font-size: 1em; }
+  @media screen and (min-width: 768px) {
+    h3 {
+      margin-top: 0.75em; } }
+
+span {
+  line-height: 1.5em; }
+
+a {
+  text-decoration: none;
+  color: black; }
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  ul li {
+    margin-top: 0.95em; }
+
+.title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  @media screen and (min-width: 768px) {
+    .title {
+      width: 65%; } }
+  @media screen and (min-width: 960px) {
+    .title {
+      width: 70%; } }
+
+.name {
+  margin: 0; }
+
+.name-job {
+  text-align: center; }
+  @media screen and (min-width: 768px) {
+    .name-job {
+      text-align: left; } }
+
+.contact {
+  margin-top: 1.75em; }
+  @media screen and (min-width: 768px) {
+    .contact {
+      margin: 0;
+      width: 35%; } }
+  @media screen and (min-width: 960px) {
+    .contact {
+      width: 30%; } }
+  .contact p {
+    margin-top: 0;
+    margin-bottom: 0.1em;
+    line-height: 1.75em; }
+    @media screen and (min-width: 768px) {
+      .contact p {
+        margin: 0;
+        line-height: 1.65em; } }
+
+.list-bullet-point {
+  margin-left: 1em;
+  padding-left: 0.25em;
+  margin-top: 0em;
+  margin-bottom: 1em; }
+  @media screen and (min-width: 768px) {
+    .list-bullet-point {
+      padding-left: 0em; } }
+  .list-bullet-point li {
+    margin-top: 0.25em; }
+
+.skills p {
+  margin: 0; }
+
+.skill-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  @media screen and (min-width: 768px) {
+    .skill-container {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; } }
+
+.skill-category {
+  width: 100%; }
+  @media screen and (min-width: 768px) {
+    .skill-category {
+      width: 50%; } }
+  @media screen and (min-width: 960px) {
+    .skill-category {
+      width: 33%; } }
+
+@media screen and (min-width: 768px) {
+  .skill-prog-lang {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1; } }
+
+@media screen and (min-width: 960px) {
+  .skill-prog-lang {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1; } }
+
+@media screen and (min-width: 768px) {
+  .skill-tools {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2; } }
+
+@media screen and (min-width: 960px) {
+  .skill-tools {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1; } }
+
+@media screen and (min-width: 768px) {
+  .skill-lang {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1; } }
+
+@media screen and (min-width: 960px) {
+  .skill-lang {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1; } }
+
+@media screen and (min-width: 768px) {
+  .skill-past {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3; } }
+
+@media screen and (min-width: 960px) {
+  .skill-past {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1; } }
+
+@media screen and (min-width: 768px) {
+  .skill-os {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3; } }
+
+@media screen and (min-width: 960px) {
+  .skill-os {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1; } }
+
+.name {
+  font-family: 'Cinzel', serif;
+  font-size: 1.7em;
+  text-align: center; }
+  @media screen and (min-width: 768px) {
+    .name {
+      font-size: 1.8em;
+      text-align: left; } }
+  @media screen and (min-width: 960px) {
+    .name {
+      font-size: 2em; } }
+
+.name-job {
+  font-size: 1em; }
+  @media screen and (min-width: 768px) {
+    .name-job {
+      font-size: 1.1em; } }
+  @media screen and (min-width: 960px) {
+    .name-job {
+      font-size: 1.2em; } }
+
+.contact {
+  font-size: 1em; }
+  @media screen and (min-width: 768px) {
+    .contact {
+      text-align: right;
+      font-size: 0.9em; } }
+
+.contact-type {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 0.85em; }
+
+.list-title {
+  font-family: 'Cinzel', serif; }
+
+.list-bullet-point {
+  list-style: disc;
+  font-style: italic; }
+
+.skills p {
+  font-size: 1em; }
+  @media screen and (min-width: 768px) {
+    .skills p {
+      font-size: 0.9em; } }
+
+.skills .skill-item {
+  font-family: monospace;
+  font-size: 1.25em; }
+
+.list-title {
+  font-weight: 700;
+  font-size: 1.1em; }
+
+.list-bullet-point {
+  line-height: 1.75em; }
+
 /*# sourceMappingURL=app.css.map */
