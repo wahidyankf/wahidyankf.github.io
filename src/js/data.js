@@ -123,7 +123,7 @@ var dataCV = {
     },
     {
       name: "Movie Trailer Website",
-      description: "In this project, I created a movie trailer website using Python",
+      description: "In this project, I created a movie trailer website using Python.",
       skillSetUsed: ["Python"],
       start: "03/2017",
       end: "03/2017",
