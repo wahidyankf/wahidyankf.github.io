@@ -21,10 +21,15 @@
 }
 
 .contact {
+  display: flex;
+  flex-wrap: wrap;
+  direction: column;
+  justify-content: center;
   margin-top: 1.75em;
   @media screen and (min-width: $break-medium) {
     margin: 0;
     width: 35%;
+    justify-content: flex-end;
   }
   @media screen and (min-width: $break-large){
     width: 30%;
@@ -37,6 +42,15 @@
       margin: 0;
       line-height: 1.65em;
     }
+  }
+}
+
+
+.contact-detail {
+  padding: 0.1em 0.4em 0.1em 0.4em;
+  @media screen and (min-width: $break-medium){
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
   }
 }
 
@@ -70,11 +84,12 @@
 
 .skill-category {
   width: 100%;
+  padding-right: 0.5em;
   @media screen and (min-width: $break-medium) {
-    width: 50%;
+    width: 48%;
   }
   @media screen and (min-width: $break-large){
-    width: 33%;
+    width: 30%;
   }
 }
 
