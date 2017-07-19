@@ -4,11 +4,10 @@ var headerContent = `
   <span class="name-job">${dataCV.personalData.shortDesc}</span>
 </div>
 <div class="contact">
-  <p><span class="contact-type">Email: </span><span class="contact-detail">${dataCV.personalData.email}</span></p>
-  <p><span class="contact-type">Website: </span><span class="contact-detail"><a href="${dataCV.personalData.socialHub.website}">wahidyankf.github.io</a></span></p>
-  <p><span class="contact-type">Github: </span><span class="contact-detail"><a href="${dataCV.personalData.socialHub.github}">wahidyankf</a></span></p>
-  <p><span class="contact-type">LinkedIn: </span><span class="contact-detail"><a href="${dataCV.personalData.socialHub.linkedin}">wahidyankf</a></span></p>
-  <p><span class="contact-type">Location: </span><span class="contact-detail">${dataCV.personalData.address}</span></p>
+  <span class=contact-detail><i class="fa fa-github"></i> <a href="${dataCV.personalData.socialHub.github}">wahidyankf</a></span> 
+  <span class=contact-detail><i class="fa fa-linkedin"></i> <a href="${dataCV.personalData.socialHub.linkedin}">wahidyankf</a></span>
+  <span class=contact-detail><i class="fa fa-envelope"></i> <a href="mailto:${dataCV.personalData.email}">wahidyankf@gmail.com</a></span>
+  <span class=contact-detail><i class="fa fa-map-marker"></i> Jakarta, Indonesia</span>
 </div>
 `;
 
@@ -152,7 +151,7 @@ var educationContent = `
 `;
 
 var workExperienceItemContent = "";
-for (let i = 0; i < dataCV.workExperience.length; i++){
+for (let i = 0; i < dataCV.workExperience.length; i++) {
   workExperienceItemContent += `
   <ul>
     <li><span class="list-title">${dataCV.workExperience[i].jobTitle}</span><span class="list-subtitle"> - ${dataCV.workExperience[i].institution} - ${dataCV.workExperience[i].location} - ${dateShown(dataCV.workExperience[i].start, dataCV.workExperience[i].end)}</span></li>
@@ -175,7 +174,7 @@ var workExperienceContent = `
 
 
 var additionalActivitiesItemContent = "";
-for (let i = 0; i < dataCV.additionalActivities.length; i++){
+for (let i = 0; i < dataCV.additionalActivities.length; i++) {
   additionalActivitiesItemContent += `
   <ul>
     <li><span class="list-title">${dataCV.additionalActivities[i].jobtitle}</span><span class="list-subtitle"> - ${dataCV.additionalActivities[i].institution} - ${dataCV.additionalActivities[i].location} - ${dateShown(dataCV.additionalActivities[i].start, dataCV.additionalActivities[i].end)}</span></li>
@@ -187,7 +186,7 @@ for (let i = 0; i < dataCV.additionalActivities.length; i++){
 }
 
 var additionalActivitiesContent = `
-<section class="work-experience">
+<section class="additional-activities">
   <h2>Additional Activities</h2>
   <hr>
   <ul>
@@ -197,7 +196,7 @@ var additionalActivitiesContent = `
 `;
 
 var organizationalExperienceItemContent = "";
-for (let i = 0; i < dataCV.organizationalExperience.length; i++){
+for (let i = 0; i < dataCV.organizationalExperience.length; i++) {
   organizationalExperienceItemContent += `
   <ul>
     <li><span class="list-title">${dataCV.organizationalExperience[i].jobtitle}</span><span class="list-subtitle"> - ${dataCV.organizationalExperience[i].institution} - ${dataCV.organizationalExperience[i].location} - ${dateShown(dataCV.organizationalExperience[i].start, dataCV.organizationalExperience[i].end)}</span></li>
@@ -209,11 +208,55 @@ for (let i = 0; i < dataCV.organizationalExperience.length; i++){
 }
 
 var organizationalExperienceContent = `
-<section class="work-experience">
+<section class="organizational-experience">
   <h2>Organizational Experience</h2>
   <hr>
   <ul>
     ${organizationalExperienceItemContent}
+  </ul>
+</section>
+`;
+
+var engineeringCourseItemContent = "";
+for (let i = 0; i < dataCV.courses.engineeringCourse.length; i++) {
+  engineeringCourseItemContent += `
+  <ul>
+    <li><span class="list-title">${dataCV.courses.engineeringCourse[i].name}</span><span class="list-subtitle"> - ${dataCV.courses.engineeringCourse[i].institution} - ${dataCV.courses.engineeringCourse[i].location} - ${dateShown(dataCV.courses.engineeringCourse[i].start, dataCV.courses.engineeringCourse[i].end)}</span></li>
+  </ul>
+  <ul class="list-bullet-point">
+    <li>${dataCV.courses.engineeringCourse[i].description}</li>
+  </ul>
+  `;
+}
+
+var engineeringCourseContent = `
+<section class="course-engineering">
+  <h2>Course Taken - Engineering</h2>
+  <hr>
+  <ul>
+    ${engineeringCourseItemContent}
+  </ul>
+</section>
+`;
+
+var nonEngineeringCourseItemContent = "";
+for (let i = 0; i < dataCV.courses.nonEngineeringCourse.length; i++) {
+  nonEngineeringCourseItemContent += `
+  <ul>
+    <li><span class="list-title">${dataCV.courses.nonEngineeringCourse[i].name}</span><span class="list-subtitle"> - ${dataCV.courses.nonEngineeringCourse[i].institution} - ${dataCV.courses.nonEngineeringCourse[i].location} - ${dateShown(dataCV.courses.nonEngineeringCourse[i].start, dataCV.courses.nonEngineeringCourse[i].end)}</span></li>
+  </ul>
+  <ul class="list-bullet-point">
+    <li>${dataCV.courses.nonEngineeringCourse[i].description}</li>
+  </ul>
+  `;
+}
+
+var nonEngineeringCourseContent = `
+<section class="course-nonengineering">
+  <h2>Course Taken - Non Engineering</h2>
+  <hr>
+  <ul>
+    ${nonEngineeringCourseItemContent}
   </ul>
 </section>
 `;
