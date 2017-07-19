@@ -132,9 +132,37 @@ var dataCV = {
   ],
   courses: {
     engineeringCourse: [{
+        name: "Front End Web Development Track",
+        institution: "Team Tree House",
+        location: "https://teamtreehouse.com/tracks/front-end-web-development",
+        type: "online",
+        description: "This compilation of courses teaches the combination of HTML, CSS and JavaScript on which all modern websites are built. This track also teaches us about responsive web design, intro to bootstrap 4, website optimization, git, accessibility, and foundation of console/command line.",
+        start: "05/2017",
+        end: "05/2017"
+      },
+      {
+        name: "Beginner JavaScript Track",
+        institution: "Team Tree House",
+        location: "https://teamtreehouse.com/tracks/beginner-javascript",
+        type: "online",
+        description: "This compilation of courses teaches the foundation of JavaScript, including jQuery and the ins-and-outs of adding interactivity in the browser.",
+        start: "04/2017",
+        end: "04/2017"
+      },
+      {
+        name: "Web Design Track",
+        institution: "Team Tree House",
+        location: "https://teamtreehouse.com/tracks/web-design",
+        type: "online",
+        description: "This compilation of courses teaches about how to design and build websites by learning the basic principles of design. This track also teaches HTML, CSS and Sass.",
+        start: "03/2017",
+        end: "03/2017"
+      },
+      {
         name: "Importing Data in Python (Part 2)",
         institution: "Data Camp",
-        location: "datacamp.com",
+        location: "https://www.datacamp.com/courses/importing-data-in-python-part-2",
+        type: "online",
         description: "This course teaches about ways to import data in Python. The type of data that was learned to be imported in this course are data from the web and APIs.",
         start: "03/2017",
         end: "03/2017"
@@ -142,7 +170,8 @@ var dataCV = {
       {
         name: "Importing Data in Python (Part 1)",
         institution: "Data Camp",
-        location: "datacamp.com",
+        location: "https://www.datacamp.com/courses/importing-data-in-python-part-1",
+        type: "online",
         description: "This course teaches about ways to import data in Python. The type of data that was learned to be imported in this course are flat files (e.g. .txts and .csvs), files native to other software (e.g. excel, Stata, SAS, Matlab), and files from relational databases such as SQLite & PostgreSQL.",
         start: "03/2017",
         end: "03/2017"
@@ -150,7 +179,8 @@ var dataCV = {
       {
         name: "Python for Data Science Toolbox (Part 2)",
         institution: "Data Camp",
-        location: "datacamp.com",
+        location: "https://www.datacamp.com/courses/python-data-science-toolbox-part-2",
+        type: "online",
         description: "This course teaches about iterators in Python, including how to use list comprehensions in real life scenarios.",
         start: "03/2017",
         end: "03/2017"
@@ -158,7 +188,8 @@ var dataCV = {
       {
         name: "Python for Data Science Toolbox (Part 1)",
         institution: "Data Camp",
-        location: "datacamp.com",
+        location: "https://www.datacamp.com/courses/python-data-science-toolbox-part-1",
+        type: "online",
         description: "This course teaches about how to write functions in Python, including functions with multiple parameters, functions with multiple return value, and lambda functions. This course alose teaches about ways to handle errors in Python.",
         start: "03/2017",
         end: "03/2017"
@@ -166,7 +197,8 @@ var dataCV = {
       {
         name: "Intermediate Python for Data Science",
         institution: "Data Camp",
-        location: "datacamp.com",
+        location: "https://www.datacamp.com/courses/intermediate-python-for-data-science",
+        type: "online",
         description: "This course teaches about ways to visualize real data using matplotlib's functions and different kinds of data structures such as dictionary and the Pandas dataframe.",
         start: "03/2017",
         end: "03/2017"
@@ -174,7 +206,8 @@ var dataCV = {
       {
         name: "Intro to Python for Data Science",
         institution: "Data Camp",
-        location: "datacamp.com",
+        location: "https://www.datacamp.com/courses/intro-to-python-for-data-science",
+        type: "online",
         description: "This introduction to Python course focuses on Python specifically for data science. In this course, student will learn about ways to store and manipulate data as well as data science tools to start the analyses.",
         start: "03/2017",
         end: "03/2017"
@@ -183,6 +216,7 @@ var dataCV = {
         name: "Topics in System Engineering - Test and Fault Tolerance",
         institution: "University of Paderborn",
         location: "Paderborn, Germany",
+        type: "university",
         description: "Grade: 2.3 (B-). In this course a series of student seminar were given on the subject of test and fault tolerance of an IC system. In this course, I wrote and present a paper about artificial neural network.",
         start: "04/2016",
         end: "10/2016",
@@ -191,6 +225,7 @@ var dataCV = {
         name: "Processing of Semiconductor",
         institution: "University of Paderborn",
         location: "Paderborn, Germany",
+        type: "university",
         description: "Grade: 3.3 (C-). This lecture describes the technical steps to build integrated circuits on silicon wafers. Physical models of the process steps were given and the technical equipment were explained.",
         start: "04/2016",
         end: "10/2016",
@@ -199,6 +234,7 @@ var dataCV = {
         name: "Project - Energieversorgungsstrukturen der Zukunft",
         institution: "University of Paderborn",
         location: "Paderborn, Germany",
+        type: "university",
         description: "Grade: 1.0 (A+), best in class. This course gives an introduction to the energy structure of the future. In this course, I wrote a report about the impact of the usage of electric vehicles on the future and current energy structure.",
         start: "10/2014",
         end: "04/2015",
@@ -207,6 +243,7 @@ var dataCV = {
         name: "Project - Optical Communications and High-Frequency Engineering",
         institution: "University of Paderborn",
         location: "Paderborn, Germany",
+        type: "university",
         description: "Grade: 2.0 (B). A series of laboratory experiments and simulation of optical communications and high frequency engineering were held in this course.",
         start: "10/2014",
         end: "04/2015",
@@ -215,6 +252,7 @@ var dataCV = {
         name: "Introduction to Algorithm",
         institution: "University of Paderborn",
         location: "Paderborn, Germany",
+        type: "university",
         description: "Grade: 1.7 (B+), top 3 in class. This course gives an introduction into the design and analysis of algorithms (sorting algorithms, basic data structures, graphs and graph algorithms, design and analysis of algorithms (problem complexity, run time and storage complexity of algorithms, exact vs heuristic solutions, probabilistic approaches)).",
         start: "10/2014",
         end: "04/2015",
@@ -224,6 +262,7 @@ var dataCV = {
         name: "Deutschkurs für Internationale Programmstudierende",
         institution: "University of Paderborn",
         location: "Paderborn, Germany",
+        type: "university",
         description: "Grade: 2.3 (B-). German language course for the university students, equal to european language level reference of B2 (upper intermediate).",
         start: "04/2015",
         end: "10/2015",
@@ -232,6 +271,7 @@ var dataCV = {
         name: "Management of Technical Project",
         institution: "University of Paderborn",
         location: "Paderborn, Germany",
+        type: "university",
         description: "Grade: 1.7 (B+). In this course, students were taught about soft skills on how to manage technical projects (e.g. requirement analysis, specification, scheduling, planning & designing, monitoring & controlling, communication in teams, communication with customers).",
         start: "04/2014",
         end: "10/2014",
@@ -240,6 +280,7 @@ var dataCV = {
         name: "DSH Vorbereitung Klasse",
         institution: "RWTH Aachen",
         location: "Aachen, Germany",
+        type: "institution",
         description: "German language preparation class for university entrance exam.",
         start: "03/2013",
         end: "06/2013",
@@ -248,6 +289,7 @@ var dataCV = {
         name: "DSH Vorbereitung Klasse",
         institution: "VHS Aachen",
         location: "Aachen, Germany",
+        type: "institution",
         description: "German language preparation class for university entrance exam.",
         start: "10/2012",
         end: "01/2013",
@@ -256,6 +298,7 @@ var dataCV = {
         name: "Superintensiv Deutsch B2",
         institution: "Goethe Institut",
         location: "Jakarta, Indonesia",
+        type: "institution",
         description: "German language class for level B2 (upper intermediate).",
         start: "01/2012",
         end: "06/2012",
@@ -264,6 +307,7 @@ var dataCV = {
         name: "Superintensiv Deutsch A1-B1",
         institution: "Goethe Institut",
         location: "Bandung, Indonesia",
+        type: "institution",
         description: "German languange class for level A1-B1 (beginner to lower intermediate).",
         start: "07/2011",
         end: "12/2011",
