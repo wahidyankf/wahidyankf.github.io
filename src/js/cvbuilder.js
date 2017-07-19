@@ -219,7 +219,17 @@ var organizationalExperienceContent = `
 
 var engineeringCourseItemContent = "";
 for (let i = 0; i < dataCV.courses.engineeringCourse.length; i++) {
-  engineeringCourseItemContent += `
+  if (dataCV.courses.engineeringCourse[i].type === "online") {
+    engineeringCourseItemContent += `
+  <ul>
+    <li><span class="list-title">${dataCV.courses.engineeringCourse[i].name}</span><span class="list-subtitle"> - ${dataCV.courses.engineeringCourse[i].institution} - <a href="${dataCV.courses.engineeringCourse[i].location}">course link</a> - ${dateShown(dataCV.courses.engineeringCourse[i].start, dataCV.courses.engineeringCourse[i].end)}</span></li>
+  </ul>
+  <ul class="list-bullet-point">
+    <li>${dataCV.courses.engineeringCourse[i].description}</li>
+  </ul>
+  `;
+  } else {
+    engineeringCourseItemContent += `
   <ul>
     <li><span class="list-title">${dataCV.courses.engineeringCourse[i].name}</span><span class="list-subtitle"> - ${dataCV.courses.engineeringCourse[i].institution} - ${dataCV.courses.engineeringCourse[i].location} - ${dateShown(dataCV.courses.engineeringCourse[i].start, dataCV.courses.engineeringCourse[i].end)}</span></li>
   </ul>
@@ -227,6 +237,8 @@ for (let i = 0; i < dataCV.courses.engineeringCourse.length; i++) {
     <li>${dataCV.courses.engineeringCourse[i].description}</li>
   </ul>
   `;
+  }
+
 }
 
 var engineeringCourseContent = `
@@ -240,8 +252,19 @@ var engineeringCourseContent = `
 `;
 
 var nonEngineeringCourseItemContent = "";
+
 for (let i = 0; i < dataCV.courses.nonEngineeringCourse.length; i++) {
-  nonEngineeringCourseItemContent += `
+  if (dataCV.courses.nonEngineeringCourse[i].type === "online") {
+    nonEngineeringCourseItemContent += `
+  <ul>
+    <li><span class="list-title">${dataCV.courses.nonEngineeringCourse[i].name}</span><span class="list-subtitle"> - ${dataCV.courses.nonEngineeringCourse[i].institution} - <a href="${dataCV.courses.nonEngineeringCourse[i].location}">course link</a> - ${dateShown(dataCV.courses.nonEngineeringCourse[i].start, dataCV.courses.nonEngineeringCourse[i].end)}</span></li>
+  </ul>
+  <ul class="list-bullet-point">
+    <li>${dataCV.courses.nonEngineeringCourse[i].description}</li>
+  </ul>
+  `;
+  } else {
+    nonEngineeringCourseItemContent += `
   <ul>
     <li><span class="list-title">${dataCV.courses.nonEngineeringCourse[i].name}</span><span class="list-subtitle"> - ${dataCV.courses.nonEngineeringCourse[i].institution} - ${dataCV.courses.nonEngineeringCourse[i].location} - ${dateShown(dataCV.courses.nonEngineeringCourse[i].start, dataCV.courses.nonEngineeringCourse[i].end)}</span></li>
   </ul>
@@ -249,6 +272,7 @@ for (let i = 0; i < dataCV.courses.nonEngineeringCourse.length; i++) {
     <li>${dataCV.courses.nonEngineeringCourse[i].description}</li>
   </ul>
   `;
+  }
 }
 
 var nonEngineeringCourseContent = `
