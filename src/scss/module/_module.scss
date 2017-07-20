@@ -1,6 +1,6 @@
 .name {
   font-family: 'Cinzel', serif;
-  font-size: 1.7em;
+  font-size: 1.5em;
   text-align: center;
   @media screen and (min-width: $break-medium){
     font-size: 1.8em;
@@ -13,6 +13,7 @@
 
 .name-job {
   font-size: 1em;
+  color: #4b5555;
   @media screen and (min-width: $break-medium){
     font-size: 1.1em;
   }

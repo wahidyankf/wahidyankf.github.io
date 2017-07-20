@@ -14,7 +14,6 @@ var headerContent = `
 var summaryContent = `
 <section class="summary">
   <h2>Summary</h2>
-  <hr>
   <p>${dataCV.personalData.summary}</p>
 </section>
 `;
@@ -63,7 +62,6 @@ for (let i = 0; i < dataCV.skills.operatingSystem.length; i++) {
 var skillsContent = `
 <section class="skills">
   <h2>Skills</h2>
-  <hr>
   <div class="skill-container">
     <div class="skill-category skill-prog-lang">
       <h3>Programming Languages (Active)</h3>
@@ -84,7 +82,9 @@ var skillsContent = `
     <div class="skill-category skill-os">
       <h3>Operating System</h3>
       <p>${skillsOSContent}</p>
-    <div
+    </div>
+    <div class="skill-category skill-empty">
+    </div>
   </div>
 </section>
 `;
@@ -121,7 +121,6 @@ for (let i = 0; i < dataCV.portfolio.length; i++) {
 var portfolioContent = `
 <section class="portfolio">
   <h2>Project Portfolio</h2>
-  <hr>
   <ul>
     ${portfolioItemContent}
   </ul>
@@ -143,7 +142,6 @@ for (let i = 0; i < dataCV.formalEducation.length; i++) {
 var educationContent = `
 <section class="education">
   <h2>Education</h2>
-  <hr>
   <ul>
     ${educationItemContent}
   </ul>
@@ -165,7 +163,6 @@ for (let i = 0; i < dataCV.workExperience.length; i++) {
 var workExperienceContent = `
 <section class="work-experience">
   <h2>Work Experience</h2>
-  <hr>
   <ul>
     ${workExperienceItemContent}
   </ul>
@@ -188,7 +185,6 @@ for (let i = 0; i < dataCV.additionalActivities.length; i++) {
 var additionalActivitiesContent = `
 <section class="additional-activities">
   <h2>Additional Activities</h2>
-  <hr>
   <ul>
     ${additionalActivitiesItemContent}
   </ul>
@@ -210,7 +206,6 @@ for (let i = 0; i < dataCV.organizationalExperience.length; i++) {
 var organizationalExperienceContent = `
 <section class="organizational-experience">
   <h2>Organizational Experience</h2>
-  <hr>
   <ul>
     ${organizationalExperienceItemContent}
   </ul>
@@ -244,7 +239,6 @@ for (let i = 0; i < dataCV.courses.engineeringCourse.length; i++) {
 var engineeringCourseContent = `
 <section class="course-engineering">
   <h2>Course Taken - Engineering</h2>
-  <hr>
   <ul>
     ${engineeringCourseItemContent}
   </ul>
@@ -278,7 +272,6 @@ for (let i = 0; i < dataCV.courses.nonEngineeringCourse.length; i++) {
 var nonEngineeringCourseContent = `
 <section class="course-nonengineering">
   <h2>Course Taken - Non Engineering</h2>
-  <hr>
   <ul>
     ${nonEngineeringCourseItemContent}
   </ul>
