@@ -2813,7 +2813,7 @@ ul {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 1.75em; }
+  margin-top: 0.5em; }
   @media screen and (min-width: 768px) {
     .contact {
       margin: 0;
