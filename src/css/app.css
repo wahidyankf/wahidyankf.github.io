@@ -2933,11 +2933,11 @@ ul {
 
 .name {
   font-family: 'Cinzel', serif;
-  font-size: 1.5em;
+  font-size: 1.4em;
   text-align: center; }
   @media screen and (min-width: 768px) {
     .name {
-      font-size: 1.8em;
+      font-size: 1.6em;
       text-align: left; } }
   @media screen and (min-width: 960px) {
     .name {
@@ -2945,7 +2945,7 @@ ul {
 
 .name-job {
   font-size: 1em;
-  color: #4b5555; }
+  color: gray; }
   @media screen and (min-width: 768px) {
     .name-job {
       font-size: 1.1em; } }
