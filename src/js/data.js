@@ -60,7 +60,7 @@ var dataCV = {
   portfolio: [
     {
       name: "Accessibility Refactor",
-      description: "In this project, I refactored a poorly created website that suffers from various accessibility flaws, resulting a website that is accessible and can pass an accessibility validator(s)'s automated checks and a human's check. This project was tested using HTML Accessibility Checker, Fangs Screen Reader Emulator and Google Chrome's Accessibility Developer Tools.",
+      description: "In this project, I refactored a website that suffers from various accessibility flaws, resulting a website that is accessible and can pass an accessibility validator(s)'s automated checks and a human's check. This project was tested using HTML Accessibility Checker, Fangs Screen Reader Emulator and Google Chrome's Accessibility Developer Tools.",
       skillSetUsed: ["HTML", "CSS", "Sass"],
       start: "07/2017",
       end: "07/2017",
