@@ -57,7 +57,16 @@ var dataCV = {
     end: "06/2011",
     info: "GPA: 3.0/4.0. Bachelor thesis: Design and implementation of SMS One Time Password (SMS-OTP) Based Web Authentication System. Supervisor: Ir. Budi Rahardjo M.Sc., Ph.D."
   }],
-  portfolio: [{
+  portfolio: [
+    {
+      name: "Accessibility Refactor",
+      description: "In this project, I refactor a poorly created website that suffer from various accessibility flaws and refine them so they are accessible and can pass an accessibility validator(s)'s automated checks and a human's check.",
+      skillSetUsed: ["HTML", "CSS", "Sass"],
+      start: "07/2017",
+      end: "07/2017",
+      link: "https://github.com/wahidyankf/treehouse-frontend-08-accessibility-refactor"
+    },
+    {
       name: "wahidyankf.github.io",
       description: "In this project, I created a portfolio website for my personal used. This website contains the complete list of my curriculum vitae.",
       skillSetUsed: ["HTML", "CSS", "Sass", "JavaScript", "jQuery"],
