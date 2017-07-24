@@ -1,3 +1,5 @@
+$("#js-check").hide();
+
 var mainContent = `
 ${summaryContent}
 ${skillsContent}
