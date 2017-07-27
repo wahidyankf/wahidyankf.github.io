@@ -44,8 +44,28 @@ var dataCV = {
         info: "Goethe ZD: 228/300"
       }
     ],
-    toolsAndLibraries: ["CSS post processing", "gulp.js", "moment.js", "PrayTimes.js", "Git", "foundation for sites", "vim", "TMUX", "Markdown", "LaTeX"],
-    pastExperience: ["Matlab", "C++", "Assembly (AT Mega 8051)", "SQL", "PHP", "Gnokii SMS Daemon"],
+    toolsAndLibraries: [
+      "Git",
+      "npm",
+      "gulp.js",
+      "CSS post processing",
+      "moment.js",
+      "MediaElement.js",
+      "PrayTimes.js",
+      "foundation for sites",
+      "vim",
+      "TMUX",
+      "Markdown",
+      "LaTeX"
+    ],
+    pastExperience: [
+      "Matlab",
+      "C++",
+      "Assembly (AT Mega 8051)",
+      "SQL",
+      "PHP",
+      "Gnokii SMS Daemon"
+    ],
     operatingSystem: ["Ubuntu", "Mac", "Windows"]
   },
   formalEducation: [{
@@ -60,7 +80,7 @@ var dataCV = {
   portfolio: [
     {
       name: "Interactive Video Player",
-      description: "In this project, I created a fully featured interactive video player using MediaElement.js. The features of this media player includes: play/pause button, current time and total duration, playing progress slider, file buffer's progress, skip backward button, playback speed chooser, captions chooser, video quality chooser, volume button, and go to fullscreen button."
+      description: "In this project, I created a fully featured interactive video player using MediaElement.js. The features of this video player includes: play/pause button, current time and total duration, playing progress slider, file buffer's progress, skip backward button, playback speed chooser, captions chooser, video quality chooser, volume level slider, and go to fullscreen button.",
       skillSetUsed: ["HMTL", "CSS", "Sass", "JavaScript", "MediaElement.js"],
       start: "07/2017",
       end: "07/2017",
