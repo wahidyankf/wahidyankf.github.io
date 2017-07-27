@@ -36,7 +36,6 @@
 
 .list-bullet-point {
   list-style: disc;
-  font-style: italic;
 }
 
 .skills {
@@ -59,4 +58,14 @@
 
 .list-bullet-point {
   line-height: 1.75em;
+}
+
+.tech-stack {
+  font-family: monospace;
+  font-size: 1.2em;
+}
+
+.normal-space {
+  font-family: serif;
+  line-height: 0em;
 }

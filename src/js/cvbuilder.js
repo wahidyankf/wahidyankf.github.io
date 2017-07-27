@@ -103,7 +103,7 @@ for (let i = 0; i < dataCV.portfolio.length; i++) {
   for (let j = 0; j < dataCV.portfolio[i].skillSetUsed.length; j++) {
     stackUsed += `${dataCV.portfolio[i].skillSetUsed[j]}`;
     if (j < dataCV.portfolio[i].skillSetUsed.length - 1) {
-      stackUsed += ", ";
+      stackUsed += ",<span class='normal-space'> </span>";
     } else {
       stackUsed += ".";
     }
@@ -113,7 +113,7 @@ for (let i = 0; i < dataCV.portfolio.length; i++) {
     <li><span class="list-title"><a href="${dataCV.portfolio[i].link}">${dataCV.portfolio[i].name}</a></span> <span class="list-subtitle"> - ${dateShown(dataCV.portfolio[i].start, dataCV.portfolio[i].end)}</span></li>
   </ul>
   <ul class="list-bullet-point">
-    <li>${dataCV.portfolio[i].description} Stack used: ${stackUsed}</li>
+    <li>${dataCV.portfolio[i].description} Stack used: <span class="tech-stack">${stackUsed}<span></li>
   </ul>
   `;
 }
