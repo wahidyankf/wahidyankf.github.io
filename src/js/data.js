@@ -59,6 +59,14 @@ var dataCV = {
   }],
   portfolio: [
     {
+      name: "Interactive Video Player",
+      description: "In this project, I created a fully featured interactive video player using MediaElement.js. The features of this media player includes: play/pause button, current time and total duration, playing progress slider, file buffer's progress, skip backward button, playback speed chooser, captions chooser, video quality chooser, volume button, and go to fullscreen button."
+      skillSetUsed: ["HMTL", "CSS", "Sass", "JavaScript", "MediaElement.js"],
+      start: "07/2017",
+      end: "07/2017",
+      links: "https://github.com/wahidyankf/interactive-video-player"
+    },
+    {
       name: "Optimizing a Site for Performance",
       description: "An unoptimized website was given to me, and I have to optimize it by reducing its http request and body size by any means necessary. In this project, I successfully reduced the website's http requests count down to 22 requests (from 44), and also reduced its body size by more than 10 times (from 12-ish MB to < 1 MB) while still maintaining the apparent quality of its images." ,
       skillSetUsed: ["HTML", "CSS", "Sass", "gulp.js", "phantomas", "imagemin"],
