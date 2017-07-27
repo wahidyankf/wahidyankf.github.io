@@ -84,7 +84,7 @@ var dataCV = {
       skillSetUsed: ["HMTL", "CSS", "Sass", "JavaScript", "MediaElement.js"],
       start: "07/2017",
       end: "07/2017",
-      links: "https://github.com/wahidyankf/interactive-video-player"
+      link: "https://github.com/wahidyankf/interactive-video-player"
     },
     {
       name: "Optimizing a Site for Performance",
