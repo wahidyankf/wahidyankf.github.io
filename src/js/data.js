@@ -181,7 +181,7 @@ var dataCV = {
         institution: "Team Tree House",
         location: "https://teamtreehouse.com/tracks/front-end-web-development",
         type: "online",
-        description: "This compilation of courses teaches the combination of HTML, CSS and JavaScript on which all modern websites are built. This track also teaches us about responsive web design, intro to bootstrap 4, website optimization, git, accessibility, and foundation of console/command line.",
+        description: "This compilation of courses taught the combination of HTML, CSS and JavaScript on which all modern websites are built. This track also taught -g us about responsive web design, intro to bootstrap 4, website optimization, git, accessibility, and foundation of console/command line.",
         start: "05/2017",
         end: "05/2017"
       },
@@ -190,7 +190,7 @@ var dataCV = {
         institution: "Team Tree House",
         location: "https://teamtreehouse.com/tracks/beginner-javascript",
         type: "online",
-        description: "This compilation of courses teaches the foundation of JavaScript, including jQuery and the ins-and-outs of adding interactivity in the browser.",
+        description: "This compilation of courses taught the foundation of JavaScript, including jQuery and the ins-and-outs of adding interactivity in the browser.",
         start: "04/2017",
         end: "04/2017"
       },
@@ -199,7 +199,7 @@ var dataCV = {
         institution: "Team Tree House",
         location: "https://teamtreehouse.com/tracks/web-design",
         type: "online",
-        description: "This compilation of courses teaches about how to design and build websites by learning the basic principles of design. This track also teaches HTML, CSS and Sass.",
+        description: "This compilation of courses taught about how to design and build websites by learning the basic principles of design. This track also taught -g HTML, CSS and Sass.",
         start: "03/2017",
         end: "03/2017"
       },
@@ -208,7 +208,7 @@ var dataCV = {
         institution: "Data Camp",
         location: "https://www.datacamp.com/courses/importing-data-in-python-part-2",
         type: "online",
-        description: "This course teaches about ways to import data in Python. The type of data that was learned to be imported in this course are data from the web and APIs.",
+        description: "This course taught about ways to import data in Python. The type of data that was learned to be imported in this course are data from the web and APIs.",
         start: "03/2017",
         end: "03/2017"
       },
@@ -217,7 +217,7 @@ var dataCV = {
         institution: "Data Camp",
         location: "https://www.datacamp.com/courses/importing-data-in-python-part-1",
         type: "online",
-        description: "This course teaches about ways to import data in Python. The type of data that was learned to be imported in this course are flat files (e.g. .txts and .csvs), files native to other software (e.g. excel, Stata, SAS, Matlab), and files from relational databases such as SQLite & PostgreSQL.",
+        description: "This course taught about ways to import data in Python. The type of data that was learned to be imported in this course are flat files (e.g. .txts and .csvs), files native to other software (e.g. excel, Stata, SAS, Matlab), and files from relational databases such as SQLite & PostgreSQL.",
         start: "03/2017",
         end: "03/2017"
       },
@@ -226,7 +226,7 @@ var dataCV = {
         institution: "Data Camp",
         location: "https://www.datacamp.com/courses/python-data-science-toolbox-part-2",
         type: "online",
-        description: "This course teaches about iterators in Python, including how to use list comprehensions in real life scenarios.",
+        description: "This course taught about iterators in Python, including how to use list comprehensions in real life scenarios.",
         start: "03/2017",
         end: "03/2017"
       },
@@ -235,7 +235,7 @@ var dataCV = {
         institution: "Data Camp",
         location: "https://www.datacamp.com/courses/python-data-science-toolbox-part-1",
         type: "online",
-        description: "This course teaches about how to write functions in Python, including functions with multiple parameters, functions with multiple return value, and lambda functions. This course alose teaches about ways to handle errors in Python.",
+        description: "This course taught about how to write functions in Python, including functions with multiple parameters, functions with multiple return value, and lambda functions. This course alose taught -g about ways to handle errors in Python.",
         start: "03/2017",
         end: "03/2017"
       },
@@ -244,7 +244,7 @@ var dataCV = {
         institution: "Data Camp",
         location: "https://www.datacamp.com/courses/intermediate-python-for-data-science",
         type: "online",
-        description: "This course teaches about ways to visualize real data using matplotlib's functions and different kinds of data structures such as dictionary and the Pandas dataframe.",
+        description: "This course taught about ways to visualize real data using matplotlib's functions and different kinds of data structures such as dictionary and the Pandas dataframe.",
         start: "03/2017",
         end: "03/2017"
       },
