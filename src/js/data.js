@@ -31,7 +31,8 @@ var dataCV = {
     ],
     language: [{
         name: "Bahasa",
-        proficiency: "Native"
+        proficiency: "Native",
+        info: ""
       },
       {
         name: "English",

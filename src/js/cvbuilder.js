@@ -20,7 +20,7 @@ var summaryContent = `
 
 var skillsProgLangContent = "";
 for (let i = 0; i < dataCV.skills.programmingLanguage.length; i++) {
-  skillsProgLangContent += `<p><span class="skill-item">${dataCV.skills.programmingLanguage[i].name}</span>: ${dataCV.skills.programmingLanguage[i].rating}/10</p>
+  skillsProgLangContent += `<p><span class="skill-item">${dataCV.skills.programmingLanguage[i].name}</span>: ${dataCV.skills.programmingLanguage[i].rating}/10.</p>
       `;
 }
 
@@ -36,7 +36,11 @@ for (let i = 0; i < dataCV.skills.toolsAndLibraries.length; i++) {
 
 var skillsLanguageContent = "";
 for (let i = 0; i < dataCV.skills.language.length; i++) {
-  skillsLanguageContent += `<p><span class="skill-item">${dataCV.skills.language[i].name}</span>: ${dataCV.skills.language[i].proficiency}, ${dataCV.skills.language[i].info}</p>`;
+  let separator = ", ";
+  if (dataCV.skills.language[i].info === ""){
+    separator = "";
+  }
+  skillsLanguageContent += `<p><span class="skill-item">${dataCV.skills.language[i].name}</span>: ${dataCV.skills.language[i].proficiency}${separator}${dataCV.skills.language[i].info}.</p>`;
 }
 
 var skillsPastContent = "";
