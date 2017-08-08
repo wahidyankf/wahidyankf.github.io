@@ -46,11 +46,14 @@ var dataCV = {
       }
     ],
     toolsAndLibraries: [
+      "jQuery",
       "Git",
       "npm",
       "gulp.js",
       "CSS post processing",
-      "moment.js",
+      "Mocha",
+      "Chai",
+      "Moment.js",
       "MediaElement.js",
       "PrayTimes.js",
       "foundation for sites",
