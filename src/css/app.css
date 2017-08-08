@@ -2907,7 +2907,8 @@ ul {
   .skill-tools {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
-            order: 1; } }
+            order: 1;
+    width: 65%; } }
 
 @media screen and (min-width: 768px) {
   .skill-lang {
