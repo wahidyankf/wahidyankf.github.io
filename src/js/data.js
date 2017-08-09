@@ -4,7 +4,7 @@ var dataCV = {
     shortDesc: "Front-end Web / JavaScript Developer",
     photos: "img/profile/profilepicture.jpeg",
     email: "wahidyankf@gmail.com",
-    summary: "Self-taught JavaScript Programmer with diverse front-end web development portfolio and large exposure to computer science/engineering in general. Has past experience with PHP and MySQL, and can also code in Python when necessary. Polyglot that speaks 3+ languages and has more than 3 years experience of living overseas. Has successfully organized nationwide entrepreneurship competition.",
+    summary: "Self-taught JavaScript Programmer with diverse front-end web development portfolio and large exposure to computer science and engineering in general. Has past experience with PHP and MySQL, and can also code in Python when necessary. Polyglot that speaks 3+ languages and has more than 3 years experience of living overseas. Has successfully organized nationwide entrepreneurship competition.",
     address: "Jakarta, Indonesia",
     socialHub: {
       website: "https://wahidyankf.github.io/",
