@@ -2,11 +2,11 @@
   font-family: 'Cinzel', serif;
   font-size: 1.4em;
   text-align: center;
-  @media screen and (min-width: $break-medium){
+  @media screen and (min-width: $break-medium) {
     font-size: 1.6em;
     text-align: left;
   }
-  @media screen and (min-width: $break-large){
+  @media screen and (min-width: $break-large) {
     font-size: 2em;
   }
 }
@@ -14,17 +14,17 @@
 .name-job {
   font-size: 1em;
   color: gray;
-  @media screen and (min-width: $break-medium){
+  @media screen and (min-width: $break-medium) {
     font-size: 1.1em;
   }
-  @media screen and (min-width: $break-large){
+  @media screen and (min-width: $break-large) {
     font-size: 1.2em;
   }
 }
 
 .contact {
   font-size: 1em;
-  @media screen and (min-width: $break-medium){
+  @media screen and (min-width: $break-medium) {
     text-align: right;
     font-size: 0.9em;
   }
@@ -40,14 +40,24 @@
 
 .skills {
   p {
-    font-size: 1em;
-    @media screen and (min-width: $break-medium) {
-      font-size: 0.9em;
-    }
+    font-size: 0.9em;
   }
   .skill-item {
     font-family: monospace;
     font-size: 1.25em;
+  }
+  h3 {
+    margin-bottom: 0.4em;
+  }
+  .skill-tools {
+    p {
+      line-height: 1.75em;
+    }
+    @media screen and (min-width: $break-large) {
+      h3 {
+        margin-bottom: 0.3em;
+      }
+    }
   }
 }
 

@@ -2923,13 +2923,17 @@ ul {
             order: 1; } }
 
 @media screen and (min-width: 768px) {
-  .skill-past, .skill-os, .skill-empty {
+  .skill-past,
+  .skill-os,
+  .skill-empty {
     -webkit-box-ordinal-group: 4;
         -ms-flex-order: 3;
             order: 3; } }
 
 @media screen and (min-width: 960px) {
-  .skill-past, .skill-os, .skill-empty {
+  .skill-past,
+  .skill-os,
+  .skill-empty {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1; } }
@@ -2970,14 +2974,21 @@ ul {
   list-style: disc; }
 
 .skills p {
-  font-size: 1em; }
-  @media screen and (min-width: 768px) {
-    .skills p {
-      font-size: 0.9em; } }
+  font-size: 0.9em; }
 
 .skills .skill-item {
   font-family: monospace;
   font-size: 1.25em; }
+
+.skills h3 {
+  margin-bottom: 0.4em; }
+
+.skills .skill-tools p {
+  line-height: 1.75em; }
+
+@media screen and (min-width: 960px) {
+  .skills .skill-tools h3 {
+    margin-bottom: 0.3em; } }
 
 .list-title {
   font-weight: 700;
