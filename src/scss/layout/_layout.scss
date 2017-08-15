@@ -1,132 +1,132 @@
 .title {
-  display: flex;
-  flex-direction: column;
-  @media screen and (min-width: $break-medium) {
-    width: 65%;
-  }
-  @media screen and (min-width: $break-large) {
-    width: 70%;
-  }
+	display: flex;
+	flex-direction: column;
+	@media screen and (min-width: $break-medium) {
+		width: 65%;
+	}
+	@media screen and (min-width: $break-large) {
+		width: 70%;
+	}
 }
 
 .name {
-  margin: 0;
+	margin: 0;
 }
 
 .name-job {
-  text-align: center;
-  @media screen and (min-width: $break-medium) {
-    text-align: left;
-  }
+	text-align: center;
+	@media screen and (min-width: $break-medium) {
+		text-align: left;
+	}
 }
 
 .contact {
-  display: flex;
-  flex-wrap: wrap;
-  direction: column;
-  justify-content: center;
-  margin-top: 0.5em;
-  @media screen and (min-width: $break-medium) {
-    margin: 0;
-    width: 35%;
-    justify-content: flex-end;
-  }
-  @media screen and (min-width: $break-large) {
-    width: 30%;
-  }
-  p {
-    margin-top: 0;
-    margin-bottom: 0.1em;
-    line-height: 1.75em;
-    @media screen and (min-width: $break-medium) {
-      margin: 0;
-      line-height: 1.65em;
-    }
-  }
+	display: flex;
+	flex-wrap: wrap;
+	direction: column;
+	justify-content: center;
+	margin-top: 0.5em;
+	@media screen and (min-width: $break-medium) {
+		margin: 0;
+		width: 35%;
+		justify-content: flex-end;
+	}
+	@media screen and (min-width: $break-large) {
+		width: 30%;
+	}
+	p {
+		margin-top: 0;
+		margin-bottom: 0.1em;
+		line-height: 1.75em;
+		@media screen and (min-width: $break-medium) {
+			margin: 0;
+			line-height: 1.65em;
+		}
+	}
 }
 
 .contact-detail {
-  padding: 0.1em 0.4em 0.1em 0.4em;
-  @media screen and (min-width: $break-medium) {
-    padding-top: 0.2em;
-    padding-bottom: 0.2em;
-  }
+	padding: 0.1em 0.4em 0.1em 0.4em;
+	@media screen and (min-width: $break-medium) {
+		padding-top: 0.2em;
+		padding-bottom: 0.2em;
+	}
 }
 
 .list-bullet-point {
-  margin-left: 1em;
-  padding-left: 0.25em;
-  margin-top: 0em;
-  margin-bottom: 1em;
-  @media screen and (min-width: $break-medium) {
-    padding-left: 0em;
-  }
-  li {
-    margin-top: 0.25em;
-  }
+	margin-left: 1em;
+	padding-left: 0.25em;
+	margin-top: 0em;
+	margin-bottom: 1em;
+	@media screen and (min-width: $break-medium) {
+		padding-left: 0em;
+	}
+	li {
+		margin-top: 0.25em;
+	}
 }
 
 .skills {
-  p {
-    margin: 0;
-  }
+	p {
+		margin: 0;
+	}
 }
 
 .skill-container {
-  display: flex;
-  flex-direction: column;
-  @media screen and (min-width: $break-medium) {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
+	display: flex;
+	flex-direction: column;
+	@media screen and (min-width: $break-medium) {
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
 }
 
 .skill-category {
-  width: 100%;
-  @media screen and (min-width: $break-medium) {
-    width: 48%;
-  }
-  @media screen and (min-width: $break-large) {
-    width: 30%;
-  }
+	width: 100%;
+	@media screen and (min-width: $break-medium) {
+		width: 48%;
+	}
+	@media screen and (min-width: $break-large) {
+		width: 30%;
+	}
 }
 
 .skill-prog-lang {
-  @media screen and (min-width: $break-medium) {
-    order: 1;
-  }
-  @media screen and (min-width: $break-large) {
-    order: 1;
-  }
+	@media screen and (min-width: $break-medium) {
+		order: 1;
+	}
+	@media screen and (min-width: $break-large) {
+		order: 1;
+	}
 }
 
 .skill-tools {
-  @media screen and (min-width: $break-medium) {
-    order: 2;
-  }
-  @media screen and (min-width: $break-large) {
-    order: 1;
-    width: 65%;
-  }
+	@media screen and (min-width: $break-medium) {
+		order: 2;
+	}
+	@media screen and (min-width: $break-large) {
+		order: 1;
+		width: 65%;
+	}
 }
 
 .skill-lang {
-  @media screen and (min-width: $break-medium) {
-    order: 1;
-  }
-  @media screen and (min-width: $break-large) {
-    order: 1;
-  }
+	@media screen and (min-width: $break-medium) {
+		order: 1;
+	}
+	@media screen and (min-width: $break-large) {
+		order: 1;
+	}
 }
 
 .skill-past,
 .skill-os,
 .skill-empty {
-  @media screen and (min-width: $break-medium) {
-    order: 3;
-  }
-  @media screen and (min-width: $break-large) {
-    order: 1;
-  }
+	@media screen and (min-width: $break-medium) {
+		order: 3;
+	}
+	@media screen and (min-width: $break-large) {
+		order: 1;
+	}
 }
