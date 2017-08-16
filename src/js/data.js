@@ -4,8 +4,7 @@ var dataCV = {
 		shortDesc: 'Front-end Web / JavaScript Developer',
 		photos: 'img/profile/profilepicture.jpeg',
 		email: 'wahidyankf@gmail.com',
-		summary:
-			'Self-taught JavaScript Programmer with diverse front-end web development portfolio and large exposure to computer science and engineering in general. Has past experience with PHP and MySQL, and can also code in Python when necessary. Polyglot that speaks 3+ languages and has more than 3 years experience of living overseas. Has successfully organized nationwide entrepreneurship competition.',
+		summary: 'Self-taught JavaScript Programmer with diverse front-end web development portfolio and large exposure to computer science and engineering in general. Has past experience with PHP and MySQL, and can also code in Python when necessary. Polyglot that speaks 3+ languages and has more than 3 years experience of living overseas. Has successfully organized nationwide entrepreneurship competition.',
 		address: 'Jakarta, Indonesia',
 		socialHub: {
 			website: 'https://wahidyankf.github.io/',
@@ -17,8 +16,7 @@ var dataCV = {
 		}
 	},
 	skills: {
-		programmingLanguage: [
-			{
+		programmingLanguage: [{
 				name: 'JavaScript',
 				rating: 7.5
 			},
@@ -31,8 +29,7 @@ var dataCV = {
 				rating: 7
 			}
 		],
-		language: [
-			{
+		language: [{
 				name: 'Bahasa',
 				proficiency: 'Native',
 				info: ''
@@ -65,71 +62,61 @@ var dataCV = {
 			'Markdown',
 			'LaTeX'
 		],
-		pastExperience: [ 'Matlab', 'C++', 'Assembly (AT Mega 8051)', 'SQL', 'PHP', 'Gnokii SMS Daemon' ],
-		operatingSystem: [ 'Ubuntu', 'Mac', 'Windows' ]
+		pastExperience: ['Matlab', 'C++', 'Assembly (AT Mega 8051)', 'SQL', 'PHP', 'Gnokii SMS Daemon'],
+		operatingSystem: ['Ubuntu', 'Mac', 'Windows']
 	},
-	formalEducation: [
-		{
-			major: 'Electrical Engineering',
-			type: 'Bachelor',
-			institution: 'Institut Teknologi Bandung',
-			location: 'Indonesia',
-			start: '08/2005',
-			end: '06/2011',
-			info:
-				'GPA: 3.0/4.0. Bachelor thesis: Design and implementation of SMS One Time Password (SMS-OTP) Based Web Authentication System. Supervisor: Ir. Budi Rahardjo M.Sc., Ph.D.'
-		}
-	],
-	portfolio: [
-		{
+	formalEducation: [{
+		major: 'Electrical Engineering',
+		type: 'Bachelor',
+		institution: 'Institut Teknologi Bandung',
+		location: 'Indonesia',
+		start: '08/2005',
+		end: '06/2011',
+		info: 'GPA: 3.0/4.0. Bachelor thesis: Design and implementation of SMS One Time Password (SMS-OTP) Based Web Authentication System. Supervisor: Ir. Budi Rahardjo M.Sc., Ph.D.'
+	}],
+	portfolio: [{
 			name: 'Interactive Video Player',
-			description:
-				"In this project, I created a fully featured interactive video player using MediaElement.js. The features of this video player includes: play/pause button, current time and total duration, playing progress slider, file buffer's progress, skip backward button, playback speed chooser, captions chooser, video quality chooser, volume level slider, and go to fullscreen button.",
-			skillSetUsed: [ 'HTML', 'CSS', 'Sass', 'JavaScript', 'MediaElement.js' ],
+			description: "In this project, I created a fully featured interactive video player using MediaElement.js. The features of this video player includes: play/pause button, current time and total duration, playing progress slider, file buffer's progress, skip backward button, playback speed chooser, captions chooser, video quality chooser, volume level slider, and go to fullscreen button.",
+			skillSetUsed: ['HTML', 'CSS', 'Sass', 'JavaScript', 'MediaElement.js'],
 			start: '07/2017',
 			end: '07/2017',
 			link: 'https://github.com/wahidyankf/interactive-video-player'
 		},
 		{
 			name: 'Optimizing a Site for Performance',
-			description:
-				"An unoptimized website was given to me, and I have to optimize it by reducing its http request and body size by any means necessary. In this project, I successfully reduced the website's http requests count down to 22 requests (from 44), and also reduced its body size by more than 10 times (from 12-ish MB to < 1 MB) while still maintaining the apparent quality of its images.",
-			skillSetUsed: [ 'HTML', 'CSS', 'Sass', 'gulp.js', 'phantomas', 'imagemin' ],
+			description: "An unoptimized website was given to me, and I have to optimize it by reducing its http request and body size by any means necessary. In this project, I successfully reduced the website's http requests count down to 22 requests (from 44), and also reduced its body size by more than 10 times (from 12-ish MB to < 1 MB) while still maintaining the apparent quality of its images.",
+			skillSetUsed: ['HTML', 'CSS', 'Sass', 'gulp.js', 'phantomas', 'imagemin'],
 			start: '07/2017',
 			end: '07/2017',
 			link: 'https://github.com/wahidyankf/treehouse-frontend-11-optimizing-a-site-for-performance'
 		},
 		{
 			name: 'Accessibility Refactor',
-			description:
-				"In this project, I refactored a website that suffers from various accessibility flaws, resulting a website that is accessible and can pass an accessibility validator(s)'s automated checks and a human's check. This project was tested using HTML Accessibility Checker, Fangs Screen Reader Emulator and Google Chrome's Accessibility Developer Tools.",
-			skillSetUsed: [ 'HTML', 'CSS', 'Sass' ],
+			description: "In this project, I refactored a website that suffers from various accessibility flaws, resulting a website that is accessible and can pass an accessibility validator(s)'s automated checks and a human's check. This project was tested using HTML Accessibility Checker, Fangs Screen Reader Emulator and Google Chrome's Accessibility Developer Tools.",
+			skillSetUsed: ['HTML', 'CSS', 'Sass'],
 			start: '07/2017',
 			end: '07/2017',
 			link: 'https://github.com/wahidyankf/treehouse-frontend-08-accessibility-refactor'
 		},
 		{
 			name: 'wahidyankf.github.io',
-			description:
-				'In this project, I created a portfolio website for my personal used. This website contains the complete list of my curriculum vitae.',
-			skillSetUsed: [ 'HTML', 'CSS', 'Sass', 'JavaScript', 'jQuery' ],
+			description: 'In this project, I created a portfolio website for my personal used. This website contains the complete list of my curriculum vitae.',
+			skillSetUsed: ['HTML', 'CSS', 'Sass', 'JavaScript', 'jQuery'],
 			start: '07/2017',
 			end: '07/2017',
 			link: 'https://wahidyankf.github.io/'
 		},
 		{
 			name: 'SVG Site Update',
-			description:
-				'In this project, a functioning website was given to me, and I have to update/replace its existing non svg images with svg images, resulting more beautiful and sharper images on the website.',
-			skillSetUsed: [ 'HTML', 'CSS', 'Sass' ],
+			description: 'In this project, a functioning website was given to me, and I have to update/replace its existing non svg images with svg images, resulting more beautiful and sharper images on the website.',
+			skillSetUsed: ['HTML', 'CSS', 'Sass'],
 			start: '06/2017',
 			end: '06/2017',
 			link: 'https://github.com/wahidyankf/treehouse-frontend-06-svg-site-update'
 		},
 		{
 			name: 'Moslem Productivity Tools',
-			description:
-				"In this project, I created a simple website application that tracks the islamic praying time and section of the day's markers, and warns me whenever I am about to burnout (according to the scientific theory of productivity). This app allow me to always work at my optimal speed.",
+			description: "In this project, I created a simple website application that tracks the islamic praying time and section of the day's markers, and warns me whenever I am about to burnout (according to the scientific theory of productivity). This app allow me to always work at my optimal speed.",
 			skillSetUsed: [
 				'HTML',
 				'CSS',
@@ -146,27 +133,24 @@ var dataCV = {
 		},
 		{
 			name: 'Interactive Photo Gallery',
-			description:
-				"In this project, an interactive online gallery's design mockup was given to me, and I have to replicate it using only jQuery as a non vanilla js element. This project includes a simple lightbox (with navigation) and search/filter function.",
-			skillSetUsed: [ 'HMTL', 'CSS', 'Sass', 'JavaScript', 'jQuery' ],
+			description: "In this project, an interactive online gallery's design mockup was given to me, and I have to replicate it using only jQuery as a non vanilla js element. This project includes a simple lightbox (with navigation) and search/filter function.",
+			skillSetUsed: ['HMTL', 'CSS', 'Sass', 'JavaScript', 'jQuery'],
 			start: '04/2017',
 			end: '04/2017',
 			link: 'https://github.com/wahidyankf/treehouse-frontend-04-interactive-photo-gallery'
 		},
 		{
 			name: 'Online Registration Form',
-			description:
-				"In this project, a responsive online form's design mockup was given to me, and I have to replicate it using vanilla HTML and CSS.",
-			skillSetUsed: [ 'HTML', 'CSS', 'Sass' ],
+			description: "In this project, a responsive online form's design mockup was given to me, and I have to replicate it using vanilla HTML and CSS.",
+			skillSetUsed: ['HTML', 'CSS', 'Sass'],
 			start: '04/2017',
 			end: '04/2017',
 			link: 'https://github.com/wahidyankf/treehouse-frontend-03-online-registration-form'
 		},
 		{
 			name: 'Responsive Layout',
-			description:
-				'In this project, a responsive web portfolio mockup was given to me, and I have to replicate it using HTML and CSS.',
-			skillSetUsed: [ 'HTML', 'CSS', 'Sass' ],
+			description: 'In this project, a responsive web portfolio mockup was given to me, and I have to replicate it using HTML and CSS.',
+			skillSetUsed: ['HTML', 'CSS', 'Sass'],
 			start: '04/2017',
 			end: '04/2017',
 			link: 'https://github.com/wahidyankf/treehouse-frontend-02-responsive-layout'
@@ -174,7 +158,7 @@ var dataCV = {
 		{
 			name: 'Personal Profile Page',
 			description: 'In this project, I modified an existing personal website to conform to my personal data.',
-			skillSetUsed: [ 'HTML', 'CSS' ],
+			skillSetUsed: ['HTML', 'CSS'],
 			start: '04/2017',
 			end: '04/2017',
 			link: 'https://github.com/wahidyankf/treehouse-frontend-01-personal-profile-page'
@@ -182,7 +166,7 @@ var dataCV = {
 		{
 			name: 'Build a Portfolio Site',
 			description: 'In this project, I created a simple responsive portfolio site using foundation for sites.',
-			skillSetUsed: [ 'HTML', 'CSS', 'Foundation for Sites' ],
+			skillSetUsed: ['HTML', 'CSS', 'Foundation for Sites'],
 			start: '03/2017',
 			end: '03/2017',
 			link: 'https://github.com/wahidyankf/udacity-fullstack-build-a-portfolio-site'
@@ -190,21 +174,28 @@ var dataCV = {
 		{
 			name: 'Movie Trailer Website',
 			description: 'In this project, I created a movie trailer website using Python.',
-			skillSetUsed: [ 'Python' ],
+			skillSetUsed: ['Python'],
 			start: '03/2017',
 			end: '03/2017',
 			link: 'https://github.com/wahidyankf/udacity-fullstack-movie-trailer-website'
 		}
 	],
 	courses: {
-		engineeringCourse: [
+		engineeringCourse: [{
+				name: "ES6 JavaScript: The Complete Developer's Guide",
+				institution: 'Udemy',
+				location: 'https://www.udemy.com/javascript-es6-tutorial/',
+				type: 'online',
+				description: 'This course taught about the new features of Ecma Script 6. The topics included in this course are array helpers (forEach, map, filter, find, every, some and reduce), const/let, template strings, arrow functions, enhanced object literals, default function arguments, rest and spread operator, destructuring, classes, generators, promises, and fetch.',
+				start: '08/2017',
+				end: '08/2017'
+			},
 			{
 				name: 'Front End Web Development Track',
 				institution: 'Team Tree House',
 				location: 'https://teamtreehouse.com/tracks/front-end-web-development',
 				type: 'online',
-				description:
-					'This compilation of courses taught the combination of HTML, CSS and JavaScript on which all modern websites are built. This track also taught -g us about responsive web design, intro to bootstrap 4, website optimization, git, accessibility, and foundation of console/command line.',
+				description: 'This compilation of courses taught the combination of HTML, CSS and JavaScript on which all modern websites are built. This track also taught -g us about responsive web design, intro to bootstrap 4, website optimization, git, accessibility, and foundation of console/command line.',
 				start: '05/2017',
 				end: '05/2017'
 			},
@@ -213,8 +204,7 @@ var dataCV = {
 				institution: 'Team Tree House',
 				location: 'https://teamtreehouse.com/tracks/beginner-javascript',
 				type: 'online',
-				description:
-					'This compilation of courses taught the foundation of JavaScript, including jQuery and the ins-and-outs of adding interactivity in the browser.',
+				description: 'This compilation of courses taught the foundation of JavaScript, including jQuery and the ins-and-outs of adding interactivity in the browser.',
 				start: '04/2017',
 				end: '04/2017'
 			},
@@ -223,8 +213,7 @@ var dataCV = {
 				institution: 'Team Tree House',
 				location: 'https://teamtreehouse.com/tracks/web-design',
 				type: 'online',
-				description:
-					'This compilation of courses taught about how to design and build websites by learning the basic principles of design. This track also taught -g HTML, CSS and Sass.',
+				description: 'This compilation of courses taught about how to design and build websites by learning the basic principles of design. This track also taught -g HTML, CSS and Sass.',
 				start: '03/2017',
 				end: '03/2017'
 			},
@@ -233,8 +222,7 @@ var dataCV = {
 				institution: 'Data Camp',
 				location: 'https://www.datacamp.com/courses/importing-data-in-python-part-2',
 				type: 'online',
-				description:
-					'This course taught about ways to import data in Python. The type of data that was learned to be imported in this course are data from the web and APIs.',
+				description: 'This course taught about ways to import data in Python. The type of data that was learned to be imported in this course are data from the web and APIs.',
 				start: '03/2017',
 				end: '03/2017'
 			},
@@ -243,8 +231,7 @@ var dataCV = {
 				institution: 'Data Camp',
 				location: 'https://www.datacamp.com/courses/importing-data-in-python-part-1',
 				type: 'online',
-				description:
-					'This course taught about ways to import data in Python. The type of data that was learned to be imported in this course are flat files (e.g. .txts and .csvs), files native to other software (e.g. excel, Stata, SAS, Matlab), and files from relational databases such as SQLite & PostgreSQL.',
+				description: 'This course taught about ways to import data in Python. The type of data that was learned to be imported in this course are flat files (e.g. .txts and .csvs), files native to other software (e.g. excel, Stata, SAS, Matlab), and files from relational databases such as SQLite & PostgreSQL.',
 				start: '03/2017',
 				end: '03/2017'
 			},
@@ -253,8 +240,7 @@ var dataCV = {
 				institution: 'Data Camp',
 				location: 'https://www.datacamp.com/courses/python-data-science-toolbox-part-2',
 				type: 'online',
-				description:
-					'This course taught about iterators in Python, including how to use list comprehensions in real life scenarios.',
+				description: 'This course taught about iterators in Python, including how to use list comprehensions in real life scenarios.',
 				start: '03/2017',
 				end: '03/2017'
 			},
@@ -263,8 +249,7 @@ var dataCV = {
 				institution: 'Data Camp',
 				location: 'https://www.datacamp.com/courses/python-data-science-toolbox-part-1',
 				type: 'online',
-				description:
-					'This course taught about how to write functions in Python, including functions with multiple parameters, functions with multiple return value, and lambda functions. This course alose taught -g about ways to handle errors in Python.',
+				description: 'This course taught about how to write functions in Python, including functions with multiple parameters, functions with multiple return value, and lambda functions. This course alose taught -g about ways to handle errors in Python.',
 				start: '03/2017',
 				end: '03/2017'
 			},
@@ -273,8 +258,7 @@ var dataCV = {
 				institution: 'Data Camp',
 				location: 'https://www.datacamp.com/courses/intermediate-python-for-data-science',
 				type: 'online',
-				description:
-					"This course taught about ways to visualize real data using matplotlib's functions and different kinds of data structures such as dictionary and the Pandas dataframe.",
+				description: "This course taught about ways to visualize real data using matplotlib's functions and different kinds of data structures such as dictionary and the Pandas dataframe.",
 				start: '03/2017',
 				end: '03/2017'
 			},
@@ -283,8 +267,7 @@ var dataCV = {
 				institution: 'Data Camp',
 				location: 'https://www.datacamp.com/courses/intro-to-python-for-data-science',
 				type: 'online',
-				description:
-					'This introduction to Python course focuses on Python specifically for data science. In this course, student will learn about ways to store and manipulate data as well as data science tools to start the analyses.',
+				description: 'This introduction to Python course focuses on Python specifically for data science. In this course, student will learn about ways to store and manipulate data as well as data science tools to start the analyses.',
 				start: '03/2017',
 				end: '03/2017'
 			},
@@ -293,8 +276,7 @@ var dataCV = {
 				institution: 'University of Paderborn',
 				location: 'Paderborn, Germany',
 				type: 'university',
-				description:
-					'Grade: 2.3 (B-). In this course a series of student seminar were given on the subject of test and fault tolerance of an IC system. In this course, I wrote and present a paper about artificial neural network.',
+				description: 'Grade: 2.3 (B-). In this course a series of student seminar were given on the subject of test and fault tolerance of an IC system. In this course, I wrote and present a paper about artificial neural network.',
 				start: '04/2016',
 				end: '10/2016'
 			},
@@ -303,8 +285,7 @@ var dataCV = {
 				institution: 'University of Paderborn',
 				location: 'Paderborn, Germany',
 				type: 'university',
-				description:
-					'Grade: 3.3 (C-). This lecture describes the technical steps to build integrated circuits on silicon wafers. Physical models of the process steps were given and the technical equipment were explained.',
+				description: 'Grade: 3.3 (C-). This lecture describes the technical steps to build integrated circuits on silicon wafers. Physical models of the process steps were given and the technical equipment were explained.',
 				start: '04/2016',
 				end: '10/2016'
 			},
@@ -313,8 +294,7 @@ var dataCV = {
 				institution: 'University of Paderborn',
 				location: 'Paderborn, Germany',
 				type: 'university',
-				description:
-					'Grade: 1.0 (A+), best in class. This course gives an introduction to the energy structure of the future. In this course, I wrote a report about the impact of the usage of electric vehicles on the future and current energy structure.',
+				description: 'Grade: 1.0 (A+), best in class. This course gives an introduction to the energy structure of the future. In this course, I wrote a report about the impact of the usage of electric vehicles on the future and current energy structure.',
 				start: '10/2014',
 				end: '04/2015'
 			},
@@ -323,8 +303,7 @@ var dataCV = {
 				institution: 'University of Paderborn',
 				location: 'Paderborn, Germany',
 				type: 'university',
-				description:
-					'Grade: 2.0 (B). A series of laboratory experiments and simulation of optical communications and high frequency engineering were held in this course.',
+				description: 'Grade: 2.0 (B). A series of laboratory experiments and simulation of optical communications and high frequency engineering were held in this course.',
 				start: '10/2014',
 				end: '04/2015'
 			},
@@ -333,20 +312,17 @@ var dataCV = {
 				institution: 'University of Paderborn',
 				location: 'Paderborn, Germany',
 				type: 'university',
-				description:
-					'Grade: 1.7 (B+), top 3 in class. This course gives an introduction into the design and analysis of algorithms (sorting algorithms, basic data structures, graphs and graph algorithms, design and analysis of algorithms (problem complexity, run time and storage complexity of algorithms, exact vs heuristic solutions, probabilistic approaches)).',
+				description: 'Grade: 1.7 (B+), top 3 in class. This course gives an introduction into the design and analysis of algorithms (sorting algorithms, basic data structures, graphs and graph algorithms, design and analysis of algorithms (problem complexity, run time and storage complexity of algorithms, exact vs heuristic solutions, probabilistic approaches)).',
 				start: '10/2014',
 				end: '04/2015'
 			}
 		],
-		nonEngineeringCourse: [
-			{
+		nonEngineeringCourse: [{
 				name: 'Deutschkurs für Internationale Programmstudierende',
 				institution: 'University of Paderborn',
 				location: 'Paderborn, Germany',
 				type: 'university',
-				description:
-					'Grade: 2.3 (B-). German language course for the university students, equal to european language level reference of B2 (upper intermediate).',
+				description: 'Grade: 2.3 (B-). German language course for the university students, equal to european language level reference of B2 (upper intermediate).',
 				start: '04/2015',
 				end: '10/2015'
 			},
@@ -355,8 +331,7 @@ var dataCV = {
 				institution: 'University of Paderborn',
 				location: 'Paderborn, Germany',
 				type: 'university',
-				description:
-					'Grade: 1.7 (B+). In this course, students were taught about soft skills on how to manage technical projects (e.g. requirement analysis, specification, scheduling, planning & designing, monitoring & controlling, communication in teams, communication with customers).',
+				description: 'Grade: 1.7 (B+). In this course, students were taught about soft skills on how to manage technical projects (e.g. requirement analysis, specification, scheduling, planning & designing, monitoring & controlling, communication in teams, communication with customers).',
 				start: '04/2014',
 				end: '10/2014'
 			},
@@ -398,24 +373,19 @@ var dataCV = {
 			}
 		]
 	},
-	workExperience: [
-		{
-			jobTitle: 'Internship',
-			institution: 'P2 TELIMEK-LIPI',
-			location: 'Bandung, Indonesia',
-			description:
-				"Taking part on the documentation of PLT Bayu (wind power plant) 100 KW project's supervisory control.",
-			start: '01/2011',
-			end: '03/2011'
-		}
-	],
-	additionalActivities: [
-		{
+	workExperience: [{
+		jobTitle: 'Internship',
+		institution: 'P2 TELIMEK-LIPI',
+		location: 'Bandung, Indonesia',
+		description: "Taking part on the documentation of PLT Bayu (wind power plant) 100 KW project's supervisory control.",
+		start: '01/2011',
+		end: '03/2011'
+	}],
+	additionalActivities: [{
 			jobtitle: 'Freelance Writer/Moderator',
 			institution: 'media.kelasnusantara.com',
 			location: 'online',
-			description:
-				"Writing articles and moderating a blog about education and learning in general. Best month's view average: 575 views/day.",
+			description: "Writing articles and moderating a blog about education and learning in general. Best month's view average: 575 views/day.",
 			start: '12/2013',
 			end: '12/2015'
 		},
@@ -423,19 +393,16 @@ var dataCV = {
 			jobtitle: 'Freelance Writer/Moderator',
 			institution: 'jermandes.kelasnusantara.com',
 			location: 'online',
-			description:
-				"Writing articles and moderating a blog about how to prepare for studying in Germany. During that time, this site was one of the pioneers in its niche and always shown on google search's first page. Best month's view average: 609 views/day.",
+			description: "Writing articles and moderating a blog about how to prepare for studying in Germany. During that time, this site was one of the pioneers in its niche and always shown on google search's first page. Best month's view average: 609 views/day.",
 			start: '12/2011',
 			end: '12/2013'
 		}
 	],
-	organizationalExperience: [
-		{
+	organizationalExperience: [{
 			jobtitle: 'Head of Logistics Division',
 			institution: 'Innovative Entrepreneurship Challenge 3 (IEC 3)',
 			location: 'Bandung, Indonesia',
-			description:
-				"I successfully secured the logistic matters of Institut Teknologi Bandung's annual national scale entrepreneurship competition, resulting a smooth run of the competition.",
+			description: "I successfully secured the logistic matters of Institut Teknologi Bandung's annual national scale entrepreneurship competition, resulting a smooth run of the competition.",
 			start: '2009',
 			end: '2009'
 		},
@@ -443,8 +410,7 @@ var dataCV = {
 			jobtitle: 'Head of Public Relation Division',
 			institution: "Palapa 1, ITB's Electrical Engineering's Student Org.",
 			location: 'Bandung, Indonesia',
-			description:
-				"An Insititut Teknologi Bandung's student organization's charity project. I successfully managed the relationship between the student organization and the targeting area's native. Resulting a smooth process of pico hydro power plant installation in a relatively remote area in Garut (west java, Indonesia).",
+			description: "An Insititut Teknologi Bandung's student organization's charity project. I successfully managed the relationship between the student organization and the targeting area's native. Resulting a smooth process of pico hydro power plant installation in a relatively remote area in Garut (west java, Indonesia).",
 			start: '2008',
 			end: '2008'
 		}
