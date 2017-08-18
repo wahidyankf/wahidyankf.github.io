@@ -199,6 +199,16 @@ var dataCV = {
   courses: {
     engineeringCourse: [
       {
+        name: "Webpack 2: The Complete Developer's Guide",
+        institution: 'Udemy',
+        location: 'https://www.udemy.com/webpack-2-the-complete-developers-guide/',
+        type: 'online',
+        description:
+          'This course taught about webpack build tool. The topics included in this course are the fundamentals of webpack, project assets handling, webpack on real project, webpack dev server, webpack-based deployment for static sites, and webpack-based deployment for dynamic sites.',
+        start: '08/2017',
+        end: '08/2017'
+      },
+      {
         name: "ES6 JavaScript: The Complete Developer's Guide",
         institution: 'Udemy',
         location: 'https://www.udemy.com/javascript-es6-tutorial/',
