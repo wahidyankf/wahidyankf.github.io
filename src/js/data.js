@@ -53,6 +53,7 @@ var dataCV = {
       'Git',
       'npm',
       'gulp.js',
+      'webpack',
       'CSS post processing',
       'Mocha',
       'Chai',
