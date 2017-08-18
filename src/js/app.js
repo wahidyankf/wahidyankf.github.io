@@ -1,4 +1,4 @@
-$('#js-check').hide();
+$("#js-check").hide();
 
 var mainContent = `
 ${summaryContent}
@@ -12,7 +12,7 @@ ${engineeringCourseContent}
 ${nonEngineeringCourseContent}
 `;
 
-$('header').append(headerContent);
-$('main').append(mainContent);
+$("header").append(headerContent);
+$("main").append(mainContent);
 
 console.log(headerContent);
