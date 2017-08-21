@@ -94,7 +94,7 @@ var dataCV = {
     {
       name: 'Learn React - YouTube Video Browser',
       description:
-        'In this "follow along" project, I created a Youtube video browser using ReactJS and YouTube API Search.',
+        'This is a "follow along" project from my learning react project. In this project, a YouTube video browser was created using ReactJS and YouTube API Search.',
       skillSetUsed: [
         'JavaScript',
         'JSX',
