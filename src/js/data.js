@@ -92,6 +92,15 @@ var dataCV = {
   ],
   portfolio: [
     {
+      name: 'Random Quote Generator',
+      description:
+        'In this project, I created a page that will randomly generate quotes from a data object. This page will change its displayed quote when we click the button / pres any key / 30 seconds has passed. This page will also not displayed the same quote until all of quotes has been displayed.',
+      skillSetUsed: ['JavaScript', 'CSS', 'Sass', 'HTML'],
+      start: '08/2017',
+      end: '08/2017',
+      link: 'https://github.com/wahidyankf/random_quote_generator'
+    },
+    {
       name: 'Learn React - YouTube Video Browser',
       description:
         'This is a "follow along" project from my learning react project. In this project, a YouTube video browser was created using ReactJS and YouTube API Search.',
