@@ -50,7 +50,7 @@ var dataCV = {
     ],
     toolsAndLibraries: [
       'jQuery',
-      'ReactJS Basics',
+      'ReactJS',
       'JSX',
       'Git',
       'npm',
