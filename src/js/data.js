@@ -92,6 +92,15 @@ var dataCV = {
   ],
   portfolio: [
     {
+      name: 'Pagination and Content Filter',
+      description:
+        'In this project, an HTML page and CSS files was given and I have to add a search and pagination feature using unobstrusive javascript. The resulting page is a page that display at most 10 student entries with an instant student search capabilities.',
+      skillSetUsed: ['HTML', 'CSS', 'Sass', 'JavaScript', 'jQuery'],
+      start: '08/2017',
+      end: '08/2017',
+      link: 'https://github.com/wahidyankf/pagination-and-content-filter'
+    },
+    {
       name: 'Random Quote Generator',
       description:
         'In this project, I created a page that will randomly generate quotes from a data object. This page will change its displayed quote when we click the button / pres any key / 30 seconds has passed. This page will also not displayed the same quote until all of quotes has been displayed.',
