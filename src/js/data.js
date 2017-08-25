@@ -92,6 +92,15 @@ var dataCV = {
   ],
   portfolio: [
     {
+      name: 'Build an Interactive Form',
+      description:
+        'In this project, an HTML and CSS files was given and I have to add interactivity to the existing form there. The resulting page is an interactive HTML form that has a simple form validity checker.',
+      skillSetUsed: ['HTML', 'CSS', 'Sass', 'JavaScript', 'jQuery', 'RegEx'],
+      start: '08/2017',
+      end: '08/2017',
+      link: 'https://github.com/wahidyankf/build-an-interactive-form'
+    },
+    {
       name: 'Pagination and Content Filter',
       description:
         'In this project, an HTML page and CSS files was given and I have to add a search and pagination feature using unobstrusive javascript. The resulting page is a page that display at most 10 student entries with an instant student search capabilities.',
