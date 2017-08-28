@@ -49,6 +49,8 @@ var dataCV = {
       }
     ],
     toolsAndLibraries: [
+      'AJAX',
+      'RegEx',
       'jQuery',
       'ReactJS',
       'JSX',
