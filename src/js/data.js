@@ -356,7 +356,7 @@ var dataCV = {
           'https://www.datacamp.com/courses/python-data-science-toolbox-part-1',
         type: 'online',
         description:
-          'This course taught about how to write functions in Python, including functions with multiple parameters, functions with multiple return value, and lambda functions. This course alose taught -g about ways to handle errors in Python.',
+          'This course taught about how to write functions in Python, including functions with multiple parameters, functions with multiple return value, and lambda functions. This course also taught about ways to handle errors in Python.',
         start: '03/2017',
         end: '03/2017'
       },
