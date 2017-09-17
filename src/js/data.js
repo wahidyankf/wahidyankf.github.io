@@ -292,7 +292,7 @@ var dataCV = {
         location: 'https://teamtreehouse.com/tracks/front-end-web-development',
         type: 'online',
         description:
-          'This compilation of courses taught the combination of HTML, CSS and JavaScript on which all modern websites are built. This track also taught -g us about responsive web design, intro to bootstrap 4, website optimization, git, accessibility, and foundation of console/command line.',
+          'This compilation of courses taught the combination of HTML, CSS and JavaScript on which all modern websites are built. This track also taught us about responsive web design, intro to bootstrap 4, website optimization, git, accessibility, and foundation of console/command line.',
         start: '05/2017',
         end: '05/2017'
       },
@@ -312,7 +312,7 @@ var dataCV = {
         location: 'https://teamtreehouse.com/tracks/web-design',
         type: 'online',
         description:
-          'This compilation of courses taught about how to design and build websites by learning the basic principles of design. This track also taught -g HTML, CSS and Sass.',
+          'This compilation of courses taught about how to design and build websites by learning the basic principles of design. This track also taught HTML, CSS and Sass.',
         start: '03/2017',
         end: '03/2017'
       },
