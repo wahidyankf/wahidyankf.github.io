@@ -121,22 +121,6 @@ var dataCV = {
       link: 'https://github.com/wahidyankf/random_quote_generator'
     },
     {
-      name: 'Learn React - YouTube Video Browser',
-      description:
-        'This is a "follow along" project from my learning react project. In this project, a YouTube video browser was created using ReactJS and YouTube API Search.',
-      skillSetUsed: [
-        'JavaScript',
-        'JSX',
-        'CSS',
-        'Bootstrap',
-        'Webpack',
-        'YouTube API Search'
-      ],
-      start: '08/2017',
-      end: '08/2017',
-      link: 'https://github.com/wahidyankf/learn-react-youtube-video-browser'
-    },
-    {
       name: 'Interactive Video Player',
       description:
         "In this project, I created a fully featured interactive video player using MediaElement.js. The features of this video player includes: play/pause button, current time and total duration, playing progress slider, file buffer's progress, skip backward button, playback speed chooser, captions chooser, video quality chooser, volume level slider, and go to fullscreen button.",
