@@ -74,6 +74,7 @@ let dataCV = {
     toolsAndLibraries: [
       'React',
       'Redux',
+      'Redux Form',
       'Redux Saga',
       'CSS in JS (styled-component)',
       'jQuery',
