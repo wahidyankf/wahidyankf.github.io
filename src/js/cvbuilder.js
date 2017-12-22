@@ -149,7 +149,7 @@ for (let i = 0; i < dataCV.portfolio.length; i++) {
 
 let portfolioContent = `
 <section class="portfolio">
-  <h2>Project Portfolio</h2>
+  <h2>Personal Projects</h2>
   <ul>
     ${portfolioItemContent}
   </ul>
