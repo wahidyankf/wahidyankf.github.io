@@ -21,9 +21,9 @@ let dataCV = {
       institution: 'Ruang Guru',
       location: 'Jakarta, Indonesia',
       description: [
-        `Refactor https://ruangguru.com/ assets and code base using imgIX, AWS S3 bucket, and fastly CDN. Resulting in loads time speed improvement of more than 300% (from more than 12 seconds average to under 3 seconds),  and launch its https://www.webpagetest.org/ score average of B to all A's without sacrificing assets' apparent quality.`,
+        `Rewrite and migrate https://uji.ruangguru.com from angular.js' stacks to react.js' stacks from scratch. Resulting in unified front-end web's stacks for ruangguru.com and more efficient development process.`,
         `Automate web apps' bugs tracking using sentry (Raven.js) and deployment from Gitlab to AWS S3 and production using Codeship. Resulting in more precise bug tracking, and much faster web app integration, deployment, and delivery.`,
-        `Rewrite and migrate https://uji.ruangguru.com from angular.js' stacks to react.js' stacks from scratch. Resulting in unified front-end web's stacks for ruangguru.com and more efficient development process.`
+        `Refactor https://ruangguru.com/ assets and code base using imgIX, AWS S3 bucket, and fastly CDN. Resulting in loads time speed improvement of more than 300% (from more than 12 seconds average to under 3 seconds),  and launch its https://www.webpagetest.org/ score average of B to all A's without sacrificing assets' apparent quality.`
       ],
       start: '10/2017',
       end: 'Now'
