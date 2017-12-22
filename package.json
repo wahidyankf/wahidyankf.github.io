@@ -34,7 +34,7 @@
   "scripts": {
     "test": "mocha",
     "deployMaster": "gulp cleanAll && gulp build && gulp deployMaster",
-    "deployPushMaster": "npm run deployMaster && git push origin master"
+    "deployPushMaster": "yarn deployMaster && git push origin master"
   },
   "author": "",
   "license": "MIT"
