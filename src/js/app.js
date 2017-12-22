@@ -1,18 +1,26 @@
-$("#js-check").hide();
+$('#js-check').hide();
 
-var mainContent = `
+// let mainContent = `
+// ${summaryContent}
+// ${workExperienceContent}
+// ${skillsContent}
+// ${portfolioContent}
+// ${educationContent}
+// ${additionalActivitiesContent}
+// ${organizationalExperienceContent}
+// ${engineeringCourseContent}
+// ${nonEngineeringCourseContent}
+// `;
+
+let mainContent = `
 ${summaryContent}
+${workExperienceContent}
 ${skillsContent}
 ${portfolioContent}
 ${educationContent}
-${workExperienceContent}
 ${additionalActivitiesContent}
 ${organizationalExperienceContent}
-${engineeringCourseContent}
-${nonEngineeringCourseContent}
 `;
 
-$("header").append(headerContent);
-$("main").append(mainContent);
-
-console.log(headerContent);
+$('header').append(headerContent);
+$('main').append(mainContent);

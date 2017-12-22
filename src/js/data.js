@@ -1,11 +1,10 @@
-var dataCV = {
+let dataCV = {
   personalData: {
     name: 'Wahidyan Kresna Fridayoka',
-    shortDesc: 'Front-end Web / JavaScript Developer',
+    shortDesc: 'Front-End Web / JavaScript / React Developer',
     photos: 'img/profile/profilepicture.jpeg',
     email: 'wahidyankf@gmail.com',
-    summary:
-      'Self-taught JavaScript Programmer with diverse front-end web development portfolio and large exposure to computer science and engineering in general. Has past experience with PHP and MySQL, and can also code in Python when necessary. Polyglot that speaks 3+ languages and has more than 3 years experience of living overseas. Has successfully organized nationwide entrepreneurship competition.',
+    summary: `Self-taught JavaScript programmer with diverse front-end web development portfolio and past experience with MySQL and hardware programming. Comfortable working with React.js' stacks but also willing to learn another programming language and tools when necessary. Can also code in python. Polyglot that speaks 3+ languages and has more than 3 years experience of living overseas. Has successfully organized nationwide entrepreneurship competition.`,
     address: 'Jakarta, Indonesia',
     socialHub: {
       website: 'https://wahidyankf.github.io/',
@@ -16,11 +15,35 @@ var dataCV = {
       blog: 'https://wahidyankf.wordpress.com'
     }
   },
+  workExperience: [
+    {
+      jobTitle: 'Front End Developer',
+      institution: 'Ruang Guru',
+      location: 'Jakarta, Indonesia',
+      description: [
+        `Refactor https://ruangguru.com/ assets and code base using imgIX, AWS S3 bucket, and fastly CDN. Resulting in loads time speed improvement of more than 300% (from more than 12 seconds average to under 3 seconds),  and launch its https://www.webpagetest.org/ score average of B to all A's without sacrificing assets' apparent quality.`,
+        `Automate web apps' bugs tracking using sentry (Raven.js) and deployment from Gitlab to AWS S3 and production using Codeship. Resulting in more precise bug tracking, and much faster web app integration, deployment, and delivery.`,
+        `Rewrite and migrate https://uji.ruangguru.com from angular.js' stacks to react.js' stacks from scratch. Resulting in unified front-end web's stacks for ruangguru.com and more efficient development process.`
+      ],
+      start: '10/2017',
+      end: 'Now'
+    },
+    {
+      jobTitle: 'Internship',
+      institution: 'P2 TELIMEK-LIPI',
+      location: 'Bandung, Indonesia',
+      description: [
+        "Taking part on the documentation of PLT Bayu (wind power plant) 100 KW project's supervisory control."
+      ],
+      start: '01/2011',
+      end: '03/2011'
+    }
+  ],
   skills: {
     programmingLanguage: [
       {
         name: 'JavaScript',
-        rating: 7.5
+        rating: 8.5
       },
       {
         name: 'HTML-CSS-Sass',
@@ -49,16 +72,20 @@ var dataCV = {
       }
     ],
     toolsAndLibraries: [
-      'AJAX',
-      'RegEx',
+      'React',
+      'Redux',
+      'Redux Saga',
+      'CSS in JS (styled-component)',
       'jQuery',
-      'ReactJS',
+      'RegEx',
+      'AJAX',
       'JSX',
       'Git',
       'npm',
+      'yarn',
       'gulp.js',
-      'webpack',
       'CSS post processing',
+      'webpack',
       'Mocha',
       'Chai',
       'Moment.js',
@@ -479,17 +506,6 @@ var dataCV = {
       }
     ]
   },
-  workExperience: [
-    {
-      jobTitle: 'Internship',
-      institution: 'P2 TELIMEK-LIPI',
-      location: 'Bandung, Indonesia',
-      description:
-        "Taking part on the documentation of PLT Bayu (wind power plant) 100 KW project's supervisory control.",
-      start: '01/2011',
-      end: '03/2011'
-    }
-  ],
   additionalActivities: [
     {
       jobtitle: 'Freelance Writer/Moderator',
