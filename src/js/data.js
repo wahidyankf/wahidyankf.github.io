@@ -4,7 +4,7 @@ let dataCV = {
     shortDesc: 'Front-End Web / JavaScript / React Developer',
     photos: 'img/profile/profilepicture.jpeg',
     email: 'wahidyankf@gmail.com',
-    summary: `Self-taught JavaScript programmer with diverse front-end web development portfolio and past experience with MySQL and hardware programming. Comfortable working with React.js' stacks but also willing to learn another programming language and tools when necessary. Can also code in python. Polyglot that speaks 3+ languages and has more than 3 years experience of living overseas. Has successfully organized nationwide entrepreneurship competition.`,
+    summary: `JavaScript developer with diverse front-end web development portfolio and past experience with MySQL and hardware programming. Comfortable working with React.js' stacks but also willing to learn another programming language and tools when necessary. Can also code in python. Polyglot that speaks 3+ languages and has more than 3 years experience of living overseas. Has successfully organized nationwide entrepreneurship competition.`,
     address: 'Jakarta, Indonesia',
     socialHub: {
       website: 'https://wahidyankf.github.io/',
@@ -263,16 +263,6 @@ let dataCV = {
       end: '03/2017',
       link:
         'https://github.com/wahidyankf/udacity-fullstack-build-a-portfolio-site'
-    },
-    {
-      name: 'Movie Trailer Website',
-      description:
-        'In this project, I created a movie trailer website using Python.',
-      skillSetUsed: ['Python'],
-      start: '03/2017',
-      end: '03/2017',
-      link:
-        'https://github.com/wahidyankf/udacity-fullstack-movie-trailer-website'
     }
   ],
   courses: {
