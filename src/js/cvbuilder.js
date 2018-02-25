@@ -198,9 +198,11 @@ for (let i = 0; i < dataCV.workExperience.length; i++) {
   <ul>
     <li><span class="list-title">${
       dataCV.workExperience[i].jobTitle
-    }</span><span class="list-subtitle"> - ${
-    dataCV.workExperience[i].institution
-  } - ${dataCV.workExperience[i].location} - ${dateShown(
+    }</span><span class="list-subtitle"> - <a href="${
+    dataCV.workExperience[i].institutionLink
+  }">${dataCV.workExperience[i].institution}</a> - ${
+    dataCV.workExperience[i].location
+  } - ${dateShown(
     dataCV.workExperience[i].start,
     dataCV.workExperience[i].end
   )}</span></li>

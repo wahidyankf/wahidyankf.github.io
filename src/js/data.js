@@ -1,10 +1,10 @@
 let dataCV = {
   personalData: {
     name: 'Wahidyan Kresna Fridayoka',
-    shortDesc: 'Front-End Web / JavaScript / React Developer',
+    shortDesc: 'Front-End Engineer',
     photos: 'img/profile/profilepicture.jpeg',
     email: 'wahidyankf@gmail.com',
-    summary: `JavaScript developer with diverse front-end web development portfolio and past experience with MySQL and hardware programming. Comfortable working with React.js' stacks but also willing to learn another programming language and tools when necessary. Can also code in python. Polyglot that speaks 3+ languages and has more than 3 years experience of living overseas. Has successfully organized nationwide entrepreneurship competition.`,
+    summary: `Software engineer with diverse front-end web development portfolio and past experience with MySQL and hardware programming. Comfortable working with React.js' stacks but also willing to learn another programming language and tools when necessary. Can also code in Python. Polyglot that speaks 3+ languages and has more than 3 years experience of living overseas. Has successfully organized nationwide entrepreneurship competition.`,
     address: 'Jakarta, Indonesia',
     socialHub: {
       website: 'https://wahidyankf.github.io/',
@@ -12,64 +12,77 @@ let dataCV = {
       linkedin: 'https://www.linkedin.com/in/wahidyan-kresna-fridayoka',
       twitter: 'https://twitter.com/wahidyankf',
       teamtreehouse: 'https://teamtreehouse.com/wahidyankresnafridayoka',
-      blog: 'https://wahidyankf.wordpress.com'
-    }
+      blog: 'https://wahidyankf.wordpress.com',
+    },
   },
   workExperience: [
     {
-      jobTitle: 'Front End Developer',
+      jobTitle: 'Front End Engineer',
       institution: 'Ruang Guru',
+      institutionLink: 'https://ruangguru.com/',
+      location: 'Jakarta, Indonesia',
+      description: [
+        `Rewrote and migrated https://uji.ruangguru.com from angular.js' stacks to react.js' stacks from scratch. The result was the unification of Ruang Guru's front-end web stacks, which make the front-end web development process in Ruang Guru more efficient.`,
+      ],
+      start: '10/2017',
+      end: 'Now',
+    },
+    {
+      jobTitle: 'Junior Front End Engineer',
+      institution: 'Ruang Guru',
+      institutionLink: 'https://ruangguru.com/',
       location: 'Jakarta, Indonesia',
       description: [
         `Refactored https://ruangguru.com/ assets and code base using imgIX, AWS S3 bucket, and fastly CDN. The result was load time speed improvement of more than 300% (from more than 12 seconds average to under 3 seconds),  and the improvement of its https://www.webpagetest.org/ average score of B to all A's without sacrificing its assets' apparent quality.`,
         `Rewrote and migrated https://uji.ruangguru.com from angular.js' stacks to react.js' stacks from scratch. The result was the unification of Ruang Guru's front-end web stacks, which make the front-end web development process in Ruang Guru more efficient.`,
-        `Automated web apps' bugs tracking using sentry (Raven.js) and deployment from Gitlab to AWS S3 and production using Codeship. The result was more precise bug tracking, and much faster web app integration, deployment, and delivery.`
+        `Automated web apps' bugs tracking using sentry (Raven.js) and deployment from Gitlab to AWS S3 and production using Codeship. The result was more precise bug tracking, and much faster web app integration, deployment, and delivery.`,
       ],
       start: '10/2017',
-      end: 'Now'
+      end: '12/2017',
     },
     {
       jobTitle: 'Internship',
       institution: 'P2 TELIMEK-LIPI',
+      institutionLink: 'http://www.telimek.lipi.go.id/',
       location: 'Bandung, Indonesia',
       description: [
-        "Taking part on the documentation of PLT Bayu (wind power plant) 100 KW project's supervisory control."
+        "Taking part on the documentation of PLT Bayu (wind power plant) 100 KW project's supervisory control.",
       ],
       start: '01/2011',
-      end: '03/2011'
-    }
+      end: '03/2011',
+    },
   ],
   skills: {
     programmingLanguage: [
       {
         name: 'JavaScript',
-        rating: 8.5
+        rating: 8.5,
       },
       {
         name: 'HTML-CSS-Sass',
-        rating: 8
+        rating: 8,
       },
       {
         name: 'Python',
-        rating: 7
-      }
+        rating: 7,
+      },
     ],
     language: [
       {
         name: 'Bahasa',
         proficiency: 'Native',
-        info: ''
+        info: '',
       },
       {
         name: 'English',
         proficiency: 'C1',
-        info: 'TOEFL: 627, IELTS: 7.0'
+        info: 'TOEFL: 627, IELTS: 7.0',
       },
       {
         name: 'German',
         proficiency: 'B1',
-        info: 'Goethe ZD: 228/300'
-      }
+        info: 'Goethe ZD: 228/300',
+      },
     ],
     toolsAndLibraries: [
       'React',
@@ -96,7 +109,7 @@ let dataCV = {
       'vim',
       'TMUX',
       'Markdown',
-      'LaTeX'
+      'LaTeX',
     ],
     pastExperience: [
       'Matlab',
@@ -104,9 +117,9 @@ let dataCV = {
       'Assembly (AT Mega 8051)',
       'SQL',
       'PHP',
-      'Gnokii SMS Daemon'
+      'Gnokii SMS Daemon',
     ],
-    operatingSystem: ['Ubuntu', 'Mac', 'Windows']
+    operatingSystem: ['Ubuntu', 'Mac', 'Windows'],
   },
   formalEducation: [
     {
@@ -117,8 +130,8 @@ let dataCV = {
       start: '08/2005',
       end: '06/2011',
       info:
-        'GPA: 3.0/4.0. Bachelor thesis: Design and implementation of SMS One Time Password (SMS-OTP) Based Web Authentication System. Supervisor: Ir. Budi Rahardjo M.Sc., Ph.D.'
-    }
+        'GPA: 3.0/4.0. Bachelor thesis: Design and implementation of SMS One Time Password (SMS-OTP) Based Web Authentication System. Supervisor: Ir. Budi Rahardjo M.Sc., Ph.D.',
+    },
   ],
   portfolio: [
     {
@@ -128,7 +141,7 @@ let dataCV = {
       skillSetUsed: ['HTML', 'CSS', 'Sass', 'JavaScript', 'jQuery', 'RegEx'],
       start: '08/2017',
       end: '08/2017',
-      link: 'https://github.com/wahidyankf/build-an-interactive-form'
+      link: 'https://github.com/wahidyankf/build-an-interactive-form',
     },
     {
       name: 'Pagination and Content Filter',
@@ -137,7 +150,7 @@ let dataCV = {
       skillSetUsed: ['HTML', 'CSS', 'Sass', 'JavaScript', 'jQuery'],
       start: '08/2017',
       end: '08/2017',
-      link: 'https://github.com/wahidyankf/pagination-and-content-filter'
+      link: 'https://github.com/wahidyankf/pagination-and-content-filter',
     },
     {
       name: 'Random Quote Generator',
@@ -146,7 +159,7 @@ let dataCV = {
       skillSetUsed: ['HTML', 'CSS', 'Sass', 'JavaScript', 'jQuery'],
       start: '08/2017',
       end: '08/2017',
-      link: 'https://github.com/wahidyankf/random_quote_generator'
+      link: 'https://github.com/wahidyankf/random_quote_generator',
     },
     {
       name: 'Interactive Video Player',
@@ -155,7 +168,7 @@ let dataCV = {
       skillSetUsed: ['HTML', 'CSS', 'Sass', 'JavaScript', 'MediaElement.js'],
       start: '07/2017',
       end: '07/2017',
-      link: 'https://github.com/wahidyankf/interactive-video-player'
+      link: 'https://github.com/wahidyankf/interactive-video-player',
     },
     {
       name: 'Optimizing a Site for Performance',
@@ -165,7 +178,7 @@ let dataCV = {
       start: '07/2017',
       end: '07/2017',
       link:
-        'https://github.com/wahidyankf/treehouse-frontend-11-optimizing-a-site-for-performance'
+        'https://github.com/wahidyankf/treehouse-frontend-11-optimizing-a-site-for-performance',
     },
     {
       name: 'Accessibility Refactor',
@@ -175,7 +188,7 @@ let dataCV = {
       start: '07/2017',
       end: '07/2017',
       link:
-        'https://github.com/wahidyankf/treehouse-frontend-08-accessibility-refactor'
+        'https://github.com/wahidyankf/treehouse-frontend-08-accessibility-refactor',
     },
     {
       name: 'wahidyankf.github.io',
@@ -184,7 +197,7 @@ let dataCV = {
       skillSetUsed: ['HTML', 'CSS', 'Sass', 'JavaScript', 'jQuery'],
       start: '07/2017',
       end: '07/2017',
-      link: 'https://wahidyankf.github.io/'
+      link: 'https://wahidyankf.github.io/',
     },
     {
       name: 'SVG Site Update',
@@ -194,7 +207,7 @@ let dataCV = {
       start: '06/2017',
       end: '06/2017',
       link:
-        'https://github.com/wahidyankf/treehouse-frontend-06-svg-site-update'
+        'https://github.com/wahidyankf/treehouse-frontend-06-svg-site-update',
     },
     {
       name: 'Moslem Productivity Tools',
@@ -208,11 +221,11 @@ let dataCV = {
         'jQuery',
         'Foundation for Sites',
         'moment.js',
-        'praytime.js'
+        'praytime.js',
       ],
       start: '04/2017',
       end: '04/2017',
-      link: 'https://github.com/wahidyankf/moslem-productivity-tools'
+      link: 'https://github.com/wahidyankf/moslem-productivity-tools',
     },
     {
       name: 'Interactive Photo Gallery',
@@ -222,7 +235,7 @@ let dataCV = {
       start: '04/2017',
       end: '04/2017',
       link:
-        'https://github.com/wahidyankf/treehouse-frontend-04-interactive-photo-gallery'
+        'https://github.com/wahidyankf/treehouse-frontend-04-interactive-photo-gallery',
     },
     {
       name: 'Online Registration Form',
@@ -232,7 +245,7 @@ let dataCV = {
       start: '04/2017',
       end: '04/2017',
       link:
-        'https://github.com/wahidyankf/treehouse-frontend-03-online-registration-form'
+        'https://github.com/wahidyankf/treehouse-frontend-03-online-registration-form',
     },
     {
       name: 'Responsive Layout',
@@ -242,7 +255,7 @@ let dataCV = {
       start: '04/2017',
       end: '04/2017',
       link:
-        'https://github.com/wahidyankf/treehouse-frontend-02-responsive-layout'
+        'https://github.com/wahidyankf/treehouse-frontend-02-responsive-layout',
     },
     {
       name: 'Personal Profile Page',
@@ -252,7 +265,7 @@ let dataCV = {
       start: '04/2017',
       end: '04/2017',
       link:
-        'https://github.com/wahidyankf/treehouse-frontend-01-personal-profile-page'
+        'https://github.com/wahidyankf/treehouse-frontend-01-personal-profile-page',
     },
     {
       name: 'Build a Portfolio Site',
@@ -262,8 +275,8 @@ let dataCV = {
       start: '03/2017',
       end: '03/2017',
       link:
-        'https://github.com/wahidyankf/udacity-fullstack-build-a-portfolio-site'
-    }
+        'https://github.com/wahidyankf/udacity-fullstack-build-a-portfolio-site',
+    },
   ],
   courses: {
     engineeringCourse: [
@@ -276,7 +289,7 @@ let dataCV = {
         description:
           'This course taught about webpack build tool. The topics included in this course are the fundamentals of webpack, project assets handling, webpack on real project, webpack dev server, webpack-based deployment for static sites, and webpack-based deployment for dynamic sites.',
         start: '08/2017',
-        end: '08/2017'
+        end: '08/2017',
       },
       {
         name: "ES6 JavaScript: The Complete Developer's Guide",
@@ -286,7 +299,7 @@ let dataCV = {
         description:
           'This course taught about the new features of Ecma Script 6. The topics included in this course are array helpers (forEach, map, filter, find, every, some and reduce), const/let, template strings, arrow functions, enhanced object literals, default function arguments, rest and spread operator, destructuring, classes, generators, promises, and fetch.',
         start: '08/2017',
-        end: '08/2017'
+        end: '08/2017',
       },
       {
         name: 'Front End Web Development Track',
@@ -296,7 +309,7 @@ let dataCV = {
         description:
           'This compilation of courses taught the combination of HTML, CSS and JavaScript on which all modern websites are built. This track also taught us about responsive web design, intro to bootstrap 4, website optimization, git, accessibility, and foundation of console/command line.',
         start: '05/2017',
-        end: '05/2017'
+        end: '05/2017',
       },
       {
         name: 'Beginner JavaScript Track',
@@ -306,7 +319,7 @@ let dataCV = {
         description:
           'This compilation of courses taught the foundation of JavaScript, including jQuery and the ins-and-outs of adding interactivity in the browser.',
         start: '04/2017',
-        end: '04/2017'
+        end: '04/2017',
       },
       {
         name: 'Web Design Track',
@@ -316,7 +329,7 @@ let dataCV = {
         description:
           'This compilation of courses taught about how to design and build websites by learning the basic principles of design. This track also taught HTML, CSS and Sass.',
         start: '03/2017',
-        end: '03/2017'
+        end: '03/2017',
       },
       {
         name: 'Importing Data in Python (Part 2)',
@@ -327,7 +340,7 @@ let dataCV = {
         description:
           'This course taught about ways to import data in Python. The type of data that was learned to be imported in this course are data from the web and APIs.',
         start: '03/2017',
-        end: '03/2017'
+        end: '03/2017',
       },
       {
         name: 'Importing Data in Python (Part 1)',
@@ -338,7 +351,7 @@ let dataCV = {
         description:
           'This course taught about ways to import data in Python. The type of data that was learned to be imported in this course are flat files (e.g. .txts and .csvs), files native to other software (e.g. excel, Stata, SAS, Matlab), and files from relational databases such as SQLite & PostgreSQL.',
         start: '03/2017',
-        end: '03/2017'
+        end: '03/2017',
       },
       {
         name: 'Python for Data Science Toolbox (Part 2)',
@@ -349,7 +362,7 @@ let dataCV = {
         description:
           'This course taught about iterators in Python, including how to use list comprehensions in real life scenarios.',
         start: '03/2017',
-        end: '03/2017'
+        end: '03/2017',
       },
       {
         name: 'Python for Data Science Toolbox (Part 1)',
@@ -360,7 +373,7 @@ let dataCV = {
         description:
           'This course taught about how to write functions in Python, including functions with multiple parameters, functions with multiple return value, and lambda functions. This course also taught about ways to handle errors in Python.',
         start: '03/2017',
-        end: '03/2017'
+        end: '03/2017',
       },
       {
         name: 'Intermediate Python for Data Science',
@@ -371,7 +384,7 @@ let dataCV = {
         description:
           "This course taught about ways to visualize real data using matplotlib's functions and different kinds of data structures such as dictionary and the Pandas dataframe.",
         start: '03/2017',
-        end: '03/2017'
+        end: '03/2017',
       },
       {
         name: 'Intro to Python for Data Science',
@@ -382,7 +395,7 @@ let dataCV = {
         description:
           'This introduction to Python course focuses on Python specifically for data science. In this course, student will learn about ways to store and manipulate data as well as data science tools to start the analyses.',
         start: '03/2017',
-        end: '03/2017'
+        end: '03/2017',
       },
       {
         name: 'Topics in System Engineering - Test and Fault Tolerance',
@@ -392,7 +405,7 @@ let dataCV = {
         description:
           'Grade: 2.3 (B-). In this course a series of student seminar were given on the subject of test and fault tolerance of an IC system. In this course, I wrote and present a paper about artificial neural network.',
         start: '04/2016',
-        end: '10/2016'
+        end: '10/2016',
       },
       {
         name: 'Processing of Semiconductor',
@@ -402,7 +415,7 @@ let dataCV = {
         description:
           'Grade: 3.3 (C-). This lecture describes the technical steps to build integrated circuits on silicon wafers. Physical models of the process steps were given and the technical equipment were explained.',
         start: '04/2016',
-        end: '10/2016'
+        end: '10/2016',
       },
       {
         name: 'Project - Energieversorgungsstrukturen der Zukunft',
@@ -412,7 +425,7 @@ let dataCV = {
         description:
           'Grade: 1.0 (A+), best in class. This course gives an introduction to the energy structure of the future. In this course, I wrote a report about the impact of the usage of electric vehicles on the future and current energy structure.',
         start: '10/2014',
-        end: '04/2015'
+        end: '04/2015',
       },
       {
         name: 'Project - Optical Communications and High-Frequency Engineering',
@@ -422,7 +435,7 @@ let dataCV = {
         description:
           'Grade: 2.0 (B). A series of laboratory experiments and simulation of optical communications and high frequency engineering were held in this course.',
         start: '10/2014',
-        end: '04/2015'
+        end: '04/2015',
       },
       {
         name: 'Introduction to Algorithm',
@@ -432,8 +445,8 @@ let dataCV = {
         description:
           'Grade: 1.7 (B+), top 3 in class. This course gives an introduction into the design and analysis of algorithms (sorting algorithms, basic data structures, graphs and graph algorithms, design and analysis of algorithms (problem complexity, run time and storage complexity of algorithms, exact vs heuristic solutions, probabilistic approaches)).',
         start: '10/2014',
-        end: '04/2015'
-      }
+        end: '04/2015',
+      },
     ],
     nonEngineeringCourse: [
       {
@@ -444,7 +457,7 @@ let dataCV = {
         description:
           'Grade: 2.3 (B-). German language course for the university students, equal to european language level reference of B2 (upper intermediate).',
         start: '04/2015',
-        end: '10/2015'
+        end: '10/2015',
       },
       {
         name: 'Management of Technical Project',
@@ -454,7 +467,7 @@ let dataCV = {
         description:
           'Grade: 1.7 (B+). In this course, students were taught about soft skills on how to manage technical projects (e.g. requirement analysis, specification, scheduling, planning & designing, monitoring & controlling, communication in teams, communication with customers).',
         start: '04/2014',
-        end: '10/2014'
+        end: '10/2014',
       },
       {
         name: 'DSH Vorbereitung Klasse',
@@ -464,7 +477,7 @@ let dataCV = {
         description:
           'German language preparation class for university entrance exam.',
         start: '03/2013',
-        end: '06/2013'
+        end: '06/2013',
       },
       {
         name: 'DSH Vorbereitung Klasse',
@@ -474,7 +487,7 @@ let dataCV = {
         description:
           'German language preparation class for university entrance exam.',
         start: '10/2012',
-        end: '01/2013'
+        end: '01/2013',
       },
       {
         name: 'Superintensiv Deutsch B2',
@@ -483,7 +496,7 @@ let dataCV = {
         type: 'institution',
         description: 'German language class for level B2 (upper intermediate).',
         start: '01/2012',
-        end: '06/2012'
+        end: '06/2012',
       },
       {
         name: 'Superintensiv Deutsch A1-B1',
@@ -493,9 +506,9 @@ let dataCV = {
         description:
           'German languange class for level A1-B1 (beginner to lower intermediate).',
         start: '07/2011',
-        end: '12/2011'
-      }
-    ]
+        end: '12/2011',
+      },
+    ],
   },
   additionalActivities: [
     {
@@ -505,7 +518,7 @@ let dataCV = {
       description:
         "Writing articles and moderating a blog about education and learning in general. Best month's view average: 575 views/day.",
       start: '12/2013',
-      end: '12/2015'
+      end: '12/2015',
     },
     {
       jobtitle: 'Freelance Writer/Moderator',
@@ -514,8 +527,8 @@ let dataCV = {
       description:
         "Writing articles and moderating a blog about how to prepare for studying in Germany. During that time, this site was one of the pioneers in its niche and always shown on google search's first page. Best month's view average: 609 views/day.",
       start: '12/2011',
-      end: '12/2013'
-    }
+      end: '12/2013',
+    },
   ],
   organizationalExperience: [
     {
@@ -525,7 +538,7 @@ let dataCV = {
       description:
         "I successfully secured the logistic matters of Institut Teknologi Bandung's annual national scale entrepreneurship competition, resulting a smooth run of the competition.",
       start: '2009',
-      end: '2009'
+      end: '2009',
     },
     {
       jobtitle: 'Head of Public Relation Division',
@@ -534,7 +547,7 @@ let dataCV = {
       description:
         "An Insititut Teknologi Bandung's student organization's charity project. I successfully managed the relationship between the student organization and the targeting area's native. Resulting a smooth process of pico hydro power plant installation in a relatively remote area in Garut (west java, Indonesia).",
       start: '2008',
-      end: '2008'
-    }
-  ]
+      end: '2008',
+    },
+  ],
 };
