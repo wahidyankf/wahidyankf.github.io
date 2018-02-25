@@ -22,7 +22,7 @@ let dataCV = {
       institutionLink: 'https://ruangguru.com/',
       location: 'Jakarta, Indonesia',
       description: [
-        `Optimized https://uji.ruangguru.com's react stacks. The result was more than 44% smaller total download size (from 612 kB to 342 kB, all assets included) than the original angular.js' stacks, while also made subsequent pages load faster by implemented agressive code splitting.`,
+        `Optimized https://uji.ruangguru.com's react stacks. The result was more than 44% smaller total download size (from 612 kB to 342 kB, all assets included) than the original angular.js' stacks, while also made subsequent pages load faster by implementing agressive code splitting.`,
       ],
       start: '01/2018',
       end: 'Now',
