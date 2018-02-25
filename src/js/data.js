@@ -1,7 +1,7 @@
 let dataCV = {
   personalData: {
     name: 'Wahidyan Kresna Fridayoka',
-    shortDesc: 'Front-End Engineer',
+    shortDesc: 'Front-End / Software Engineer',
     photos: 'img/profile/profilepicture.jpeg',
     email: 'wahidyankf@gmail.com',
     summary: `Software engineer with diverse front-end web development portfolio and past experience with MySQL and hardware programming. Comfortable working with React.js' stacks but also willing to learn another programming language and tools when necessary. Can also code in Python. Polyglot that speaks 3+ languages and has more than 3 years experience of living overseas. Has successfully organized nationwide entrepreneurship competition.`,
@@ -22,7 +22,7 @@ let dataCV = {
       institutionLink: 'https://ruangguru.com/',
       location: 'Jakarta, Indonesia',
       description: [
-        `Rewrote and migrated https://uji.ruangguru.com from angular.js' stacks to react.js' stacks from scratch. The result was the unification of Ruang Guru's front-end web stacks, which make the front-end web development process in Ruang Guru more efficient.`,
+        `Optimize https://uji.ruangguru.com's react stacks. The result was more than 44% smaller total download size (from 612 kB to 342 kB, all assets included) than the original angular.js' stacks.`,
       ],
       start: '10/2017',
       end: 'Now',
@@ -64,7 +64,7 @@ let dataCV = {
       },
       {
         name: 'Python',
-        rating: 7,
+        rating: 6,
       },
     ],
     language: [
