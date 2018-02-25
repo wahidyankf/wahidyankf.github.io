@@ -24,7 +24,7 @@ let dataCV = {
       description: [
         `Optimize https://uji.ruangguru.com's react stacks. The result was more than 44% smaller total download size (from 612 kB to 342 kB, all assets included) than the original angular.js' stacks, while also make subsequent page load faster by implementing agressive code splitting.`,
       ],
-      start: '10/2017',
+      start: '01/2018',
       end: 'Now',
     },
     {
