@@ -22,7 +22,7 @@ let dataCV = {
       institutionLink: 'https://ruangguru.com/',
       location: 'Jakarta, Indonesia',
       description: [
-        `Optimized https://uji.ruangguru.com's react stacks. The result was more than 44% smaller total download size (from 612 kB to 342 kB, all assets included) than the original angular.js' stacks, while also made subsequent pages load faster by implementing agressive code splitting.`,
+        `Optimized <a href="https://uji.ruangguru.com">Ruang Uji</a>'s react stacks and deployment. The result was more than 55% smaller initial download size (from 617 kB to 275 kB, all assets included) and 66% faster load time (from 17.478s to 5.925s on Slow 3G network, Motorola G 4th generation device emulation) than the original angular.js' stacks, while also made subsequent pages load faster by implementing on point code optimization, aggressive code splitting, various images lazy loading.`,
       ],
       start: '01/2018',
       end: 'Now',
@@ -33,8 +33,8 @@ let dataCV = {
       institutionLink: 'https://ruangguru.com/',
       location: 'Jakarta, Indonesia',
       description: [
-        `Refactored https://ruangguru.com/ assets and code base using imgIX, AWS S3 bucket, and fastly CDN. The result was load time speed improvement of more than 300% (from more than 12 seconds average to under 3 seconds),  and the improvement of its https://www.webpagetest.org/ average score of B to all A's without sacrificing its assets' apparent quality.`,
-        `Rewrote and migrated https://uji.ruangguru.com from angular.js' stacks to react.js' stacks from scratch. The result was the unification of Ruang Guru's front-end web stacks, which make the front-end web development process in Ruang Guru more efficient.`,
+        `Refactored  <a href="https://ruangguru.com">Ruang Guru</a>'s assets and code base using imgIX, AWS S3 bucket, and fastly CDN. The result was load time speed improvement of more than 300% (from more than 12 seconds average to under 3 seconds),  and the improvement of its  <a href="https://www.webpagetest.org/">Web Page Test</a> average score of B to all A's without sacrificing its assets' apparent quality.`,
+        `Rewrote and migrated <a href="https://uji.ruangguru.com">Ruang Uji</a> from angular.js' stacks to react.js' stacks from scratch. The result was the unification of Ruang Guru's front-end web stacks, which make the front-end web development process in Ruang Guru more efficient.`,
         `Automated web apps' bugs tracking using sentry (Raven.js) and deployment from Gitlab to AWS S3 and production using Codeship. The result was more precise bug tracking, and much faster web app integration, deployment, and delivery.`,
       ],
       start: '10/2017',
