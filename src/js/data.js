@@ -22,7 +22,7 @@ let dataCV = {
       institutionLink: 'https://ruangguru.com/',
       location: 'Jakarta, Indonesia',
       description: [
-        `Optimized <a href="https://uji.ruangguru.com">Ruang Uji</a>'s react stacks and deployment. The result was more than 55% smaller initial download size (from 617 kB to 275 kB, all assets included) and 66% faster load time (from 17.478s to 5.925s on Slow 3G network, 50KB/s 400ms RTT), Motorola G 4th generation device emulation) than the original angular.js' stacks, while also made subsequent pages load faster by implementing on point code optimization, aggressive code splitting, various images lazy loading.`,
+        `Optimized <a href="https://uji.ruangguru.com">Ruang Uji</a>'s react stacks and deployment. The result was more than 55% smaller initial download size (from 617 kB to 275 kB, all assets included) and 66% faster load time (from 17.478s to 5.925s on Slow 3G - 50KB/s 400ms RTT - network, Motorola G 4th generation device emulation) than the original angular.js' stacks, while also made subsequent pages load faster by implementing on point code optimization, aggressive code splitting, various images lazy loading.`,
       ],
       start: '01/2018',
       end: 'Now',
