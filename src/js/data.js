@@ -20,7 +20,7 @@ const dataCV = {
       institutionLink: 'https://ruangguru.com/',
       location: 'Jakarta, Indonesia',
       description: [
-        `Getting involved in Ruang Guru engineering's new initiative of React Native apps development. Resulting in more efficient engineering resources usage for Ruang Guru by expanding the usages of its front end engineers, while theoretically cut the cost of one app development down almost to 50%.`,
+        `Become one of the pioneering engineers in Ruang Guru engineering's new initiative of React Native apps development. Resulting in more efficient engineering resources usage for Ruang Guru by expanding the usages of its front end engineers, while theoretically cut the cost of one app development down almost to 50%.`,
         `Optimized <a href="https://uji.ruangguru.com">Ruang Uji</a>'s react stacks and deployment. The result was more than 53.86% smaller initial download size (all assets included), 9.52% lower request number, 46.72% faster finish time, 137.10% faster DOMContentLoad time, and 62.49% faster load time than the original angular.js' stacks (2G connection, 280kbps/256kbps 800ms RTT), while also made subsequent pages load substantially faster by implementing on point code optimization, aggressive code splitting, and various images lazy loading.`,
       ],
       start: '01/2018',
