@@ -2893,54 +2893,30 @@ ul {
   .skill-prog-lang {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
-            order: 1; } }
-
-@media screen and (min-width: 960px) {
-  .skill-prog-lang {
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1; } }
+            order: 1;
+    width: 59%; } }
 
 @media screen and (min-width: 768px) {
   .skill-tools {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
-            order: 2; } }
+            order: 2;
+    width: 59%; } }
 
-@media screen and (min-width: 960px) {
-  .skill-tools {
+@media screen and (min-width: 768px) {
+  .skill-lang {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
-    width: 65%; } }
-
-@media screen and (min-width: 768px) {
-  .skill-lang {
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1; } }
-
-@media screen and (min-width: 960px) {
-  .skill-lang {
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1; } }
+    width: 40%; } }
 
 @media screen and (min-width: 768px) {
   .skill-past,
-  .skill-os,
   .skill-empty {
-    -webkit-box-ordinal-group: 4;
-        -ms-flex-order: 3;
-            order: 3; } }
-
-@media screen and (min-width: 960px) {
-  .skill-past,
-  .skill-os,
-  .skill-empty {
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1; } }
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    width: 40%; } }
 
 .name {
   font-family: 'Cinzel', serif;

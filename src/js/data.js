@@ -1,4 +1,4 @@
-let dataCV = {
+const dataCV = {
   personalData: {
     name: 'Wahidyan Kresna Fridayoka',
     shortDesc: 'Front-End / Software Engineer',
@@ -55,16 +55,16 @@ let dataCV = {
   skills: {
     programmingLanguage: [
       {
-        name: 'JavaScript',
-        rating: 8.5,
+        level: 'Production',
+        languages: ['HTML-CSS-SASS', 'JavaScript'],
       },
       {
-        name: 'HTML-CSS-Sass',
-        rating: 8,
+        level: 'Famiiar',
+        languages: ['Python'],
       },
       {
-        name: 'Python',
-        rating: 6,
+        level: 'Exposure',
+        languages: ['Elixir'],
       },
     ],
     language: [
@@ -115,7 +115,6 @@ let dataCV = {
       'PHP',
       'Gnokii SMS Daemon',
     ],
-    operatingSystem: ['Ubuntu', 'Mac', 'Windows'],
   },
   formalEducation: [
     {

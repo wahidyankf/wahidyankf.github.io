@@ -95,38 +95,28 @@
 .skill-prog-lang {
   @media screen and (min-width: $break-medium) {
     order: 1;
-  }
-  @media screen and (min-width: $break-large) {
-    order: 1;
+    width: 59%;
   }
 }
 
 .skill-tools {
   @media screen and (min-width: $break-medium) {
     order: 2;
-  }
-  @media screen and (min-width: $break-large) {
-    order: 1;
-    width: 65%;
+    width: 59%;
   }
 }
 
 .skill-lang {
   @media screen and (min-width: $break-medium) {
     order: 1;
-  }
-  @media screen and (min-width: $break-large) {
-    order: 1;
+    width: 40%;
   }
 }
 
 .skill-past,
-.skill-os,
 .skill-empty {
   @media screen and (min-width: $break-medium) {
-    order: 3;
-  }
-  @media screen and (min-width: $break-large) {
-    order: 1;
+    order: 2;
+    width: 40%;
   }
 }

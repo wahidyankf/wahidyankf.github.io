@@ -12,7 +12,7 @@ $('#js-check').hide();
 // ${nonEngineeringCourseContent}
 // `;
 
-let mainContent = `
+const mainContent = `
 ${summaryContent}
 ${workExperienceContent}
 ${skillsContent}
