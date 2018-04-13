@@ -55,7 +55,7 @@ const dataCV = {
     programmingLanguage: [
       {
         level: 'Production',
-        languages: ['HTML-CSS-SASS', 'JavaScript'],
+        languages: ['HTML/CSS/SASS', 'JavaScript'],
       },
       {
         level: 'Familiar',
