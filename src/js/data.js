@@ -58,7 +58,7 @@ const dataCV = {
         languages: ['HTML-CSS-SASS', 'JavaScript'],
       },
       {
-        level: 'Famiiar',
+        level: 'Familiar',
         languages: ['Python'],
       },
       {

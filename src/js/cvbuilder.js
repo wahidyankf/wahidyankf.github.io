@@ -56,11 +56,9 @@ for (let i = 0; i < dataCV.skills.language.length; i++) {
   if (dataCV.skills.language[i].info === '') {
     separator = '';
   }
-  skillsLanguageContent += `<p><span class="skill-item">${
-    dataCV.skills.language[i].name
-  }</span>: ${dataCV.skills.language[i].proficiency}${separator}${
-    dataCV.skills.language[i].info
-  }.</p>`;
+  skillsLanguageContent += `<p>${dataCV.skills.language[i].name}: ${
+    dataCV.skills.language[i].proficiency
+  }${separator}${dataCV.skills.language[i].info}.</p>`;
 }
 
 let skillsPastContent = '';
