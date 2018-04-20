@@ -58,12 +58,8 @@ const dataCV = {
         languages: ['HTML/CSS/SASS', 'JavaScript'],
       },
       {
-        level: 'Familiar',
-        languages: ['Python'],
-      },
-      {
         level: 'Exposure',
-        languages: ['Elixir'],
+        languages: ['Python'],
       },
     ],
     language: [
@@ -539,7 +535,7 @@ const dataCV = {
       institution: "Palapa 1, ITB's Electrical Engineering's Student Org.",
       location: 'Bandung, Indonesia',
       description:
-        "An Insititut Teknologi Bandung's student organization's charity project. I successfully managed the relationship between the student organization and the targeting area's native. Resulting a smooth process of pico hydro power plant installation in a relatively remote area in Garut (west java, Indonesia).",
+        "An Insititut Teknologi Bandung's student organization's charity project. I successfully managed the relationship between the student organization and the targeting area's native. Resulting a smooth process of pico hydro power plant installation in a relatively remote area in Garut (West Java, Indonesia).",
       start: '2008',
       end: '2008',
     },

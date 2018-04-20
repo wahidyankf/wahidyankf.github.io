@@ -34,16 +34,14 @@ const skillsProgLangContent = dataCV.skills.programmingLanguage.reduce(
   (acccumulator, currentValue) => {
     return `${acccumulator}<p>${
       currentValue.level
-    }: <span class="skill-item">${currentValue.languages.join(
-      ', '
-    )}</span>.</p>`;
+    }: ${currentValue.languages.join(', ')}.</p>`;
   },
   ''
 );
 
 const skillsToolsContent = dataCV.skills.toolsAndLibraries.reduce(
   (acccumulator, currentValue, currentIndex) => {
-    return `${acccumulator}<span class="skill-item">${currentValue}</span>${
+    return `${acccumulator}${currentValue}${
       currentIndex === dataCV.skills.toolsAndLibraries.length - 1 ? '.' : ', '
     }`;
   },
@@ -63,9 +61,7 @@ for (let i = 0; i < dataCV.skills.language.length; i++) {
 
 let skillsPastContent = '';
 for (let i = 0; i < dataCV.skills.pastExperience.length; i++) {
-  skillsPastContent += `<span class="skill-item">${
-    dataCV.skills.pastExperience[i]
-  }</span>`;
+  skillsPastContent += `${dataCV.skills.pastExperience[i]}`;
   if (i < dataCV.skills.pastExperience.length - 1) {
     skillsPastContent += ', ';
   } else {
@@ -100,6 +96,8 @@ const skillsContent = `
 </section>
 `;
 
+// ----- Portfolio
+
 let dateShown = function(start, end) {
   if (start === end) {
     return start;
@@ -128,9 +126,7 @@ for (let i = 0; i < dataCV.portfolio.length; i++) {
   )}</span></li>
   </ul>
   <ul class="list-bullet-point">
-    <li>${
-      dataCV.portfolio[i].description
-    } Stack used: <span class="tech-stack">${stackUsed}<span></li>
+    <li>${dataCV.portfolio[i].description} Stack used: ${stackUsed}</li>
   </ul>
   `;
 }
