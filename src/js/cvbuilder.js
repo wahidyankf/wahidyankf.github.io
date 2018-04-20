@@ -40,24 +40,24 @@ const skillsProgLangContent = dataCV.skills.programmingLanguage.reduce(
 );
 
 const skillsToolsContent = dataCV.skills.toolsAndLibraries.reduce(
-  (acccumulator, currentValue, currentIndex) => {
-    return `${acccumulator}${currentValue}${
-      currentIndex === dataCV.skills.toolsAndLibraries.length - 1 ? '.' : ', '
+  (acccumulator, currentSkill, index) => {
+    return `${acccumulator}${currentSkill}${
+      index === dataCV.skills.toolsAndLibraries.length - 1 ? '.' : ', '
     }`;
   },
   ''
 );
 
-let skillsLanguageContent = '';
-for (let i = 0; i < dataCV.skills.language.length; i++) {
-  let separator = ', ';
-  if (dataCV.skills.language[i].info === '') {
-    separator = '';
-  }
-  skillsLanguageContent += `<p>${dataCV.skills.language[i].name}: ${
-    dataCV.skills.language[i].proficiency
-  }${separator}${dataCV.skills.language[i].info}.</p>`;
-}
+const skillsLanguageContent = dataCV.skills.language.reduce(
+  (acccumulator, currentLanguage, index) => {
+    return `${acccumulator}<p>${currentLanguage.name}: ${
+      currentLanguage.proficiency
+    }${currentLanguage.info === '' ? '.' : ','} ${currentLanguage.info}${
+      currentLanguage.info === '' ? '' : '.'
+    }</p>`;
+  },
+  ''
+);
 
 let skillsPastContent = '';
 for (let i = 0; i < dataCV.skills.pastExperience.length; i++) {
@@ -131,7 +131,7 @@ for (let i = 0; i < dataCV.portfolio.length; i++) {
   `;
 }
 
-let portfolioContent = `
+const portfolioContent = `
 <section class="portfolio">
   <h2>Personal Projects</h2>
   <ul>
