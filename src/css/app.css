@@ -2918,6 +2918,11 @@ ul {
             order: 2;
     width: 40%; } }
 
+.time-duration {
+  font-size: 5px;
+  vertical-align: middle;
+  margin: 0 1em 0.425em; }
+
 .name {
   font-family: 'Cinzel', serif;
   font-size: 1.4em;

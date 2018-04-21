@@ -98,12 +98,43 @@ const skillsContent = `
 
 // ----- Portfolio
 
-let dateShown = function(start, end) {
-  if (start === end) {
-    return start;
-  }
-  return `${start} - ${end}`;
-};
+let workExperienceItemContent = '';
+for (let i = 0; i < dataCV.workExperience.length; i++) {
+  let workDescription = dataCV.workExperience[i].description.reduce(
+    (descItem, descTotal) => {
+      return descItem + `<li>${descTotal}</li>`;
+    },
+    ''
+  );
+
+  workExperienceItemContent += `
+  <ul>
+    <li><span class="list-title">${
+      dataCV.workExperience[i].jobTitle
+    }</span><span class="list-subtitle"> - <a href="${
+    dataCV.workExperience[i].institutionLink
+  }">${dataCV.workExperience[i].institution}</a> - ${
+    dataCV.workExperience[i].location
+  } - ${dateShown(
+    dataCV.workExperience[i].start,
+    dataCV.workExperience[i].end,
+    'verbose'
+  )}</span></li>
+  </ul>
+  <ul class="list-bullet-point">
+    ${workDescription}
+  </ul>  
+  `;
+}
+
+const workExperienceContent = `
+<section class="work-experience">
+  <h2>Work Experience</h2>
+  <ul>
+    ${workExperienceItemContent}
+  </ul>
+</section>
+`;
 
 let portfolioItemContent = '';
 for (let i = 0; i < dataCV.portfolio.length; i++) {
@@ -165,46 +196,6 @@ const educationContent = `
   <h2>Formal Education</h2>
   <ul>
     ${educationItemContent}
-  </ul>
-</section>
-`;
-
-let workExperienceItemContent = '';
-
-for (let i = 0; i < dataCV.workExperience.length; i++) {
-  let workDescription = dataCV.workExperience[i].description.reduce(
-    (descItem, descTotal) => {
-      return descItem + `<li>${descTotal}</li>`;
-    },
-    ''
-  );
-
-  workExperienceItemContent += `
-  <ul>
-    <li><span class="list-title">${
-      dataCV.workExperience[i].jobTitle
-    }</span><span class="list-subtitle"> - <a href="${
-    dataCV.workExperience[i].institutionLink
-  }">${dataCV.workExperience[i].institution}</a> - ${
-    dataCV.workExperience[i].location
-  } - ${dateShown(
-    dataCV.workExperience[i].start,
-    dataCV.workExperience[i].end
-  )}</span></li>
-  </ul>
-  <ul class="list-bullet-point">
-    ${workDescription}
-  </ul>  
-  `;
-}
-
-// ----- Work experience
-
-const workExperienceContent = `
-<section class="work-experience">
-  <h2>Work Experience</h2>
-  <ul>
-    ${workExperienceItemContent}
   </ul>
 </section>
 `;
