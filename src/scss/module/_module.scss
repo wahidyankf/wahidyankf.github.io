@@ -23,16 +23,17 @@
 }
 
 .contact {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   @media screen and (min-width: $break-medium) {
     text-align: right;
+    font-size: 0.9rem;
   }
 }
 
 .list-title {
   font-family: 'Cinzel', serif;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.85rem;
 }
 
 .list-bullet-point {
