@@ -22,7 +22,7 @@ const headerContent = `
 // ----- summary
 
 const summaryContent = `
-<section class="summary">
+<section class="portfolio-section summary">
   <h2>Summary</h2>
   <p>${dataCV.personalData.summary}</p>
 </section>
@@ -70,23 +70,23 @@ for (let i = 0; i < dataCV.skills.pastExperience.length; i++) {
 }
 
 const skillsContent = `
-<section class="skills">
+<section class="portfolio-section skills">
   <h2>Skills</h2>
   <div class="skill-container">
     <div class="skill-category skill-prog-lang">
-      <h3>Programming Languages</h3>
+      <h3 class="list-title">Programming Languages</h3>
       ${skillsProgLangContent}
     </div>
     <div class="skill-category skill-tools">
-      <h3>Tools and Libraries</h3>
+      <h3 class="list-title">Tools and Libraries</h3>
       <p>${skillsToolsContent}</p>
     </div>
     <div class="skill-category skill-lang">
-      <h3>Languages (<a href="https://en.wikipedia.org/wiki/Common_European_Framework_of_Reference_for_Languages">CEFR</a>)</h3>
+      <h3 class="list-title">Languages (<a href="https://en.wikipedia.org/wiki/Common_European_Framework_of_Reference_for_Languages">CEFR</a>)</h3>
       ${skillsLanguageContent}
     </div>
     <div class="skill-category skill-past">
-      <h3>Past Experience</h3>
+      <h3 class="list-title">Past Experience</h3>
       <p>${skillsPastContent}<p>
     </div>
 
@@ -128,7 +128,7 @@ for (let i = 0; i < dataCV.workExperience.length; i++) {
 }
 
 const workExperienceContent = `
-<section class="work-experience">
+<section class="portfolio-section work-experience">
   <h2>Work Experience</h2>
   <ul>
     ${workExperienceItemContent}
@@ -142,7 +142,7 @@ for (let i = 0; i < dataCV.portfolio.length; i++) {
   for (let j = 0; j < dataCV.portfolio[i].skillSetUsed.length; j++) {
     stackUsed += `${dataCV.portfolio[i].skillSetUsed[j]}`;
     if (j < dataCV.portfolio[i].skillSetUsed.length - 1) {
-      stackUsed += ",<span class='normal-space'> </span>";
+      stackUsed += ', ';
     } else {
       stackUsed += '.';
     }
@@ -163,7 +163,7 @@ for (let i = 0; i < dataCV.portfolio.length; i++) {
 }
 
 const portfolioContent = `
-<section class="portfolio">
+<section class="portfolio-section">
   <h2>Personal Projects</h2>
   <ul>
     ${portfolioItemContent}
@@ -200,6 +200,8 @@ const educationContent = `
 </section>
 `;
 
+// ----- additional activities
+
 let additionalActivitiesItemContent = '';
 for (let i = 0; i < dataCV.additionalActivities.length; i++) {
   additionalActivitiesItemContent += `
@@ -210,7 +212,8 @@ for (let i = 0; i < dataCV.additionalActivities.length; i++) {
     dataCV.additionalActivities[i].institution
   } - ${dataCV.additionalActivities[i].location} - ${dateShown(
     dataCV.additionalActivities[i].start,
-    dataCV.additionalActivities[i].end
+    dataCV.additionalActivities[i].end,
+    'verbose'
   )}</span></li>
   </ul>
   <ul class="list-bullet-point">
@@ -219,16 +222,16 @@ for (let i = 0; i < dataCV.additionalActivities.length; i++) {
   `;
 }
 
-// ----- additional activities
-
 const additionalActivitiesContent = `
-<section class="additional-activities">
+<section class="portfolio-section">
   <h2>Additional Activities</h2>
   <ul>
     ${additionalActivitiesItemContent}
   </ul>
 </section>
 `;
+
+// ----- organizational experience
 
 let organizationalExperienceItemContent = '';
 for (let i = 0; i < dataCV.organizationalExperience.length; i++) {
@@ -252,7 +255,7 @@ for (let i = 0; i < dataCV.organizationalExperience.length; i++) {
 // ----- organizational experience
 
 const organizationalExperienceContent = `
-<section class="organizational-experience">
+<section class="portfolio-section">
   <h2>Organizational Experience</h2>
   <ul>
     ${organizationalExperienceItemContent}
@@ -302,7 +305,7 @@ for (let i = 0; i < dataCV.courses.engineeringCourse.length; i++) {
 // ----- engineering course
 
 const engineeringCourseContent = `
-<section class="course-engineering">
+<section class="portfolio-section">
   <h2>Course Taken - Engineering</h2>
   <ul>
     ${engineeringCourseItemContent}
@@ -353,7 +356,7 @@ for (let i = 0; i < dataCV.courses.nonEngineeringCourse.length; i++) {
 // ----- non engineering course
 
 const nonEngineeringCourseContent = `
-<section class="course-nonengineering">
+<section class="portfolio-section">
   <h2>Course Taken - Non Engineering</h2>
   <ul>
     ${nonEngineeringCourseItemContent}
