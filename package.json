@@ -35,7 +35,7 @@
     "test": "mocha",
     "deployMaster": "gulp cleanAll && gulp build && gulp deployMaster",
     "deployBig":
-      "gulp cleanAll && gulp build && gulp deployMaster && git add --all && git commit -m 'update $(Date +\"%D %T\")' && git push origin master"
+      "gulp cleanAll && gulp build && gulp deployMaster && git add --all && git commit -m 'update $(date +\"%D %T\")' && git push origin master"
   },
   "author": "",
   "license": "MIT"
