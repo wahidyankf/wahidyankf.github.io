@@ -34,8 +34,6 @@
   "scripts": {
     "test": "mocha",
     "deployMaster": "gulp cleanAll && gulp build && gulp deployMaster",
-    "deployGit":
-      "git add --all && git commit -m 'update' && git push origin master",
     "deployBig":
       "gulp cleanAll && gulp build && gulp deployMaster && git add --all && git commit -m 'update' && git push origin master"
   },
