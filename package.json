@@ -33,7 +33,9 @@
   },
   "scripts": {
     "test": "mocha",
-    "deployMaster": "gulp cleanAll && gulp build && gulp deployMaster"
+    "deployMaster": "gulp cleanAll && gulp build && gulp deployMaster",
+    "deployGit":
+      "git add --all && git commit -m 'update' && git push origin master"
   },
   "author": "",
   "license": "MIT"

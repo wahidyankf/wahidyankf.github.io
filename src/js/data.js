@@ -4,7 +4,7 @@ const dataCV = {
     shortDesc: 'Front-End / Software Engineer',
     photos: 'img/profile/profilepicture.jpeg',
     email: 'wahidyankf@gmail.com',
-    summary: `Software engineer with diverse front-end web development portfolio and past experience with MySQL and hardware programming. Comfortable working with React.js and React Native stacks but also willing to learn another programming language and tools when necessary. Can also code in Python. Polyglot that speaks 3+ languages and has more than 3 years experience of living overseas. Has successfully organized nationwide entrepreneurship competition.`,
+    summary: `Software engineer with diverse front-end web development portfolio. Comfortable working with JavaScript, React and React Native stacks but also willing to learn another programming language and tools. Have exposure to Node.js and Python. Polyglot that speaks 3+ languages and has more than 3 years experience of living overseas. Has successfully organized nationwide entrepreneurship competition.`,
     address: 'Jakarta, Indonesia',
     socialHub: {
       website: 'https://wahidyankf.github.io/',
@@ -55,11 +55,11 @@ const dataCV = {
     programmingLanguage: [
       {
         level: 'Production',
-        languages: ['HTML/CSS/SASS', 'JavaScript'],
+        languages: ['HTML-CSS', 'JavaScript'],
       },
       {
         level: 'Exposure',
-        languages: ['Python'],
+        languages: ['Node.js', 'Python'],
       },
     ],
     language: [
@@ -87,10 +87,8 @@ const dataCV = {
       'Redux Form',
       'Redux Saga',
       'CSS in JS',
-      'Node.js',
-      'RegEx',
+      'Sass',
       'jQuery',
-      'AJAX',
       'Git',
       'npm/yarn',
       'gulp.js',
@@ -106,8 +104,8 @@ const dataCV = {
       'Matlab',
       'C++',
       'Assembly (AT Mega 8051)',
-      'SQL',
       'PHP',
+      'MySQL',
       'Gnokii SMS Daemon',
     ],
   },
