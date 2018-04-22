@@ -57,15 +57,20 @@
   }
 }
 
+.summary {
+  p {
+    margin-top: initial;
+    margin-bottom: initial;
+  }
+}
+
 .list-bullet-point {
+  margin-top: -0.25rem;
+  margin-bottom: 0rem;
   margin-left: 1rem;
-  margin-top: 0rem;
-  margin-bottom: 1rem;
   @media screen and (min-width: $break-medium) {
     padding-left: 0rem;
-  }
-  li {
-    margin-top: 0.25rem;
+    margin-top: -0.5rem;
   }
 }
 
@@ -74,18 +79,13 @@
     margin: 0;
   }
   h3 {
-    margin-bottom: 0.4rem;
-  }
-  .skill-tools {
-    @media screen and (min-width: $break-large) {
-      h3 {
-        margin-bottom: 0.3rem;
-      }
-    }
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
   }
 }
 
 .skill-container {
+  margin-top: -0.25rem;
   display: flex;
   flex-direction: column;
   @media screen and (min-width: $break-medium) {
