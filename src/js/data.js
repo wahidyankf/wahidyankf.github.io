@@ -84,7 +84,7 @@ const dataCV = {
       'React Native',
       'Redux',
       'Rematch',
-      'Redux Saga',
+      'Redux-Saga',
       'Redux Form',
       'flow-typed',
       'CSS in JS',
@@ -102,12 +102,11 @@ const dataCV = {
       'LaTeX',
     ],
     pastExperience: [
-      'Matlab',
-      'C++',
       'Assembly (AT Mega 8051)',
       'PHP',
       'MySQL',
-      'Gnokii SMS Daemon',
+      'Matlab',
+      'C++',
     ],
   },
   formalEducation: [
