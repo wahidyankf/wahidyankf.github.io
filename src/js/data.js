@@ -5,7 +5,8 @@ const dataCV = {
     photos: 'img/profile/profilepicture.jpeg',
     email: 'wahidyankf@gmail.com',
     summary: `Software engineer with diverse front-end web development's portfolio. Comfortable working with JavaScript, React and React Native stacks but also eager to learn another programming language and tools. Have exposure to Node.js and Python. Polyglot that speaks 3+ languages and has more than 3 years experience of living overseas. Has successfully organized nationwide entrepreneurship competition.`,
-    address: 'Jakarta, Indonesia',
+    address:
+      '<a href="https://www.google.com/maps/place/Jakarta/@-6.2295712,106.7594785,12z/data=!3m1!4b1!4m5!3m4!1s0x2e69f3e945e34b9d:0x5371bf0fdad786a2!8m2!3d-6.2087634!4d106.845599">Jakarta, Indonesia</a>',
     socialHub: {
       website: 'https://wahidyankf.github.io/',
       github: 'https://github.com/wahidyankf',

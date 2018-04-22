@@ -15,7 +15,9 @@ const headerContent = `
   <span class=contact-detail><i class="fa fa-envelope"></i> <a href="mailto:${
     dataCV.personalData.email
   }">wahidyankf@gmail.com</a></span>
-  <span class=contact-detail><i class="fa fa-map-marker"></i> Jakarta, Indonesia</span>
+  <span class=contact-detail><i class="fa fa-map-marker"></i> ${
+    dataCV.personalData.address
+  }</span>
 </div>
 `;
 
