@@ -86,6 +86,7 @@ const dataCV = {
       'Rematch',
       'Redux Form',
       'Redux Saga',
+      'flow',
       'CSS in JS',
       'Sass',
       'jQuery',
