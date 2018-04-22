@@ -502,7 +502,7 @@ const dataCV = {
     {
       jobtitle: 'Freelance Writer/Moderator',
       institution: 'Kelas Nusantara',
-      location: 'online',
+      location: 'online (deprecated)',
       description:
         "Writing articles and moderating a blog about education and learning in general. Best month's view average: 575 views/day.",
       start: '12/2013',
@@ -511,7 +511,7 @@ const dataCV = {
     {
       jobtitle: 'Freelance Writer/Moderator',
       institution: 'Jermandes',
-      location: 'online',
+      location: 'online (deprecated)',
       description:
         "Writing articles and moderating a blog about how to prepare for studying in Germany. During that time, this site was one of the pioneers in its niche and always shown on google search's first page. Best month's view average: 609 views/day.",
       start: '12/2011',
