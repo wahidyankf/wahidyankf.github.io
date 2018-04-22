@@ -2874,7 +2874,7 @@ ul {
 
 .list-bullet-point {
   margin-top: -0.25rem;
-  margin-bottom: 0rem;
+  margin-bottom: 0.5rem;
   margin-left: 1rem; }
   .list-bullet-point li {
     margin-top: 0.15rem;
