@@ -2763,6 +2763,14 @@ h2 {
   border-radius: 3px;
   background-color: black;
   color: whitesmoke; }
+  @media screen and (min-width: 768px) {
+    h2 {
+      font-size: 1.3rem;
+      padding: 0.3rem 0.2rem;
+      margin-top: 1rem; } }
+  @media screen and (min-width: 960px) {
+    h2 {
+      padding: 0.4rem 0.2rem; } }
 
 h3 {
   font-weight: 700;
@@ -2783,14 +2791,17 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0; }
+  ul li {
+    margin-top: 0.25rem; }
   @media screen and (min-width: 768px) {
     ul {
-      margin-bottom: 0.25rem; } }
+      margin-bottom: 0.25rem; }
+      ul li {
+        margin-top: 0.5rem;
+        margin-bottom: 0.65rem; } }
   @media screen and (min-width: 768px) {
     ul {
       margin-bottom: 0.5rem; } }
-  ul li {
-    margin-top: 0.5rem; }
 
 .title {
   display: -webkit-box;
@@ -2865,6 +2876,8 @@ ul {
   margin-top: -0.25rem;
   margin-bottom: 0rem;
   margin-left: 1rem; }
+  .list-bullet-point li {
+    margin-top: 0.25rem; }
   @media screen and (min-width: 768px) {
     .list-bullet-point {
       padding-left: 0rem;
@@ -2976,7 +2989,10 @@ ul {
 .list-title {
   font-family: 'Cinzel', serif;
   font-weight: 700;
-  font-size: 0.85rem; }
+  font-size: 0.9rem; }
+  @media screen and (min-width: 768px) {
+    .list-title {
+      font-size: 1.05rem; } }
 
 .list-bullet-point {
   list-style: disc;

@@ -33,7 +33,10 @@
 .list-title {
   font-family: 'Cinzel', serif;
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
+  @media screen and (min-width: $break-medium) {
+    font-size: 1.05rem;
+  }
 }
 
 .list-bullet-point {
