@@ -4,7 +4,7 @@ const dataCV = {
     shortDesc: 'Front-End / Software Engineer',
     photos: 'img/profile/profilepicture.jpeg',
     email: 'wahidyankf@gmail.com',
-    summary: `Software engineer with diverse front-end web development's portfolio. Comfortable working with JavaScript, React and React Native stacks and eager to learn another programming language and tools. Have exposure to Node.js and Python. Polyglot that speaks 3+ languages and has more than 3 years experience of living overseas. Has successfully organized nationwide entrepreneurship competition.`,
+    summary: `Software engineer with diverse front-end web development's portfolio. Comfortable working with JavaScript, React and React Native stacks but eager to learn another programming language and tools. Have exposure to Node.js and Python. Polyglot that speaks 3+ languages and has more than 3 years experience of living overseas. Has successfully organized nationwide entrepreneurship competition.`,
     address: '<a href="https://goo.gl/maps/dpbvmixZWTs">Jakarta, Indonesia</a>',
     socialHub: {
       website: 'https://wahidyankf.github.io/',
