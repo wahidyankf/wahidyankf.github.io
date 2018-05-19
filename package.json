@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "web template",
   "main": "gulpfile.js",
-  "dependencies": {},
+  "dependencies": {
+    "npm": "^6.0.1"
+  },
   "devDependencies": {
     "autoprefixer": "^7.1.5",
     "babel-cli": "^6.26.0",
