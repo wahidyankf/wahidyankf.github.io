@@ -20,7 +20,7 @@ const dataCV = {
       institutionLink: 'https://ruangguru.com/',
       location: 'Jakarta, Indonesia',
       description: [
-        `Developed Ruang Kerja's company dashboard using React JS stacks and flow-typed. Resulting in a finely crafted and run-time-error free complex dashboard web app.`,
+        `Developed Ruang Kerja's company dashboard using React JS stacks and flow-typed. Resulting in a finely crafted and runtime-error free complex dashboard web app.`,
         `Became one of the pioneering engineers in Ruang Kerja's React Native app development. Resulting in a more efficient engineering resources usage for Ruang Guru by expanding the usages of its front end engineers, while theoretically cut the cost of apps development down almost to 50% without losing any of native apps' development speed.`,
         `Optimized <a href="https://uji.ruangguru.com">Ruang Uji</a>'s react stacks and deployment. The result was more than 53.86% smaller initial download size (all assets included), 9.52% lower request number, 46.72% faster finish time, 137.10% faster DOMContentLoad time, and 62.49% faster load time than the original angular.js' stacks (2G connection, 280kbps/256kbps 800ms RTT), while also made subsequent pages load substantially faster by implementing on point code optimization, aggressive code splitting, and various images lazy loading.`,
       ],
