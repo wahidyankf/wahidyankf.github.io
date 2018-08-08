@@ -15,7 +15,7 @@
     "clean": "ls | grep -v -e src -e .gitignore -e package.json -e README.md -e yarn.lock -e node_modules | xargs rm",
     "copyBuild": "cp -r src/dist/. .",
     "deploy": "git add --all && git commit -m \"update $(date +\"%D %T\")\" && git push origin master",
-    "buildDeploy": "yarn build ; yarn clean ; yarn copyBuild ; yarn deploy"
+    "buildDeploy": "yarn clean ; yarn build ; yarn copyBuild ; yarn deploy"
   },
   "repository": {
     "type": "git",
