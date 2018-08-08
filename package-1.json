@@ -1,0 +1,17 @@
+{
+  "name": "web_template",
+  "version": "1.0.0",
+  "description": "web template",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "npm": "^6.0.1"
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+    "test": "mocha",
+    "deployMaster": "gulp cleanAll && gulp build && gulp deployMaster && git add --all && git commit -m \"update $(date +\"%D %T\")\" && git push origin master"
+  },
+  "author": "",
+  "license": "MIT"
+}
