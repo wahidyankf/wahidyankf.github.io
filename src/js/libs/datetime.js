@@ -1,4 +1,4 @@
-const formatTimeDuration = timeDuration => {
+export const formatTimeDuration = timeDuration => {
   const numberOfMonths = Math.floor(timeDuration / (1000 * 3600 * 24 * 30));
   const numberOfYears = Math.floor(numberOfMonths / 12);
   const numberOfRemainderMonths = Math.floor(numberOfMonths % 12);
@@ -18,7 +18,7 @@ const formatTimeDuration = timeDuration => {
   return formattedTimeDuration;
 };
 
-const dateShown = (start, end, type = 'compact') => {
+export const dateShown = (start, end, type = 'compact') => {
   const dateNow = new Date();
   const startMonth = `${Number(start.slice(0, 2) - 1)}`;
   const startYear = `${Number(start.slice(3))}`;

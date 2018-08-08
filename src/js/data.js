@@ -1,4 +1,4 @@
-const dataCV = {
+export const dataCV = {
   personalData: {
     name: 'Wahidyan Kresna Fridayoka',
     shortDesc: 'Front-End / Software Engineer',

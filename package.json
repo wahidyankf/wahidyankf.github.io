@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "git add --all && git commit -m \"update $(date +\"%D %T\")\" && git push origin master"
+    "build-css": "node-sass --include-path scss src/scss/app.scss src/css/app.css",
+    "deploy": "git add --all && git commit -m \"update $(date +\"%D %T\")\" && git push origin master",
+    "dev": "watch --wait=1 'cd src && parcel watch index.html' ./src/"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,12 @@
   "bugs": {
     "url": "https://github.com/wahidyankf/wahidyankf.github.io/issues"
   },
-  "homepage": "https://github.com/wahidyankf/wahidyankf.github.io#readme"
+  "homepage": "https://github.com/wahidyankf/wahidyankf.github.io#readme",
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "node-sass": "^4.9.2"
+  },
+  "devDependencies": {
+    "watch": "^1.0.2"
+  }
 }

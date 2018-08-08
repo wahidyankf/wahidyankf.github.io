@@ -1,6 +1,9 @@
+import {dataCV} from './data';
+import {formatTimeDuration, dateShown} from './libs/datetime';
+
 // ----- header
 
-const headerContent = `
+export const headerContent = `
 <div class="title">
   <h1 class="name">${dataCV.personalData.name}</h1>
   <span class="name-job">${dataCV.personalData.shortDesc}</span>
@@ -23,7 +26,7 @@ const headerContent = `
 
 // ----- summary
 
-const summaryContent = `
+export const summaryContent = `
 <section class="portfolio-section summary">
   <h2>Summary</h2>
   <p>${dataCV.personalData.summary}</p>
@@ -71,7 +74,7 @@ for (let i = 0; i < dataCV.skills.pastExperience.length; i++) {
   }
 }
 
-const skillsContent = `
+export const skillsContent = `
 <section class="portfolio-section skills">
   <h2>Skills</h2>
   <div class="skill-container">
@@ -129,7 +132,7 @@ for (let i = 0; i < dataCV.workExperience.length; i++) {
   `;
 }
 
-const workExperienceContent = `
+export const workExperienceContent = `
 <section class="portfolio-section work-experience">
   <h2>Work Experience</h2>
   <ul>
@@ -164,7 +167,7 @@ for (let i = 0; i < dataCV.portfolio.length; i++) {
   `;
 }
 
-const portfolioContent = `
+export const portfolioContent = `
 <section class="portfolio-section">
   <h2>Personal Projects</h2>
   <ul>
@@ -193,7 +196,7 @@ for (let i = 0; i < dataCV.formalEducation.length; i++) {
   `;
 }
 
-const educationContent = `
+export const educationContent = `
 <section class="education">
   <h2>Formal Education</h2>
   <ul>
@@ -224,7 +227,7 @@ for (let i = 0; i < dataCV.additionalActivities.length; i++) {
   `;
 }
 
-const additionalActivitiesContent = `
+export const additionalActivitiesContent = `
 <section class="portfolio-section">
   <h2>Additional Activities</h2>
   <ul>
@@ -256,7 +259,7 @@ for (let i = 0; i < dataCV.organizationalExperience.length; i++) {
 
 // ----- organizational experience
 
-const organizationalExperienceContent = `
+export const organizationalExperienceContent = `
 <section class="portfolio-section">
   <h2>Organizational Experience</h2>
   <ul>

@@ -1,16 +1,17 @@
-$('#js-check').hide();
+import $ from 'jquery';
+import {
+  summaryContent,
+  workExperienceContent,
+  skillsContent,
+  portfolioContent,
+  educationContent,
+  additionalActivitiesContent,
+  organizationalExperienceContent,
+  headerContent,
+} from './cvbuilder';
+import '../css/app.css';
 
-// let mainContent = `
-// ${summaryContent}
-// ${workExperienceContent}
-// ${skillsContent}
-// ${portfolioContent}
-// ${educationContent}
-// ${additionalActivitiesContent}
-// ${organizationalExperienceContent}
-// ${engineeringCourseContent}
-// ${nonEngineeringCourseContent}
-// `;
+$('#js-check').hide();
 
 const mainContent = `
 ${summaryContent}
