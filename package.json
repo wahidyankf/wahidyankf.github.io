@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-css": "node-sass --include-path scss src/scss/app.scss src/css/app.css",
     "deploy": "git add --all && git commit -m \"update $(date +\"%D %T\")\" && git push origin master",
-    "dev": "watch --wait=1 'cd src && parcel watch index.html' ./src/"
+    "devParcel": "watch --wait=1 'cd src && parcel index.html' ./src/ ",
+    "devCp": "watch --wait=1 'cp -r src/img src/dist/' ./src/",
+    "dev": "npm-run-all --parallel devParcel"
   },
   "repository": {
     "type": "git",
@@ -24,6 +26,7 @@
     "node-sass": "^4.9.2"
   },
   "devDependencies": {
+    "npm-run-all": "^4.1.3",
     "watch": "^1.0.2"
   }
 }
