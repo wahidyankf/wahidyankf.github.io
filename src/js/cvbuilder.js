@@ -141,6 +141,8 @@ export const workExperienceContent = `
 </section>
 `;
 
+// -------- portfolio
+
 let portfolioItemContent = '';
 for (let i = 0; i < dataCV.portfolio.length; i++) {
   let stackUsed = '';
@@ -257,8 +259,6 @@ for (let i = 0; i < dataCV.organizationalExperience.length; i++) {
   `;
 }
 
-// ----- organizational experience
-
 export const organizationalExperienceContent = `
 <section class="portfolio-section">
   <h2>Organizational Experience</h2>
@@ -267,6 +267,8 @@ export const organizationalExperienceContent = `
   </ul>
 </section>
 `;
+
+// ---------- unused sections
 
 let engineeringCourseItemContent = '';
 for (let i = 0; i < dataCV.courses.engineeringCourse.length; i++) {
