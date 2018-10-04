@@ -10685,7 +10685,7 @@ var dataCV = exports.dataCV = {
     institution: 'Ruang Guru',
     institutionLink: 'https://ruangguru.com/',
     location: 'Jakarta, Indonesia',
-    description: ['Developed Ruang Kerja\'s company dashboard using React JS stacks, flow-typed, and data visualization tools. Resulting in a finely crafted and runtime-error free complex dashboard web app.', 'Became one of the pioneering engineers in Ruang Kerja\'s React Native app development. Resulting in a more efficient engineering resources usage for Ruang Guru by expanding the usages of its front end engineers, while theoretically cut the cost of apps development down almost to 50% without losing any of native apps\' development speed.', 'Optimized <a href="https://uji.ruangguru.com">Ruang Uji</a>\'s react stacks and deployment. The result was more than 53.86% smaller initial download size (all assets included), 9.52% lower request number, 46.72% faster finish time, 137.10% faster DOMContentLoad time, and 62.49% faster load time than the original angular.js\' stacks (2G connection, 280kbps/256kbps 800ms RTT), while also made subsequent pages load substantially faster by implementing on point code optimization, aggressive code splitting, and various images lazy loading.'],
+    description: ['Developed Ruang Kerja CMS\' question and question-set modules using React and Draft.js. Resulting in well functioning rich-text editor implementation for question and question-set generation task in Ruang Kerja apps.', 'Developed internal command-line application to bootstrap new web project inside Ruang Guru\'s mono-repo using Node.js. Resulting in a more efficient new web project\'s initial setup for Ruang Guru developers.', 'Led a team of front-end developers to create Ruang Kerja\'s company dashboard using React JS stacks, flow-typed, and data visualization tools. Also did an end-to-end testing for it using cypress. Resulting in a finely crafted and runtime-error free dashboard web app.', 'Became one of the pioneering engineers in Ruang Kerja\'s React Native app development. Resulting in a more efficient engineering resources usage for Ruang Guru by expanding the usages of its front end engineers, while theoretically cut the cost of apps development down almost to 50% without losing any of native apps\' development speed.', 'Led a team of front-end developers to develop and optimize Ruang Uji\'s react stacks and deployment. The result was more than 53.86% smaller initial download size (all assets included), 9.52% lower request number, 46.72% faster finish time, 137.10% faster DOMContentLoad time, and 62.49% faster load time than the original angular.js\' stacks (2G connection, 280kbps/256kbps 800ms RTT), while also made subsequent pages load substantially faster by implementing on point code optimization, aggressive code splitting, and various images lazy loading.'],
     start: '01/2018',
     end: 'Now'
   }, {
@@ -11156,6 +11156,8 @@ for (var _i = 0; _i < _data.dataCV.workExperience.length; _i++) {
 
 var workExperienceContent = exports.workExperienceContent = '\n<section class="portfolio-section work-experience">\n  <h2>Work Experience</h2>\n  <ul>\n    ' + workExperienceItemContent + '\n  </ul>\n</section>\n';
 
+// -------- portfolio
+
 var portfolioItemContent = '';
 for (var _i2 = 0; _i2 < _data.dataCV.portfolio.length; _i2++) {
   var stackUsed = '';
@@ -11196,9 +11198,9 @@ for (var _i5 = 0; _i5 < _data.dataCV.organizationalExperience.length; _i5++) {
   organizationalExperienceItemContent += '\n  <ul>\n    <li><span class="list-title">' + _data.dataCV.organizationalExperience[_i5].jobtitle + '</span><span class="list-subtitle"> - ' + _data.dataCV.organizationalExperience[_i5].institution + ' - ' + _data.dataCV.organizationalExperience[_i5].location + ' - ' + (0, _datetime.dateShown)(_data.dataCV.organizationalExperience[_i5].start, _data.dataCV.organizationalExperience[_i5].end) + '</span></li>\n  </ul>\n  <ul class="list-bullet-point">\n    <li>' + _data.dataCV.organizationalExperience[_i5].description + '</li>\n  </ul>\n  ';
 }
 
-// ----- organizational experience
-
 var organizationalExperienceContent = exports.organizationalExperienceContent = '\n<section class="portfolio-section">\n  <h2>Organizational Experience</h2>\n  <ul>\n    ' + organizationalExperienceItemContent + '\n  </ul>\n</section>\n';
+
+// ---------- unused sections
 
 var engineeringCourseItemContent = '';
 for (var _i6 = 0; _i6 < _data.dataCV.courses.engineeringCourse.length; _i6++) {
@@ -11311,6 +11313,15 @@ var mainContent = '\n' + _cvbuilder.summaryContent + '\n' + _cvbuilder.workExper
 
 (0, _jquery2.default)('header').append(_cvbuilder.headerContent);
 (0, _jquery2.default)('main').append(mainContent);
+
+if (module.hot) {
+  module.hot.dispose(function () {
+    // module is about to be replaced
+  });
+  module.hot.accept(function () {
+    // module or one of its dependencies was just updated
+  });
+}
 },{"jquery":"../node_modules/jquery/dist/jquery.js","./cvbuilder":"js/cvbuilder.js","../css/app.css":"css/app.css"}],"../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -11340,7 +11351,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '51959' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '50666' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
