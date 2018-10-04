@@ -20,7 +20,7 @@ export const dataCV = {
       institutionLink: 'https://ruangguru.com/',
       location: 'Jakarta, Indonesia',
       description: [
-        `Developed Ruang Kerja CMS' question and question-set modules using React and Draft.js. Resulting in well functioning rich-text editor implementation for question and question-set generation task in Ruang Kerja apps.`,
+        `Developed Ruang Kerja CMS' question and question-set modules using React and Draft.js. Resulting in well functioning rich text editor implementation for question and question-set generation task in Ruang Kerja apps.`,
         `Developed internal command-line application to bootstrap new web project inside Ruang Guru's mono-repo using Node.js. Resulting in a more efficient new web project's initial setup for Ruang Guru developers.`,
         `Led a team of front-end developers to create Ruang Kerja's company dashboard using React JS stacks, flow-typed, and data visualization tools. Also did an end-to-end testing for it using cypress. Resulting in a finely crafted and runtime-error free dashboard web app.`,
         `Became one of the pioneering engineers in Ruang Kerja's React Native app development. Resulting in a more efficient engineering resources usage for Ruang Guru by expanding the usages of its front end engineers, while theoretically cut the cost of apps development down almost to 50% without losing any of native apps' development speed.`,
