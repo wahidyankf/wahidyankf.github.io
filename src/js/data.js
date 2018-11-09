@@ -4,7 +4,7 @@ export const dataCV = {
     shortDesc: 'Front-End / Software Engineer',
     photos: 'img/profile/profilepicture.jpeg',
     email: 'wahidyankf@gmail.com',
-    summary: `Software engineer with diverse front-end web development's portfolio. Comfortable working with JavaScript, React and React Native stacks but eager to learn another programming language and tools. Has exposure to Node.js and Python. Polyglot that speaks 3+ languages and has more than 3 years experience of living overseas. Has successfully organized nationwide entrepreneurship competition.`,
+    summary: `Software engineer with diverse front-end web development's portfolio. Comfortable working with JavaScript, React and React Native stacks but eager to learn another programming language and tools. Polyglot that speaks 3+ languages and has more than 3 years experience of living overseas. Has successfully organized nationwide entrepreneurship competition.`,
     address: '<a href="https://goo.gl/maps/dpbvmixZWTs">Jakarta, Indonesia</a>',
     socialHub: {
       website: 'https://wahidyankf.github.io/',
@@ -21,7 +21,7 @@ export const dataCV = {
       location: 'Jakarta, Indonesia',
       description: [
         `Developed Ruang Kerja CMS' question and question-set modules using React and Draft.js. Resulting in well functioning rich text editor implementation for question and question-set generation task in Ruang Kerja apps.`,
-        `Developed internal command-line application to bootstrap new web project inside Ruang Guru's mono-repo using Node.js. Resulting in a more efficient new web project's initial setup for Ruang Guru developers.`,
+        `Developed and setup various internal front-end tooling, including command-line application to bootstrap new web project, various uikits and JavaScript utility functions. Resulting in a higher code sharing and development speed for Ruang Guru's engineering team.`,
         `Led a team of front-end developers to create Ruang Kerja's company dashboard using React JS stacks, flow-typed, and data visualization tools. Also did an end-to-end testing for it using cypress. Resulting in a finely crafted and runtime-error free dashboard web app.`,
         `Became one of the pioneering engineers in Ruang Kerja's React Native app development. Resulting in a more efficient engineering resources usage for Ruang Guru by expanding the usages of its front end engineers, while theoretically cut the cost of apps development down almost to 50% without losing any of native apps' development speed.`,
         `Led a team of front-end developers to develop and optimize Ruang Uji's react stacks and deployment. The result was more than 53.86% smaller initial download size (all assets included), 9.52% lower request number, 46.72% faster finish time, 137.10% faster DOMContentLoad time, and 62.49% faster load time than the original angular.js' stacks (2G connection, 280kbps/256kbps 800ms RTT), while also made subsequent pages load substantially faster by implementing on point code optimization, aggressive code splitting, and various images lazy loading.`,

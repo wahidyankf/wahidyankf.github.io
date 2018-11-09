@@ -28,7 +28,8 @@
   "homepage": "https://github.com/wahidyankf/wahidyankf.github.io#readme",
   "dependencies": {
     "jquery": "^3.3.1",
-    "node-sass": "^4.9.2"
+    "node-sass": "^4.9.2",
+    "parcel": "^1.10.3"
   },
   "devDependencies": {
     "cssnano": "^4.0.5",
