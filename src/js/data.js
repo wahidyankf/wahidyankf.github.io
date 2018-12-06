@@ -62,8 +62,12 @@ export const dataCV = {
         languages: ['HTML-CSS', 'JavaScript'],
       },
       {
+        level: 'Familiar',
+        languages: ['Node.js', 'ReasonML'],
+      },
+      {
         level: 'Exposure',
-        languages: ['Node.js', 'Python'],
+        languages: ['Python'],
       },
     ],
     language: [
