@@ -60,11 +60,11 @@ export const dataCV = {
     programmingLanguage: [
       {
         level: 'Production',
-        languages: ['HTML-CSS', 'JavaScript'],
+        languages: ['HTML-CSS', 'JavaScript', 'ReasonML'],
       },
       {
         level: 'Familiar',
-        languages: ['Node.js', 'ReasonML'],
+        languages: ['Node.js'],
       },
       {
         level: 'Exposure',
@@ -90,6 +90,7 @@ export const dataCV = {
     ],
     toolsAndLibraries: [
       'React',
+      'ReasonReact',
       'React Native',
       'Redux',
       'Rematch',
@@ -110,13 +111,6 @@ export const dataCV = {
       'vim',
       'TMUX',
       'LaTeX',
-    ],
-    pastExperience: [
-      'Assembly (AT Mega 8051)',
-      'PHP',
-      'MySQL',
-      'Matlab',
-      'C++',
     ],
   },
   formalEducation: [

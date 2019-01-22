@@ -1,5 +1,5 @@
-import {dataCV} from './data';
-import {formatTimeDuration, dateShown} from './libs/datetime';
+import { dataCV } from './data';
+import { formatTimeDuration, dateShown } from './libs/datetime';
 
 // ----- header
 
@@ -10,16 +10,16 @@ export const headerContent = `
 </div>
 <div class="contact">
   <span class=contact-detail><i class="fa fa-github"></i> <a href="${
-    dataCV.personalData.socialHub.github
+  dataCV.personalData.socialHub.github
   }">wahidyankf</a></span> 
   <span class=contact-detail><i class="fa fa-linkedin"></i> <a href="${
-    dataCV.personalData.socialHub.linkedin
+  dataCV.personalData.socialHub.linkedin
   }">wahidyankf</a></span>
   <span class=contact-detail><i class="fa fa-envelope"></i> <a href="mailto:${
-    dataCV.personalData.email
+  dataCV.personalData.email
   }">wahidyankf@gmail.com</a></span>
   <span class=contact-detail><i class="fa fa-map-marker"></i> ${
-    dataCV.personalData.address
+  dataCV.personalData.address
   }</span>
 </div>
 `;
@@ -39,7 +39,7 @@ const skillsProgLangContent = dataCV.skills.programmingLanguage.reduce(
   (acccumulator, currentValue) => {
     return `${acccumulator}<p>${
       currentValue.level
-    }: ${currentValue.languages.join(', ')}.</p>`;
+      }: ${currentValue.languages.join(', ')}.</p>`;
   },
   ''
 );
@@ -48,7 +48,7 @@ const skillsToolsContent = dataCV.skills.toolsAndLibraries.reduce(
   (acccumulator, currentSkill, index) => {
     return `${acccumulator}${currentSkill}${
       index === dataCV.skills.toolsAndLibraries.length - 1 ? '.' : ', '
-    }`;
+      }`;
   },
   ''
 );
@@ -57,22 +57,12 @@ const skillsLanguageContent = dataCV.skills.language.reduce(
   (acccumulator, currentLanguage, index) => {
     return `${acccumulator}<p>${currentLanguage.name}: ${
       currentLanguage.proficiency
-    }${currentLanguage.info === '' ? '.' : ','} ${currentLanguage.info}${
+      }${currentLanguage.info === '' ? '.' : ','} ${currentLanguage.info}${
       currentLanguage.info === '' ? '' : '.'
-    }</p>`;
+      }</p>`;
   },
   ''
 );
-
-let skillsPastContent = '';
-for (let i = 0; i < dataCV.skills.pastExperience.length; i++) {
-  skillsPastContent += `${dataCV.skills.pastExperience[i]}`;
-  if (i < dataCV.skills.pastExperience.length - 1) {
-    skillsPastContent += ', ';
-  } else {
-    skillsPastContent += '.';
-  }
-}
 
 export const skillsContent = `
 <section class="portfolio-section skills">
@@ -89,10 +79,6 @@ export const skillsContent = `
     <div class="skill-category skill-lang">
       <h3 class="list-title">Languages (<a href="https://en.wikipedia.org/wiki/Common_European_Framework_of_Reference_for_Languages">CEFR</a>)</h3>
       ${skillsLanguageContent}
-    </div>
-    <div class="skill-category skill-past">
-      <h3 class="list-title">Past Experience</h3>
-      <p>${skillsPastContent}<p>
     </div>
 
     <div class="skill-category skill-empty">
@@ -115,16 +101,16 @@ for (let i = 0; i < dataCV.workExperience.length; i++) {
   workExperienceItemContent += `
   <ul>
     <li><span class="list-title">${
-      dataCV.workExperience[i].jobTitle
+    dataCV.workExperience[i].jobTitle
     }</span><span class="list-subtitle"> - <a href="${
     dataCV.workExperience[i].institutionLink
-  }">${dataCV.workExperience[i].institution}</a> - ${
+    }">${dataCV.workExperience[i].institution}</a> - ${
     dataCV.workExperience[i].location
-  } - ${dateShown(
-    dataCV.workExperience[i].start,
-    dataCV.workExperience[i].end,
-    'verbose'
-  )}</span></li>
+    } - ${dateShown(
+      dataCV.workExperience[i].start,
+      dataCV.workExperience[i].end,
+      'verbose'
+    )}</span></li>
   </ul>
   <ul class="list-bullet-point">
     ${workDescription}
@@ -158,10 +144,10 @@ for (let i = 0; i < dataCV.portfolio.length; i++) {
   <ul>
     <li><span class="list-title"><a href="${dataCV.portfolio[i].link}">${
     dataCV.portfolio[i].name
-  }</a></span> <span class="list-subtitle"> - ${dateShown(
-    dataCV.portfolio[i].start,
-    dataCV.portfolio[i].end
-  )}</span></li>
+    }</a></span> <span class="list-subtitle"> - ${dateShown(
+      dataCV.portfolio[i].start,
+      dataCV.portfolio[i].end
+    )}</span></li>
   </ul>
   <ul class="list-bullet-point">
     <li>${dataCV.portfolio[i].description} Stack used: ${stackUsed}</li>
@@ -185,12 +171,12 @@ for (let i = 0; i < dataCV.formalEducation.length; i++) {
   <ul>
     <li><span class="list-title">${dataCV.formalEducation[i].type} Degree in ${
     dataCV.formalEducation[i].major
-  }</span><span class="list-subtitle"> - ${
+    }</span><span class="list-subtitle"> - ${
     dataCV.formalEducation[i].institution
-  } - ${dataCV.formalEducation[i].location} - ${dateShown(
-    dataCV.formalEducation[i].start,
-    dataCV.formalEducation[i].end
-  )}</span></li>
+    } - ${dataCV.formalEducation[i].location} - ${dateShown(
+      dataCV.formalEducation[i].start,
+      dataCV.formalEducation[i].end
+    )}</span></li>
   </ul>
   <ul class="list-bullet-point">
     <li>${dataCV.formalEducation[i].info}</li>
@@ -214,14 +200,14 @@ for (let i = 0; i < dataCV.additionalActivities.length; i++) {
   additionalActivitiesItemContent += `
   <ul>
     <li><span class="list-title">${
-      dataCV.additionalActivities[i].jobtitle
+    dataCV.additionalActivities[i].jobtitle
     }</span><span class="list-subtitle"> - ${
     dataCV.additionalActivities[i].institution
-  } - ${dataCV.additionalActivities[i].location} - ${dateShown(
-    dataCV.additionalActivities[i].start,
-    dataCV.additionalActivities[i].end,
-    'verbose'
-  )}</span></li>
+    } - ${dataCV.additionalActivities[i].location} - ${dateShown(
+      dataCV.additionalActivities[i].start,
+      dataCV.additionalActivities[i].end,
+      'verbose'
+    )}</span></li>
   </ul>
   <ul class="list-bullet-point">
     <li>${dataCV.additionalActivities[i].description}</li>
@@ -245,13 +231,13 @@ for (let i = 0; i < dataCV.organizationalExperience.length; i++) {
   organizationalExperienceItemContent += `
   <ul>
     <li><span class="list-title">${
-      dataCV.organizationalExperience[i].jobtitle
+    dataCV.organizationalExperience[i].jobtitle
     }</span><span class="list-subtitle"> - ${
     dataCV.organizationalExperience[i].institution
-  } - ${dataCV.organizationalExperience[i].location} - ${dateShown(
-    dataCV.organizationalExperience[i].start,
-    dataCV.organizationalExperience[i].end
-  )}</span></li>
+    } - ${dataCV.organizationalExperience[i].location} - ${dateShown(
+      dataCV.organizationalExperience[i].start,
+      dataCV.organizationalExperience[i].end
+    )}</span></li>
   </ul>
   <ul class="list-bullet-point">
     <li>${dataCV.organizationalExperience[i].description}</li>
@@ -277,14 +263,14 @@ for (let i = 0; i < dataCV.courses.engineeringCourse.length; i++) {
   <ul>
     <li><span class="list-title">${
       dataCV.courses.engineeringCourse[i].name
-    }</span><span class="list-subtitle"> - ${
+      }</span><span class="list-subtitle"> - ${
       dataCV.courses.engineeringCourse[i].institution
-    } - <a href="${
+      } - <a href="${
       dataCV.courses.engineeringCourse[i].location
-    }">course link</a> - ${dateShown(
-      dataCV.courses.engineeringCourse[i].start,
-      dataCV.courses.engineeringCourse[i].end
-    )}</span></li>
+      }">course link</a> - ${dateShown(
+        dataCV.courses.engineeringCourse[i].start,
+        dataCV.courses.engineeringCourse[i].end
+      )}</span></li>
   </ul>
   <ul class="list-bullet-point">
     <li>${dataCV.courses.engineeringCourse[i].description}</li>
@@ -295,12 +281,12 @@ for (let i = 0; i < dataCV.courses.engineeringCourse.length; i++) {
   <ul>
     <li><span class="list-title">${
       dataCV.courses.engineeringCourse[i].name
-    }</span><span class="list-subtitle"> - ${
+      }</span><span class="list-subtitle"> - ${
       dataCV.courses.engineeringCourse[i].institution
-    } - ${dataCV.courses.engineeringCourse[i].location} - ${dateShown(
-      dataCV.courses.engineeringCourse[i].start,
-      dataCV.courses.engineeringCourse[i].end
-    )}</span></li>
+      } - ${dataCV.courses.engineeringCourse[i].location} - ${dateShown(
+        dataCV.courses.engineeringCourse[i].start,
+        dataCV.courses.engineeringCourse[i].end
+      )}</span></li>
   </ul>
   <ul class="list-bullet-point">
     <li>${dataCV.courses.engineeringCourse[i].description}</li>
@@ -328,14 +314,14 @@ for (let i = 0; i < dataCV.courses.nonEngineeringCourse.length; i++) {
   <ul>
     <li><span class="list-title">${
       dataCV.courses.nonEngineeringCourse[i].name
-    }</span><span class="list-subtitle"> - ${
+      }</span><span class="list-subtitle"> - ${
       dataCV.courses.nonEngineeringCourse[i].institution
-    } - <a href="${
+      } - <a href="${
       dataCV.courses.nonEngineeringCourse[i].location
-    }">course link</a> - ${dateShown(
-      dataCV.courses.nonEngineeringCourse[i].start,
-      dataCV.courses.nonEngineeringCourse[i].end
-    )}</span></li>
+      }">course link</a> - ${dateShown(
+        dataCV.courses.nonEngineeringCourse[i].start,
+        dataCV.courses.nonEngineeringCourse[i].end
+      )}</span></li>
   </ul>
   <ul class="list-bullet-point">
     <li>${dataCV.courses.nonEngineeringCourse[i].description}</li>
@@ -346,12 +332,12 @@ for (let i = 0; i < dataCV.courses.nonEngineeringCourse.length; i++) {
   <ul>
     <li><span class="list-title">${
       dataCV.courses.nonEngineeringCourse[i].name
-    }</span><span class="list-subtitle"> - ${
+      }</span><span class="list-subtitle"> - ${
       dataCV.courses.nonEngineeringCourse[i].institution
-    } - ${dataCV.courses.nonEngineeringCourse[i].location} - ${dateShown(
-      dataCV.courses.nonEngineeringCourse[i].start,
-      dataCV.courses.nonEngineeringCourse[i].end
-    )}</span></li>
+      } - ${dataCV.courses.nonEngineeringCourse[i].location} - ${dateShown(
+        dataCV.courses.nonEngineeringCourse[i].start,
+        dataCV.courses.nonEngineeringCourse[i].end
+      )}</span></li>
   </ul>
   <ul class="list-bullet-point">
     <li>${dataCV.courses.nonEngineeringCourse[i].description}</li>
