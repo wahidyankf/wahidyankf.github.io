@@ -99,6 +99,7 @@ export const dataCV = {
       'Redux Form',
       'flow-typed',
       'TypeScript',
+      'Babel',
       'Jest',
       'CSS in JS',
       'Sass',
