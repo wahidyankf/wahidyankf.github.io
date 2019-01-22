@@ -20,6 +20,7 @@ export const dataCV = {
       institutionLink: 'https://ruangguru.com/',
       location: 'Jakarta, Indonesia',
       description: [
+        `Became one of the pioneering engineers in Ruang Belajar's Desktop app development using ReasonML, ReasonReact, and Electron. Heavily involved in its core and primitives UI components development, while also helping other engineers (mobile engineers) to pick up React and web technology in general. This project is a first joint project between Ruang Guru's Front-end and Mobile engineers. Opening up a new possibility of higher app development's velocity in Ruang Guru.`,
         `Involved in company new front-end engineer hiring process by assessing their computational thinking and React.js problem-solving skills through coding challenges. Resulting in a faster front-end engineering division's hiring process while making sure that only the high-quality one passed.`,
         `Developed Ruang Kerja CMS' question and question-set modules using React and Draft.js. Resulting in well functioning rich text editor implementation for question and question-set generation task in Ruang Kerja apps.`,
         `Developed and set up various internal front-end tooling, including command-line application to bootstrap new web project, various UI kits, and JavaScript utility functions. Resulting in a higher code sharing and development speed for Ruang Guru's engineering team.`,
@@ -62,8 +63,12 @@ export const dataCV = {
         languages: ['HTML-CSS', 'JavaScript'],
       },
       {
+        level: 'Familiar',
+        languages: ['Node.js', 'ReasonML'],
+      },
+      {
         level: 'Exposure',
-        languages: ['Node.js', 'Python'],
+        languages: ['Python'],
       },
     ],
     language: [
