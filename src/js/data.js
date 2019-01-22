@@ -92,6 +92,7 @@ export const dataCV = {
       'React',
       'ReasonReact',
       'React Native',
+      'Electron',
       'Redux',
       'Rematch',
       'Redux-Saga',
