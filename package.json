@@ -12,7 +12,7 @@
     "build:parcel": "cd src && parcel build index.html",
     "build:css": "node-sass --include-path scss src/scss/app.scss src/css/app.css",
     "build": "yarn build:css && yarn build:parcel",
-    "clean": "ls | grep -v -e src -e .gitignore -e package.json -e README.md -e yarn.lock -e node_modules | xargs rm",
+    "clean": "ls | grep -v -e src -e .gitignore -e package.json -e README.md -e yarn.lock -e node_modules | xargs rm -rf",
     "copyBuild": "cp -r src/dist/. .",
     "deploy": "git add --all && git commit -m \"update $(date +\"%D %T\")\" && git push origin master",
     "buildDeploy": "yarn clean ; yarn build ; yarn copyBuild ; yarn deploy"
