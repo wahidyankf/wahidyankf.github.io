@@ -2899,7 +2899,7 @@ ul {
 @media screen and (min-width: 768px) {
   .skill-tools {
     order: 2;
-    width: 59%; } }
+    width: 100%; } }
 
 @media screen and (min-width: 768px) {
   .skill-lang {
