@@ -88,7 +88,6 @@ export const skills = `
       <h3 class="list-title">Languages (<a href="https://en.wikipedia.org/wiki/Common_European_Framework_of_Reference_for_Languages">CEFR</a>)</h3>
       ${skillsLanguage}
     </div>
-
     <div class="skill-category skill-empty">
     </div>
   </div>

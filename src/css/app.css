@@ -2907,7 +2907,6 @@ ul {
     width: 40%; } }
 
 @media screen and (min-width: 768px) {
-  .skill-past,
   .skill-empty {
     order: 2;
     width: 40%; } }
