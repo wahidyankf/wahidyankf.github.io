@@ -7,6 +7,6 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{"./data":"99DI","./libs/datetime":"QJCQ"}],"7V+V":[function(require,module,exports) {
 
 },{"./../fonts/fontawesome-webfont.eot":[["fontawesome-webfont.4a2277d0.eot","/DY8"],"/DY8"],"./../fonts/fontawesome-webfont.woff2":[["fontawesome-webfont.9fb3877d.woff2","e6wg"],"e6wg"],"./../fonts/fontawesome-webfont.woff":[["fontawesome-webfont.4e039e70.woff","70Ff"],"70Ff"],"./../fonts/fontawesome-webfont.ttf":[["fontawesome-webfont.152c194f.ttf","x+z7"],"x+z7"],"./../fonts/fontawesome-webfont.svg":[["fontawesome-webfont.a9acc805.svg","K176"],"K176"]}],"93ha":[function(require,module,exports) {
-"use strict";var e=require("./cvbuilder");require("../css/app.css");var n=document.getElementById("js-check");n&&(n.style.display="none");var r="\n"+e.summary+"\n"+e.workExperience+"\n"+e.skills+"\n"+e.education+"\n"+e.portfolio+"\n",t=document.getElementById("header"),i=document.getElementById("main");t&&(t.innerHTML=e.header),i&&(i.innerHTML=r);
+"use strict";var e=require("./cvbuilder");require("../css/app.css");var n="\n"+e.summary+"\n"+e.workExperience+"\n"+e.skills+"\n"+e.education+"\n"+e.portfolio+"\n",r=document.getElementById("js-check");r&&(r.style.display="none");var t=document.getElementById("header");t&&(t.innerHTML=e.header);var i=document.getElementById("main");i&&(i.innerHTML=n);
 },{"./cvbuilder":"v7iY","../css/app.css":"7V+V"}]},{},["93ha"], null)
-//# sourceMappingURL=/app.e034971c.js.map
+//# sourceMappingURL=/app.50a76d1f.js.map
