@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import {
   summary,
   workExperience,
@@ -9,7 +8,11 @@ import {
 } from './cvbuilder';
 import '../css/app.css';
 
-$('#js-check').hide();
+const jsCheckEl = document.getElementById('js-check');
+
+if (jsCheckEl) {
+  jsCheckEl.style.display = 'none';
+}
 
 const main = `
 ${summary}
@@ -19,5 +22,13 @@ ${education}
 ${portfolio}
 `;
 
-$('header').append(header);
-$('main').append(main);
+const headerEl = document.getElementById('header');
+const mainEl = document.getElementById('main');
+
+if (headerEl) {
+  headerEl.innerHTML = header;
+}
+
+if (mainEl) {
+  mainEl.innerHTML = main;
+}
