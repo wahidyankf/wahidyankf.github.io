@@ -1,27 +1,23 @@
 import $ from 'jquery';
 import {
-  summaryContent,
-  workExperienceContent,
-  skillsContent,
-  portfolioContent,
-  educationContent,
-  additionalActivitiesContent,
-  organizationalExperienceContent,
-  headerContent,
+  summary,
+  workExperience,
+  skills,
+  portfolio,
+  education,
+  header,
 } from './cvbuilder';
 import '../css/app.css';
 
 $('#js-check').hide();
 
-const mainContent = `
-${summaryContent}
-${workExperienceContent}
-${skillsContent}
-${portfolioContent}
-${educationContent}
-${additionalActivitiesContent}
-${organizationalExperienceContent}
+const main = `
+${summary}
+${workExperience}
+${skills}
+${portfolio}
+${education}
 `;
 
-$('header').append(headerContent);
-$('main').append(mainContent);
+$('header').append(header);
+$('main').append(main);
