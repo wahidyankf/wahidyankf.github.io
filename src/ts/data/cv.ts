@@ -1,4 +1,54 @@
-const cv = {
+interface Project {
+  name: string;
+  description: string;
+  stacks: Array<string>;
+  start: string;
+  end: string;
+  link: string;
+}
+
+interface FormalEducation {
+  major: string;
+  type: string;
+  institution: string;
+  location: string;
+  start: string;
+  end: string;
+  info: string;
+}
+
+interface Skills {
+  programmingLanguage: Array<{level: string; languages: Array<string>}>;
+  language: Array<{name: string; proficiency: string; info: string}>;
+  toolsAndLibraries: Array<string>;
+}
+
+interface WorkExperienceItem {
+  jobTitle: string;
+  institution: string;
+  institutionLink: string;
+  location: string;
+  description: string[];
+  start: string;
+  end: string;
+}
+
+interface CVData {
+  personalInfo: {
+    name: string;
+    shortDesc: string;
+    email: string;
+    summary: string;
+    location: string;
+    socialHub: {website: string; github: string; linkedin: string};
+  };
+  workExperience: Array<WorkExperienceItem>;
+  skills: Skills;
+  formalEducation: Array<FormalEducation>;
+  personalProjects: Array<Project>;
+}
+
+const cv: CVData = {
   personalInfo: {
     name: 'Wahidyan Kresna Fridayoka',
     shortDesc: 'Front-End / Software Engineer',
