@@ -68,7 +68,7 @@ export const dataCV = {
       },
       {
         level: 'Exposure',
-        languages: ['Python'],
+        languages: ['Python', 'OCaml'],
       },
     ],
     language: [
