@@ -15,8 +15,9 @@
     "clean:dist": "rm -rf src/dist",
     "clean": "yarn clean:dist ; yarn clean:webBuild",
     "copyBuild": "cp -r src/dist/. .",
-    "deploy": "git add --all && git commit -m \"update $(date +\"%D %T\")\" && git push origin master",
-    "buildDeploy": "yarn clean ; yarn build ; yarn copyBuild ; yarn deploy"
+    "deploy:auto": "git add --all && git commit -m \"update $(date +\"%D %T\")\" && git push origin master",
+    "deploy:web": "git add --all && git commit -m \"Web version $(date +\"%D %T\")\" && git push origin master",
+    "buildDeploy": "yarn clean ; yarn build ; yarn copyBuild ; yarn deploy:web"
   },
   "repository": {
     "type": "git",
