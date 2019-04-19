@@ -14,7 +14,7 @@ const {
 export const header = `
 <div class="title">
   <h1 class="name">${personalInfoData.name}</h1>
-  <span class="name-job">${personalInfoData.shortDesc}</span>
+  <span class="job-name">${personalInfoData.shortDesc}</span>
 </div>
 <div class="contact">
   <span class=contact-detail><i class="fa fa-github"></i> <a href="${

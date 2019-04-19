@@ -2813,11 +2813,11 @@ ul {
     .name {
       margin-bottom: 0.15rem; } }
 
-.name-job {
+.job-name {
   text-align: center;
   margin-bottom: 0.25rem; }
   @media screen and (min-width: 768px) {
-    .name-job {
+    .job-name {
       text-align: left;
       margin-top: 0.35rem; } }
 
