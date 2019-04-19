@@ -1,12 +1,12 @@
-import cvData from './cvData';
-import {dateShown} from './utils/datetime';
+import cvData from '../cvData';
+import {dateShown} from '../utils/datetime';
 
 const {formalEducation: formalEducationData} = cvData;
 
-let educationItem = '';
+let formalEducations = '';
 
 for (let i = 0; i < formalEducationData.length; i++) {
-  educationItem += `
+  formalEducations += `
   <ul>
     <li><span class="list-title">${formalEducationData[i].type} Degree in ${
     formalEducationData[i].major
@@ -23,11 +23,13 @@ for (let i = 0; i < formalEducationData.length; i++) {
   `;
 }
 
-export const education = `
+const formalEducation = `
 <section class="education">
   <h2>Formal Education</h2>
   <ul>
-    ${educationItem}
+    ${formalEducations}
   </ul>
 </section>
 `;
+
+export default formalEducation;

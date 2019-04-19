@@ -1,16 +1,16 @@
-import {education} from './cvBuilder';
 import header from './sections/header';
 import summary from './sections/summary';
 import skills from './sections/skills';
 import workExperience from './sections/workExperience';
 import personalProjects from './sections/personalProjects';
+import formalEducation from './sections/formalEducation';
 import '../css/app.css';
 
 const main = `
 ${summary}
 ${workExperience}
 ${skills}
-${education}
+${formalEducation}
 ${personalProjects}
 `;
 
