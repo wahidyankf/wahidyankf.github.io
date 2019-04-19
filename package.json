@@ -30,10 +30,10 @@
   },
   "homepage": "https://github.com/wahidyankf/wahidyankf.github.io#readme",
   "dependencies": {
-    "jquery": "^3.3.1",
-    "node-sass": "^4.9.2"
+    "jquery": "^3.3.1"
   },
   "devDependencies": {
+    "node-sass": "^4.9.2",
     "@types/jquery": "^3.3.29",
     "cssnano": "^4.0.5",
     "npm-run-all": "^4.1.3",
