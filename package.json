@@ -4,10 +4,7 @@
   "description": "## Introduction",
   "main": "app.js",
   "scripts": {
-    "parcel": "parcel ./src/index.html",
-    "devParcel": "watch --wait=1 'cd src && parcel index.html' ./src/ ",
-    "devCp": "watch --wait=1 'cp -r src/img src/dist/' ./src/",
-    "dev": "npm-run-all --parallel devParcel",
+    "dev": "parcel ./src/index.html",
     "dae": "rm -v !(\"src\"|\".gitignore\"|\"package.json\"|\"README.md\"|\"yarn.lock\")",
     "build:parcel": "cd src && parcel build index.html",
     "build:css": "node-sass --include-path scss src/scss/app.scss src/css/app.css",
@@ -29,8 +26,7 @@
   "homepage": "https://github.com/wahidyankf/wahidyankf.github.io#readme",
   "dependencies": {
     "jquery": "^3.3.1",
-    "node-sass": "^4.9.2",
-    "parcel": "^1.10.3"
+    "node-sass": "^4.9.2"
   },
   "devDependencies": {
     "cssnano": "^4.0.5",
