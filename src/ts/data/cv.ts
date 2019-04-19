@@ -122,7 +122,7 @@ const cv = {
       name: 'Build an Interactive Form',
       description:
         'In this project, an HTML and CSS files was given and I have to add interactivity to the existing form there. The resulting page is an interactive HTML form that has a simple form validity checker.',
-      skillSetUsed: ['HTML', 'CSS', 'Sass', 'JavaScript', 'jQuery', 'RegEx'],
+      stacks: ['HTML', 'CSS', 'Sass', 'JavaScript', 'jQuery', 'RegEx'],
       start: '08/2017',
       end: '08/2017',
       link: 'https://github.com/wahidyankf/build-an-interactive-form',
@@ -131,7 +131,7 @@ const cv = {
       name: 'Pagination and Content Filter',
       description:
         'In this project, an HTML page and CSS files was given and I have to add a search and pagination feature using unobstrusive javascript. The resulting page is a page that display at most 10 student entries with an instant student search capabilities.',
-      skillSetUsed: ['HTML', 'CSS', 'Sass', 'JavaScript', 'jQuery'],
+      stacks: ['HTML', 'CSS', 'Sass', 'JavaScript', 'jQuery'],
       start: '08/2017',
       end: '08/2017',
       link: 'https://github.com/wahidyankf/pagination-and-content-filter',
@@ -140,7 +140,7 @@ const cv = {
       name: 'Random Quote Generator',
       description:
         'In this project, I created a page that will randomly generate quotes from a data object. This page will change its displayed quote when we click the button / pres any key / 30 seconds has passed. This page will also not displayed the same quote until all of quotes has been displayed.',
-      skillSetUsed: ['HTML', 'CSS', 'Sass', 'JavaScript', 'jQuery'],
+      stacks: ['HTML', 'CSS', 'Sass', 'JavaScript', 'jQuery'],
       start: '08/2017',
       end: '08/2017',
       link: 'https://github.com/wahidyankf/random_quote_generator',
@@ -149,7 +149,7 @@ const cv = {
       name: 'Interactive Video Player',
       description:
         "In this project, I created a fully featured interactive video player using MediaElement.js. The features of this video player includes: play/pause button, current time and total duration, playing progress slider, file buffer's progress, skip backward button, playback speed chooser, captions chooser, video quality chooser, volume level slider, and go to fullscreen button.",
-      skillSetUsed: ['HTML', 'CSS', 'Sass', 'JavaScript', 'MediaElement.js'],
+      stacks: ['HTML', 'CSS', 'Sass', 'JavaScript', 'MediaElement.js'],
       start: '07/2017',
       end: '07/2017',
       link: 'https://github.com/wahidyankf/interactive-video-player',
@@ -158,7 +158,7 @@ const cv = {
       name: 'Optimizing a Site for Performance',
       description:
         "An unoptimized website was given to me, and I have to optimize it by reducing its http request and body size by any means necessary. In this project, I successfully reduced the website's http requests count down to 22 requests (from 44), and also reduced its body size by more than 10 times (from 12-ish MB to < 1 MB) while still maintaining the apparent quality of its images.",
-      skillSetUsed: ['HTML', 'CSS', 'Sass', 'gulp.js', 'phantomas', 'imagemin'],
+      stacks: ['HTML', 'CSS', 'Sass', 'gulp.js', 'phantomas', 'imagemin'],
       start: '07/2017',
       end: '07/2017',
       link:
@@ -168,7 +168,7 @@ const cv = {
       name: 'Accessibility Refactor',
       description:
         "In this project, I refactored a website that suffers from various accessibility flaws, resulting a website that is accessible and can pass an accessibility validator(s)'s automated checks and a human's check. This project was tested using HTML Accessibility Checker, Fangs Screen Reader Emulator and Google Chrome's Accessibility Developer Tools.",
-      skillSetUsed: ['HTML', 'CSS', 'Sass'],
+      stacks: ['HTML', 'CSS', 'Sass'],
       start: '07/2017',
       end: '07/2017',
       link:
@@ -178,7 +178,7 @@ const cv = {
       name: 'wahidyankf.github.io',
       description:
         'In this project, I created a portfolio website for my personal used. This website contains the complete list of my curriculum vitae.',
-      skillSetUsed: ['HTML', 'CSS', 'Sass', 'JavaScript', 'jQuery'],
+      stacks: ['HTML', 'CSS', 'Sass', 'JavaScript', 'jQuery'],
       start: '07/2017',
       end: '07/2017',
       link: 'https://wahidyankf.github.io/',
@@ -187,7 +187,7 @@ const cv = {
       name: 'SVG Site Update',
       description:
         'In this project, a functioning website was given to me, and I have to update/replace its existing non svg images with svg images, resulting more beautiful and sharper images on the website.',
-      skillSetUsed: ['HTML', 'CSS', 'Sass'],
+      stacks: ['HTML', 'CSS', 'Sass'],
       start: '06/2017',
       end: '06/2017',
       link:
@@ -197,7 +197,7 @@ const cv = {
       name: 'Moslem Productivity Tools',
       description:
         "In this project, I created a simple website application that tracks the islamic praying time and section of the day's markers, and warns me whenever I am about to burnout (according to the scientific theory of productivity). This app allow me to always work at my optimal speed.",
-      skillSetUsed: [
+      stacks: [
         'HTML',
         'CSS',
         'Sass',
@@ -215,7 +215,7 @@ const cv = {
       name: 'Interactive Photo Gallery',
       description:
         "In this project, an interactive online gallery's design mockup was given to me, and I have to replicate it using only jQuery as a non vanilla js element. This project includes a simple lightbox (with navigation) and search/filter function.",
-      skillSetUsed: ['HMTL', 'CSS', 'Sass', 'JavaScript', 'jQuery'],
+      stacks: ['HMTL', 'CSS', 'Sass', 'JavaScript', 'jQuery'],
       start: '04/2017',
       end: '04/2017',
       link:
@@ -225,7 +225,7 @@ const cv = {
       name: 'Online Registration Form',
       description:
         "In this project, a responsive online form's design mockup was given to me, and I have to replicate it using vanilla HTML and CSS.",
-      skillSetUsed: ['HTML', 'CSS', 'Sass'],
+      stacks: ['HTML', 'CSS', 'Sass'],
       start: '04/2017',
       end: '04/2017',
       link:
@@ -235,7 +235,7 @@ const cv = {
       name: 'Responsive Layout',
       description:
         'In this project, a responsive web portfolio mockup was given to me, and I have to replicate it using HTML and CSS.',
-      skillSetUsed: ['HTML', 'CSS', 'Sass'],
+      stacks: ['HTML', 'CSS', 'Sass'],
       start: '04/2017',
       end: '04/2017',
       link:
@@ -245,7 +245,7 @@ const cv = {
       name: 'Personal Profile Page',
       description:
         'In this project, I modified an existing personal website to conform to my personal data.',
-      skillSetUsed: ['HTML', 'CSS'],
+      stacks: ['HTML', 'CSS'],
       start: '04/2017',
       end: '04/2017',
       link:
@@ -255,7 +255,7 @@ const cv = {
       name: 'Build a Portfolio Site',
       description:
         'In this project, I created a simple responsive portfolio site using foundation for sites.',
-      skillSetUsed: ['HTML', 'CSS', 'Foundation for Sites'],
+      stacks: ['HTML', 'CSS', 'Foundation for Sites'],
       start: '03/2017',
       end: '03/2017',
       link:
