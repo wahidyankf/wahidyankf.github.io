@@ -5,12 +5,12 @@ export const dataCV = {
     photos: 'img/profile/profilepicture.jpeg',
     email: 'wahidyankf@gmail.com',
     summary: `Software engineer with diverse front-end web development's portfolio. Love to code in ReasonML. Comfortable working with JavaScript, React and React Native stacks but eager to learn another programming language and tools. Polyglot that speaks 3+ languages and has more than 3 years experience of living overseas.`,
-    address: '<a href="https://goo.gl/maps/dpbvmixZWTs">Jakarta, Indonesia</a>',
+    location:
+      '<a href="https://goo.gl/maps/dpbvmixZWTs">Jakarta, Indonesia</a>',
     socialHub: {
       website: 'https://wahidyankf.github.io/',
       github: 'https://github.com/wahidyankf',
       linkedin: 'https://www.linkedin.com/in/wahidyan-kresna-fridayoka',
-      blog: 'https://wahidyankf.wordpress.com',
     },
   },
   workExperience: [

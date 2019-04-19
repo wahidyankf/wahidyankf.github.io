@@ -1,5 +1,5 @@
 import {dataCV} from './data';
-import {formatTimeDuration, dateShown} from './libs/datetime';
+import {dateShown} from './libs/datetime';
 
 const {
   personalInfo: personalInfoData,
@@ -27,7 +27,7 @@ export const header = `
     personalInfoData.email
   }">wahidyankf@gmail.com</a></span>
   <span class=contact-detail><i class="fa fa-map-marker"></i> ${
-    personalInfoData.address
+    personalInfoData.location
   }</span>
 </div>
 `;
@@ -62,7 +62,7 @@ const skillsTools = skillsData.toolsAndLibraries.reduce(
 );
 
 const skillsLanguage = skillsData.language.reduce(
-  (acccumulator, currentLanguage, index) => {
+  (acccumulator, currentLanguage) => {
     return `${acccumulator}<p>${currentLanguage.name}: ${
       currentLanguage.proficiency
     }${currentLanguage.info === '' ? '.' : ','} ${currentLanguage.info}${

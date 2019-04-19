@@ -1,4 +1,4 @@
-export const formatTimeDuration = (timeDuration: any) => {
+export const formatTimeDuration = (timeDuration: number): string => {
   const numberOfMonths = Math.floor(timeDuration / (1000 * 3600 * 24 * 30));
   const numberOfYears = Math.floor(numberOfMonths / 12);
   const numberOfRemainderMonths = Math.floor(numberOfMonths % 12);
@@ -18,23 +18,23 @@ export const formatTimeDuration = (timeDuration: any) => {
   return formattedTimeDuration;
 };
 
-export const dateShown = (start: any, end: any, type = 'compact') => {
+export const dateShown = (start: string, end: string, type = 'compact') => {
   const dateNow = new Date();
-  const startMonth = Number(start.slice(0, 2) - 1);
+  const startMonth = Number(start.slice(0, 2)) - 1;
   const startYear = Number(start.slice(3));
 
   const endMonth =
     end.toLowerCase() === 'now'
       ? `${dateNow.getMonth()}`
-      : `${Number(end.slice(0, 2) - 1)}`;
+      : `${Number(end.slice(0, 2)) - 1}`;
   const endYear =
     end.toLowerCase() === 'now' ? dateNow.getFullYear() : Number(end.slice(3));
   const adaptedEndMonth = Number(endMonth) + 1;
 
-  const dateStart: any = new Date(startYear, startMonth);
-  const dateEnd: any = new Date(endYear, adaptedEndMonth);
+  const dateStart: Date = new Date(startYear, startMonth);
+  const dateEnd: Date = new Date(endYear, adaptedEndMonth);
 
-  const timeDuration = dateEnd - dateStart;
+  const timeDuration = Number(dateEnd) - Number(dateStart);
 
   const duration =
     type === 'compact'
