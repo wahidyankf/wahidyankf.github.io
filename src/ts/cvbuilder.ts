@@ -1,98 +1,11 @@
-import {dataCV} from './data';
-import {dateShown} from './libs/datetime';
+import cvData from './cvData';
+import {dateShown} from './utils/datetime';
 
 const {
-  personalInfo: personalInfoData,
-  skills: skillsData,
   workExperience: workExperienceData,
   formalEducation: formalEducationData,
   personalProjects: personalProjectsData,
-} = dataCV;
-
-// ----- header
-
-export const header = `
-<div class="title">
-  <h1 class="name">${personalInfoData.name}</h1>
-  <span class="job-name">${personalInfoData.shortDesc}</span>
-</div>
-<div class="contact">
-  <span class=contact-detail><i class="fa fa-github"></i> <a href="${
-    personalInfoData.socialHub.github
-  }">wahidyankf</a></span> 
-  <span class=contact-detail><i class="fa fa-linkedin"></i> <a href="${
-    personalInfoData.socialHub.linkedin
-  }">wahidyankf</a></span>
-  <span class=contact-detail><i class="fa fa-envelope"></i> <a href="mailto:${
-    personalInfoData.email
-  }">wahidyankf@gmail.com</a></span>
-  <span class=contact-detail><i class="fa fa-map-marker"></i> ${
-    personalInfoData.location
-  }</span>
-</div>
-`;
-
-// ----- summary
-
-export const summary = `
-<section class="portfolio-section summary">
-  <h2>Summary</h2>
-  <p>${personalInfoData.summary}</p>
-</section>
-`;
-
-// ----- skills
-
-const skillsProgLang = skillsData.programmingLanguage.reduce(
-  (acccumulator, currentValue) => {
-    return `${acccumulator}<p>${
-      currentValue.level
-    }: ${currentValue.languages.join(', ')}.</p>`;
-  },
-  ''
-);
-
-const skillsTools = skillsData.toolsAndLibraries.reduce(
-  (acccumulator, currentSkill, index) => {
-    return `${acccumulator}${currentSkill}${
-      index === skillsData.toolsAndLibraries.length - 1 ? '.' : ', '
-    }`;
-  },
-  ''
-);
-
-const skillsLanguage = skillsData.language.reduce(
-  (acccumulator, currentLanguage) => {
-    return `${acccumulator}<p>${currentLanguage.name}: ${
-      currentLanguage.proficiency
-    }${currentLanguage.info === '' ? '.' : ','} ${currentLanguage.info}${
-      currentLanguage.info === '' ? '' : '.'
-    }</p>`;
-  },
-  ''
-);
-
-export const skills = `
-<section class="portfolio-section skills">
-  <h2>Skills</h2>
-  <div class="skill-container">
-    <div class="skill-category skill-prog-lang">
-      <h3 class="list-title">Programming Languages</h3>
-      ${skillsProgLang}
-    </div>
-    <div class="skill-category skill-tools">
-      <h3 class="list-title">Tools and Libraries</h3>
-      <p>${skillsTools}</p>
-    </div>
-    <div class="skill-category skill-lang">
-      <h3 class="list-title">Languages (<a href="https://en.wikipedia.org/wiki/Common_European_Framework_of_Reference_for_Languages">CEFR</a>)</h3>
-      ${skillsLanguage}
-    </div>
-    <div class="skill-category skill-empty">
-    </div>
-  </div>
-</section>
-`;
+} = cvData;
 
 // ----- Portfolio
 
