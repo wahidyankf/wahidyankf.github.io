@@ -6,7 +6,7 @@ const {
   skills: skillsData,
   workExperience: workExperienceData,
   formalEducation: formalEducationData,
-  portfolio: portfolioData,
+  personalProjects: personalProjectsData,
 } = dataCV;
 
 // ----- header
@@ -137,11 +137,11 @@ export const workExperience = `
 // -------- portfolio
 
 let portfolioItem = '';
-for (let i = 0; i < portfolioData.length; i++) {
+for (let i = 0; i < personalProjectsData.length; i++) {
   let stackUsed = '';
-  for (let j = 0; j < portfolioData[i].skillSetUsed.length; j++) {
-    stackUsed += `${portfolioData[i].skillSetUsed[j]}`;
-    if (j < portfolioData[i].skillSetUsed.length - 1) {
+  for (let j = 0; j < personalProjectsData[i].skillSetUsed.length; j++) {
+    stackUsed += `${personalProjectsData[i].skillSetUsed[j]}`;
+    if (j < personalProjectsData[i].skillSetUsed.length - 1) {
       stackUsed += ', ';
     } else {
       stackUsed += '.';
@@ -149,15 +149,15 @@ for (let i = 0; i < portfolioData.length; i++) {
   }
   portfolioItem += `
   <ul>
-    <li><span class="list-title"><a href="${portfolioData[i].link}">${
-    portfolioData[i].name
+    <li><span class="list-title"><a href="${personalProjectsData[i].link}">${
+    personalProjectsData[i].name
   }</a></span> <span class="list-subtitle"> - ${dateShown(
-    portfolioData[i].start,
-    portfolioData[i].end
+    personalProjectsData[i].start,
+    personalProjectsData[i].end
   )}</span></li>
   </ul>
   <ul class="list-bullet-point">
-    <li>${portfolioData[i].description} Stack used: ${stackUsed}</li>
+    <li>${personalProjectsData[i].description} Stack used: ${stackUsed}</li>
   </ul>
   `;
 }

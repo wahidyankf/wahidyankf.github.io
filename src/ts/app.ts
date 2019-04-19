@@ -15,8 +15,8 @@ const main = `
 ${summary}
 ${workExperience}
 ${skills}
-${portfolio}
 ${education}
+${portfolio}
 `;
 
 $('header').append(header);

@@ -13,6 +13,7 @@ export const dataCV = {
       linkedin: 'https://www.linkedin.com/in/wahidyan-kresna-fridayoka',
     },
   },
+
   workExperience: [
     {
       jobTitle: 'Front End Engineer',
@@ -44,18 +45,8 @@ export const dataCV = {
       start: '10/2017',
       end: '12/2017',
     },
-    {
-      jobTitle: 'Internship',
-      institution: 'P2 TELIMEK-LIPI',
-      institutionLink: 'http://www.telimek.lipi.go.id/',
-      location: 'Bandung, Indonesia',
-      description: [
-        "Taking part on the documentation of PLT Bayu (wind power plant) 100 KW project's supervisory control.",
-      ],
-      start: '01/2011',
-      end: '03/2011',
-    },
   ],
+
   skills: {
     programmingLanguage: [
       {
@@ -113,6 +104,7 @@ export const dataCV = {
       'LaTeX',
     ],
   },
+
   formalEducation: [
     {
       major: 'Electrical Engineering',
@@ -125,7 +117,8 @@ export const dataCV = {
         'GPA: 3.0/4.0. Bachelor thesis: Design and implementation of SMS One Time Password (SMS-OTP) Based Web Authentication System. Supervisor: Ir. Budi Rahardjo M.Sc., Ph.D.',
     },
   ],
-  portfolio: [
+
+  personalProjects: [
     {
       name: 'Build an Interactive Form',
       description:
