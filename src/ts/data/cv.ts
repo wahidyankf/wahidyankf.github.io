@@ -1,4 +1,4 @@
-const cvData = {
+const cv = {
   personalInfo: {
     name: 'Wahidyan Kresna Fridayoka',
     shortDesc: 'Front-End / Software Engineer',
@@ -264,4 +264,4 @@ const cvData = {
   ],
 };
 
-export default cvData;
+export default cv;

@@ -1,18 +1,7 @@
-import header from './sections/header';
-import summary from './sections/summary';
-import skills from './sections/skills';
-import workExperience from './sections/workExperience';
-import personalProjects from './sections/personalProjects';
-import formalEducation from './sections/formalEducation';
-import '../css/app.css';
+import header from './sections/header/index';
+import main from './sections/main/index';
 
-const main = `
-${summary}
-${workExperience}
-${skills}
-${formalEducation}
-${personalProjects}
-`;
+import '../css/app.css';
 
 const jsCheckEl = document.getElementById('js-check');
 if (jsCheckEl) {

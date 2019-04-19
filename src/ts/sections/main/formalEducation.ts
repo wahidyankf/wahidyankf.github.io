@@ -1,5 +1,5 @@
-import cvData from '../cvData';
-import {dateShown} from '../utils/datetime';
+import cvData from '../../data/cv';
+import {dateShown} from '../../utils/datetime';
 
 const {formalEducation: formalEducationData} = cvData;
 
