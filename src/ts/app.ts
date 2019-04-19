@@ -1,8 +1,9 @@
-import {portfolio, education} from './cvBuilder';
+import {education} from './cvBuilder';
 import header from './sections/header';
 import summary from './sections/summary';
 import skills from './sections/skills';
 import workExperience from './sections/workExperience';
+import personalProjects from './sections/personalProjects';
 import '../css/app.css';
 
 const main = `
@@ -10,7 +11,7 @@ ${summary}
 ${workExperience}
 ${skills}
 ${education}
-${portfolio}
+${personalProjects}
 `;
 
 const jsCheckEl = document.getElementById('js-check');
