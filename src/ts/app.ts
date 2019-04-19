@@ -1,7 +1,8 @@
-import {workExperience, portfolio, education} from './cvBuilder';
+import {portfolio, education} from './cvBuilder';
 import header from './sections/header';
 import summary from './sections/summary';
 import skills from './sections/skills';
+import workExperience from './sections/workExperience';
 import '../css/app.css';
 
 const main = `
