@@ -27,7 +27,7 @@ export enum Library {
   PraytimeJS = 'praytime.js',
   ReactJS = 'React.js',
   ReactNative = 'React Native',
-  ReasonReact = 'Reason React',
+  ReasonReact = 'ReasonReact',
   ReactChartJS2 = 'React Chart.js 2',
   Redux = 'Redux',
   ReduxSaga = 'Redux Saga',
