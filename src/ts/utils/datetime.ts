@@ -19,16 +19,17 @@ export const formatTimeDuration = (timeDuration: number): string => {
 };
 
 export const dateShown = (start: string, end: string, type = 'compact') => {
+  const now = 'now';
   const dateNow = new Date();
   const startMonth = Number(start.slice(0, 2)) - 1;
   const startYear = Number(start.slice(3));
 
   const endMonth =
-    end.toLowerCase() === 'now'
+    end.toLowerCase() === now
       ? `${dateNow.getMonth()}`
       : `${Number(end.slice(0, 2)) - 1}`;
   const endYear =
-    end.toLowerCase() === 'now' ? dateNow.getFullYear() : Number(end.slice(3));
+    end.toLowerCase() === now ? dateNow.getFullYear() : Number(end.slice(3));
   const adaptedEndMonth = Number(endMonth) + 1;
 
   const dateStart: Date = new Date(startYear, startMonth);
