@@ -5,7 +5,7 @@ export const createProjectsHTML = (projects: Project[]): string => {
   return projects.reduce((acc, project) => {
     const {stacks, link, name, start, end, highlights} = project;
 
-    const stacksAsString = stacks.reduce((acc, skillSet, index) => {
+    const stacksAsHTML = stacks.reduce((acc, skillSet, index) => {
       const isLastItem = index == stacks.length - 1;
       const suffix = isLastItem ? '.' : ', ';
 
@@ -17,18 +17,24 @@ export const createProjectsHTML = (projects: Project[]): string => {
       ''
     );
 
+    let projectNameAsHTML =
+      link.length === 0 ? name : `<a href="${link}">${name}</a>`;
+
+    let timeDurationAsHTML =
+      start.length === 0 ? '' : `- ${showTimeDuration(start, end)}`;
+
     return (acc += `
     <ul>
       <li>
         <span class="list-title">
-          <a href="${link}">${name}</a>
+          ${projectNameAsHTML}
         </span>
-        <span class="list-subtitle"> - ${showTimeDuration(start, end)}</span>
+        <span class="list-subtitle">${timeDurationAsHTML}</span>
       </li>
     </ul>
     <ul class="list-bullet-point">
       ${hightlightsAsHTML}
-      <li>Technology stack: ${stacksAsString}</li>
+      <li>Technology stack: ${stacksAsHTML}</li>
     </ul>
     `);
   }, '');
