@@ -18,7 +18,11 @@ export const formatTimeDuration = (timeDuration: number): string => {
   return formattedTimeDuration;
 };
 
-export const dateShown = (start: string, end: string, type = 'compact') => {
+export const showTimeDuration = (
+  start: string,
+  end: string,
+  type = 'compact'
+): string => {
   const now = 'now';
   const dateNow = new Date();
   const startMonth = Number(start.slice(0, 2)) - 1;
@@ -47,5 +51,6 @@ export const dateShown = (start: string, end: string, type = 'compact') => {
   if (start === end) {
     return start;
   }
+
   return `${start} - ${end}${duration}`;
 };

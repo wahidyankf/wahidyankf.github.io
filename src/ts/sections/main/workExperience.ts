@@ -1,5 +1,5 @@
 import cvData from '../../data/cv';
-import {dateShown} from '../../utils/datetime';
+import {showTimeDuration} from '../../utils/datetime';
 
 const {workExperience: workExperienceData} = cvData;
 
@@ -24,7 +24,7 @@ const workExperienceAsHTML = workExperienceData.reduce(
   <ul>
       <li>
         <span class="list-title">${jobTitle}</span>
-        <span class="list-subtitle"> - <a href="${institutionLink}">${institution}</a> - ${location} - ${dateShown(
+        <span class="list-subtitle"> - <a href="${institutionLink}">${institution}</a> - ${location} - ${showTimeDuration(
         start,
         end,
         'verbose'

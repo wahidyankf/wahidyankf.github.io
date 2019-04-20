@@ -1,5 +1,5 @@
 import cvData from '../../data/cv';
-import {dateShown} from '../../utils/datetime';
+import {showTimeDuration} from '../../utils/datetime';
 
 const {personalProjects: personalProjectsData} = cvData;
 
@@ -24,7 +24,7 @@ const projects = personalProjectsData.reduce((acc, project) => {
       <span class="list-title">
         <a href="${link}">${name}</a>
       </span>
-      <span class="list-subtitle"> - ${dateShown(start, end)}</span>
+      <span class="list-subtitle"> - ${showTimeDuration(start, end)}</span>
     </li>
   </ul>
   <ul class="list-bullet-point">
