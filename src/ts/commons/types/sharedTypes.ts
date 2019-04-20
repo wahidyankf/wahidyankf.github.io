@@ -1,0 +1,46 @@
+export enum ProgrammingLanguage {
+  CSS = 'CSS',
+  HTML = 'HTML',
+  JS = 'JavaScript',
+  NodeJS = 'Node.js',
+  OCaml = 'OCaml',
+  Python = 'Python',
+  ReasonML = 'ReasonML',
+}
+
+export enum Library {
+  BabelJS = 'Babel',
+  CSSInJS = 'CSS in JS',
+  DraftJS = 'DraftJS',
+  Electron = 'Electron',
+  FoundationForSites = 'Foundation for Sites',
+  FlowTyped = 'flow-typed',
+  GulpJS = 'Gulp',
+  Imagemin = 'imagemin',
+  Jest = 'Jest',
+  JQuery = 'jQuery',
+  MediaElementJS = 'MediaElement.js',
+  MomentJS = 'moment.js',
+  NPM = 'npm',
+  Phantomas = 'phantomas',
+  PraytimeJS = 'praytime.js',
+  ReactJS = 'React.js',
+  ReactNative = 'React Native',
+  ReasonReact = 'Reason React',
+  ReactChartJS2 = 'React Chart.js 2',
+  Redux = 'Redux',
+  ReduxSaga = 'Redux Saga',
+  Rematch = 'Rematch',
+  Sass = 'Sass',
+  StyledComponents = 'styled-components',
+  TypeScript = 'TypeScript',
+  Webpack = 'Webpack',
+  Yarn = 'Yarn',
+}
+
+export enum Tool {
+  Git = 'Git',
+  TMUX = 'TMUX',
+  LaTeX = 'LaTeX',
+  Vim = 'vim',
+}

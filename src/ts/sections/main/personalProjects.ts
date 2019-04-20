@@ -1,5 +1,5 @@
 import cvData from '../../data/cv';
-import {createProjectsHTML} from '../../helpers/projects';
+import {createProjectsHTML} from '../../commons/helpers/projects';
 
 export default `
 <section class="portfolio-section">

@@ -1,5 +1,5 @@
 import cvData from '../../data/cv';
-import {showTimeDuration} from '../../utils/datetime';
+import {showTimeDuration} from '../../commons/utils/dateTime';
 
 const {workExperience: workExperienceData} = cvData;
 

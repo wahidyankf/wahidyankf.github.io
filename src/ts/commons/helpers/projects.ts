@@ -1,5 +1,5 @@
-import {Project} from '../data/cv';
-import {showTimeDuration} from '../utils/datetime';
+import {Project} from '../../data/cv';
+import {showTimeDuration} from '../utils/dateTime';
 
 export const createProjectsHTML = (projects: Project[]): string => {
   return projects.reduce((acc, project) => {

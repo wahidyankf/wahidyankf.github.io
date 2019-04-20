@@ -1,4 +1,0 @@
-import cvData from '../../data/cv';
-var personalInfoData = cvData.personalInfo;
-var header = "\n<div class=\"title\">\n  <h1 class=\"name\">" + personalInfoData.name + "</h1>\n  <span class=\"job-name\">" + personalInfoData.shortDesc + "</span>\n</div>\n<div class=\"contact\">\n  <span class=contact-detail><i class=\"fa fa-github\"></i> <a href=\"" + personalInfoData.socialHub.github + "\">wahidyankf</a></span> \n  <span class=contact-detail><i class=\"fa fa-linkedin\"></i> <a href=\"" + personalInfoData.socialHub.linkedin + "\">wahidyankf</a></span>\n  <span class=contact-detail><i class=\"fa fa-envelope\"></i> <a href=\"mailto:" + personalInfoData.email + "\">wahidyankf@gmail.com</a></span>\n  <span class=contact-detail><i class=\"fa fa-map-marker\"></i> " + personalInfoData.location + "</span>\n</div>\n";
-export default header;

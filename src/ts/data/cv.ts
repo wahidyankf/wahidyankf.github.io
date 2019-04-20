@@ -1,7 +1,12 @@
+import {createStringsOfEnums} from '../commons/helpers/enums';
+import {Library, Tool, ProgrammingLanguage} from '../commons/types/sharedTypes';
+
+const tools = [...createStringsOfEnums(Library), ...createStringsOfEnums(Tool)];
+
 export interface Project {
   name: string;
   highlights: string[];
-  stacks: Array<string>;
+  stacks: Array<Library | ProgrammingLanguage>;
   start: string;
   end: string;
   link: string;
@@ -18,7 +23,10 @@ interface FormalEducation {
 }
 
 interface Skills {
-  programmingLanguages: Array<{level: string; languages: Array<string>}>;
+  programmingLanguages: Array<{
+    level: string;
+    languages: Array<ProgrammingLanguage>;
+  }>;
   languages: Array<{name: string; proficiency: string; info: string}>;
   tools: Array<string>;
 }
@@ -103,15 +111,20 @@ const cv: CVData = {
     programmingLanguages: [
       {
         level: 'Production',
-        languages: ['HTML-CSS', 'JavaScript', 'ReasonML'],
+        languages: [
+          ProgrammingLanguage.HTML,
+          ProgrammingLanguage.CSS,
+          ProgrammingLanguage.JS,
+          ProgrammingLanguage.ReasonML,
+        ],
       },
       {
         level: 'Familiar',
-        languages: ['Node.js'],
+        languages: [ProgrammingLanguage.NodeJS],
       },
       {
         level: 'Exposure',
-        languages: ['Python', 'OCaml'],
+        languages: [ProgrammingLanguage.Python, ProgrammingLanguage.OCaml],
       },
     ],
     languages: [
@@ -131,30 +144,7 @@ const cv: CVData = {
         info: 'Goethe ZD: 228/300',
       },
     ],
-    tools: [
-      'React',
-      'ReasonReact',
-      'React Native',
-      'Electron',
-      'Redux',
-      'Rematch',
-      'Redux-Saga',
-      'Redux Form',
-      'flow-typed',
-      'TypeScript',
-      'Babel',
-      'Jest',
-      'CSS in JS',
-      'Sass',
-      'jQuery',
-      'Git',
-      'npm/yarn',
-      'gulp.js',
-      'webpack',
-      'vim',
-      'TMUX',
-      'LaTeX',
-    ],
+    tools,
   },
 
   formalEducation: [
@@ -175,13 +165,12 @@ const cv: CVData = {
       name: 'Ruang Belanja - Admin Dashboard (Internal)',
       highlights: [],
       stacks: [
-        'HTML',
-        'CSS',
-        'JavaScript',
-        'ReasonML',
-        'ReactJS',
-        'ReasonReact',
-        'Webpack',
+        ProgrammingLanguage.HTML,
+        ProgrammingLanguage.CSS,
+        ProgrammingLanguage.JS,
+        ProgrammingLanguage.ReasonML,
+        Library.ReasonReact,
+        Library.Webpack,
       ],
       start: '',
       end: '',
@@ -191,13 +180,12 @@ const cv: CVData = {
       name: 'Ruang Guru - Video Review Dashboard (Internal)',
       highlights: [],
       stacks: [
-        'HTML',
-        'CSS',
-        'JavaScript',
-        'ReasonML',
-        'ReactJS',
-        'ReasonReact',
-        'Webpack',
+        ProgrammingLanguage.HTML,
+        ProgrammingLanguage.CSS,
+        ProgrammingLanguage.JS,
+        ProgrammingLanguage.ReasonML,
+        Library.ReasonReact,
+        Library.Webpack,
       ],
       start: '',
       end: '',
@@ -207,14 +195,13 @@ const cv: CVData = {
       name: 'Ruang Belajar - Desktop App',
       highlights: [],
       stacks: [
-        'HTML',
-        'CSS',
-        'JavaScript',
-        'ReasonML',
-        'ReactJS',
-        'ReasonReact',
-        'Electron',
-        'Webpack',
+        ProgrammingLanguage.HTML,
+        ProgrammingLanguage.CSS,
+        ProgrammingLanguage.JS,
+        ProgrammingLanguage.ReasonML,
+        Library.ReasonReact,
+        Library.Webpack,
+        Library.Electron,
       ],
       start: '',
       end: '',
@@ -224,15 +211,15 @@ const cv: CVData = {
       name: 'Ruang Kerja - Content Management System (CMS)',
       highlights: [],
       stacks: [
-        'HTML',
-        'CSS',
-        'JavaScript',
-        'ReactJS',
-        'Redux',
-        'Rematch',
-        'DraftJS',
-        'styled-components',
-        'Webpack',
+        ProgrammingLanguage.HTML,
+        ProgrammingLanguage.CSS,
+        ProgrammingLanguage.JS,
+        Library.ReactJS,
+        Library.Redux,
+        Library.Rematch,
+        Library.DraftJS,
+        Library.StyledComponents,
+        Library.Webpack,
       ],
       start: '',
       end: '',
@@ -242,15 +229,15 @@ const cv: CVData = {
       name: 'Ruang Kerja - Company and User Progress Dashboard',
       highlights: [],
       stacks: [
-        'HTML',
-        'CSS',
-        'JavaScript',
-        'ReactJS',
-        'Redux',
-        'Rematch',
-        'styled-components',
-        'Chart.js',
-        'Webpack',
+        ProgrammingLanguage.HTML,
+        ProgrammingLanguage.CSS,
+        ProgrammingLanguage.JS,
+        Library.ReactJS,
+        Library.Redux,
+        Library.Rematch,
+        Library.StyledComponents,
+        Library.ReactChartJS2,
+        Library.Webpack,
       ],
       start: '',
       end: '',
@@ -260,13 +247,13 @@ const cv: CVData = {
       name: 'Ruang Kerja - Mobile App',
       highlights: [],
       stacks: [
-        'HTML',
-        'CSS',
-        'JavaScript',
-        'ReactNative',
-        'Redux',
-        'Rematch',
-        'Webpack',
+        ProgrammingLanguage.HTML,
+        ProgrammingLanguage.CSS,
+        ProgrammingLanguage.JS,
+        Library.ReactNative,
+        Library.Redux,
+        Library.Rematch,
+        Library.Webpack,
       ],
       start: '',
       end: '',
@@ -276,14 +263,14 @@ const cv: CVData = {
       name: 'Ruang Uji - Revamp',
       highlights: [],
       stacks: [
-        'HTML',
-        'CSS',
-        'JavaScript',
-        'ReactJS',
-        'Redux',
-        'Redux Saga',
-        'styled-components',
-        'Webpack',
+        ProgrammingLanguage.HTML,
+        ProgrammingLanguage.CSS,
+        ProgrammingLanguage.JS,
+        Library.ReactJS,
+        Library.Redux,
+        Library.ReduxSaga,
+        Library.StyledComponents,
+        Library.Webpack,
       ],
       start: '',
       end: '',
@@ -292,7 +279,12 @@ const cv: CVData = {
     {
       name: 'Ruang Guru Web - Landing Page',
       highlights: [],
-      stacks: ['HTML', 'CSS', 'SASS', 'ReactJS'],
+      stacks: [
+        ProgrammingLanguage.HTML,
+        ProgrammingLanguage.CSS,
+        Library.Sass,
+        Library.ReactJS,
+      ],
       start: '',
       end: '',
       link: '',
@@ -305,7 +297,13 @@ const cv: CVData = {
       highlights: [
         'In this project, an HTML and CSS files was given and I have to add interactivity to the existing form there. The resulting page is an interactive HTML form that has a simple form validity checker.',
       ],
-      stacks: ['HTML', 'CSS', 'Sass', 'JavaScript', 'jQuery', 'RegEx'],
+      stacks: [
+        ProgrammingLanguage.HTML,
+        ProgrammingLanguage.CSS,
+        Library.Sass,
+        ProgrammingLanguage.JS,
+        Library.JQuery,
+      ],
       start: '08/2017',
       end: '08/2017',
       link: 'https://github.com/wahidyankf/build-an-interactive-form',
@@ -315,7 +313,13 @@ const cv: CVData = {
       highlights: [
         'In this project, an HTML page and CSS files was given and I have to add a search and pagination feature using unobstrusive javascript. The resulting page is a page that display at most 10 student entries with an instant student search capabilities.',
       ],
-      stacks: ['HTML', 'CSS', 'Sass', 'JavaScript', 'jQuery'],
+      stacks: [
+        ProgrammingLanguage.HTML,
+        ProgrammingLanguage.CSS,
+        Library.Sass,
+        ProgrammingLanguage.JS,
+        Library.JQuery,
+      ],
       start: '08/2017',
       end: '08/2017',
       link: 'https://github.com/wahidyankf/pagination-and-content-filter',
@@ -325,7 +329,13 @@ const cv: CVData = {
       highlights: [
         'In this project, I created a page that will randomly generate quotes from a data object. This page will change its displayed quote when we click the button / pres any key / 30 seconds has passed. This page will also not displayed the same quote until all of quotes has been displayed.',
       ],
-      stacks: ['HTML', 'CSS', 'Sass', 'JavaScript', 'jQuery'],
+      stacks: [
+        ProgrammingLanguage.HTML,
+        ProgrammingLanguage.CSS,
+        Library.Sass,
+        ProgrammingLanguage.JS,
+        Library.JQuery,
+      ],
       start: '08/2017',
       end: '08/2017',
       link: 'https://github.com/wahidyankf/random_quote_generator',
@@ -335,7 +345,13 @@ const cv: CVData = {
       highlights: [
         "In this project, I created a fully featured interactive video player using MediaElement.js. The features of this video player includes: play/pause button, current time and total duration, playing progress slider, file buffer's progress, skip backward button, playback speed chooser, captions chooser, video quality chooser, volume level slider, and go to fullscreen button.",
       ],
-      stacks: ['HTML', 'CSS', 'Sass', 'JavaScript', 'MediaElement.js'],
+      stacks: [
+        ProgrammingLanguage.HTML,
+        ProgrammingLanguage.CSS,
+        Library.Sass,
+        ProgrammingLanguage.JS,
+        Library.MediaElementJS,
+      ],
       start: '07/2017',
       end: '07/2017',
       link: 'https://github.com/wahidyankf/interactive-video-player',
@@ -345,7 +361,14 @@ const cv: CVData = {
       highlights: [
         "An unoptimized website was given to me, and I have to optimize it by reducing its http request and body size by any means necessary. In this project, I successfully reduced the website's http requests count down to 22 requests (from 44), and also reduced its body size by more than 10 times (from 12-ish MB to < 1 MB) while still maintaining the apparent quality of its images.",
       ],
-      stacks: ['HTML', 'CSS', 'Sass', 'gulp.js', 'phantomas', 'imagemin'],
+      stacks: [
+        ProgrammingLanguage.HTML,
+        ProgrammingLanguage.CSS,
+        Library.Sass,
+        Library.GulpJS,
+        Library.Phantomas,
+        Library.Imagemin,
+      ],
       start: '07/2017',
       end: '07/2017',
       link:
@@ -356,7 +379,7 @@ const cv: CVData = {
       highlights: [
         "In this project, I refactored a website that suffers from various accessibility flaws, resulting a website that is accessible and can pass an accessibility validator(s)'s automated checks and a human's check. This project was tested using HTML Accessibility Checker, Fangs Screen Reader Emulator and Google Chrome's Accessibility Developer Tools.",
       ],
-      stacks: ['HTML', 'CSS', 'Sass'],
+      stacks: [ProgrammingLanguage.HTML, ProgrammingLanguage.CSS, Library.Sass],
       start: '07/2017',
       end: '07/2017',
       link:
@@ -367,7 +390,12 @@ const cv: CVData = {
       highlights: [
         'In this project, I created a portfolio website for my personal used. This website contains the complete list of my curriculum vitae.',
       ],
-      stacks: ['HTML', 'CSS', 'Sass', 'JavaScript', 'jQuery'],
+      stacks: [
+        ProgrammingLanguage.HTML,
+        ProgrammingLanguage.CSS,
+        Library.Sass,
+        ProgrammingLanguage.JS,
+      ],
       start: '07/2017',
       end: '07/2017',
       link: 'https://wahidyankf.github.io/',
@@ -377,7 +405,7 @@ const cv: CVData = {
       highlights: [
         'In this project, a functioning website was given to me, and I have to update/replace its existing non svg images with svg images, resulting more beautiful and sharper images on the website.',
       ],
-      stacks: ['HTML', 'CSS', 'Sass'],
+      stacks: [ProgrammingLanguage.HTML, ProgrammingLanguage.CSS, Library.Sass],
       start: '06/2017',
       end: '06/2017',
       link:
@@ -389,14 +417,14 @@ const cv: CVData = {
         "In this project, I created a simple website application that tracks the islamic praying time and section of the day's markers, and warns me whenever I am about to burnout (according to the scientific theory of productivity). This app allow me to always work at my optimal speed.",
       ],
       stacks: [
-        'HTML',
-        'CSS',
-        'Sass',
-        'JavaScript',
-        'jQuery',
-        'Foundation for Sites',
-        'moment.js',
-        'praytime.js',
+        ProgrammingLanguage.HTML,
+        ProgrammingLanguage.CSS,
+        Library.Sass,
+        ProgrammingLanguage.JS,
+        Library.JQuery,
+        Library.FoundationForSites,
+        Library.MomentJS,
+        Library.PraytimeJS,
       ],
       start: '04/2017',
       end: '04/2017',
@@ -407,7 +435,13 @@ const cv: CVData = {
       highlights: [
         "In this project, an interactive online gallery's design mockup was given to me, and I have to replicate it using only jQuery as a non vanilla js element. This project includes a simple lightbox (with navigation) and search/filter function.",
       ],
-      stacks: ['HMTL', 'CSS', 'Sass', 'JavaScript', 'jQuery'],
+      stacks: [
+        ProgrammingLanguage.HTML,
+        ProgrammingLanguage.CSS,
+        Library.Sass,
+        ProgrammingLanguage.JS,
+        Library.JQuery,
+      ],
       start: '04/2017',
       end: '04/2017',
       link:
@@ -418,7 +452,7 @@ const cv: CVData = {
       highlights: [
         "In this project, a responsive online form's design mockup was given to me, and I have to replicate it using vanilla HTML and CSS.",
       ],
-      stacks: ['HTML', 'CSS', 'Sass'],
+      stacks: [ProgrammingLanguage.HTML, ProgrammingLanguage.CSS, Library.Sass],
       start: '04/2017',
       end: '04/2017',
       link:
@@ -429,7 +463,7 @@ const cv: CVData = {
       highlights: [
         'In this project, a responsive web portfolio mockup was given to me, and I have to replicate it using HTML and CSS.',
       ],
-      stacks: ['HTML', 'CSS', 'Sass'],
+      stacks: [ProgrammingLanguage.HTML, ProgrammingLanguage.CSS, Library.Sass],
       start: '04/2017',
       end: '04/2017',
       link:
@@ -440,7 +474,7 @@ const cv: CVData = {
       highlights: [
         'In this project, I modified an existing personal website to conform to my personal data.',
       ],
-      stacks: ['HTML', 'CSS'],
+      stacks: [ProgrammingLanguage.HTML, ProgrammingLanguage.CSS],
       start: '04/2017',
       end: '04/2017',
       link:
@@ -451,7 +485,11 @@ const cv: CVData = {
       highlights: [
         'In this project, I created a simple responsive portfolio site using foundation for sites.',
       ],
-      stacks: ['HTML', 'CSS', 'Foundation for Sites'],
+      stacks: [
+        ProgrammingLanguage.HTML,
+        ProgrammingLanguage.CSS,
+        Library.FoundationForSites,
+      ],
       start: '03/2017',
       end: '03/2017',
       link:
