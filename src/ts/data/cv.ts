@@ -47,6 +47,7 @@ interface CVData {
   workExperience: Array<WorkExperienceItem>;
   skills: Skills;
   formalEducation: Array<FormalEducation>;
+  professionalProjects: Array<Project>;
   personalProjects: Array<Project>;
 }
 
@@ -168,6 +169,8 @@ const cv: CVData = {
         'GPA: 3.0/4.0. Bachelor thesis: Design and implementation of SMS One Time Password (SMS-OTP) Based Web Authentication System. Supervisor: Ir. Budi Rahardjo M.Sc., Ph.D.',
     },
   ],
+
+  professionalProjects: [],
 
   personalProjects: [
     {
