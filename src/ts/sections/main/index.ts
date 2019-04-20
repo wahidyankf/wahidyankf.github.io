@@ -8,9 +8,9 @@ import formalEducation from './formalEducation';
 const main = `
 ${summary}
 ${workExperience}
+${professionalProjects}
 ${skills}
 ${formalEducation}
-${professionalProjects}
 ${personalProjects}
 `;
 
