@@ -23,7 +23,7 @@ const toolsAsHTML = tools.reduce((acccumulator, currentSkill, index) => {
 }, '');
 
 const languagesAsHTML = languages.reduce((acccumulator, currentLanguage) => {
-  return `${acccumulator}<p>${currentLanguage.name}: ${
+  return `${acccumulator}<p><code>${currentLanguage.name}</code>: ${
     currentLanguage.proficiency
   }${currentLanguage.info === '' ? '.' : ','} ${currentLanguage.info}${
     currentLanguage.info === '' ? '' : '.'
