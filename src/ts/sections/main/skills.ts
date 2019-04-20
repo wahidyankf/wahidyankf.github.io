@@ -1,8 +1,9 @@
 import cvData from '../../data/cv';
 
 const {skills: skillsData} = cvData;
+const {programmingLanguages, tools, languages} = skillsData;
 
-const skillsProgLang = skillsData.programmingLanguage.reduce(
+const programmingLanguagesAsHTML = programmingLanguages.reduce(
   (acccumulator, currentValue) => {
     return `${acccumulator}<p>${
       currentValue.level
@@ -11,25 +12,19 @@ const skillsProgLang = skillsData.programmingLanguage.reduce(
   ''
 );
 
-const skillsTools = skillsData.toolsAndLibraries.reduce(
-  (acccumulator, currentSkill, index) => {
-    return `${acccumulator}${currentSkill}${
-      index === skillsData.toolsAndLibraries.length - 1 ? '.' : ', '
-    }`;
-  },
-  ''
-);
+const toolsAsHTML = tools.reduce((acccumulator, currentSkill, index) => {
+  return `${acccumulator}${currentSkill}${
+    index === tools.length - 1 ? '.' : ', '
+  }`;
+}, '');
 
-const skillsLanguage = skillsData.language.reduce(
-  (acccumulator, currentLanguage) => {
-    return `${acccumulator}<p>${currentLanguage.name}: ${
-      currentLanguage.proficiency
-    }${currentLanguage.info === '' ? '.' : ','} ${currentLanguage.info}${
-      currentLanguage.info === '' ? '' : '.'
-    }</p>`;
-  },
-  ''
-);
+const languagesAsHTML = languages.reduce((acccumulator, currentLanguage) => {
+  return `${acccumulator}<p>${currentLanguage.name}: ${
+    currentLanguage.proficiency
+  }${currentLanguage.info === '' ? '.' : ','} ${currentLanguage.info}${
+    currentLanguage.info === '' ? '' : '.'
+  }</p>`;
+}, '');
 
 const skills = `
 <section class="portfolio-section skills">
@@ -37,15 +32,15 @@ const skills = `
   <div class="skill-container">
     <div class="skill-category skill-prog-lang">
       <h3 class="list-title">Programming Languages</h3>
-      ${skillsProgLang}
+      ${programmingLanguagesAsHTML}
     </div>
     <div class="skill-category skill-tools">
       <h3 class="list-title">Tools and Libraries</h3>
-      <p>${skillsTools}</p>
+      <p>${toolsAsHTML}</p>
     </div>
     <div class="skill-category skill-lang">
       <h3 class="list-title">Languages (<a href="https://en.wikipedia.org/wiki/Common_European_Framework_of_Reference_for_Languages">CEFR</a>)</h3>
-      ${skillsLanguage}
+      ${languagesAsHTML}
     </div>
     <div class="skill-category skill-empty">
     </div>

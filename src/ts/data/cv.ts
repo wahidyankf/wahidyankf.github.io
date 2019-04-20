@@ -18,9 +18,9 @@ interface FormalEducation {
 }
 
 interface Skills {
-  programmingLanguage: Array<{level: string; languages: Array<string>}>;
-  language: Array<{name: string; proficiency: string; info: string}>;
-  toolsAndLibraries: Array<string>;
+  programmingLanguages: Array<{level: string; languages: Array<string>}>;
+  languages: Array<{name: string; proficiency: string; info: string}>;
+  tools: Array<string>;
 }
 
 interface WorkExperienceItem {
@@ -42,7 +42,7 @@ interface CVData {
     location: string;
     socialHub: {website: string; github: string; linkedin: string};
   };
-  workExperience: Array<WorkExperienceItem>;
+  workExperiences: Array<WorkExperienceItem>;
   skills: Skills;
   formalEducation: Array<FormalEducation>;
   personalProjects: Array<Project>;
@@ -63,7 +63,7 @@ const cv: CVData = {
     },
   },
 
-  workExperience: [
+  workExperiences: [
     {
       jobTitle: 'Front End Engineer',
       institution: 'Ruang Guru',
@@ -97,7 +97,7 @@ const cv: CVData = {
   ],
 
   skills: {
-    programmingLanguage: [
+    programmingLanguages: [
       {
         level: 'Production',
         languages: ['HTML-CSS', 'JavaScript', 'ReasonML'],
@@ -111,7 +111,7 @@ const cv: CVData = {
         languages: ['Python', 'OCaml'],
       },
     ],
-    language: [
+    languages: [
       {
         name: 'Bahasa',
         proficiency: 'Native',
@@ -128,7 +128,7 @@ const cv: CVData = {
         info: 'Goethe ZD: 228/300',
       },
     ],
-    toolsAndLibraries: [
+    tools: [
       'React',
       'ReasonReact',
       'React Native',
