@@ -56,7 +56,7 @@ const cv: CVData = {
     name: 'Wahidyan Kresna Fridayoka',
     shortDesc: 'Front-End / Software Engineer',
     email: 'wahidyankf@gmail.com',
-    summary: `Software engineer with diverse front-end web development's portfolio. Love to code in ReasonML. Comfortable working with JavaScript, React and React Native stacks but eager to learn another programming language and tools. Polyglot that speaks 3+ languages and has more than 3 years experience of living overseas.`,
+    summary: `Software engineer with diverse front-end web development's portfolio. Love to code in statically-typed functional programming languages. Comfortable working with JavaScript and ReactJS' stacks but is eager to learn another programming language and tools. Polyglot that speaks 3+ languages and has more than 3 years experience of living overseas.`,
     location:
       '<a href="https://goo.gl/maps/dpbvmixZWTs">Jakarta, Indonesia</a>',
     socialHub: {
