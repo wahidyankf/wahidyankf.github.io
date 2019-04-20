@@ -1,6 +1,6 @@
 interface Project {
   name: string;
-  description: string;
+  highlights: string[];
   stacks: Array<string>;
   start: string;
   end: string;
@@ -28,7 +28,7 @@ interface WorkExperienceItem {
   institution: string;
   institutionLink: string;
   location: string;
-  description: string[];
+  highlights: string[];
   start: string;
   end: string;
 }
@@ -72,7 +72,7 @@ const cv: CVData = {
       institution: 'Ruang Guru',
       institutionLink: 'https://ruangguru.com/',
       location: 'Jakarta, Indonesia',
-      description: [
+      highlights: [
         `Became one of the pioneering engineers in Ruang Belajar's Desktop app development using ReasonML, ReasonReact, and Electron. Heavily involved in its core and primitive UI components development (created more than 50% of it) and routing design, while also helping other engineers (mobile engineers) to pick up React and web technology in general. This project is a first joint project between Ruang Guru's Front-end and Mobile engineers. Opening up a new possibility of higher app development's velocity in Ruang Guru.`,
         `Involved in company new front-end engineer hiring process by assessing their computational thinking and React.js problem-solving skills through coding challenges. Resulting in a faster front-end engineering division's hiring process while making sure that only the high-quality one passed.`,
         `Developed Ruang Kerja CMS' question and question-set modules using React and Draft.js. Resulting in well functioning rich text editor implementation for question and question-set generation task in Ruang Kerja apps.`,
@@ -88,7 +88,7 @@ const cv: CVData = {
       institution: 'Ruang Guru',
       institutionLink: 'https://ruangguru.com/',
       location: 'Jakarta, Indonesia',
-      description: [
+      highlights: [
         `Led a team of front-end developers to develop and optimize Ruang Uji's react stacks and deployment. The result was more than 53.86% smaller initial download size (all assets included), 9.52% lower request number, 46.72% faster finish time, 137.10% faster DOMContentLoad time, and 62.49% faster load time than the original angular.js' stacks (2G connection, 280kbps/256kbps 800ms RTT), while also made subsequent pages load substantially faster by implementing on point code optimization, aggressive code splitting, and various images lazy loading.`,
         `Refactored  <a href="https://ruangguru.com">Ruang Guru</a>'s assets and code base using imgIX, AWS S3 bucket, and fastly CDN. The result was load time speed improvement of more than 300% (from more than 12 seconds average to under 3 seconds),  and the improvement of its  <a href="https://www.webpagetest.org/">Web Page Test</a> average score of B to all A's without sacrificing its assets' apparent quality.`,
         `Rewrote and migrated <a href="https://uji.ruangguru.com">Ruang Uji</a> from angular.js' stacks to react.js' stacks from scratch. Thus solved the old "exam event" problem (e.g. no automatic submission in the background, submission error handler, continue to last exam on reload, etc.) at <a href="https://uji.ruangguru.com">Ruang Uji</a> while also modernized its tech stacks and make it less error prone.`,
@@ -170,13 +170,95 @@ const cv: CVData = {
     },
   ],
 
-  professionalProjects: [],
+  professionalProjects: [
+    {
+      name: 'Ruang Belanja - Dashboard (Internal)',
+      highlights: [
+        'In this project, an HTML and CSS files was given and I have to add interactivity to the existing form there. The resulting page is an interactive HTML form that has a simple form validity checker.',
+      ],
+      stacks: ['HTML', 'CSS', 'Sass', 'JavaScript', 'jQuery', 'RegEx'],
+      start: '08/2017',
+      end: '08/2017',
+      link: 'https://github.com/wahidyankf/build-an-interactive-form',
+    },
+    {
+      name: 'Ruang Guru Internal - Video Review',
+      highlights: [
+        'In this project, an HTML and CSS files was given and I have to add interactivity to the existing form there. The resulting page is an interactive HTML form that has a simple form validity checker.',
+      ],
+      stacks: ['HTML', 'CSS', 'Sass', 'JavaScript', 'jQuery', 'RegEx'],
+      start: '08/2017',
+      end: '08/2017',
+      link: 'https://github.com/wahidyankf/build-an-interactive-form',
+    },
+    {
+      name: 'Ruang Belajar - Desktop App',
+      highlights: [
+        'In this project, an HTML and CSS files was given and I have to add interactivity to the existing form there. The resulting page is an interactive HTML form that has a simple form validity checker.',
+      ],
+      stacks: ['HTML', 'CSS', 'Sass', 'JavaScript', 'jQuery', 'RegEx'],
+      start: '08/2017',
+      end: '08/2017',
+      link: 'https://github.com/wahidyankf/build-an-interactive-form',
+    },
+    {
+      name: 'Ruang Kerja - Content Managemern System (CMS)',
+      highlights: [
+        'In this project, an HTML and CSS files was given and I have to add interactivity to the existing form there. The resulting page is an interactive HTML form that has a simple form validity checker.',
+      ],
+      stacks: ['HTML', 'CSS', 'Sass', 'JavaScript', 'jQuery', 'RegEx'],
+      start: '08/2017',
+      end: '08/2017',
+      link: 'https://github.com/wahidyankf/build-an-interactive-form',
+    },
+    {
+      name: 'Ruang Kerja - User Progress Dashboard',
+      highlights: [
+        'In this project, an HTML and CSS files was given and I have to add interactivity to the existing form there. The resulting page is an interactive HTML form that has a simple form validity checker.',
+      ],
+      stacks: ['HTML', 'CSS', 'Sass', 'JavaScript', 'jQuery', 'RegEx'],
+      start: '08/2017',
+      end: '08/2017',
+      link: 'https://github.com/wahidyankf/build-an-interactive-form',
+    },
+    {
+      name: 'Ruang Kerja - Mobile App',
+      highlights: [
+        'In this project, an HTML and CSS files was given and I have to add interactivity to the existing form there. The resulting page is an interactive HTML form that has a simple form validity checker.',
+      ],
+      stacks: ['HTML', 'CSS', 'Sass', 'JavaScript', 'jQuery', 'RegEx'],
+      start: '08/2017',
+      end: '08/2017',
+      link: 'https://github.com/wahidyankf/build-an-interactive-form',
+    },
+    {
+      name: 'Ruang Uji - Revamp',
+      highlights: [
+        'In this project, an HTML and CSS files was given and I have to add interactivity to the existing form there. The resulting page is an interactive HTML form that has a simple form validity checker.',
+      ],
+      stacks: ['HTML', 'CSS', 'Sass', 'JavaScript', 'jQuery', 'RegEx'],
+      start: '08/2017',
+      end: '08/2017',
+      link: 'https://github.com/wahidyankf/build-an-interactive-form',
+    },
+    {
+      name: 'Ruang Guru - Landing Page',
+      highlights: [
+        'In this project, an HTML and CSS files was given and I have to add interactivity to the existing form there. The resulting page is an interactive HTML form that has a simple form validity checker.',
+      ],
+      stacks: ['HTML', 'CSS', 'Sass', 'JavaScript', 'jQuery', 'RegEx'],
+      start: '08/2017',
+      end: '08/2017',
+      link: 'https://github.com/wahidyankf/build-an-interactive-form',
+    },
+  ],
 
   personalProjects: [
     {
       name: 'Build an Interactive Form',
-      description:
+      highlights: [
         'In this project, an HTML and CSS files was given and I have to add interactivity to the existing form there. The resulting page is an interactive HTML form that has a simple form validity checker.',
+      ],
       stacks: ['HTML', 'CSS', 'Sass', 'JavaScript', 'jQuery', 'RegEx'],
       start: '08/2017',
       end: '08/2017',
@@ -184,8 +266,9 @@ const cv: CVData = {
     },
     {
       name: 'Pagination and Content Filter',
-      description:
+      highlights: [
         'In this project, an HTML page and CSS files was given and I have to add a search and pagination feature using unobstrusive javascript. The resulting page is a page that display at most 10 student entries with an instant student search capabilities.',
+      ],
       stacks: ['HTML', 'CSS', 'Sass', 'JavaScript', 'jQuery'],
       start: '08/2017',
       end: '08/2017',
@@ -193,8 +276,9 @@ const cv: CVData = {
     },
     {
       name: 'Random Quote Generator',
-      description:
+      highlights: [
         'In this project, I created a page that will randomly generate quotes from a data object. This page will change its displayed quote when we click the button / pres any key / 30 seconds has passed. This page will also not displayed the same quote until all of quotes has been displayed.',
+      ],
       stacks: ['HTML', 'CSS', 'Sass', 'JavaScript', 'jQuery'],
       start: '08/2017',
       end: '08/2017',
@@ -202,8 +286,9 @@ const cv: CVData = {
     },
     {
       name: 'Interactive Video Player',
-      description:
+      highlights: [
         "In this project, I created a fully featured interactive video player using MediaElement.js. The features of this video player includes: play/pause button, current time and total duration, playing progress slider, file buffer's progress, skip backward button, playback speed chooser, captions chooser, video quality chooser, volume level slider, and go to fullscreen button.",
+      ],
       stacks: ['HTML', 'CSS', 'Sass', 'JavaScript', 'MediaElement.js'],
       start: '07/2017',
       end: '07/2017',
@@ -211,8 +296,9 @@ const cv: CVData = {
     },
     {
       name: 'Optimizing a Site for Performance',
-      description:
+      highlights: [
         "An unoptimized website was given to me, and I have to optimize it by reducing its http request and body size by any means necessary. In this project, I successfully reduced the website's http requests count down to 22 requests (from 44), and also reduced its body size by more than 10 times (from 12-ish MB to < 1 MB) while still maintaining the apparent quality of its images.",
+      ],
       stacks: ['HTML', 'CSS', 'Sass', 'gulp.js', 'phantomas', 'imagemin'],
       start: '07/2017',
       end: '07/2017',
@@ -221,8 +307,9 @@ const cv: CVData = {
     },
     {
       name: 'Accessibility Refactor',
-      description:
+      highlights: [
         "In this project, I refactored a website that suffers from various accessibility flaws, resulting a website that is accessible and can pass an accessibility validator(s)'s automated checks and a human's check. This project was tested using HTML Accessibility Checker, Fangs Screen Reader Emulator and Google Chrome's Accessibility Developer Tools.",
+      ],
       stacks: ['HTML', 'CSS', 'Sass'],
       start: '07/2017',
       end: '07/2017',
@@ -231,8 +318,9 @@ const cv: CVData = {
     },
     {
       name: 'wahidyankf.github.io',
-      description:
+      highlights: [
         'In this project, I created a portfolio website for my personal used. This website contains the complete list of my curriculum vitae.',
+      ],
       stacks: ['HTML', 'CSS', 'Sass', 'JavaScript', 'jQuery'],
       start: '07/2017',
       end: '07/2017',
@@ -240,8 +328,9 @@ const cv: CVData = {
     },
     {
       name: 'SVG Site Update',
-      description:
+      highlights: [
         'In this project, a functioning website was given to me, and I have to update/replace its existing non svg images with svg images, resulting more beautiful and sharper images on the website.',
+      ],
       stacks: ['HTML', 'CSS', 'Sass'],
       start: '06/2017',
       end: '06/2017',
@@ -250,8 +339,9 @@ const cv: CVData = {
     },
     {
       name: 'Moslem Productivity Tools',
-      description:
+      highlights: [
         "In this project, I created a simple website application that tracks the islamic praying time and section of the day's markers, and warns me whenever I am about to burnout (according to the scientific theory of productivity). This app allow me to always work at my optimal speed.",
+      ],
       stacks: [
         'HTML',
         'CSS',
@@ -268,8 +358,9 @@ const cv: CVData = {
     },
     {
       name: 'Interactive Photo Gallery',
-      description:
+      highlights: [
         "In this project, an interactive online gallery's design mockup was given to me, and I have to replicate it using only jQuery as a non vanilla js element. This project includes a simple lightbox (with navigation) and search/filter function.",
+      ],
       stacks: ['HMTL', 'CSS', 'Sass', 'JavaScript', 'jQuery'],
       start: '04/2017',
       end: '04/2017',
@@ -278,8 +369,9 @@ const cv: CVData = {
     },
     {
       name: 'Online Registration Form',
-      description:
+      highlights: [
         "In this project, a responsive online form's design mockup was given to me, and I have to replicate it using vanilla HTML and CSS.",
+      ],
       stacks: ['HTML', 'CSS', 'Sass'],
       start: '04/2017',
       end: '04/2017',
@@ -288,8 +380,9 @@ const cv: CVData = {
     },
     {
       name: 'Responsive Layout',
-      description:
+      highlights: [
         'In this project, a responsive web portfolio mockup was given to me, and I have to replicate it using HTML and CSS.',
+      ],
       stacks: ['HTML', 'CSS', 'Sass'],
       start: '04/2017',
       end: '04/2017',
@@ -298,8 +391,9 @@ const cv: CVData = {
     },
     {
       name: 'Personal Profile Page',
-      description:
+      highlights: [
         'In this project, I modified an existing personal website to conform to my personal data.',
+      ],
       stacks: ['HTML', 'CSS'],
       start: '04/2017',
       end: '04/2017',
@@ -308,8 +402,9 @@ const cv: CVData = {
     },
     {
       name: 'Build a Portfolio Site',
-      description:
+      highlights: [
         'In this project, I created a simple responsive portfolio site using foundation for sites.',
+      ],
       stacks: ['HTML', 'CSS', 'Foundation for Sites'],
       start: '03/2017',
       end: '03/2017',

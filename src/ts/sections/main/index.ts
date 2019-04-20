@@ -12,7 +12,6 @@ ${skills}
 ${formalEducation}
 ${personalProjects}
 `;
-
 // ${professionalProjects}
 
 export default main;

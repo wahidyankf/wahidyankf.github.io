@@ -5,9 +5,9 @@ const {workExperience: workExperienceData} = cvData;
 
 let workExperienceItem = '';
 for (let i = 0; i < workExperienceData.length; i++) {
-  let workDescription = workExperienceData[i].description.reduce(
-    (descItem, descTotal) => {
-      return descItem + `<li>${descTotal}</li>`;
+  let workDescription = workExperienceData[i].highlights.reduce(
+    (acc, description) => {
+      return acc + `<li>${description}</li>`;
     },
     ''
   );

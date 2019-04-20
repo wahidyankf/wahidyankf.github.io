@@ -4,7 +4,7 @@ import {dateShown} from '../../utils/datetime';
 const {personalProjects: personalProjectsData} = cvData;
 
 const projects = personalProjectsData.reduce((acc, project) => {
-  const {stacks, link, name, start, end, description} = project;
+  const {stacks, link, name, start, end, highlights} = project;
 
   const stacksAsString = stacks.reduce((acc, skillSet, index) => {
     const isLastItem = index == stacks.length - 1;
@@ -12,6 +12,11 @@ const projects = personalProjectsData.reduce((acc, project) => {
 
     return (acc += skillSet + suffix);
   }, '');
+
+  const hightlightsAsHTML = highlights.reduce(
+    (acc, description) => acc + `<li>${description}</li>`,
+    ''
+  );
 
   return (acc += `
   <ul>
@@ -21,7 +26,8 @@ const projects = personalProjectsData.reduce((acc, project) => {
   )}</span></li>
   </ul>
   <ul class="list-bullet-point">
-    <li>${description} Stack used: ${stacksAsString}</li>
+    ${hightlightsAsHTML}
+    <li>Stack used: ${stacksAsString}</li>
   </ul>
   `);
 }, '');
