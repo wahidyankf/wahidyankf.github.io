@@ -10,7 +10,7 @@ const projects = personalProjectsData.reduce((acc, project) => {
     const isLastItem = index == stacks.length - 1;
     const suffix = isLastItem ? '.' : ', ';
 
-    return (acc += skillSet + suffix);
+    return (acc += `<code>${skillSet}</code>` + suffix);
   }, '');
 
   const hightlightsAsHTML = highlights.reduce(
@@ -20,14 +20,16 @@ const projects = personalProjectsData.reduce((acc, project) => {
 
   return (acc += `
   <ul>
-    <li><span class="list-title"><a href="${link}">${name}</a></span> <span class="list-subtitle"> - ${dateShown(
-    start,
-    end
-  )}</span></li>
+    <li>
+      <span class="list-title">
+        <a href="${link}">${name}</a>
+      </span>
+      <span class="list-subtitle"> - ${dateShown(start, end)}</span>
+    </li>
   </ul>
   <ul class="list-bullet-point">
     ${hightlightsAsHTML}
-    <li>Stack used: ${stacksAsString}</li>
+    <li>Technology stack: ${stacksAsString}</li>
   </ul>
   `);
 }, '');
