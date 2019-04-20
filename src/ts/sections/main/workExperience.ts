@@ -1,7 +1,7 @@
 import cvData from '../../data/cv';
 import {dateShown} from '../../utils/datetime';
 
-const {workExperiences: workExperienceData} = cvData;
+const {workExperience: workExperienceData} = cvData;
 
 let workExperienceItem = '';
 for (let i = 0; i < workExperienceData.length; i++) {

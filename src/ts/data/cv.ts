@@ -33,16 +33,18 @@ interface WorkExperienceItem {
   end: string;
 }
 
+interface PersonalInfo {
+  name: string;
+  shortDesc: string;
+  email: string;
+  summary: string;
+  location: string;
+  socialHub: {website: string; github: string; linkedin: string};
+}
+
 interface CVData {
-  personalInfo: {
-    name: string;
-    shortDesc: string;
-    email: string;
-    summary: string;
-    location: string;
-    socialHub: {website: string; github: string; linkedin: string};
-  };
-  workExperiences: Array<WorkExperienceItem>;
+  personalInfo: PersonalInfo;
+  workExperience: Array<WorkExperienceItem>;
   skills: Skills;
   formalEducation: Array<FormalEducation>;
   personalProjects: Array<Project>;
@@ -63,7 +65,7 @@ const cv: CVData = {
     },
   },
 
-  workExperiences: [
+  workExperience: [
     {
       jobTitle: 'Front End Engineer',
       institution: 'Ruang Guru',
