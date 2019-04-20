@@ -5,15 +5,19 @@ const {programmingLanguages, tools, languages} = skillsData;
 
 const programmingLanguagesAsHTML = programmingLanguages.reduce(
   (acccumulator, currentValue) => {
+    const languagesAsListOfHTML = currentValue.languages.map(
+      language => `<code>${language}</code>`
+    );
+
     return `${acccumulator}<p>${
       currentValue.level
-    }: ${currentValue.languages.join(', ')}.</p>`;
+    }: ${languagesAsListOfHTML.join(', ')}.</p>`;
   },
   ''
 );
 
 const toolsAsHTML = tools.reduce((acccumulator, currentSkill, index) => {
-  return `${acccumulator}${currentSkill}${
+  return `${acccumulator}<code>${currentSkill}</code>${
     index === tools.length - 1 ? '.' : ', '
   }`;
 }, '');
