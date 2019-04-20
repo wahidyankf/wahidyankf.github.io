@@ -1,4 +1,4 @@
-interface Project {
+export interface Project {
   name: string;
   highlights: string[];
   stacks: Array<string>;

@@ -1,5 +1,5 @@
 import cvData from '../../data/cv';
-import {dateShown} from '../../utils/datetime';
+import {showTimeDuration} from '../../utils/datetime';
 
 const {formalEducation: formalEducationData} = cvData;
 
@@ -12,7 +12,7 @@ for (let i = 0; i < formalEducationData.length; i++) {
     formalEducationData[i].major
   }</span><span class="list-subtitle"> - ${
     formalEducationData[i].institution
-  } - ${formalEducationData[i].location} - ${dateShown(
+  } - ${formalEducationData[i].location} - ${showTimeDuration(
     formalEducationData[i].start,
     formalEducationData[i].end
   )}</span></li>
