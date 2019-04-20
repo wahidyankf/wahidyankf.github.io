@@ -22,6 +22,7 @@ export enum Library {
   MediaElementJS = 'MediaElement.js',
   MomentJS = 'moment.js',
   NPM = 'npm',
+  ParcelJS = 'Parcel',
   Phantomas = 'phantomas',
   PraytimeJS = 'praytime.js',
   ReactJS = 'React.js',
