@@ -8,7 +8,7 @@ export const formatTimeDuration = (timeDuration: number): string => {
 
   let formattedTimeDuration;
   if (numberOfMonths > 12 && numberOfRemainderMonths > 0) {
-    formattedTimeDuration = `${numberOfYears} Year${yearEnding}, ${numberOfRemainderMonths} Month${yearEnding}`;
+    formattedTimeDuration = `${numberOfYears} Year${yearEnding}, ${numberOfRemainderMonths} Month${monthEnding}`;
   } else if (numberOfMonths > 12 && numberOfRemainderMonths === 0) {
     formattedTimeDuration = `${numberOfYears} Year${yearEnding}`;
   } else {
