@@ -12,6 +12,7 @@ const workExperienceAsHTML = workExperienceData.reduce(
       institution,
       start,
       end,
+      location,
     } = experienceItem;
 
     const workHighlightsAsHTML = highlights.reduce((acc, description) => {
