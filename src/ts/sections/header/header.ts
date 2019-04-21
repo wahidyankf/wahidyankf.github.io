@@ -8,18 +8,22 @@ const header = `
   <span class="job-name">${personalInfoData.shortDesc}</span>
 </div>
 <div class="contact">
-  <span class=contact-detail><i class="fa fa-github"></i> <a href="${
-    personalInfoData.socialHub.github
-  }">wahidyankf</a></span> 
-  <span class=contact-detail><i class="fa fa-linkedin"></i> <a href="${
-    personalInfoData.socialHub.linkedin
-  }">wahidyankf</a></span>
-  <span class=contact-detail><i class="fa fa-envelope"></i> <a href="mailto:${
-    personalInfoData.email
-  }">wahidyankf@gmail.com</a></span>
-  <span class=contact-detail><i class="fa fa-map-marker"></i> ${
-    personalInfoData.location
-  }</span>
+  <span class=contact-detail>
+    <span class=contact-detail-category>GitHub</span>: 
+    <a href="${personalInfoData.socialHub.github}">wahidyankf</a>
+  </span> 
+  <span class=contact-detail>
+    <span class=contact-detail-category>LinkedIn</span>: 
+    <a href="${personalInfoData.socialHub.linkedin}">wahidyankf</a>
+  </span>
+  <span class=contact-detail>
+    <span class=contact-detail-category>Email</span>: 
+    <a href="mailto:${personalInfoData.email}">wahidyankf@gmail.com</a>
+  </span>
+  <span class=contact-detail>
+    <span class=contact-detail-category>Location</span>: 
+    ${personalInfoData.location}
+  </span>
 </div>
 `;
 
