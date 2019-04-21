@@ -49,3 +49,10 @@ export enum Tool {
   LaTeX = 'LaTeX',
   Vim = 'vim',
 }
+
+export enum ProjectType {
+  Web = 'Web',
+  Mobile = 'Mobile',
+  Infrastructure = 'Infrastructure',
+  Desktop = 'Desktop',
+}

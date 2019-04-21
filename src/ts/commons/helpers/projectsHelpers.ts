@@ -5,6 +5,7 @@ export const createProjectsHTML = (projects: Project[]): string => {
   return projects.reduce((acc, project) => {
     const {
       stacks,
+      type: projectType,
       link,
       name,
       start,
@@ -26,7 +27,8 @@ export const createProjectsHTML = (projects: Project[]): string => {
     );
 
     const projectNameAsHTML =
-      link.length === 0 ? name : `<a href="${link}">${name}</a>`;
+      (link.length === 0 ? `${name}` : `<a href="${link}">${name}</a>`) +
+      ` (${projectType})`;
 
     const timeDurationAsHTML =
       start.length === 0 ? '' : `- ${showTimeDuration(start, end)}`;

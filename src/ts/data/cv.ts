@@ -1,10 +1,16 @@
 import {createStringsOfEnums} from '../commons/helpers/enumsHelpers';
-import {Library, Tool, ProgrammingLanguage} from '../commons/sharedEnums';
+import {
+  Library,
+  Tool,
+  ProgrammingLanguage,
+  ProjectType,
+} from '../commons/sharedEnums';
 
 const tools = [...createStringsOfEnums(Library), ...createStringsOfEnums(Tool)];
 
 export interface Project {
   name: string;
+  type: ProjectType;
   highlights: string[];
   context: string | null;
   stacks: Array<Library | ProgrammingLanguage>;
@@ -163,7 +169,8 @@ const cv: CVData = {
 
   professionalProjects: [
     {
-      name: 'Ruang Belanja - Admin Dashboard (Internal)',
+      name: 'Ruang Belanja - Admin Dashboard',
+      type: ProjectType.Web,
       context: null,
       highlights: [],
       stacks: [
@@ -183,7 +190,8 @@ const cv: CVData = {
       link: '',
     },
     {
-      name: 'Ruang Guru - Video Review Dashboard (Internal)',
+      name: 'Ruang Guru - Video Review Dashboard',
+      type: ProjectType.Web,
       context: null,
       highlights: [],
       stacks: [
@@ -203,7 +211,8 @@ const cv: CVData = {
       link: '',
     },
     {
-      name: 'Ruang Guru FrontEnd - ReasonML Web UIkit',
+      name: 'Ruang Guru FrontEnd - ReasonML Monorepo Integration',
+      type: ProjectType.Infrastructure,
       context: null,
       highlights: [],
       stacks: [
@@ -219,7 +228,8 @@ const cv: CVData = {
       link: '',
     },
     {
-      name: 'Ruang Belajar - Desktop App',
+      name: 'Ruang Belajar - App',
+      type: ProjectType.Desktop,
       context: null,
       highlights: [],
       stacks: [
@@ -240,7 +250,8 @@ const cv: CVData = {
       link: '',
     },
     {
-      name: 'Ruang Kerja - Content Management System (CMS)',
+      name: 'Ruang Kerja - Content Management System',
+      type: ProjectType.Web,
       context: null,
       highlights: [],
       stacks: [
@@ -260,7 +271,8 @@ const cv: CVData = {
       link: '',
     },
     {
-      name: 'Ruang Guru FrontEnd - Create Project CLI',
+      name: 'Ruang Guru FrontEnd - Create Web Project CLI',
+      type: ProjectType.Infrastructure,
       context: null,
       highlights: [],
       stacks: [
@@ -277,7 +289,8 @@ const cv: CVData = {
       link: '',
     },
     {
-      name: 'Ruang Kerja - Company and User Progress Dashboard',
+      name: 'Ruang Kerja - Company Dashboard',
+      type: ProjectType.Web,
       context: null,
       highlights: [],
       stacks: [
@@ -297,7 +310,8 @@ const cv: CVData = {
       link: '',
     },
     {
-      name: 'Ruang Kerja - Mobile App',
+      name: 'Ruang Kerja - App',
+      type: ProjectType.Mobile,
       context: null,
       highlights: [],
       stacks: [
@@ -316,6 +330,7 @@ const cv: CVData = {
     },
     {
       name: 'Ruang Uji - Revamp',
+      type: ProjectType.Web,
       context: null,
       highlights: [],
       stacks: [
@@ -334,6 +349,7 @@ const cv: CVData = {
     },
     {
       name: 'Ruang Guru Web - Landing Page',
+      type: ProjectType.Web,
       context: null,
       highlights: [],
       stacks: [
@@ -351,6 +367,7 @@ const cv: CVData = {
   personalProjects: [
     {
       name: 'Build an Interactive Form',
+      type: ProjectType.Web,
       context: null,
       highlights: [
         'In this project, an HTML and CSS files was given and I have to add interactivity to the existing form there. The resulting page is an interactive HTML form that has a simple form validity checker.',
@@ -368,6 +385,7 @@ const cv: CVData = {
     },
     {
       name: 'Pagination and Content Filter',
+      type: ProjectType.Web,
       context: null,
       highlights: [
         'In this project, an HTML page and CSS files was given and I have to add a search and pagination feature using unobstrusive javascript. The resulting page is a page that display at most 10 student entries with an instant student search capabilities.',
@@ -385,6 +403,7 @@ const cv: CVData = {
     },
     {
       name: 'Random Quote Generator',
+      type: ProjectType.Web,
       context: null,
       highlights: [
         'In this project, I created a page that will randomly generate quotes from a data object. This page will change its displayed quote when we click the button / pres any key / 30 seconds has passed. This page will also not displayed the same quote until all of quotes has been displayed.',
@@ -402,6 +421,7 @@ const cv: CVData = {
     },
     {
       name: 'Interactive Video Player',
+      type: ProjectType.Web,
       context: null,
       highlights: [
         "In this project, I created a fully featured interactive video player using MediaElement.js. The features of this video player includes: play/pause button, current time and total duration, playing progress slider, file buffer's progress, skip backward button, playback speed chooser, captions chooser, video quality chooser, volume level slider, and go to fullscreen button.",
@@ -419,6 +439,7 @@ const cv: CVData = {
     },
     {
       name: 'Optimizing a Site for Performance',
+      type: ProjectType.Web,
       context: null,
       highlights: [
         "An unoptimized website was given to me, and I have to optimize it by reducing its http request and body size by any means necessary. In this project, I successfully reduced the website's http requests count down to 22 requests (from 44), and also reduced its body size by more than 10 times (from 12-ish MB to < 1 MB) while still maintaining the apparent quality of its images.",
@@ -438,6 +459,7 @@ const cv: CVData = {
     },
     {
       name: 'Accessibility Refactor',
+      type: ProjectType.Web,
       context: null,
       highlights: [
         "In this project, I refactored a website that suffers from various accessibility flaws, resulting a website that is accessible and can pass an accessibility validator(s)'s automated checks and a human's check. This project was tested using HTML Accessibility Checker, Fangs Screen Reader Emulator and Google Chrome's Accessibility Developer Tools.",
@@ -450,6 +472,7 @@ const cv: CVData = {
     },
     {
       name: 'wahidyankf.github.io',
+      type: ProjectType.Web,
       context: null,
       highlights: [
         'In this project, I created a portfolio website for my personal used. This website contains the complete list of my curriculum vitae.',
@@ -466,6 +489,7 @@ const cv: CVData = {
     },
     {
       name: 'SVG Site Update',
+      type: ProjectType.Web,
       context: null,
       highlights: [
         'In this project, a functioning website was given to me, and I have to update/replace its existing non svg images with svg images, resulting more beautiful and sharper images on the website.',
@@ -478,6 +502,7 @@ const cv: CVData = {
     },
     {
       name: 'Moslem Productivity Tools',
+      type: ProjectType.Web,
       context: null,
       highlights: [
         "In this project, I created a simple website application that tracks the islamic praying time and section of the day's markers, and warns me whenever I am about to burnout (according to the scientific theory of productivity). This app allow me to always work at my optimal speed.",
@@ -498,6 +523,7 @@ const cv: CVData = {
     },
     {
       name: 'Interactive Photo Gallery',
+      type: ProjectType.Web,
       context: null,
       highlights: [
         "In this project, an interactive online gallery's design mockup was given to me, and I have to replicate it using only jQuery as a non vanilla js element. This project includes a simple lightbox (with navigation) and search/filter function.",
@@ -516,6 +542,7 @@ const cv: CVData = {
     },
     {
       name: 'Online Registration Form',
+      type: ProjectType.Web,
       context: null,
       highlights: [
         "In this project, a responsive online form's design mockup was given to me, and I have to replicate it using vanilla HTML and CSS.",
@@ -528,6 +555,7 @@ const cv: CVData = {
     },
     {
       name: 'Responsive Layout',
+      type: ProjectType.Web,
       context: null,
       highlights: [
         'In this project, a responsive web portfolio mockup was given to me, and I have to replicate it using HTML and CSS.',
@@ -540,6 +568,7 @@ const cv: CVData = {
     },
     {
       name: 'Personal Profile Page',
+      type: ProjectType.Web,
       context: null,
       highlights: [
         'In this project, I modified an existing personal website to conform to my personal data.',
@@ -552,6 +581,7 @@ const cv: CVData = {
     },
     {
       name: 'Build a Portfolio Site',
+      type: ProjectType.Web,
       context: null,
       highlights: [
         'In this project, I created a simple responsive portfolio site using foundation for sites.',
