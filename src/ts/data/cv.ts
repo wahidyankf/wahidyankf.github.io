@@ -1,5 +1,5 @@
-import {createStringsOfEnums} from '../commons/helpers/enums';
-import {Library, Tool, ProgrammingLanguage} from '../commons/types/sharedTypes';
+import {createStringsOfEnums} from '../commons/helpers/enumsHelpers';
+import {Library, Tool, ProgrammingLanguage} from '../commons/enums';
 
 const tools = [...createStringsOfEnums(Library), ...createStringsOfEnums(Tool)];
 
