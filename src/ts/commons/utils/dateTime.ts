@@ -48,7 +48,7 @@ export const showTimeDuration = (
           timeDuration
         )}`;
 
-  if (start === end) {
+  if (start === end || end.length === 0) {
     return start;
   }
 
