@@ -9,6 +9,9 @@ export enum ProgrammingLanguage {
 }
 
 export enum Library {
+  BsCSS = 'bs-css',
+  BsFetch = 'bs-fetch',
+  BsJSON = 'bs-json',
   BabelJS = 'Babel',
   CSSInJS = 'CSS in JS',
   DraftJS = 'DraftJS',
@@ -28,7 +31,8 @@ export enum Library {
   ReactJS = 'React.js',
   ReactNative = 'React Native',
   ReasonReact = 'ReasonReact',
-  ReactChartJS2 = 'React Chart.js 2',
+  ReactChartJS2 = 'ReactChart.js 2',
+  Reformality = 're-formality',
   Redux = 'Redux',
   ReduxSaga = 'Redux Saga',
   Rematch = 'Rematch',
