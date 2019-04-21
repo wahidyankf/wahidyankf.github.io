@@ -260,7 +260,7 @@ const cv: CVData = {
       link: '',
     },
     {
-      name: 'Ruang Guru FronEnd - Create Project CLI',
+      name: 'Ruang Guru FrontEnd - Create Project CLI',
       context: null,
       highlights: [],
       stacks: [
