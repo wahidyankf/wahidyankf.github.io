@@ -48,7 +48,7 @@ interface IWorkExperienceItem {
   end: string;
 }
 
-interface PersonalInfo {
+interface IPersonalInfo {
   name: string;
   shortDesc: string;
   email: string;
@@ -57,8 +57,8 @@ interface PersonalInfo {
   socialHub: {website: string; github: string; linkedin: string};
 }
 
-interface CVData {
-  personalInfo: PersonalInfo;
+interface ICVData {
+  personalInfo: IPersonalInfo;
   workExperience: Array<IWorkExperienceItem>;
   skills: ISkills;
   formalEducation: Array<IFormalEducation>;
@@ -66,7 +66,7 @@ interface CVData {
   personalProjects: Array<IProject>;
 }
 
-const cv: CVData = {
+const cv: ICVData = {
   personalInfo: {
     name: 'Wahidyan Kresna Fridayoka',
     shortDesc: 'Front-End / Software Engineer',
@@ -169,6 +169,27 @@ const cv: CVData = {
 
   professionalProjects: [
     {
+      name: 'Ruang Belajar Forum - Admin Dashboard',
+      type: ProjectType.Web,
+      context: null,
+      highlights: [],
+      stacks: [
+        ProgrammingLanguage.HTML,
+        ProgrammingLanguage.CSS,
+        ProgrammingLanguage.JS,
+        ProgrammingLanguage.ReasonML,
+        Library.ReasonReact,
+        Library.Webpack,
+        Library.Reformality,
+        Library.BsCSS,
+        Library.BsFetch,
+        Library.BsJSON,
+      ],
+      start: '07/2019',
+      end: 'Now',
+      link: '',
+    },
+    {
       name: 'Ruang Belanja - Admin Dashboard',
       type: ProjectType.Web,
       context: null,
@@ -186,7 +207,7 @@ const cv: CVData = {
         Library.BsJSON,
       ],
       start: '04/2019',
-      end: 'Now',
+      end: '07/2019',
       link: '',
     },
     {
@@ -207,7 +228,7 @@ const cv: CVData = {
         Library.BsJSON,
       ],
       start: '03/2019',
-      end: 'Now',
+      end: '04/2019',
       link: '',
     },
     {
