@@ -8,7 +8,7 @@ import {
 
 const tools = [...createStringsOfEnums(Library), ...createStringsOfEnums(Tool)];
 
-export interface Project {
+export interface IProject {
   name: string;
   type: ProjectType;
   highlights: string[];
@@ -19,7 +19,7 @@ export interface Project {
   link: string;
 }
 
-interface FormalEducation {
+interface IFormalEducation {
   major: string;
   type: string;
   institution: string;
@@ -29,7 +29,7 @@ interface FormalEducation {
   info: string;
 }
 
-interface Skills {
+interface ISkills {
   programmingLanguages: Array<{
     level: string;
     languages: Array<ProgrammingLanguage>;
@@ -38,7 +38,7 @@ interface Skills {
   tools: Array<string>;
 }
 
-interface WorkExperienceItem {
+interface IWorkExperienceItem {
   jobTitle: string;
   institution: string;
   institutionLink: string;
@@ -59,11 +59,11 @@ interface PersonalInfo {
 
 interface CVData {
   personalInfo: PersonalInfo;
-  workExperience: Array<WorkExperienceItem>;
-  skills: Skills;
-  formalEducation: Array<FormalEducation>;
-  professionalProjects: Array<Project>;
-  personalProjects: Array<Project>;
+  workExperience: Array<IWorkExperienceItem>;
+  skills: ISkills;
+  formalEducation: Array<IFormalEducation>;
+  professionalProjects: Array<IProject>;
+  personalProjects: Array<IProject>;
 }
 
 const cv: CVData = {
