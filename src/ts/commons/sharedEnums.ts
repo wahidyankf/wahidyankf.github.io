@@ -6,6 +6,7 @@ export enum ProgrammingLanguage {
   OCaml = 'OCaml',
   Python = 'Python',
   ReasonML = 'ReasonML',
+  Elixir = 'Elixir',
 }
 
 export enum Library {

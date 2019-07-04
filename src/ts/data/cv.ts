@@ -90,10 +90,7 @@ const cv: ICVData = {
       highlights: [
         `Became one of the pioneering engineers in Ruang Belajar's Desktop app development using ReasonML, ReasonReact, and Electron. Heavily involved in its core and primitive UI components development (created more than 50% of it) and routing design, while also helping other engineers (mobile engineers) to pick up React and web technology in general. This project is a first joint project between Ruang Guru's Front-end and Mobile engineers. Opening up a new possibility of higher app development's velocity in Ruang Guru.`,
         `Involved in company new front-end engineer hiring process by assessing their computational thinking and React.js problem-solving skills through coding challenges. Resulting in a faster front-end engineering division's hiring process while making sure that only the high-quality one passed.`,
-        `Developed Ruang Kerja CMS' question and question-set modules using React and Draft.js. Resulting in well functioning rich text editor implementation for question and question-set generation task in Ruang Kerja apps.`,
         `Developed and set up various internal front-end tooling, including command-line application to bootstrap new web project, various UI kits, rich text-editor, and JavaScript utility functions. Resulting in a higher code sharing and development speed for Ruang Guru's engineering team.`,
-        `Led a team of front-end developers to create Ruang Kerja's company dashboard using React JS stacks, flow-typed, and data visualization tools. Also did an end-to-end testing for it using cypress. Resulting in a finely crafted and runtime-error free dashboard web app.`,
-        `Became one of the pioneering engineers in Ruang Kerja's React Native app development. Resulting in a more efficient engineering resources usage for Ruang Guru by expanding the usages of its front end engineers, while theoretically cut the cost of apps development down almost to 50% without losing any of native apps' development speed.`,
       ],
       start: '01/2018',
       end: 'Now',
@@ -107,7 +104,6 @@ const cv: ICVData = {
         `Led a team of front-end developers to develop and optimize Ruang Uji's react stacks and deployment. The result was more than 53.86% smaller initial download size (all assets included), 9.52% lower request number, 46.72% faster finish time, 137.10% faster DOMContentLoad time, and 62.49% faster load time than the original angular.js' stacks (2G connection, 280kbps/256kbps 800ms RTT), while also made subsequent pages load substantially faster by implementing on point code optimization, aggressive code splitting, and various images lazy loading.`,
         `Refactored  <a href="https://ruangguru.com">Ruang Guru</a>'s assets and code base using imgIX, AWS S3 bucket, and fastly CDN. The result was load time speed improvement of more than 300% (from more than 12 seconds average to under 3 seconds),  and the improvement of its  <a href="https://www.webpagetest.org/">Web Page Test</a> average score of B to all A's without sacrificing its assets' apparent quality.`,
         `Rewrote and migrated <a href="https://uji.ruangguru.com">Ruang Uji</a> from angular.js' stacks to react.js' stacks from scratch. Thus solved the old "exam event" problem (e.g. no automatic submission in the background, submission error handler, continue to last exam on reload, etc.) at <a href="https://uji.ruangguru.com">Ruang Uji</a> while also modernized its tech stacks and make it less error prone.`,
-        `Automated web apps' bugs tracking using sentry (Raven.js) and deployment from Gitlab to AWS S3 and production using Codeship. The result was more precise bug tracking, and much faster web app integration, deployment, and delivery.`,
       ],
       start: '10/2017',
       end: '12/2017',
@@ -131,7 +127,11 @@ const cv: ICVData = {
       },
       {
         level: 'Exposure',
-        languages: [ProgrammingLanguage.Python, ProgrammingLanguage.OCaml],
+        languages: [
+          ProgrammingLanguage.OCaml,
+          ProgrammingLanguage.Elixir,
+          ProgrammingLanguage.Python,
+        ],
       },
     ],
     languages: [
