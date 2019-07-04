@@ -18,10 +18,27 @@ export const formatTimeDuration = (timeDuration: number): string => {
   return formattedTimeDuration;
 };
 
+export const calculateMonthDurationFromNow = (
+  year: number,
+  month: number,
+): number => {
+  const now = new Date();
+  const target = new Date(year, month);
+
+  const oneDay = 1000 * 60 * 60 * 24;
+  const oneMonth = oneDay * 30;
+
+  const timeDifference = Math.round(
+    (now.getTime() - target.getTime()) / oneMonth,
+  );
+
+  return timeDifference;
+};
+
 export const showTimeDuration = (
   start: string,
   end: string,
-  type = 'compact'
+  type = 'compact',
 ): string => {
   const now = 'now';
   const dateNow = new Date();
@@ -45,7 +62,7 @@ export const showTimeDuration = (
     type === 'compact'
       ? ''
       : `<i class="fa fa-circle time-duration"></i>${formatTimeDuration(
-          timeDuration
+          timeDuration,
         )}`;
 
   if (start === end || end.length === 0) {

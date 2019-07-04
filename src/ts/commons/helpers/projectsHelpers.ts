@@ -1,8 +1,28 @@
 import {IProject} from '../../data/project';
-import {showTimeDuration} from '../utils/dateTime';
+import {
+  showTimeDuration,
+  calculateMonthDurationFromNow,
+} from '../utils/dateTime';
 
 export const createProjectsHTML = (projects: IProject[]): string => {
-  return projects.reduce((acc, project) => {
+  const keepProjectInLastTwoYears = (project: IProject) => {
+    if (project.end == 'Now') {
+      return true;
+    } else {
+      let projectMonth = project.end.slice(0, 2);
+      let projectYear = project.end.slice(-4);
+
+      const isProjectInLastTwoYears =
+        calculateMonthDurationFromNow(
+          parseInt(projectYear),
+          parseInt(projectMonth),
+        ) <= 24;
+
+      return isProjectInLastTwoYears;
+    }
+  };
+
+  const formatProjectHTML = (acc: string, project: IProject): string => {
     const {
       stacks,
       type: projectType,
@@ -52,5 +72,9 @@ export const createProjectsHTML = (projects: IProject[]): string => {
       <li>Technology stack: ${stacksAsHTML}</li>
     </ul>
     `);
-  }, '');
+  };
+
+  return projects
+    .filter(keepProjectInLastTwoYears)
+    .reduce(formatProjectHTML, '');
 };
