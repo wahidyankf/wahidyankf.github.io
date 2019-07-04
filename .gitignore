@@ -4,3 +4,4 @@ dist
 optimization-testing
 .cache
 ts-build
+yarn-error.log
