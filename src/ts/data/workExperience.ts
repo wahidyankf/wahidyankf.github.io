@@ -16,7 +16,7 @@ const workExperience: IWorkExperienceItem[] = [
     location: 'Jakarta, Indonesia',
     highlights: [
       `Became one of the pioneering engineers in Ruang Belajar's Desktop app development using ReasonML, ReasonReact, and Electron. Heavily involved in its core and primitive UI components development (created more than 50% of it) and routing design, while also helping other engineers (mobile engineers) to pick up React and web technology in general. This project is a first joint project between Ruang Guru's Front-end and Mobile engineers. Opening up a new possibility of higher app development's velocity in Ruang Guru.`,
-      `Involved in company new front-end engineer hiring process by assessing their computational thinking and React.js problem-solving skills through coding challenges. Resulting in a faster front-end engineering division's hiring process while making sure that only the high-quality one passed.`,
+      `Involved in company new software engineers hiring process by assessing their computational thinking and problem-solving skills through various challenges. Resulting in a faster engineering division's hiring process while making sure that only the high-quality and culturally-fit candidates passed.`,
       `Developed and set up various internal front-end tooling, including command-line application to bootstrap new web project, various UI kits, rich text-editor, and JavaScript utility functions. Resulting in a higher code sharing and development speed for Ruang Guru's engineering team.`,
     ],
     start: '01/2018',
