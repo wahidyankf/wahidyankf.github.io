@@ -1,4 +1,4 @@
-import cvData from '../../data/cv';
+import cvData from '../../data/index';
 import {showTimeDuration} from '../../commons/utils/dateTime';
 
 const {formalEducation: formalEducationData} = cvData;
@@ -14,7 +14,7 @@ for (let i = 0; i < formalEducationData.length; i++) {
     formalEducationData[i].institution
   } - ${formalEducationData[i].location} - ${showTimeDuration(
     formalEducationData[i].start,
-    formalEducationData[i].end
+    formalEducationData[i].end,
   )}</span></li>
   </ul>
   <ul class="list-bullet-point">

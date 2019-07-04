@@ -1,7 +1,7 @@
-import {Project} from '../../data/cv';
+import {IProject} from '../../data/project';
 import {showTimeDuration} from '../utils/dateTime';
 
-export const createProjectsHTML = (projects: Project[]): string => {
+export const createProjectsHTML = (projects: IProject[]): string => {
   return projects.reduce((acc, project) => {
     const {
       stacks,
@@ -23,7 +23,7 @@ export const createProjectsHTML = (projects: Project[]): string => {
 
     const hightlightsAsHTML = highlights.reduce(
       (acc, description) => acc + `<li>${description}</li>`,
-      ''
+      '',
     );
 
     const projectNameAsHTML =

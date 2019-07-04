@@ -1,4 +1,4 @@
-import cvData from '../../data/cv';
+import cvData from '../../data/index';
 
 const {skills: skillsData} = cvData;
 const {programmingLanguages, tools, languages} = skillsData;
@@ -6,14 +6,14 @@ const {programmingLanguages, tools, languages} = skillsData;
 const programmingLanguagesAsHTML = programmingLanguages.reduce(
   (acccumulator, currentValue) => {
     const languagesAsListOfHTML = currentValue.languages.map(
-      language => `<code>${language}</code>`
+      (language) => `<code>${language}</code>`,
     );
 
     return `${acccumulator}<p>${
       currentValue.level
     }: ${languagesAsListOfHTML.join(', ')}.</p>`;
   },
-  ''
+  '',
 );
 
 const toolsAsHTML = tools.reduce((acccumulator, currentSkill, index) => {

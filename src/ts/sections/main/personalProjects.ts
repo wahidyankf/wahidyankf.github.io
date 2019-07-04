@@ -1,4 +1,4 @@
-import cvData from '../../data/cv';
+import cvData from '../../data/index';
 import {createProjectsHTML} from '../../commons/helpers/projectsHelpers';
 
 export default `

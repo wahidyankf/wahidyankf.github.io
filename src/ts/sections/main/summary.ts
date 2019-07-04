@@ -1,4 +1,4 @@
-import cvData from '../../data/cv';
+import cvData from '../../data/index';
 
 const {personalInfo: personalInfoData} = cvData;
 

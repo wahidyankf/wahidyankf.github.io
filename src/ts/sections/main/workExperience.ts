@@ -1,4 +1,4 @@
-import cvData from '../../data/cv';
+import cvData from '../../data/index';
 import {showTimeDuration} from '../../commons/utils/dateTime';
 
 const {workExperience: workExperienceData} = cvData;
@@ -28,7 +28,7 @@ const workExperienceAsHTML = workExperienceData.reduce(
         <span class="list-subtitle"> - <a href="${institutionLink}">${institution}</a> - ${location} - ${showTimeDuration(
         start,
         end,
-        'verbose'
+        'verbose',
       )}</span>
       </li>
   </ul>
@@ -38,7 +38,7 @@ const workExperienceAsHTML = workExperienceData.reduce(
   `
     );
   },
-  ''
+  '',
 );
 
 const workExperience = `
