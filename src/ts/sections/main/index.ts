@@ -1,7 +1,7 @@
 import summary from './summary';
 import skills from './skills';
 import workExperience from './workExperience';
-import personalProjects from './personalProjects';
+// import personalProjects from './personalProjects';
 import professionalProjects from './professionalProjects';
 import formalEducation from './formalEducation';
 
@@ -11,7 +11,8 @@ ${workExperience}
 ${professionalProjects}
 ${skills}
 ${formalEducation}
-${personalProjects}
 `;
+
+// ${personalProjects}
 
 export default main;
