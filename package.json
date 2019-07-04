@@ -10,6 +10,7 @@
     "buildDeploy": "yarn clean ; yarn build ; yarn copyBuild ; yarn deploy:web",
     "clean:dist": "rm -rf src/dist",
     "clean:webBuild": "ls | grep -v -e src -e .gitignore -e package.json -e README.md -e yarn.lock -e node_modules -e tsconfig.json | xargs rm -rf",
+    "clean:all": "yarn clean && rm -rf node_modules && rm -rf .cache && rm -rf src/.cache",
     "clean": "yarn clean:dist ; yarn clean:webBuild",
     "copyBuild": "cp -r src/dist/. .",
     "deploy:auto": "git add --all && git commit -m \"update $(date +\"%D %T\")\" && git push origin master",
