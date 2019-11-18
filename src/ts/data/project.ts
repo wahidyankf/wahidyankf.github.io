@@ -17,6 +17,27 @@ interface Project {
 
 const professionalProjects: Project[] = [
   {
+    name: 'SkillAcademy',
+    type: ProjectType.Web,
+    context: null,
+    highlights: [],
+    stacks: [
+      ProgrammingLanguage.HTML,
+      ProgrammingLanguage.CSS,
+      ProgrammingLanguage.JS,
+      ProgrammingLanguage.ReasonML,
+      Library.ReasonReact,
+      Library.Webpack,
+      Library.Reformality,
+      Library.BsCSS,
+      Library.BsFetch,
+      Library.BsJSON,
+    ],
+    start: '08/2019',
+    end: 'Now',
+    link: 'https://skillacademy.com/',
+  },
+  {
     name: 'Ruang Belajar Forum - Admin Dashboard',
     type: ProjectType.Web,
     context: null,
@@ -34,7 +55,7 @@ const professionalProjects: Project[] = [
       Library.BsJSON,
     ],
     start: '07/2019',
-    end: 'Now',
+    end: '07/2019',
     link: '',
   },
   {

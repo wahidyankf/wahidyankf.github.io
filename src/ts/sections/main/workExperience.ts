@@ -12,7 +12,6 @@ const workExperienceAsHTML = workExperienceData.reduce(
       institution,
       start,
       end,
-      location,
     } = experienceItem;
 
     const workHighlightsAsHTML = highlights.reduce((acc, description) => {
@@ -25,11 +24,11 @@ const workExperienceAsHTML = workExperienceData.reduce(
   <ul>
       <li>
         <span class="list-title">${jobTitle}</span>
-        <span class="list-subtitle"> - <a href="${institutionLink}">${institution}</a> - ${location} - ${showTimeDuration(
+        <span class="list-subtitle"> - <a href="${institutionLink}">${institution}</a> - ${showTimeDuration(
         start,
         end,
         'verbose',
-      )}</span>
+      )} </span>
       </li>
   </ul>
   <ul class="list-bullet-point">
