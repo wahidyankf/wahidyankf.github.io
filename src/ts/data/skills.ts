@@ -1,7 +1,7 @@
 import {createStringsOfEnums} from '../commons/helpers/enumsHelpers';
 import {Library, Tool, ProgrammingLanguage} from '../commons/constants/enums';
 
-interface ISkills {
+interface Skills {
   programmingLanguages: Array<{
     level: string;
     languages: ProgrammingLanguage[];
@@ -10,7 +10,7 @@ interface ISkills {
   tools: Array<string>;
 }
 
-const skills: ISkills = {
+const skills: Skills = {
   programmingLanguages: [
     {
       level: 'Production',
@@ -54,4 +54,4 @@ const skills: ISkills = {
   tools: [...createStringsOfEnums(Library), ...createStringsOfEnums(Tool)],
 };
 
-export {ISkills, skills};
+export {Skills, skills};

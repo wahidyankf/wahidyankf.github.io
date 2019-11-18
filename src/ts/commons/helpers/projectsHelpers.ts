@@ -1,11 +1,11 @@
-import {IProject} from '../../data/project';
+import {Project} from '../../data/project';
 import {
   showTimeDuration,
   calculateMonthDurationFromNow,
 } from '../utils/dateTime';
 
-export const createProjectsHTML = (projects: IProject[]): string => {
-  const keepProjectInLastTwoYears = (project: IProject) => {
+export const createProjectsHTML = (projects: Project[]): string => {
+  const keepProjectInLastTwoYears = (project: Project) => {
     if (project.end == 'Now') {
       return true;
     } else {
@@ -22,7 +22,7 @@ export const createProjectsHTML = (projects: IProject[]): string => {
     }
   };
 
-  const formatProjectHTML = (acc: string, project: IProject): string => {
+  const formatProjectHTML = (acc: string, project: Project): string => {
     const {
       stacks,
       type: projectType,

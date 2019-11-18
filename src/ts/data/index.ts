@@ -1,19 +1,19 @@
-import {IPersonalInfo, personalInfo} from './personalInfo';
-import {IProject, personalProjects, professionalProjects} from './project';
-import {IFormalEducation, formalEducation} from './formalEducation';
-import {IWorkExperienceItem, workExperience} from './workExperience';
-import {ISkills, skills} from './skills';
+import {PersonalInfo, personalInfo} from './personalInfo';
+import {Project, personalProjects, professionalProjects} from './project';
+import {FormalEducation, formalEducation} from './formalEducation';
+import {WorkExperience, workExperience} from './workExperience';
+import {Skills, skills} from './skills';
 
-interface ICV {
-  personalInfo: IPersonalInfo;
-  workExperience: IWorkExperienceItem[];
-  skills: ISkills;
-  formalEducation: IFormalEducation[];
-  professionalProjects: IProject[];
-  personalProjects: IProject[];
+interface CV {
+  personalInfo: PersonalInfo;
+  workExperience: WorkExperience[];
+  skills: Skills;
+  formalEducation: FormalEducation[];
+  professionalProjects: Project[];
+  personalProjects: Project[];
 }
 
-const cv: ICV = {
+const cv: CV = {
   personalInfo,
   personalProjects,
   professionalProjects,

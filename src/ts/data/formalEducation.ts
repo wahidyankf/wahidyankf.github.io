@@ -1,4 +1,4 @@
-interface IFormalEducation {
+interface FormalEducation {
   major: string;
   type: string;
   institution: string;
@@ -8,7 +8,7 @@ interface IFormalEducation {
   info: string;
 }
 
-const formalEducation: IFormalEducation[] = [
+const formalEducation: FormalEducation[] = [
   {
     major: 'Electrical Engineering',
     type: 'Bachelor',
@@ -21,4 +21,4 @@ const formalEducation: IFormalEducation[] = [
   },
 ];
 
-export {formalEducation, IFormalEducation};
+export {formalEducation, FormalEducation};

@@ -4,7 +4,7 @@ import {
   ProgrammingLanguage,
 } from '../commons/constants/enums';
 
-interface IProject {
+interface Project {
   name: string;
   type: ProjectType;
   highlights: string[];
@@ -15,7 +15,7 @@ interface IProject {
   link: string;
 }
 
-const professionalProjects: IProject[] = [
+const professionalProjects: Project[] = [
   {
     name: 'Ruang Belajar Forum - Admin Dashboard',
     type: ProjectType.Web,
@@ -233,7 +233,7 @@ const professionalProjects: IProject[] = [
   },
 ];
 
-const personalProjects: IProject[] = [
+const personalProjects: Project[] = [
   {
     name: 'Build an Interactive Form',
     type: ProjectType.Web,
@@ -466,4 +466,4 @@ const personalProjects: IProject[] = [
   },
 ];
 
-export {IProject, personalProjects, professionalProjects};
+export {Project, personalProjects, professionalProjects};

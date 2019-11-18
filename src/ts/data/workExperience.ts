@@ -1,4 +1,4 @@
-interface IWorkExperienceItem {
+interface WorkExperience {
   jobTitle: string;
   institution: string;
   institutionLink: string;
@@ -8,7 +8,7 @@ interface IWorkExperienceItem {
   end: string;
 }
 
-const workExperience: IWorkExperienceItem[] = [
+const workExperience: WorkExperience[] = [
   {
     jobTitle: 'Front End Engineer',
     institution: 'Ruang Guru',
@@ -37,4 +37,4 @@ const workExperience: IWorkExperienceItem[] = [
   },
 ];
 
-export {IWorkExperienceItem, workExperience};
+export {WorkExperience, workExperience};

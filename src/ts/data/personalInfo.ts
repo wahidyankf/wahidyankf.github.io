@@ -1,4 +1,4 @@
-interface IPersonalInfo {
+interface PersonalInfo {
   name: string;
   shortDesc: string;
   email: string;
@@ -20,4 +20,4 @@ const personalInfo = {
   },
 };
 
-export {personalInfo, IPersonalInfo};
+export {personalInfo, PersonalInfo};
