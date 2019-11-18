@@ -39,4 +39,4 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{}],"93ha":[function(require,module,exports) {
 "use strict";var e=t(require("./sections/header/index")),n=t(require("./sections/main/index"));function t(e){return e&&e.__esModule?e:{default:e}}require("../css/app.css");var r=document.getElementById("js-check");r&&(r.style.display="none");var d=document.getElementById("header");d&&(d.innerHTML=e.default);var i=document.getElementById("main");i&&(i.innerHTML=n.default);
 },{"./sections/header/index":"3HDf","./sections/main/index":"pM3A","../css/app.css":"7V+V"}]},{},["93ha"], null)
-//# sourceMappingURL=/app.8bae85e5.js.map
+//# sourceMappingURL=/app.ecc732d7.js.map
