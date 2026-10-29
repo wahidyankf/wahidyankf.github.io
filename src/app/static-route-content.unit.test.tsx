@@ -15,9 +15,7 @@ vi.mock("@/features/app-shell/shell/navigation", () => ({
 }));
 
 vi.mock("@/features/ui/shell", () => ({
-  SearchComponent: ({ placeholder }: { placeholder: string }) => (
-    <input placeholder={placeholder} readOnly />
-  ),
+  SearchComponent: ({ placeholder }: { placeholder: string }) => <input placeholder={placeholder} readOnly />,
   HighlightText: ({ text }: { text: string }) => <>{text}</>,
 }));
 
@@ -39,8 +37,7 @@ const routes = [
   {
     pathname: "/personal-projects",
     source: "personal-projects/page.tsx",
-    contentSource:
-      "../features/personal-projects/shell/personal-projects-content.tsx",
+    contentSource: "../features/personal-projects/shell/personal-projects-content.tsx",
     Component: Projects,
     visibleContent: "Independent Projects",
   },
@@ -50,16 +47,11 @@ describe("static portfolio route content", () => {
   for (const route of routes) {
     it(`${route.pathname} renders visible content before browser query seeding`, () => {
       const source = readFileSync(resolve(__dirname, route.source), "utf8");
-      const contentSource = readFileSync(
-        resolve(__dirname, route.contentSource),
-        "utf8",
-      );
+      const contentSource = readFileSync(resolve(__dirname, route.contentSource), "utf8");
 
       expect(source).not.toContain("Suspense");
       expect(contentSource).not.toContain("useSearchParams");
-      expect(renderToStaticMarkup(<route.Component />)).toContain(
-        route.visibleContent,
-      );
+      expect(renderToStaticMarkup(<route.Component />)).toContain(route.visibleContent);
     });
   }
 });

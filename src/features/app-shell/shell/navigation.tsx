@@ -22,12 +22,7 @@ export const Navigation: React.FC = () => {
         className="fixed right-0 bottom-0 left-0 z-50 flex justify-around border-t border-green-400 bg-gray-900 p-4 lg:hidden"
       >
         {navItems.map((item) => (
-          <NavLink
-            key={item.href}
-            href={item.href}
-            isActive={pathname === item.href}
-            label={item.label}
-          />
+          <NavLink key={item.href} href={item.href} isActive={pathname === item.href} label={item.label} />
         ))}
       </nav>
 
@@ -46,12 +41,7 @@ export const Navigation: React.FC = () => {
         <hr className="light-theme:border-light-primary mx-4 mb-4 border-t border-green-400" />
         <ul className="pl-4">
           {navItems.map((item) => (
-            <NavItem
-              key={item.href}
-              href={item.href}
-              isActive={pathname === item.href}
-              label={item.label}
-            />
+            <NavItem key={item.href} href={item.href} isActive={pathname === item.href} label={item.label} />
           ))}
         </ul>
       </nav>
@@ -68,9 +58,7 @@ const NavLink: React.FC<{
   <Link
     href={href}
     className={`flex flex-col items-center ${
-      isActive
-        ? "light-theme:text-light-accent text-yellow-400"
-        : "light-theme:text-light-primary text-green-400"
+      isActive ? "light-theme:text-light-accent text-yellow-400" : "light-theme:text-light-primary text-green-400"
     } transition-colors duration-200 hover:text-yellow-400`}
   >
     <File className="h-6 w-6" />

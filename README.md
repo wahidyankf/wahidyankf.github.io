@@ -17,8 +17,8 @@ npm run build
 npm run start
 ```
 
-The listener port comes from `WAHIDYANKF_WWW_PORT`, then the built-in default (`3201` for `dev`, `3000` for `start`).
-A bare `PORT` never moves it.
+The listener port comes from `WAHIDYANKF_WWW_PORT`, then the built-in default (`3201` for `dev`, `3000` for `start`). A
+bare `PORT` never moves it.
 
 ## Check your changes
 
@@ -34,9 +34,8 @@ the integration layer in behind it and write PDFs to the real filesystem on ever
 
 ## Specifications
 
-The canonical Gherkin corpus is
-[specs/apps/wahidyankf-www/behaviours/](specs/apps/wahidyankf-www/behaviours/README.md), and the as-built C4 model
-is [specs/apps/wahidyankf-www/architecture.md](specs/apps/wahidyankf-www/architecture.md).
+The canonical Gherkin corpus is [specs/apps/wahidyankf-www/behaviours/](specs/apps/wahidyankf-www/behaviours/README.md),
+and the as-built C4 model is [specs/apps/wahidyankf-www/architecture.md](specs/apps/wahidyankf-www/architecture.md).
 
 Three adapters bind that one corpus across the owner and dedicated E2E projects. Which adapter a scenario reaches is a
 property of the boundary it touches:

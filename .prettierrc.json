@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json.schemastore.org/prettierrc",
+  "printWidth": 120,
+  "proseWrap": "always",
+  "overrides": [
+    {
+      "files": ["docs/cv-raw.md", "docs/cv-linkedin.md", "docs/linkedin-projects.md"],
+      "options": {
+        "proseWrap": "preserve"
+      }
+    }
+  ]
+}

@@ -70,12 +70,7 @@ const ClickableItem = ({
     </div>
     {showDuration && (
       <span className="text-xs text-green-300 transition-colors duration-200 group-hover:text-white">
-        (total:{" "}
-        <HighlightText
-          text={formatDuration(duration)}
-          searchTerm={searchTerm}
-        />
-        )
+        (total: <HighlightText text={formatDuration(duration)} searchTerm={searchTerm} />)
       </span>
     )}
   </button>
@@ -118,9 +113,7 @@ const DynamicSkillsComponent = ({
         </ul>
       </>
     )}
-    <h4 className="mt-4 mb-2 text-lg font-semibold text-yellow-400">
-      Top Skills Used in The Last 5 Years
-    </h4>
+    <h4 className="mt-4 mb-2 text-lg font-semibold text-yellow-400">Top Skills Used in The Last 5 Years</h4>
     <ul className="mb-4 grid list-none grid-cols-1 gap-2 sm:grid-cols-2">
       {skills.map(({ name, duration }) => (
         <li key={name}>
@@ -134,9 +127,7 @@ const DynamicSkillsComponent = ({
         </li>
       ))}
     </ul>
-    <h4 className="mb-2 text-lg font-semibold text-yellow-400">
-      Top Programming Languages Used in The Last 5 Years
-    </h4>
+    <h4 className="mb-2 text-lg font-semibold text-yellow-400">Top Programming Languages Used in The Last 5 Years</h4>
     <ul className="mb-4 grid list-none grid-cols-1 gap-2 sm:grid-cols-2">
       {languages.map(({ name }) => (
         <li key={name}>
@@ -151,9 +142,7 @@ const DynamicSkillsComponent = ({
         </li>
       ))}
     </ul>
-    <h4 className="mb-2 text-lg font-semibold text-yellow-400">
-      Top Frameworks & Libraries Used in The Last 5 Years
-    </h4>
+    <h4 className="mb-2 text-lg font-semibold text-yellow-400">Top Frameworks & Libraries Used in The Last 5 Years</h4>
     <ul className="grid list-none grid-cols-1 gap-2 sm:grid-cols-2">
       {frameworks.map(({ name }) => (
         <li key={name}>
@@ -204,26 +193,19 @@ const CVEntryComponent = ({
         {entry.type === "work" && (
           <span className="ml-2 text-yellow-400">
             (
-            <HighlightText
-              text={formatDuration(calculateDuration(entry.period))}
-              searchTerm={searchTerm}
-            />
-            )
+            <HighlightText text={formatDuration(calculateDuration(entry.period))} searchTerm={searchTerm} />)
           </span>
         )}
       </p>
     )}
-    {entry.type === "work" &&
-      entry.employmentType &&
-      entry.location &&
-      entry.locationType && (
-        <p className="mb-2 text-green-200">
-          <HighlightText
-            text={`${entry.employmentType} | ${entry.location} | ${entry.locationType}`}
-            searchTerm={searchTerm}
-          />
-        </p>
-      )}
+    {entry.type === "work" && entry.employmentType && entry.location && entry.locationType && (
+      <p className="mb-2 text-green-200">
+        <HighlightText
+          text={`${entry.employmentType} | ${entry.location} | ${entry.locationType}`}
+          searchTerm={searchTerm}
+        />
+      </p>
+    )}
     {entry.type === "work" ? (
       <ul className="mb-2 list-inside list-disc text-green-200">
         {entry.details.map((detail) => (
@@ -243,9 +225,7 @@ const CVEntryComponent = ({
       <>
         {entry.aiSkills && entry.aiSkills.length > 0 && (
           <div className="mt-2">
-            <h4 className="text-md font-semibold text-yellow-400">
-              AI Skills:
-            </h4>
+            <h4 className="text-md font-semibold text-yellow-400">AI Skills:</h4>
             <ul className="mb-2 grid list-none grid-cols-2 gap-2">
               {entry.aiSkills.map((skill) => (
                 <li key={skill}>
@@ -283,9 +263,7 @@ const CVEntryComponent = ({
         )}
         {entry.programmingLanguages && (
           <div className="mt-2">
-            <h4 className="text-md font-semibold text-yellow-400">
-              Programming Languages:
-            </h4>
+            <h4 className="text-md font-semibold text-yellow-400">Programming Languages:</h4>
             <ul className="mb-2 grid list-none grid-cols-2 gap-2">
               {entry.programmingLanguages.map((lang) => (
                 <li key={lang}>
@@ -304,9 +282,7 @@ const CVEntryComponent = ({
         )}
         {entry.frameworks && (
           <div className="mt-2">
-            <h4 className="text-md font-semibold text-yellow-400">
-              Frameworks:
-            </h4>
+            <h4 className="text-md font-semibold text-yellow-400">Frameworks:</h4>
             <ul className="mb-2 grid list-none grid-cols-2 gap-2">
               {entry.frameworks.map((framework) => (
                 <li key={framework}>
@@ -325,20 +301,16 @@ const CVEntryComponent = ({
         )}
       </>
     )}
-    {entry.type === "about" &&
-      topAISkills &&
-      topSkills &&
-      topLanguages &&
-      topFrameworks && (
-        <DynamicSkillsComponent
-          aiSkills={topAISkills}
-          skills={topSkills}
-          languages={topLanguages}
-          frameworks={topFrameworks}
-          searchTerm={searchTerm}
-          handleItemClick={handleItemClick}
-        />
-      )}
+    {entry.type === "about" && topAISkills && topSkills && topLanguages && topFrameworks && (
+      <DynamicSkillsComponent
+        aiSkills={topAISkills}
+        skills={topSkills}
+        languages={topLanguages}
+        frameworks={topFrameworks}
+        searchTerm={searchTerm}
+        handleItemClick={handleItemClick}
+      />
+    )}
     {entry.links && (
       <div className="mt-4 flex flex-wrap gap-4">
         {Object.entries(entry.links).map(([key, value]) => (
@@ -486,10 +458,7 @@ const WorkExperienceSection = ({
     (acc, org) => {
       const periods = groupedEntries[org].map((entry) => ({
         start: parseDate(entry.period.split(" - ")[0]),
-        end:
-          entry.period.split(" - ")[1] === "Present"
-            ? new Date()
-            : parseDate(entry.period.split(" - ")[1]),
+        end: entry.period.split(" - ")[1] === "Present" ? new Date() : parseDate(entry.period.split(" - ")[1]),
       }));
       const totalMonths = calculateTotalDuration(periods);
       acc[org] = formatDuration(totalMonths);
@@ -500,14 +469,9 @@ const WorkExperienceSection = ({
 
   const allPeriods = entries.map((entry) => ({
     start: parseDate(entry.period.split(" - ")[0]),
-    end:
-      entry.period.split(" - ")[1] === "Present"
-        ? new Date()
-        : parseDate(entry.period.split(" - ")[1]),
+    end: entry.period.split(" - ")[1] === "Present" ? new Date() : parseDate(entry.period.split(" - ")[1]),
   }));
-  const totalWorkExperience = formatDuration(
-    calculateTotalDuration(allPeriods),
-  );
+  const totalWorkExperience = formatDuration(calculateTotalDuration(allPeriods));
 
   const filteredOrganizations = sortedOrganizations.filter((org) =>
     groupedEntries[org].some((entry) => {
@@ -525,30 +489,19 @@ const WorkExperienceSection = ({
             <HighlightText text="Work Experience" searchTerm={searchTerm} />
           </h2>
           <div className="flex items-center">
-            <span className="mr-2 text-sm text-green-300">
-              Show recent only (≤5 years)
-            </span>
+            <span className="mr-2 text-sm text-green-300">Show recent only (≤5 years)</span>
             <button
               type="button"
               onClick={() => setShowRecentOnly(!showRecentOnly)}
               className="text-yellow-400 transition-colors duration-200 hover:text-green-400"
-              aria-label={
-                showRecentOnly
-                  ? "Show all work experience"
-                  : "Show recent work experience only"
-              }
+              aria-label={showRecentOnly ? "Show all work experience" : "Show recent work experience only"}
             >
-              {showRecentOnly ? (
-                <ToggleRight className="h-6 w-6" />
-              ) : (
-                <ToggleLeft className="h-6 w-6" />
-              )}
+              {showRecentOnly ? <ToggleRight className="h-6 w-6" /> : <ToggleLeft className="h-6 w-6" />}
             </button>
           </div>
         </div>
         <div className="mt-2 text-sm text-green-300">
-          Total:{" "}
-          <HighlightText text={totalWorkExperience} searchTerm={searchTerm} />
+          Total: <HighlightText text={totalWorkExperience} searchTerm={searchTerm} />
         </div>
       </StickyHeader>
       {filteredOrganizations.map((organization) => (
@@ -558,11 +511,7 @@ const WorkExperienceSection = ({
               <HighlightText text={organization} searchTerm={searchTerm} />
             </span>
             <span className="text-sm text-green-300">
-              Total:{" "}
-              <HighlightText
-                text={organizationDurations[organization]}
-                searchTerm={searchTerm}
-              />
+              Total: <HighlightText text={organizationDurations[organization]} searchTerm={searchTerm} />
             </span>
           </h3>
           {groupedEntries[organization]
@@ -598,9 +547,7 @@ export function CvContent() {
 
   useEffect(() => {
     const syncSearchTerm = () => {
-      setSearchTerm(
-        new URLSearchParams(window.location.search).get("search") ?? "",
-      );
+      setSearchTerm(new URLSearchParams(window.location.search).get("search") ?? "");
     };
 
     syncSearchTerm();
@@ -609,9 +556,7 @@ export function CvContent() {
   }, []);
 
   useEffect(() => {
-    if (
-      new URLSearchParams(window.location.search).get("scrollTop") === "true"
-    ) {
+    if (new URLSearchParams(window.location.search).get("scrollTop") === "true") {
       window.scrollTo(0, 0);
       const newURL = new URL(window.location.href);
       newURL.searchParams.delete("scrollTop");
@@ -641,30 +586,18 @@ export function CvContent() {
       "aiSkills",
     ]) || []; // Provide an empty array as fallback
 
-  const skillSources = [
-    ...cvData.filter((entry) => entry.type === "work"),
-    ...projects,
-  ];
+  const skillSources = [...cvData.filter((entry) => entry.type === "work"), ...projects];
   const topSkills = getTopSkillsLastFiveYears(skillSources);
   const topLanguages = getTopLanguagesLastFiveYears(skillSources);
   const topFrameworks = getTopFrameworksLastFiveYears(skillSources);
   const topAISkills = getTopAISkillsLastFiveYears(skillSources);
 
-  const aboutEntry =
-    filteredEntries.find((entry) => entry.type === "about") || null;
+  const aboutEntry = filteredEntries.find((entry) => entry.type === "about") || null;
   const workEntries = filteredEntries.filter((entry) => entry.type === "work");
-  const honorEntries = filteredEntries.filter(
-    (entry) => entry.type === "honor",
-  );
-  const licenseEntries = filteredEntries.filter(
-    (entry) => entry.type === "certification",
-  );
-  const languageEntries = filteredEntries.filter(
-    (entry) => entry.type === "language",
-  );
-  const educationEntries = filteredEntries.filter(
-    (entry) => entry.type === "education",
-  );
+  const honorEntries = filteredEntries.filter((entry) => entry.type === "honor");
+  const licenseEntries = filteredEntries.filter((entry) => entry.type === "certification");
+  const languageEntries = filteredEntries.filter((entry) => entry.type === "language");
+  const educationEntries = filteredEntries.filter((entry) => entry.type === "education");
 
   return (
     <main className="flex min-h-screen flex-col bg-gray-900 p-4 pb-20 text-green-400 wrap-break-word sm:p-8 md:p-12 lg:ml-80 lg:p-16 lg:pb-0">
@@ -758,9 +691,7 @@ export function CvContent() {
             </div>
           </>
         ) : (
-          <p className="text-center text-yellow-400">
-            No CV entries found matching your search.
-          </p>
+          <p className="text-center text-yellow-400">No CV entries found matching your search.</p>
         )}
       </div>
     </main>

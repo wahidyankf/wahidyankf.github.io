@@ -7,12 +7,7 @@ import { ThemeToggle } from "@/features/ui/shell";
 
 // DOM cleanup runs after each scenario. Navigation and reload actions perform
 // any remount they imply; Then only observes the resulting DOM or persistence.
-const feature = await loadFeature(
-  path.resolve(
-    process.cwd(),
-    "specs/apps/wahidyankf-www/behaviours/theme.feature",
-  ),
-);
+const feature = await loadFeature(path.resolve(process.cwd(), "specs/apps/wahidyankf-www/behaviours/theme.feature"));
 
 describeFeature(feature, ({ Scenario, Background, AfterEachScenario }) => {
   AfterEachScenario(cleanup);
@@ -32,47 +27,34 @@ describeFeature(feature, ({ Scenario, Background, AfterEachScenario }) => {
     });
 
     Then('the html element has no "light-theme" class', () => {
-      expect(document.documentElement.classList.contains("light-theme")).toBe(
-        false,
-      );
+      expect(document.documentElement.classList.contains("light-theme")).toBe(false);
     });
 
     // @covers specs/apps/wahidyankf-www/behaviours/theme.feature:Default theme is dark
     And('the theme toggle aria-label is "Switch to light theme"', () => {
-      expect(
-        screen.getByRole("button", { name: "Switch to light theme" }),
-      ).toBeInTheDocument();
+      expect(screen.getByRole("button", { name: "Switch to light theme" })).toBeInTheDocument();
     });
   });
 
-  Scenario(
-    "Clicking the toggle switches to light theme",
-    ({ When, And, Then }) => {
-      When("a visitor opens the home page", () => {
-        window.history.replaceState({}, "", "/");
-      });
+  Scenario("Clicking the toggle switches to light theme", ({ When, And, Then }) => {
+    When("a visitor opens the home page", () => {
+      window.history.replaceState({}, "", "/");
+    });
 
-      And("the visitor clicks the theme toggle", () => {
-        render(React.createElement(ThemeToggle));
-        fireEvent.click(
-          screen.getByRole("button", { name: "Switch to light theme" }),
-        );
-      });
+    And("the visitor clicks the theme toggle", () => {
+      render(React.createElement(ThemeToggle));
+      fireEvent.click(screen.getByRole("button", { name: "Switch to light theme" }));
+    });
 
-      Then('the html element has the "light-theme" class', () => {
-        expect(document.documentElement.classList.contains("light-theme")).toBe(
-          true,
-        );
-      });
+    Then('the html element has the "light-theme" class', () => {
+      expect(document.documentElement.classList.contains("light-theme")).toBe(true);
+    });
 
-      // @covers specs/apps/wahidyankf-www/behaviours/theme.feature:Clicking the toggle switches to light theme
-      And('the theme toggle aria-label is "Switch to dark theme"', () => {
-        expect(
-          screen.getByRole("button", { name: "Switch to dark theme" }),
-        ).toBeInTheDocument();
-      });
-    },
-  );
+    // @covers specs/apps/wahidyankf-www/behaviours/theme.feature:Clicking the toggle switches to light theme
+    And('the theme toggle aria-label is "Switch to dark theme"', () => {
+      expect(screen.getByRole("button", { name: "Switch to dark theme" })).toBeInTheDocument();
+    });
+  });
 
   Scenario("Theme persists across navigation", ({ When, And, Then }) => {
     When("a visitor opens the home page", () => {
@@ -81,9 +63,7 @@ describeFeature(feature, ({ Scenario, Background, AfterEachScenario }) => {
 
     And("the visitor clicks the theme toggle", () => {
       render(React.createElement(ThemeToggle));
-      fireEvent.click(
-        screen.getByRole("button", { name: "Switch to light theme" }),
-      );
+      fireEvent.click(screen.getByRole("button", { name: "Switch to light theme" }));
     });
 
     And("the visitor navigates to the CV page", () => {
@@ -94,9 +74,7 @@ describeFeature(feature, ({ Scenario, Background, AfterEachScenario }) => {
 
     // @covers specs/apps/wahidyankf-www/behaviours/theme.feature:Theme persists across navigation
     Then('the html element still has the "light-theme" class', () => {
-      expect(document.documentElement.classList.contains("light-theme")).toBe(
-        true,
-      );
+      expect(document.documentElement.classList.contains("light-theme")).toBe(true);
     });
   });
 
@@ -107,9 +85,7 @@ describeFeature(feature, ({ Scenario, Background, AfterEachScenario }) => {
 
     And("the visitor clicks the theme toggle", () => {
       render(React.createElement(ThemeToggle));
-      fireEvent.click(
-        screen.getByRole("button", { name: "Switch to light theme" }),
-      );
+      fireEvent.click(screen.getByRole("button", { name: "Switch to light theme" }));
     });
 
     And("the visitor reloads the page", () => {
@@ -123,9 +99,7 @@ describeFeature(feature, ({ Scenario, Background, AfterEachScenario }) => {
 
     // @covers specs/apps/wahidyankf-www/behaviours/theme.feature:Theme choice persists across reloads
     Then('the html element still has the "light-theme" class', () => {
-      expect(document.documentElement.classList.contains("light-theme")).toBe(
-        true,
-      );
+      expect(document.documentElement.classList.contains("light-theme")).toBe(true);
     });
   });
 });

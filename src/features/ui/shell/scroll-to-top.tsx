@@ -38,12 +38,7 @@ const ScrollToTop = ({
   };
 
   const button = isVisible ? (
-    <button
-      type="button"
-      onClick={scrollToTop}
-      className={buttonClassName}
-      aria-label="Scroll to top"
-    >
+    <button type="button" onClick={scrollToTop} className={buttonClassName} aria-label="Scroll to top">
       <ChevronUp size={24} />
     </button>
   ) : null;

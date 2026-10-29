@@ -11,13 +11,7 @@
  * that write bytes to disk.
  */
 import path from "node:path";
-import {
-  createWriteStream,
-  existsSync,
-  mkdtempSync,
-  readFileSync,
-  rmSync,
-} from "node:fs";
+import { createWriteStream, existsSync, mkdtempSync, readFileSync, rmSync } from "node:fs";
 import { once } from "node:events";
 import { tmpdir } from "node:os";
 import { Writable } from "node:stream";
@@ -31,10 +25,7 @@ import { renderCvPdf } from "@/features/cv/shell/pdf";
 import { behaviourTestLayer } from "../bdd/test-layer";
 
 const feature = await loadFeature(
-  path.resolve(
-    process.cwd(),
-    "specs/apps/wahidyankf-www/behaviours/cv-export.feature",
-  ),
+  path.resolve(process.cwd(), "specs/apps/wahidyankf-www/behaviours/cv-export.feature"),
 );
 
 /**
@@ -73,10 +64,7 @@ function outputFixture(): {
 } {
   if (behaviourTestLayer === "unit") {
     virtualDirectorySequence += 1;
-    const directory = path.join(
-      "/virtual",
-      `cv-export-${virtualDirectorySequence}`,
-    );
+    const directory = path.join("/virtual", `cv-export-${virtualDirectorySequence}`);
     const file = path.join(directory, "cv.pdf");
     virtualDirectories.add(directory);
     activeOutputDirectories.add(directory);
@@ -147,9 +135,7 @@ async function exportCvPdfTo(file: string): Promise<Error | undefined> {
 }
 
 function outputExists(file: string): boolean {
-  return behaviourTestLayer === "unit"
-    ? virtualFiles.has(file)
-    : existsSync(file);
+  return behaviourTestLayer === "unit" ? virtualFiles.has(file) : existsSync(file);
 }
 
 function readOutput(file: string): Buffer {
@@ -162,72 +148,61 @@ function readOutput(file: string): Buffer {
 describeFeature(feature, ({ Scenario, AfterEachScenario }) => {
   AfterEachScenario(cleanupOutputDirectories);
 
-  Scenario(
-    "Generating the CV writes a PDF to the local filesystem",
-    ({ Given, When, Then, And }) => {
-      let output: ReturnType<typeof outputFixture>;
-      let contents: Buffer;
+  Scenario("Generating the CV writes a PDF to the local filesystem", ({ Given, When, Then, And }) => {
+    let output: ReturnType<typeof outputFixture>;
+    let contents: Buffer;
 
-      // @covers specs/apps/wahidyankf-www/behaviours/cv-export.feature:Generating the CV writes a PDF to the local filesystem
-      Given("the application CV record contains at least one entry", () => {
-        expect(cvData.length).toBeGreaterThan(0);
-      });
+    // @covers specs/apps/wahidyankf-www/behaviours/cv-export.feature:Generating the CV writes a PDF to the local filesystem
+    Given("the application CV record contains at least one entry", () => {
+      expect(cvData.length).toBeGreaterThan(0);
+    });
 
-      When(
-        "the CV export runs against a writable output directory",
-        async () => {
-          output = outputFixture();
-          expect(await exportCvPdfTo(output.file)).toBeUndefined();
-        },
-      );
+    When("the CV export runs against a writable output directory", async () => {
+      output = outputFixture();
+      expect(await exportCvPdfTo(output.file)).toBeUndefined();
+    });
 
-      Then("a readable PDF file exists at the configured output path", () => {
-        contents = readOutput(output.file);
-        expect(contents.length).toBeGreaterThan(0);
-      });
+    Then("a readable PDF file exists at the configured output path", () => {
+      contents = readOutput(output.file);
+      expect(contents.length).toBeGreaterThan(0);
+    });
 
-      And("the file begins with the PDF header bytes", () => {
-        expect(contents.subarray(0, 5).toString("latin1")).toBe("%PDF-");
-      });
-    },
-  );
+    And("the file begins with the PDF header bytes", () => {
+      expect(contents.subarray(0, 5).toString("latin1")).toBe("%PDF-");
+    });
+  });
 
-  Scenario(
-    "Generating the CV reports an unwritable output location",
-    ({ Given, When, Then, And }) => {
-      let missingDirectory: string;
-      let missingFile: string;
-      let failure: unknown;
+  Scenario("Generating the CV reports an unwritable output location", ({ Given, When, Then, And }) => {
+    let missingDirectory: string;
+    let missingFile: string;
+    let failure: unknown;
 
-      // @covers specs/apps/wahidyankf-www/behaviours/cv-export.feature:Generating the CV reports an unwritable output location
-      Given("the configured CV output directory does not exist", () => {
-        const fixture = outputFixture();
-        // Created and immediately removed, rather than simply naming a path
-        // that was never there. That way the parent is a real temp location
-        // this process owns, and the only thing missing is the directory the
-        // export was told to write into.
-        fixture.cleanup();
-        missingDirectory = fixture.directory;
-        missingFile = fixture.file;
-        expect(
-          behaviourTestLayer === "unit"
-            ? virtualDirectories.has(missingDirectory)
-            : existsSync(missingDirectory),
-        ).toBe(false);
-      });
+    // @covers specs/apps/wahidyankf-www/behaviours/cv-export.feature:Generating the CV reports an unwritable output location
+    Given("the configured CV output directory does not exist", () => {
+      const fixture = outputFixture();
+      // Created and immediately removed, rather than simply naming a path
+      // that was never there. That way the parent is a real temp location
+      // this process owns, and the only thing missing is the directory the
+      // export was told to write into.
+      fixture.cleanup();
+      missingDirectory = fixture.directory;
+      missingFile = fixture.file;
+      expect(
+        behaviourTestLayer === "unit" ? virtualDirectories.has(missingDirectory) : existsSync(missingDirectory),
+      ).toBe(false);
+    });
 
-      When("the CV export runs", async () => {
-        failure = await exportCvPdfTo(missingFile);
-      });
+    When("the CV export runs", async () => {
+      failure = await exportCvPdfTo(missingFile);
+    });
 
-      Then("the export fails with a message naming the output path", () => {
-        expect(failure).toBeInstanceOf(Error);
-        expect(String((failure as Error).message)).toContain(missingFile);
-      });
+    Then("the export fails with a message naming the output path", () => {
+      expect(failure).toBeInstanceOf(Error);
+      expect(String((failure as Error).message)).toContain(missingFile);
+    });
 
-      And("no partial file is left behind", () => {
-        expect(outputExists(missingFile)).toBe(false);
-      });
-    },
-  );
+    And("no partial file is left behind", () => {
+      expect(outputExists(missingFile)).toBe(false);
+    });
+  });
 });

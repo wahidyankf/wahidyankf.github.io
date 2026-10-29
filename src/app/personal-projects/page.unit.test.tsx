@@ -52,9 +52,7 @@ type ProjectItem = {
 
 vi.mock("@/features/search/core/search", () => ({
   filterItems: vi.fn((items: ProjectItem[], searchTerm: string) =>
-    items.filter((item) =>
-      item.title.toLowerCase().includes(searchTerm.toLowerCase()),
-    ),
+    items.filter((item) => item.title.toLowerCase().includes(searchTerm.toLowerCase())),
   ),
 }));
 
@@ -74,9 +72,7 @@ describe("Personal Projects component", () => {
 
   it("renders all projects initially", () => {
     render(<PersonalProjectsContent />);
-    expect(
-      screen.getByText("Open Sharia Enterprise (OSE)"),
-    ).toBeInTheDocument();
+    expect(screen.getByText("Open Sharia Enterprise (OSE)")).toBeInTheDocument();
     expect(screen.getByText("BeaverNest")).toBeInTheDocument();
     expect(screen.getByText("AyoKoding")).toBeInTheDocument();
     expect(screen.getByText("OrganicLever")).toBeInTheDocument();
@@ -107,9 +103,7 @@ describe("Personal Projects component", () => {
     fireEvent.change(searchInput, { target: { value: "NonexistentProject" } });
 
     await waitFor(() => {
-      expect(
-        screen.getByText("No projects found matching your search."),
-      ).toBeInTheDocument();
+      expect(screen.getByText("No projects found matching your search.")).toBeInTheDocument();
     });
   });
 
@@ -119,10 +113,7 @@ describe("Personal Projects component", () => {
     fireEvent.change(searchInput, { target: { value: "AyoKoding" } });
 
     await waitFor(() => {
-      expect(mockPush).toHaveBeenCalledWith(
-        "/personal-projects?search=AyoKoding",
-        { scroll: false },
-      );
+      expect(mockPush).toHaveBeenCalledWith("/personal-projects?search=AyoKoding", { scroll: false });
     });
   });
 
@@ -132,27 +123,15 @@ describe("Personal Projects component", () => {
     const repositoryLinks = screen.getAllByRole("link", {
       name: /Repository/i,
     });
-    expect(repositoryLinks[0]).toHaveAttribute(
-      "href",
-      "https://github.com/wahidyankf/ose-public",
-    );
-    expect(repositoryLinks[1]).toHaveAttribute(
-      "href",
-      "https://github.com/wahidyankf/beaver-nest",
-    );
-    expect(repositoryLinks[2]).toHaveAttribute(
-      "href",
-      "https://github.com/organiclever/ayokoding",
-    );
+    expect(repositoryLinks[0]).toHaveAttribute("href", "https://github.com/wahidyankf/ose-public");
+    expect(repositoryLinks[1]).toHaveAttribute("href", "https://github.com/wahidyankf/beaver-nest");
+    expect(repositoryLinks[2]).toHaveAttribute("href", "https://github.com/organiclever/ayokoding");
 
     const websiteLinks = screen.getAllByRole("link", { name: /Website/i });
     expect(websiteLinks[0]).toHaveAttribute("href", "https://oseplatform.com/");
     expect(websiteLinks[1]).toHaveAttribute("href", "https://ayokoding.com/");
 
     const youtubeLink = screen.getByRole("link", { name: /YouTube/i });
-    expect(youtubeLink).toHaveAttribute(
-      "href",
-      "https://www.youtube.com/@AyoKoding",
-    );
+    expect(youtubeLink).toHaveAttribute("href", "https://www.youtube.com/@AyoKoding");
   });
 });

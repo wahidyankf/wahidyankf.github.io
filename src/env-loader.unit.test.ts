@@ -23,10 +23,6 @@ describe("env-loader", () => {
 
   it("re-exports the three names the config reaches for", async () => {
     const module = await import("./env-loader");
-    expect(Object.keys(module).sort()).toEqual([
-      "loadTierEnv",
-      "resolveTier",
-      "tierEnvFilePath",
-    ]);
+    expect(Object.keys(module).sort()).toEqual(["loadTierEnv", "resolveTier", "tierEnvFilePath"]);
   });
 });

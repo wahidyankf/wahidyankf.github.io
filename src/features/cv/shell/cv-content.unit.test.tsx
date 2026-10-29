@@ -16,14 +16,12 @@ vi.mock("next/navigation", () => ({
 }));
 
 vi.mock("@/features/app-shell/shell/navigation", () => ({
-  Navigation: () =>
-    React.createElement("div", { "data-testid": "navigation" }, "Navigation"),
+  Navigation: () => React.createElement("div", { "data-testid": "navigation" }, "Navigation"),
 }));
 
 vi.stubGlobal("scrollTo", vi.fn());
 
-const recentOnlyToggle = () =>
-  screen.getByRole("button", { name: "Show recent work experience only" });
+const recentOnlyToggle = () => screen.getByRole("button", { name: "Show recent work experience only" });
 
 describe("CvContent recent-only filter", () => {
   it("offers the filter switched off, showing all work experience", () => {
@@ -34,17 +32,13 @@ describe("CvContent recent-only filter", () => {
   it("switches its label when the filter is turned on", () => {
     render(<CvContent />);
     fireEvent.click(recentOnlyToggle());
-    expect(
-      screen.getByRole("button", { name: "Show all work experience" }),
-    ).toBeDefined();
+    expect(screen.getByRole("button", { name: "Show all work experience" })).toBeDefined();
   });
 
   it("returns to the unfiltered label when switched off again", () => {
     render(<CvContent />);
     fireEvent.click(recentOnlyToggle());
-    fireEvent.click(
-      screen.getByRole("button", { name: "Show all work experience" }),
-    );
+    fireEvent.click(screen.getByRole("button", { name: "Show all work experience" }));
     expect(recentOnlyToggle()).toBeDefined();
   });
 

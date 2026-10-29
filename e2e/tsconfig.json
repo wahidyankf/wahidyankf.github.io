@@ -15,10 +15,5 @@
     "target": "ES2022"
   },
   "include": ["playwright.config.ts", "tests/**/*.ts", "tools/**/*.ts"],
-  "exclude": [
-    "node_modules",
-    ".features-gen",
-    "playwright-report",
-    "test-results"
-  ]
+  "exclude": ["node_modules", ".features-gen", "playwright-report", "test-results"]
 }

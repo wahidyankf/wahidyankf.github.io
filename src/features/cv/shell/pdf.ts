@@ -19,29 +19,15 @@ const addSectionHeading = (pdf: PDFKit.PDFDocument, title: string): void => {
   pdf.moveDown(0.35);
 };
 
-const addSections = (
-  pdf: PDFKit.PDFDocument,
-  heading: string,
-  entries: CvPdfSection[],
-): void => {
+const addSections = (pdf: PDFKit.PDFDocument, heading: string, entries: CvPdfSection[]): void => {
   if (entries.length === 0) return;
 
   addSectionHeading(pdf, heading);
   entries.forEach((entry) => {
-    pdf
-      .font("Helvetica-Bold")
-      .fontSize(11.5)
-      .fillColor(COLORS.black)
-      .text(entry.title);
-    const subtitle = [entry.organization, entry.period]
-      .filter(Boolean)
-      .join(" · ");
+    pdf.font("Helvetica-Bold").fontSize(11.5).fillColor(COLORS.black).text(entry.title);
+    const subtitle = [entry.organization, entry.period].filter(Boolean).join(" · ");
     if (subtitle) {
-      pdf
-        .font("Helvetica-Bold")
-        .fontSize(10.5)
-        .fillColor(COLORS.black)
-        .text(subtitle);
+      pdf.font("Helvetica-Bold").fontSize(10.5).fillColor(COLORS.black).text(subtitle);
     }
     pdf.moveDown(0.25);
     pdf.font("Helvetica").fontSize(10.5).fillColor(COLORS.black);
@@ -70,45 +56,26 @@ const addFooters = (pdf: PDFKit.PDFDocument, name: string): void => {
       .font("Helvetica")
       .fontSize(9)
       .fillColor(COLORS.gray)
-      .text(
-        `${name} | Page ${i - range.start + 1}`,
-        left,
-        pdf.page.height - FOOTER_MARGIN_FROM_BOTTOM,
-        {
-          width: pdf.page.width - left - right,
-          align: "right",
-        },
-      );
+      .text(`${name} | Page ${i - range.start + 1}`, left, pdf.page.height - FOOTER_MARGIN_FROM_BOTTOM, {
+        width: pdf.page.width - left - right,
+        align: "right",
+      });
     pdf.page.margins.bottom = bottom;
   }
 };
 
-export const renderCvPdf = (
-  document: CvPdfDocumentModel,
-): PDFKit.PDFDocument => {
+export const renderCvPdf = (document: CvPdfDocumentModel): PDFKit.PDFDocument => {
   const pdf = new PDFDocument({
     size: "A4",
     bufferPages: true,
     margins: { top: 44, bottom: 54, left: 50, right: 50 },
   });
 
-  pdf
-    .font("Helvetica-Bold")
-    .fontSize(22)
-    .fillColor(COLORS.black)
-    .text(document.name, { align: "center" });
+  pdf.font("Helvetica-Bold").fontSize(22).fillColor(COLORS.black).text(document.name, { align: "center" });
   pdf.moveDown(0.15);
-  pdf
-    .font("Helvetica-Bold")
-    .fontSize(13)
-    .fillColor(COLORS.navy)
-    .text(document.tagline, { align: "center" });
+  pdf.font("Helvetica-Bold").fontSize(13).fillColor(COLORS.navy).text(document.tagline, { align: "center" });
   pdf.moveDown(0.3);
-  pdf
-    .font("Helvetica")
-    .fontSize(10)
-    .fillColor(COLORS.black)
-    .text(document.contactLine, { align: "center" });
+  pdf.font("Helvetica").fontSize(10).fillColor(COLORS.black).text(document.contactLine, { align: "center" });
   pdf.moveDown(0.8);
 
   if (document.summary.length > 0) {

@@ -38,12 +38,8 @@ const toSection = (entry: CVEntry): CvPdfSection => ({
   details: entry.details,
   meta: [
     entry.skills?.length ? `Skills: ${entry.skills.join(", ")}` : "",
-    entry.programmingLanguages?.length
-      ? `Programming Languages: ${entry.programmingLanguages.join(", ")}`
-      : "",
-    entry.frameworks?.length
-      ? `Frameworks: ${entry.frameworks.join(", ")}`
-      : "",
+    entry.programmingLanguages?.length ? `Programming Languages: ${entry.programmingLanguages.join(", ")}` : "",
+    entry.frameworks?.length ? `Frameworks: ${entry.frameworks.join(", ")}` : "",
     entry.aiSkills?.length ? `AI Skills: ${entry.aiSkills.join(", ")}` : "",
   ].filter((line): line is string => line.length > 0),
 });
@@ -68,9 +64,7 @@ export const buildCvPdfDocument = (data: CVEntry[]): CvPdfDocumentModel => {
     contactLine,
     summary: about?.details ?? [],
     experience: data.filter((entry) => entry.type === "work").map(toSection),
-    education: data
-      .filter((entry) => entry.type === "education")
-      .map(toSection),
+    education: data.filter((entry) => entry.type === "education").map(toSection),
     honors: data.filter((entry) => entry.type === "honor").map(toSection),
     languages: (languageEntry?.details ?? []).map(toLanguage),
   };

@@ -75,9 +75,7 @@ vi.mock("@/features/cv/core/data", () => ({
   getTopSkillsLastFiveYears: () => [{ name: "React", duration: 60 }],
   getTopLanguagesLastFiveYears: () => [{ name: "JavaScript", duration: 60 }],
   getTopFrameworksLastFiveYears: () => [{ name: "Next.js", duration: 60 }],
-  getTopAISkillsLastFiveYears: () => [
-    { name: "AI-Agent Orchestration", duration: 10 },
-  ],
+  getTopAISkillsLastFiveYears: () => [{ name: "AI-Agent Orchestration", duration: 10 }],
   formatDuration: (duration: number) => `${duration} months`,
   parseDate: vi.fn((dateStr: string) => new Date(dateStr)),
   calculateDuration: vi.fn(() => 12),
@@ -113,10 +111,7 @@ describe("CV component", () => {
     const downloadLink = screen.getByRole("link", {
       name: /Download CV \(PDF\)/,
     });
-    expect(downloadLink).toHaveAttribute(
-      "href",
-      "/wahidyankf-kresna-fridayoka-cv.pdf",
-    );
+    expect(downloadLink).toHaveAttribute("href", "/wahidyankf-kresna-fridayoka-cv.pdf");
     expect(downloadLink).toHaveAttribute("download");
   });
 
@@ -126,9 +121,7 @@ describe("CV component", () => {
 
     expect(screen.getByTestId("search-component")).toHaveValue("Software");
     expect(screen.getByText("Software Engineer")).toBeInTheDocument();
-    expect(
-      screen.queryByText("Bachelor of Science in Computer Science"),
-    ).not.toBeInTheDocument();
+    expect(screen.queryByText("Bachelor of Science in Computer Science")).not.toBeInTheDocument();
   });
 
   it("renders the about section", () => {
@@ -143,27 +136,21 @@ describe("CV component", () => {
     const softwareElements = screen.getAllByText(/Software/);
     expect(softwareElements.length).toBeGreaterThan(0);
 
-    const workExperienceSection = screen
-      .getByText("Work Experience")
-      .closest("div");
+    const workExperienceSection = screen.getByText("Work Experience").closest("div");
     expect(workExperienceSection).toBeInTheDocument();
     expect(workExperienceSection?.textContent).toMatch(/\w+/);
   });
 
   it("renders skills, languages, and frameworks", () => {
     render(<CvContent />);
-    expect(
-      screen.getByText("Top Skills Used in The Last 5 Years"),
-    ).toBeInTheDocument();
+    expect(screen.getByText("Top Skills Used in The Last 5 Years")).toBeInTheDocument();
     const reactElements = screen.getAllByText(/React/);
     expect(reactElements.length).toBeGreaterThan(0);
   });
 
   it("updates search term when typing in the search component", () => {
     render(<CvContent />);
-    const searchInput = screen.getByTestId(
-      "search-component",
-    ) as HTMLInputElement;
+    const searchInput = screen.getByTestId("search-component") as HTMLInputElement;
     fireEvent.change(searchInput, { target: { value: "React" } });
     expect(searchInput.value).toBe("React");
   });
@@ -190,9 +177,7 @@ describe("CV component", () => {
     render(<CvContent />);
 
     expect(screen.getByText("Education")).toBeInTheDocument();
-    expect(
-      screen.getByText("Bachelor of Science in Computer Science"),
-    ).toBeInTheDocument();
+    expect(screen.getByText("Bachelor of Science in Computer Science")).toBeInTheDocument();
     expect(screen.getByText("University of Example")).toBeInTheDocument();
     expect(screen.getByText("2015 - 2019")).toBeInTheDocument();
     expect(screen.getByText("Graduated with honors")).toBeInTheDocument();

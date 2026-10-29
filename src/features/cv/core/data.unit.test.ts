@@ -16,9 +16,7 @@ describe("data.ts functions", () => {
     });
 
     it("should throw an error for invalid month", () => {
-      expect(() => parseDate("InvalidMonth 2020")).toThrowError(
-        "Invalid month: InvalidMonth",
-      );
+      expect(() => parseDate("InvalidMonth 2020")).toThrowError("Invalid month: InvalidMonth");
     });
   });
 
@@ -55,10 +53,7 @@ describe("data.ts functions", () => {
       ];
       const result = calculateTotalDuration(periods);
       const currentDate = new Date();
-      const expectedMonths =
-        (currentDate.getFullYear() - 2017) * 12 +
-        (currentDate.getMonth() - 9) +
-        1; // +1 to include both start and end months
+      const expectedMonths = (currentDate.getFullYear() - 2017) * 12 + (currentDate.getMonth() - 9) + 1; // +1 to include both start and end months
       expect(result).toBe(expectedMonths);
     });
 
@@ -155,14 +150,7 @@ describe("data.ts functions", () => {
           employmentType: "Full-time",
           location: "Jakarta, Indonesia",
           locationType: "Remote",
-          programmingLanguages: [
-            "JavaScript",
-            "TypeScript",
-            "ReasonML",
-            "SQL",
-            "HTML",
-            "CSS",
-          ],
+          programmingLanguages: ["JavaScript", "TypeScript", "ReasonML", "SQL", "HTML", "CSS"],
           frameworks: ["React.js", "React Native", "ReasonReact"],
         },
         {
@@ -205,9 +193,7 @@ describe("data.ts functions", () => {
         },
       ];
 
-      const names = getTopSkillsLastFiveYears(mockData).map(
-        (skill) => skill.name,
-      );
+      const names = getTopSkillsLastFiveYears(mockData).map((skill) => skill.name);
       expect(names).toContain("TypeScript");
       expect(names).not.toContain("COBOL");
     });

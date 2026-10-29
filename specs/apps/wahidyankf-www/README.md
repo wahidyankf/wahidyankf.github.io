@@ -3,8 +3,8 @@
 The canonical as-built boundaries for `wahidyankf-www` live in [architecture.md](architecture.md), and its executable
 behaviour lives in [behaviours/](behaviours/README.md). Eleven feature files carry the executable scenarios.
 
-The owner application hosts Unit and Integration adapters. `e2e/` owns the browser adapter and
-depends one-way on the owner; it owns no feature files.
+The owner application hosts Unit and Integration adapters. `e2e/` owns the browser adapter and depends one-way on the
+owner; it owns no feature files.
 
 ## Adapters
 

@@ -3,19 +3,9 @@ import path from "node:path";
 
 const scenarioPattern = /^(?:Scenario(?: Outline| Template)?|Example):/iu;
 const exemptionTags = new Set(["integration-exempt", "e2e-exempt"]);
-const forbiddenTags = new Set([
-  "unit",
-  "integration",
-  "e2e",
-  "unit-exempt",
-  "no-unit",
-  "no-integration",
-  "no-e2e",
-]);
-const exemptionCommentPattern =
-  /^# Exemption\((integration|e2e)\): (.+); alternative-proof: (.+)$/u;
-const invalidReasonPattern =
-  /\b(?:hard|slow|flaky|cost(?:ly)?|expensive|not yet implemented|todo)\b/iu;
+const forbiddenTags = new Set(["unit", "integration", "e2e", "unit-exempt", "no-unit", "no-integration", "no-e2e"]);
+const exemptionCommentPattern = /^# Exemption\((integration|e2e)\): (.+); alternative-proof: (.+)$/u;
+const invalidReasonPattern = /\b(?:hard|slow|flaky|cost(?:ly)?|expensive|not yet implemented|todo)\b/iu;
 
 function startsStep(keyword, line) {
   return line.toLowerCase().startsWith(`${keyword.toLowerCase()} `);
@@ -24,14 +14,10 @@ function startsStep(keyword, line) {
 function finishScenario(resourceName, state, errors) {
   if (state.currentScenario === undefined) return;
   if (!state.hasWhen) {
-    errors.push(
-      `${resourceName}: ${state.currentScenario} requires a When step.`,
-    );
+    errors.push(`${resourceName}: ${state.currentScenario} requires a When step.`);
   }
   if (!state.hasThen) {
-    errors.push(
-      `${resourceName}: ${state.currentScenario} requires a Then step.`,
-    );
+    errors.push(`${resourceName}: ${state.currentScenario} requires a Then step.`);
   }
 }
 
@@ -50,15 +36,9 @@ function inspectLine(resourceName, state, errors, line) {
     state.currentScenario = trimmed;
     state.hasWhen = false;
     state.hasThen = false;
-  } else if (
-    state.currentScenario !== undefined &&
-    startsStep("When", trimmed)
-  ) {
+  } else if (state.currentScenario !== undefined && startsStep("When", trimmed)) {
     state.hasWhen = true;
-  } else if (
-    state.currentScenario !== undefined &&
-    startsStep("Then", trimmed)
-  ) {
+  } else if (state.currentScenario !== undefined && startsStep("Then", trimmed)) {
     state.hasThen = true;
   }
 }
@@ -73,16 +53,12 @@ export function validateFeatureSource(resourceName, source) {
     insideDocString: false,
     scenarioCount: 0,
   };
-  for (const line of source
-    .replaceAll("\r\n", "\n")
-    .replaceAll("\r", "\n")
-    .split("\n")) {
+  for (const line of source.replaceAll("\r\n", "\n").replaceAll("\r", "\n").split("\n")) {
     inspectLine(resourceName, state, errors, line);
   }
   finishScenario(resourceName, state, errors);
   errors.push(...validateExemptionPolicy(resourceName, source));
-  if (!state.hasFeature)
-    errors.push(`${resourceName}: missing Feature: declaration.`);
+  if (!state.hasFeature) errors.push(`${resourceName}: missing Feature: declaration.`);
   if (state.scenarioCount === 0) {
     errors.push(`${resourceName}: feature must contain at least one scenario.`);
   }
@@ -91,38 +67,26 @@ export function validateFeatureSource(resourceName, source) {
 
 function validateExemptionPolicy(resourceName, source) {
   const errors = [];
-  const lines = source
-    .replaceAll("\r\n", "\n")
-    .replaceAll("\r", "\n")
-    .split("\n");
+  const lines = source.replaceAll("\r\n", "\n").replaceAll("\r", "\n").split("\n");
   let pending = [];
   lines.forEach((line, index) => {
     const trimmed = line.trim();
     const lineNumber = index + 1;
     if (trimmed.startsWith("@")) {
-      pending.push(
-        ...validateTagLine(resourceName, trimmed, lineNumber, errors),
-      );
+      pending.push(...validateTagLine(resourceName, trimmed, lineNumber, errors));
       return;
     }
     if (gherkinDeclaration(trimmed)) {
-      errors.push(
-        ...declarationErrors(resourceName, lines, pending, trimmed, lineNumber),
-      );
+      errors.push(...declarationErrors(resourceName, lines, pending, trimmed, lineNumber));
       pending = [];
       return;
     }
     if (trimmed !== "" && !trimmed.startsWith("#") && pending.length > 0) {
-      errors.push(
-        `${resourceName}:${lineNumber}: tags must be followed by their Gherkin declaration.`,
-      );
+      errors.push(`${resourceName}:${lineNumber}: tags must be followed by their Gherkin declaration.`);
       pending = [];
     }
   });
-  if (pending.length > 0)
-    errors.push(
-      `${resourceName}: dangling tags are not attached to a scenario.`,
-    );
+  if (pending.length > 0) errors.push(`${resourceName}: dangling tags are not attached to a scenario.`);
   return errors;
 }
 
@@ -133,38 +97,24 @@ function validateTagLine(resourceName, line, lineNumber, errors) {
     .map((part) => part.slice(1))
     .map((name) => {
       if (forbiddenTags.has(name)) {
-        errors.push(
-          `${resourceName}:${lineNumber}: @${name} is forbidden; use only canonical exemption tags.`,
-        );
+        errors.push(`${resourceName}:${lineNumber}: @${name} is forbidden; use only canonical exemption tags.`);
       }
       return { line: lineNumber, name };
     });
 }
 
-function declarationErrors(
-  resourceName,
-  lines,
-  pending,
-  declaration,
-  lineNumber,
-) {
+function declarationErrors(resourceName, lines, pending, declaration, lineNumber) {
   const exemptions = pending.filter(({ name }) => exemptionTags.has(name));
   if (exemptions.length === 0) return [];
-  const errors = exemptions.flatMap((tag) =>
-    documentedExemptionErrors(resourceName, lines, tag),
-  );
+  const errors = exemptions.flatMap((tag) => documentedExemptionErrors(resourceName, lines, tag));
   if (!scenarioPattern.test(declaration)) {
-    errors.push(
-      `${resourceName}:${lineNumber}: exemption tags may only annotate a Scenario or Scenario Outline.`,
-    );
+    errors.push(`${resourceName}:${lineNumber}: exemption tags may only annotate a Scenario or Scenario Outline.`);
   }
   return errors;
 }
 
 function documentedExemptionErrors(resourceName, lines, exemption) {
-  const match = exemptionCommentPattern.exec(
-    lines[exemption.line - 2]?.trim() ?? "",
-  );
+  const match = exemptionCommentPattern.exec(lines[exemption.line - 2]?.trim() ?? "");
   const layer = exemption.name.replace("-exempt", "");
   if (match === null || match[1] !== layer) {
     return [
@@ -186,9 +136,7 @@ function documentedExemptionErrors(resourceName, lines, exemption) {
 }
 
 function gherkinDeclaration(line) {
-  return /^(?:Feature|Rule|Background|Scenario(?: Outline| Template)?|Examples?|Example):/iu.test(
-    line,
-  );
+  return /^(?:Feature|Rule|Background|Scenario(?: Outline| Template)?|Examples?|Example):/iu.test(line);
 }
 
 /** Recursively returns predicate-matching files in deterministic order. */
@@ -198,9 +146,7 @@ export async function findFiles(root, predicate) {
     entries.map((entry) => {
       const entryPath = path.join(root, entry.name);
       if (entry.isDirectory()) return findFiles(entryPath, predicate);
-      return Promise.resolve(
-        entry.isFile() && predicate(entry.name) ? [entryPath] : [],
-      );
+      return Promise.resolve(entry.isFile() && predicate(entry.name) ? [entryPath] : []);
     }),
   );
   return files.flat().toSorted();
@@ -209,9 +155,7 @@ export async function findFiles(root, predicate) {
 /** Validates a deterministic list of canonical feature files. */
 export async function validateFeatureFiles(featureFiles) {
   const results = await Promise.all(
-    featureFiles.map(async (featureFile) =>
-      validateFeatureSource(featureFile, await readFile(featureFile, "utf8")),
-    ),
+    featureFiles.map(async (featureFile) => validateFeatureSource(featureFile, await readFile(featureFile, "utf8"))),
   );
   return results.flat().toSorted();
 }
@@ -220,38 +164,25 @@ export async function validateFeatureFiles(featureFiles) {
 export function inspectFeatureReferences(resourceName, source) {
   const scenarios = [];
   const proofs = [];
-  const lines = source
-    .replaceAll("\r\n", "\n")
-    .replaceAll("\r", "\n")
-    .split("\n");
+  const lines = source.replaceAll("\r\n", "\n").replaceAll("\r", "\n").split("\n");
   lines.forEach((line, index) => {
-    const declaration =
-      /^(?:Scenario(?: Outline| Template)?|Example):\s*(.+)$/iu.exec(
-        line.trim(),
-      );
+    const declaration = /^(?:Scenario(?: Outline| Template)?|Example):\s*(.+)$/iu.exec(line.trim());
     if (declaration?.[1]) scenarios.push(declaration[1]);
     const match = exemptionCommentPattern.exec(line.trim());
     if (match?.[3]) {
       const [target, scenario] = match[3].split(/\s+\/\s+/u, 2);
-      if (target && scenario)
-        proofs.push({ line: index + 1, resourceName, scenario, target });
+      if (target && scenario) proofs.push({ line: index + 1, resourceName, scenario, target });
     }
   });
   return { proofs, scenarios };
 }
 
 /** Validates that every structured alternative proof names an existing target and scenario. */
-export function validateAlternativeProofReferences(
-  proofs,
-  projectTargets,
-  scenarioNames,
-) {
+export function validateAlternativeProofReferences(proofs, projectTargets, scenarioNames) {
   const findings = [];
   for (const proof of proofs) {
     if (!projectTargets.has(proof.target)) {
-      findings.push(
-        `${proof.resourceName}:${proof.line}: alternative-proof target ${proof.target} does not exist.`,
-      );
+      findings.push(`${proof.resourceName}:${proof.line}: alternative-proof target ${proof.target} does not exist.`);
     }
     if (!scenarioNames.has(proof.scenario)) {
       findings.push(
@@ -265,10 +196,7 @@ export function validateAlternativeProofReferences(
 /** Returns the owner-adapter rows required by each canonical scenario declaration. */
 export function inspectOwnerCoverageRequirements(resourceName, source) {
   const requirements = [];
-  const lines = source
-    .replaceAll("\r\n", "\n")
-    .replaceAll("\r", "\n")
-    .split("\n");
+  const lines = source.replaceAll("\r\n", "\n").replaceAll("\r", "\n").split("\n");
   let pendingTags = [];
   for (const line of lines) {
     const trimmed = line.trim();
@@ -281,8 +209,7 @@ export function inspectOwnerCoverageRequirements(resourceName, source) {
       );
       continue;
     }
-    const scenario =
-      /^(?:Scenario(?: Outline| Template)?|Example):\s*(.+)$/iu.exec(trimmed);
+    const scenario = /^(?:Scenario(?: Outline| Template)?|Example):\s*(.+)$/iu.exec(trimmed);
     if (scenario?.[1]) {
       requirements.push({
         integrationExempt: pendingTags.includes("integration-exempt"),
@@ -307,22 +234,15 @@ export function inspectCoverageMarkers(resourceName, source) {
 }
 
 /** Proves exactly one Unit row and one non-exempt Integration row per scenario. */
-export function validateOwnerAdapterCoverage(
-  requirements,
-  unitMarkers,
-  integrationMarkers,
-) {
+export function validateOwnerAdapterCoverage(requirements, unitMarkers, integrationMarkers) {
   const findings = [];
   const requiredKeys = new Set(requirements.map(({ key }) => key));
-  const count = (markers, key) =>
-    markers.filter((marker) => marker.key === key).length;
+  const count = (markers, key) => markers.filter((marker) => marker.key === key).length;
 
   for (const requirement of requirements) {
     const unitCount = count(unitMarkers, requirement.key);
     if (unitCount !== 1) {
-      findings.push(
-        `${requirement.key}: expected exactly one Unit adapter marker, found ${unitCount}.`,
-      );
+      findings.push(`${requirement.key}: expected exactly one Unit adapter marker, found ${unitCount}.`);
     }
     const integrationCount = count(integrationMarkers, requirement.key);
     const expectedIntegrationCount = requirement.integrationExempt ? 0 : 1;
@@ -339,9 +259,7 @@ export function validateOwnerAdapterCoverage(
   ]) {
     for (const marker of markers) {
       if (!requiredKeys.has(marker.key)) {
-        findings.push(
-          `${marker.resourceName}: ${layer} adapter marker references unknown scenario ${marker.key}.`,
-        );
+        findings.push(`${marker.resourceName}: ${layer} adapter marker references unknown scenario ${marker.key}.`);
       }
     }
   }

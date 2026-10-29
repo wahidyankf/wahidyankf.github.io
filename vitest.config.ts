@@ -45,6 +45,13 @@ export default defineConfig({
         "**/coverage/**",
       ],
       reporter: ["text", "json-summary", "lcov"],
+      // The 99% line floor for unit scope (`test:coverage:unit` runs the
+      // `unit` and `behaviour-unit` projects against this denominator).
+      // Kept here so every coverage run enforces it, not only the npm
+      // script that repeats it as a CLI flag.
+      thresholds: {
+        lines: 99,
+      },
     },
     projects: [
       {
@@ -63,10 +70,7 @@ export default defineConfig({
         test: {
           name: "behaviour-unit",
           testTimeout: TEST_TIMEOUT_MS,
-          include: [
-            "tests/bdd/**/*.{ts,tsx}",
-            "tests/integration/cv-pdf.integration.test.ts",
-          ],
+          include: ["tests/bdd/**/*.{ts,tsx}", "tests/integration/cv-pdf.integration.test.ts"],
           exclude: ["tests/bdd/test-layer.ts", "node_modules"],
           env: { WAHIDYANKF_WWW_BEHAVIOUR_TEST_LAYER: "unit" },
           environment: "jsdom",

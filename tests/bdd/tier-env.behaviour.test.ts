@@ -11,18 +11,11 @@ import { mkdtempSync, rmSync, writeFileSync, existsSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { loadFeature, describeFeature } from "@amiceli/vitest-cucumber";
 import { describe, expect, it } from "vitest";
-import {
-  loadTierEnv,
-  resolveTier,
-  type EnvRecord,
-} from "@/features/env/core/tier-env";
+import { loadTierEnv, resolveTier, type EnvRecord } from "@/features/env/core/tier-env";
 import { behaviourTestLayer } from "./test-layer";
 
 const feature = await loadFeature(
-  path.resolve(
-    process.cwd(),
-    "specs/apps/wahidyankf-www/behaviours/tier-env-loading.feature",
-  ),
+  path.resolve(process.cwd(), "specs/apps/wahidyankf-www/behaviours/tier-env-loading.feature"),
 );
 
 const tmpDirs: string[] = [];
@@ -39,11 +32,7 @@ function makeTmpAppDir(): string {
   return dir;
 }
 
-function writeEnvFile(
-  appDir: string,
-  fileName: string,
-  contents: string,
-): void {
+function writeEnvFile(appDir: string, fileName: string, contents: string): void {
   if (behaviourTestLayer === "unit") {
     virtualFiles.set(path.join(appDir, fileName), contents);
     return;
@@ -52,9 +41,7 @@ function writeEnvFile(
 }
 
 function fileExists(filePath: string): boolean {
-  return behaviourTestLayer === "unit"
-    ? virtualFiles.has(filePath)
-    : existsSync(filePath);
+  return behaviourTestLayer === "unit" ? virtualFiles.has(filePath) : existsSync(filePath);
 }
 
 function loadAtCurrentLayer(appDir: string, env: EnvRecord): void {
@@ -98,11 +85,7 @@ describeFeature(feature, ({ Scenario, ScenarioOutline, AfterEachScenario }) => {
 
     Given('only ".env.stag" exists in the app directory', () => {
       appDir = makeTmpAppDir();
-      writeEnvFile(
-        appDir,
-        ".env.stag",
-        "SHARED_VAR=stag-value\nSTAG_ONLY_VAR=stag-only\n",
-      );
+      writeEnvFile(appDir, ".env.stag", "SHARED_VAR=stag-value\nSTAG_ONLY_VAR=stag-only\n");
     });
 
     When('the loader runs with APP_ENV set to "stag"', () => {
@@ -117,32 +100,29 @@ describeFeature(feature, ({ Scenario, ScenarioOutline, AfterEachScenario }) => {
     });
   });
 
-  Scenario(
-    "Process env always wins over the tier file",
-    ({ Given, When, Then, And }) => {
-      let appDir = "";
-      let env: EnvRecord = {};
+  Scenario("Process env always wins over the tier file", ({ Given, When, Then, And }) => {
+    let appDir = "";
+    let env: EnvRecord = {};
 
-      Given('".env.local" sets a variable to a file value', () => {
-        appDir = makeTmpAppDir();
-        writeEnvFile(appDir, ".env.local", "SOME_VAR=file-value\n");
-      });
+    Given('".env.local" sets a variable to a file value', () => {
+      appDir = makeTmpAppDir();
+      writeEnvFile(appDir, ".env.local", "SOME_VAR=file-value\n");
+    });
 
-      When('the process already has that variable set at tier "local"', () => {
-        env = { APP_ENV: "local", SOME_VAR: "process-value" };
-        loadAtCurrentLayer(appDir, env);
-      });
+    When('the process already has that variable set at tier "local"', () => {
+      env = { APP_ENV: "local", SOME_VAR: "process-value" };
+      loadAtCurrentLayer(appDir, env);
+    });
 
-      Then("the process value is used", () => {
-        expect(env.SOME_VAR).toBe("process-value");
-      });
+    Then("the process value is used", () => {
+      expect(env.SOME_VAR).toBe("process-value");
+    });
 
-      // @covers specs/apps/wahidyankf-www/behaviours/tier-env-loading.feature:Process env always wins over the tier file
-      And('the ".env.local" value is not applied over it', () => {
-        expect(env.SOME_VAR).toBe("process-value");
-      });
-    },
-  );
+    // @covers specs/apps/wahidyankf-www/behaviours/tier-env-loading.feature:Process env always wins over the tier file
+    And('the ".env.local" value is not applied over it', () => {
+      expect(env.SOME_VAR).toBe("process-value");
+    });
+  });
 
   Scenario("Tolerates a missing tier file", ({ Given, When, Then, And }) => {
     let appDir = "";
@@ -173,65 +153,56 @@ describeFeature(feature, ({ Scenario, ScenarioOutline, AfterEachScenario }) => {
     });
   });
 
-  ScenarioOutline(
-    "Fails loudly on a stray auto-loaded env file",
-    ({ Given, When, Then }, examples) => {
-      const file = String(examples.file ?? "");
-      let appDir = "";
-      let thrown: unknown;
+  ScenarioOutline("Fails loudly on a stray auto-loaded env file", ({ Given, When, Then }, examples) => {
+    const file = String(examples.file ?? "");
+    let appDir = "";
+    let thrown: unknown;
 
-      Given('a stray "<file>" sits beside the tier file', () => {
-        appDir = makeTmpAppDir();
-        writeEnvFile(appDir, ".env.stag", "VAR=value\n");
-        writeEnvFile(appDir, file, "VAR=other\n");
-      });
+    Given('a stray "<file>" sits beside the tier file', () => {
+      appDir = makeTmpAppDir();
+      writeEnvFile(appDir, ".env.stag", "VAR=value\n");
+      writeEnvFile(appDir, file, "VAR=other\n");
+    });
 
-      When("the loader runs with APP_ENV set to a non-local tier", () => {
-        try {
-          loadAtCurrentLayer(appDir, { APP_ENV: "stag" });
-        } catch (error) {
-          thrown = error;
-        }
-      });
+    When("the loader runs with APP_ENV set to a non-local tier", () => {
+      try {
+        loadAtCurrentLayer(appDir, { APP_ENV: "stag" });
+      } catch (error) {
+        thrown = error;
+      }
+    });
 
-      // @covers specs/apps/wahidyankf-www/behaviours/tier-env-loading.feature:Fails loudly on a stray auto-loaded env file
-      Then(
-        'the loader throws, naming "<file>" and the correct ".env.<tier>" replacement',
-        () => {
-          expect(thrown).toBeInstanceOf(Error);
-          expect((thrown as Error).message).toContain(file);
-          expect((thrown as Error).message).toContain(".env.stag");
-        },
-      );
-    },
-  );
+    // @covers specs/apps/wahidyankf-www/behaviours/tier-env-loading.feature:Fails loudly on a stray auto-loaded env file
+    Then('the loader throws, naming "<file>" and the correct ".env.<tier>" replacement', () => {
+      expect(thrown).toBeInstanceOf(Error);
+      expect((thrown as Error).message).toContain(file);
+      expect((thrown as Error).message).toContain(".env.stag");
+    });
+  });
 
-  Scenario(
-    "Tolerates a stray file at the local tier",
-    ({ Given, When, Then }) => {
-      let appDir = "";
-      let thrown: unknown;
+  Scenario("Tolerates a stray file at the local tier", ({ Given, When, Then }) => {
+    let appDir = "";
+    let thrown: unknown;
 
-      Given('a stray ".env" sits beside ".env.local"', () => {
-        appDir = makeTmpAppDir();
-        writeEnvFile(appDir, ".env.local", "VAR=value\n");
-        writeEnvFile(appDir, ".env", "VAR=other\n");
-      });
+    Given('a stray ".env" sits beside ".env.local"', () => {
+      appDir = makeTmpAppDir();
+      writeEnvFile(appDir, ".env.local", "VAR=value\n");
+      writeEnvFile(appDir, ".env", "VAR=other\n");
+    });
 
-      When('the loader runs with APP_ENV set to "local"', () => {
-        try {
-          loadAtCurrentLayer(appDir, { APP_ENV: "local" });
-        } catch (error) {
-          thrown = error;
-        }
-      });
+    When('the loader runs with APP_ENV set to "local"', () => {
+      try {
+        loadAtCurrentLayer(appDir, { APP_ENV: "local" });
+      } catch (error) {
+        thrown = error;
+      }
+    });
 
-      // @covers specs/apps/wahidyankf-www/behaviours/tier-env-loading.feature:Tolerates a stray file at the local tier
-      Then("the loader does not throw", () => {
-        expect(thrown).toBeUndefined();
-      });
-    },
-  );
+    // @covers specs/apps/wahidyankf-www/behaviours/tier-env-loading.feature:Tolerates a stray file at the local tier
+    Then("the loader does not throw", () => {
+      expect(thrown).toBeUndefined();
+    });
+  });
 });
 
 // Rule 1 of the loader contract (APP_ENV unset defaults to "local") is exercised directly against

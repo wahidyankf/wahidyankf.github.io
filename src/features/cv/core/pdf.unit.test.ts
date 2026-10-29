@@ -54,10 +54,7 @@ const fixture: CVEntry[] = [
     title: "Languages",
     organization: "",
     period: "",
-    details: [
-      "English|Full professional proficiency",
-      "French|Elementary proficiency",
-    ],
+    details: ["English|Full professional proficiency", "French|Elementary proficiency"],
   },
 ];
 
@@ -65,9 +62,7 @@ describe("buildCvPdfDocument", () => {
   it("carries the fixed name and tagline used across the site's metadata", () => {
     const doc = buildCvPdfDocument(fixture);
     expect(doc.name).toBe("Wahidyan Kresna Fridayoka");
-    expect(doc.tagline).toBe(
-      "Engineering Leader — Digital Banking, Fintech & RegTech",
-    );
+    expect(doc.tagline).toBe("Engineering Leader — Digital Banking, Fintech & RegTech");
   });
 
   it("builds the contact line from the about entry's known links only", () => {
@@ -79,10 +74,7 @@ describe("buildCvPdfDocument", () => {
 
   it("pulls the about entry's details into the summary", () => {
     const doc = buildCvPdfDocument(fixture);
-    expect(doc.summary).toEqual([
-      "Summary paragraph one.",
-      "Summary paragraph two.",
-    ]);
+    expect(doc.summary).toEqual(["Summary paragraph one.", "Summary paragraph two."]);
   });
 
   it("shapes work entries into experience sections with joined meta lines", () => {

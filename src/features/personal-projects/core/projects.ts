@@ -75,8 +75,7 @@ export const projects: Project[] = [
   },
   {
     title: "OrganicLever",
-    description:
-      "A web application focused on team and personal productivity (in progress).",
+    description: "A web application focused on team and personal productivity (in progress).",
     period: "February 2026 - Present",
     details: [
       "Aims to improve team collaboration",
@@ -102,10 +101,7 @@ export type ProjectFilter = string;
  * rather than derived from the type, which makes adding a field to `Project` a
  * deliberate decision about whether it should be searchable.
  */
-export function filterProjects(
-  projects: Project[],
-  filter: ProjectFilter,
-): Project[] {
+export function filterProjects(projects: Project[], filter: ProjectFilter): Project[] {
   return filterItems(projects, filter, [
     "title",
     "description",

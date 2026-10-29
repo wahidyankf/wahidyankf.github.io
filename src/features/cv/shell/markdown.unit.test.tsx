@@ -27,8 +27,7 @@ describe("parseMarkdownLinks", () => {
   });
 
   it("should parse multiple markdown links correctly", () => {
-    const text =
-      "Visit [Google](https://www.google.com) or [GitHub](https://github.com)";
+    const text = "Visit [Google](https://www.google.com) or [GitHub](https://github.com)";
     const result = parseMarkdownLinks(text, "");
     render(result);
 
@@ -61,15 +60,12 @@ describe("parseMarkdownLinks", () => {
   });
 
   it("should highlight search terms in both link text and regular text", () => {
-    const text =
-      "Check out [Google Search](https://www.google.com) for searching";
+    const text = "Check out [Google Search](https://www.google.com) for searching";
     const searchTerm = "search";
     const result = parseMarkdownLinks(text, searchTerm);
     render(result);
 
-    const highlightedTexts = screen.getAllByText((content) =>
-      content.toLowerCase().includes(searchTerm),
-    );
+    const highlightedTexts = screen.getAllByText((content) => content.toLowerCase().includes(searchTerm));
     expect(highlightedTexts).toHaveLength(2); // "Search" in link text and "searching" in regular text
   });
 });

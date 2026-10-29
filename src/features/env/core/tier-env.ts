@@ -56,11 +56,7 @@ export function tierEnvFilePath(tier: string, appDir: string): string {
  * at "local": Next.js auto-loading a bare `.env` alongside an explicit `.env.local` tier file is
  * the one case this convention treats as safe, since local development is never a deploy target.
  */
-function assertNoStrayEnvFile(
-  tier: string,
-  appDir: string,
-  fileExists: (filePath: string) => boolean,
-): void {
+function assertNoStrayEnvFile(tier: string, appDir: string, fileExists: (filePath: string) => boolean): void {
   if (tier === DEFAULT_TIER) {
     return;
   }

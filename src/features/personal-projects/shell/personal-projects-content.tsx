@@ -1,10 +1,7 @@
 "use client";
 
 import { Navigation } from "@/features/app-shell/shell/navigation";
-import {
-  projects,
-  filterProjects,
-} from "@/features/personal-projects/core/projects";
+import { projects, filterProjects } from "@/features/personal-projects/core/projects";
 import { calculateDuration, formatDuration } from "@/features/cv/core/data";
 import { Code, Globe, Package, Sparkles, Star } from "lucide-react";
 import { useState, useEffect } from "react";
@@ -35,9 +32,7 @@ function ProjectsContent() {
 
   useEffect(() => {
     const syncSearchTerm = () => {
-      setSearchTerm(
-        new URLSearchParams(window.location.search).get("search") ?? "",
-      );
+      setSearchTerm(new URLSearchParams(window.location.search).get("search") ?? "");
     };
 
     syncSearchTerm();
@@ -46,9 +41,7 @@ function ProjectsContent() {
   }, []);
 
   const updateURL = (term: string) => {
-    const newURL = term
-      ? `/personal-projects?search=${encodeURIComponent(term)}`
-      : "/personal-projects";
+    const newURL = term ? `/personal-projects?search=${encodeURIComponent(term)}` : "/personal-projects";
     router.push(newURL, { scroll: false });
   };
 
@@ -79,11 +72,7 @@ function ProjectsContent() {
           // on, so the id has to track position in the filtered list. React's
           // key must not, because reusing a position as identity makes it
           // reuse the wrong card's state when a search filters the list.
-          <div
-            id={`project-${index}`}
-            key={project.title}
-            className="mb-8 border border-green-400 p-4"
-          >
+          <div id={`project-${index}`} key={project.title} className="mb-8 border border-green-400 p-4">
             <h2 className="mb-2 text-xl text-yellow-400 sm:text-2xl md:text-3xl">
               <HighlightText text={project.title} searchTerm={searchTerm} />
             </h2>
@@ -91,18 +80,11 @@ function ProjectsContent() {
               <HighlightText text={project.period} searchTerm={searchTerm} />
               <span className="ml-2 text-yellow-400">
                 (
-                <HighlightText
-                  text={formatDuration(calculateDuration(project.period))}
-                  searchTerm={searchTerm}
-                />
-                )
+                <HighlightText text={formatDuration(calculateDuration(project.period))} searchTerm={searchTerm} />)
               </span>
             </p>
             <p className="mb-2 text-green-300">
-              <HighlightText
-                text={project.description}
-                searchTerm={searchTerm}
-              />
+              <HighlightText text={project.description} searchTerm={searchTerm} />
             </p>
             <ul className="mb-2 list-inside list-disc text-green-200">
               {project.details.map((detail: string) => (
@@ -151,19 +133,14 @@ function ProjectsContent() {
                   className="mr-4 inline-flex items-center text-yellow-400 underline decoration-yellow-400 transition-all duration-200 hover:text-green-400 hover:decoration-green-400"
                 >
                   <LinkIcon type={key} />
-                  <HighlightText
-                    text={key.charAt(0).toUpperCase() + key.slice(1)}
-                    searchTerm={searchTerm}
-                  />
+                  <HighlightText text={key.charAt(0).toUpperCase() + key.slice(1)} searchTerm={searchTerm} />
                 </a>
               ))}
             </div>
           </div>
         ))
       ) : (
-        <p className="text-center text-yellow-400">
-          No projects found matching your search.
-        </p>
+        <p className="text-center text-yellow-400">No projects found matching your search.</p>
       )}
     </div>
   );

@@ -42,12 +42,7 @@ export const SearchComponent: React.FC<SearchComponentProps> = ({
       />
       <Search className="absolute top-1/2 left-3 -translate-y-1/2 transform text-green-400" />
       {searchTerm && (
-        <button
-          type="button"
-          onClick={clearSearch}
-          className={clearButtonClassName}
-          aria-label="Clear search"
-        >
+        <button type="button" onClick={clearSearch} className={clearButtonClassName} aria-label="Clear search">
           <X className="h-4 w-4" />
         </button>
       )}

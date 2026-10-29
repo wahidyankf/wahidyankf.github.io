@@ -17,8 +17,6 @@ describe("sitemap", () => {
   });
 
   it("declares every route as monthly", () => {
-    expect(
-      sitemap().every((entry) => entry.changeFrequency === "monthly"),
-    ).toBe(true);
+    expect(sitemap().every((entry) => entry.changeFrequency === "monthly")).toBe(true);
   });
 });
