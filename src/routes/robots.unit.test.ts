@@ -10,7 +10,7 @@ describe("robots.txt server route", () => {
       throw new Error("Route /robots.txt exports no GET handler.");
     }
     const response = await get({
-      request: new Request("https://www.wahidyankf.com/robots.txt"),
+      request: new Request("https://wahidyankf.github.io/robots.txt"),
     } as never);
     if (!(response instanceof Response)) {
       throw new Error("Route /robots.txt did not return a response.");
