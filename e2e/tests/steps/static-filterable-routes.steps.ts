@@ -72,12 +72,12 @@ When("a crawler requests the robots and sitemap routes", async ({ page }) => {
 Then("robots permits crawling and names the canonical sitemap", async () => {
   expect(robotsText).toContain("User-Agent: *");
   expect(robotsText).toContain("Allow: /");
-  expect(robotsText).toContain("Sitemap: https://wahidyankf.github.io/sitemap.xml");
+  expect(robotsText).toContain("Sitemap: https://wahidyankf.com/sitemap.xml");
 });
 
 // @covers specs/apps/wahidyankf-www/behaviours/static-filterable-routes.feature:Crawlers receive discovery directives for every public route
 Then("the sitemap lists every public portfolio route", async () => {
   for (const route of publicPortfolioRoutes.slice(0, 3)) {
-    expect(sitemapText).toContain(`https://wahidyankf.github.io${route === "/" ? "" : route}`);
+    expect(sitemapText).toContain(`https://wahidyankf.com${route === "/" ? "" : route}`);
   }
 });
