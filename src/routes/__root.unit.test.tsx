@@ -49,7 +49,7 @@ describe("Root route head", () => {
     }
     expect(byName.get("description")).toContain("engineering leader");
     expect(byName.get("og:title")).toContain("Engineering Leader");
-    expect(byName.get("og:image")).toBe("https://wahidyankf.github.io/og-image.jpg");
+    expect(byName.get("og:image")).toBe("https://wahidyankf.com/og-image.jpg");
     expect(byName.get("twitter:card")).toBe("summary_large_image");
   });
 

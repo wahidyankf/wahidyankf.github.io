@@ -151,7 +151,7 @@ describeFeature(feature, ({ Scenario, Background, AfterEachScenario }) => {
     Then("robots permits crawling and names the canonical sitemap", () => {
       expect(crawlerRobots).toEqual({
         rules: [{ userAgent: "*", allow: "/" }],
-        sitemap: "https://wahidyankf.github.io/sitemap.xml",
+        sitemap: "https://wahidyankf.com/sitemap.xml",
       });
     });
 
@@ -159,10 +159,10 @@ describeFeature(feature, ({ Scenario, Background, AfterEachScenario }) => {
     And("the sitemap lists every public portfolio route", () => {
       expect(crawlerSitemap).toEqual(
         expect.arrayContaining([
-          expect.objectContaining({ url: "https://wahidyankf.github.io" }),
-          expect.objectContaining({ url: "https://wahidyankf.github.io/cv" }),
+          expect.objectContaining({ url: "https://wahidyankf.com" }),
+          expect.objectContaining({ url: "https://wahidyankf.com/cv" }),
           expect.objectContaining({
-            url: "https://wahidyankf.github.io/personal-projects",
+            url: "https://wahidyankf.com/personal-projects",
           }),
         ]),
       );

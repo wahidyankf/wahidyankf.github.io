@@ -10,7 +10,7 @@ describe("sitemap.xml server route", () => {
       throw new Error("Route /sitemap.xml exports no GET handler.");
     }
     const response = await get({
-      request: new Request("https://wahidyankf.github.io/sitemap.xml"),
+      request: new Request("https://wahidyankf.com/sitemap.xml"),
     } as never);
     if (!(response instanceof Response)) {
       throw new Error("Route /sitemap.xml did not return a response.");
