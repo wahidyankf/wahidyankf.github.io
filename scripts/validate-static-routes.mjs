@@ -16,8 +16,8 @@ const publicRoutes = [
   { path: "cv/index.html", marker: "Curriculum Vitae" },
   { path: "personal-projects/index.html", marker: "Independent Projects" },
   { path: "404.html", marker: "404: This page could not be found." },
-  { path: "robots.txt", marker: "Sitemap: https://www.wahidyankf.com/sitemap.xml" },
-  { path: "sitemap.xml", marker: "https://www.wahidyankf.com/cv" },
+  { path: "robots.txt", marker: "Sitemap: https://wahidyankf.github.io/sitemap.xml" },
+  { path: "sitemap.xml", marker: "https://wahidyankf.github.io/cv" },
 ];
 
 const missingFiles = publicRoutes.map((route) => route.path).filter((file) => !existsSync(resolve(publicDir, file)));

@@ -6,7 +6,7 @@
  * framework: these are the decisions, and the routes are the transport.
  */
 
-export const siteUrl = "https://www.wahidyankf.com";
+export const siteUrl = "https://wahidyankf.github.io";
 
 export const siteMetadata = {
   description:

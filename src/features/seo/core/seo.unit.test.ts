@@ -9,20 +9,20 @@ describe("robots", () => {
   it("names the sitemap by absolute URL", () => {
     // A crawler resolves this field against the origin, not against the file it
     // read, so a relative path here would point somewhere that does not exist.
-    expect(buildRobots().sitemap).toBe("https://www.wahidyankf.com/sitemap.xml");
+    expect(buildRobots().sitemap).toBe("https://wahidyankf.github.io/sitemap.xml");
   });
 
   it("serializes to the plain-text directives crawlers read", () => {
-    expect(serializeRobots()).toBe("User-Agent: *\nAllow: /\n\nSitemap: https://www.wahidyankf.com/sitemap.xml\n");
+    expect(serializeRobots()).toBe("User-Agent: *\nAllow: /\n\nSitemap: https://wahidyankf.github.io/sitemap.xml\n");
   });
 });
 
 describe("sitemap", () => {
   it("publishes the three public routes and nothing else", () => {
     expect(buildSitemap().map((entry) => entry.url)).toEqual([
-      "https://www.wahidyankf.com",
-      "https://www.wahidyankf.com/cv",
-      "https://www.wahidyankf.com/personal-projects",
+      "https://wahidyankf.github.io",
+      "https://wahidyankf.github.io/cv",
+      "https://wahidyankf.github.io/personal-projects",
     ]);
   });
 
@@ -39,7 +39,7 @@ describe("sitemap", () => {
   it("serializes to the XML document crawlers read", () => {
     const xml = serializeSitemap();
     expect(xml).toContain('<?xml version="1.0" encoding="UTF-8"?>');
-    expect(xml).toContain("<loc>https://www.wahidyankf.com/cv</loc>");
+    expect(xml).toContain("<loc>https://wahidyankf.github.io/cv</loc>");
   });
 });
 
@@ -47,16 +47,16 @@ describe("site metadata", () => {
   it("references the og-image.jpg asset for OpenGraph and Twitter previews", () => {
     expect(siteMetadata.openGraph.images).toEqual([
       {
-        url: "https://www.wahidyankf.com/og-image.jpg",
+        url: "https://wahidyankf.github.io/og-image.jpg",
         width: 1200,
         height: 630,
       },
     ]);
-    expect(siteMetadata.twitter.images).toEqual(["https://www.wahidyankf.com/og-image.jpg"]);
+    expect(siteMetadata.twitter.images).toEqual(["https://wahidyankf.github.io/og-image.jpg"]);
   });
 
   it("uses the canonical public URL for OpenGraph metadata", () => {
-    expect(siteMetadata.openGraph.url).toBe("https://www.wahidyankf.com");
+    expect(siteMetadata.openGraph.url).toBe("https://wahidyankf.github.io");
   });
 
   it("does not reference a Twitter handle", () => {
