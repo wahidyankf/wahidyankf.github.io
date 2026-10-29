@@ -24,3 +24,6 @@ storybook-static/
 # Vercel
 .vercel
 .env*.local
+
+# TypeScript
+*.tsbuildinfo
