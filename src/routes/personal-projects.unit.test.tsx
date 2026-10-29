@@ -4,14 +4,14 @@ import { PersonalProjectsContent } from "@/features/personal-projects/shell/pers
 
 // Mock declarations
 const mockPush = vi.fn();
-let mockSearchParams = new URLSearchParams();
 
-vi.mock("next/navigation", () => ({
-  useRouter: () => ({
-    push: mockPush,
-  }),
-  useSearchParams: () => mockSearchParams,
-}));
+vi.mock("@tanstack/react-router", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("@tanstack/react-router")>();
+  return {
+    ...actual,
+    useRouter: () => ({ history: { push: mockPush, replace: vi.fn() } }),
+  };
+});
 
 vi.mock("@/features/app-shell/shell/navigation", () => ({
   Navigation: () => <div data-testid="navigation">Navigation</div>,
@@ -59,7 +59,6 @@ vi.mock("@/features/search/core/search", () => ({
 describe("Personal Projects component", () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    mockSearchParams = new URLSearchParams();
     window.history.replaceState({}, "", "/personal-projects");
   });
 
@@ -113,7 +112,7 @@ describe("Personal Projects component", () => {
     fireEvent.change(searchInput, { target: { value: "AyoKoding" } });
 
     await waitFor(() => {
-      expect(mockPush).toHaveBeenCalledWith("/personal-projects?search=AyoKoding", { scroll: false });
+      expect(mockPush).toHaveBeenCalledWith("/personal-projects?search=AyoKoding");
     });
   });
 
@@ -133,5 +132,17 @@ describe("Personal Projects component", () => {
 
     const youtubeLink = screen.getByRole("link", { name: /YouTube/i });
     expect(youtubeLink).toHaveAttribute("href", "https://www.youtube.com/@AyoKoding");
+  });
+});
+
+describe("Independent Projects page metadata", () => {
+  it("titles the tab and describes the page for search results", async () => {
+    const { Route } = await import("./personal-projects");
+    const { routeMetadata } = await import("@/features/seo/core/seo");
+    const head = await Route.options.head?.({} as never);
+    expect(head?.meta).toEqual([
+      { title: routeMetadata["/personal-projects"].title },
+      { name: "description", content: routeMetadata["/personal-projects"].description },
+    ]);
   });
 });

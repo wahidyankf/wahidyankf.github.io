@@ -3,6 +3,28 @@
 @import "./tokens.css";
 @import "./theme.css";
 
+/* Local variable fonts. These live in `public/fonts/` so the static host
+   serves them as plain files; no webfont request leaves the site. */
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/GeistVF.woff") format("woff");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/fonts/GeistMonoVF.woff") format("woff");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+.geist-font {
+  font-family: "Geist", ui-sans-serif, system-ui, sans-serif;
+}
+
 @theme {
   --color-light-background: #ffffff;
   --color-light-foreground: #1e1e1e;

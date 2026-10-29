@@ -8,12 +8,14 @@ import { CvContent } from "./cv-content";
 // toggle's handler and the five-year window helper behind it went unexercised.
 // These tests drive that one control.
 const mockReplace = vi.fn();
-const mockSearchParams = new URLSearchParams();
 
-vi.mock("next/navigation", () => ({
-  useRouter: () => ({ push: vi.fn(), replace: mockReplace }),
-  useSearchParams: () => mockSearchParams,
-}));
+vi.mock("@tanstack/react-router", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("@tanstack/react-router")>();
+  return {
+    ...actual,
+    useRouter: () => ({ history: { push: vi.fn(), replace: mockReplace } }),
+  };
+});
 
 vi.mock("@/features/app-shell/shell/navigation", () => ({
   Navigation: () => React.createElement("div", { "data-testid": "navigation" }, "Navigation"),

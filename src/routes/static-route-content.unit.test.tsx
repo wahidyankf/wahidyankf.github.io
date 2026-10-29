@@ -1,14 +1,34 @@
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
+import type { ComponentType, ReactNode } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it, vi } from "vitest";
-import Home from "./page";
-import CV from "./cv/page";
-import Projects from "./personal-projects/page";
+import { Route as IndexRoute } from "./index";
+import { Route as CvRoute } from "./cv";
+import { Route as ProjectsRoute } from "./personal-projects";
 
-vi.mock("next/navigation", () => ({
-  useRouter: () => ({ push: vi.fn(), replace: vi.fn() }),
-}));
+/**
+ * Every route file in this directory exports its page through `component`,
+ * which is what the assertions below render. The helper fails loudly when a
+ * route forgets it, instead of rendering `undefined` into a confusing React
+ * error.
+ */
+function mustComponent(route: { options: { component?: ComponentType } }, pathname: string): ComponentType {
+  const { component } = route.options;
+  if (!component) {
+    throw new Error(`Route ${pathname} exports no component.`);
+  }
+  return component;
+}
+
+vi.mock("@tanstack/react-router", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("@tanstack/react-router")>();
+  return {
+    ...actual,
+    useRouter: () => ({ history: { push: vi.fn(), replace: vi.fn() } }),
+    Link: ({ to, children }: { to: string; children: ReactNode }) => <a href={to}>{children}</a>,
+  };
+});
 
 vi.mock("@/features/app-shell/shell/navigation", () => ({
   Navigation: () => <nav aria-label="Primary navigation" />,
@@ -22,26 +42,26 @@ vi.mock("@/features/ui/shell", () => ({
 const routes = [
   {
     pathname: "/",
-    source: "page.tsx",
+    source: "index.tsx",
     contentSource: "../features/home/shell/home-content.tsx",
-    Component: Home,
+    Component: mustComponent(IndexRoute, "/"),
     visibleContent: "Welcome to My Portfolio",
   },
   {
     pathname: "/cv",
-    source: "cv/page.tsx",
+    source: "cv.tsx",
     contentSource: "../features/cv/shell/cv-content.tsx",
-    Component: CV,
+    Component: mustComponent(CvRoute, "/cv"),
     visibleContent: "Curriculum Vitae",
   },
   {
     pathname: "/personal-projects",
-    source: "personal-projects/page.tsx",
+    source: "personal-projects.tsx",
     contentSource: "../features/personal-projects/shell/personal-projects-content.tsx",
-    Component: Projects,
+    Component: mustComponent(ProjectsRoute, "/personal-projects"),
     visibleContent: "Independent Projects",
   },
-] as const;
+];
 
 describe("static portfolio route content", () => {
   for (const route of routes) {

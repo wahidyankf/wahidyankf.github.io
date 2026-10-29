@@ -3,15 +3,21 @@ import { describe, it, expect, vi, beforeEach } from "vitest";
 import { HomeContent } from "@/features/home/shell/home-content";
 import { filterItems } from "@/features/search/core/search";
 
-// Mock the next/navigation module
+// Mock the router module. The real `Link` needs a router context.
 const mockPush = vi.fn();
-let mockSearchParams = new URLSearchParams();
-vi.mock("next/navigation", () => ({
-  useRouter: () => ({
-    push: mockPush,
-  }),
-  useSearchParams: () => mockSearchParams,
-}));
+vi.mock("@tanstack/react-router", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("@tanstack/react-router")>();
+  return {
+    ...actual,
+    useRouter: () => ({ history: { push: mockPush, replace: vi.fn() } }),
+    useLocation: () => ({ pathname: "/" }),
+    Link: ({ to, children, className }: { to: string; children: React.ReactNode; className?: string }) => (
+      <a href={to} className={className}>
+        {children}
+      </a>
+    ),
+  };
+});
 
 // Mock the components imported from other files
 vi.mock("@/features/app-shell/shell/navigation", () => ({
@@ -81,7 +87,6 @@ vi.mock("@/features/cv/core/data", () => ({
 describe("Home component", () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    mockSearchParams = new URLSearchParams();
     window.history.replaceState({}, "", "/");
   });
 
@@ -175,9 +180,7 @@ describe("Home component", () => {
     render(<HomeContent />);
     const searchInput = screen.getByTestId("search-component") as HTMLInputElement;
     fireEvent.change(searchInput, { target: { value: "TypeScript" } });
-    expect(mockPush).toHaveBeenCalledWith("/?search=TypeScript", {
-      scroll: false,
-    });
+    expect(mockPush).toHaveBeenCalledWith("/?search=TypeScript");
   });
 
   it("handles TypeScript skill pill click navigates with scrollTop", () => {
@@ -189,8 +192,10 @@ describe("Home component", () => {
 });
 
 describe("Home page metadata", () => {
-  it("names the site, because the root layout no longer carries a title", async () => {
-    const { metadata } = await import("./page");
-    expect(metadata.title).toBe("Wahidyan Kresna Fridayoka | Engineering Leader — Digital Banking, Fintech & RegTech");
+  it("names the site, because the root route no longer carries a title", async () => {
+    const { routeMetadata } = await import("@/features/seo/core/seo");
+    expect(routeMetadata["/"].title).toBe(
+      "Wahidyan Kresna Fridayoka | Engineering Leader — Digital Banking, Fintech & RegTech",
+    );
   });
 });

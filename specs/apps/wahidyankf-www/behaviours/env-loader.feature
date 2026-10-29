@@ -8,7 +8,7 @@ Feature: APP_ENV tier env-file loading
   @e2e-exempt
   Scenario: wahidyankf-www builds against the staging tier
     Given only ".env.stag" exists in the app directory
-    When "next build" runs with APP_ENV set to "stag"
+    When "vite build" runs with APP_ENV set to "stag"
     Then every variable consumed by the build resolves to its ".env.stag" value
 
   # Exemption(e2e): Local configuration and filesystem behaviour is not observable through the browser boundary; alternative-proof: wahidyankf-www:test:integration / wahidyankf-www process env wins over the local tier file

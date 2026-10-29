@@ -1,5 +1,14 @@
 import path from "node:path";
-import { copyFileSync, mkdirSync, mkdtempSync, readFileSync, rmSync, symlinkSync, writeFileSync } from "node:fs";
+import {
+  copyFileSync,
+  mkdirSync,
+  mkdtempSync,
+  readdirSync,
+  readFileSync,
+  rmSync,
+  symlinkSync,
+  writeFileSync,
+} from "node:fs";
 import { execFileSync } from "node:child_process";
 import { tmpdir } from "node:os";
 import { fileURLToPath } from "node:url";
@@ -26,10 +35,8 @@ const virtualFiles = new Map<string, string>();
 let virtualDirectorySequence = 0;
 const workspaceRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 
-function runNextBuildFixture(appDir: string): string {
-  const appDirectory = path.join(appDir, "app");
+function runViteBuildFixture(appDir: string): string {
   const fixtureLibrary = path.join(appDir, "lib");
-  mkdirSync(appDirectory, { recursive: true });
   mkdirSync(fixtureLibrary, { recursive: true });
   copyFileSync(
     path.join(workspaceRoot, "src/features/env/core", "tier-env.ts"),
@@ -37,33 +44,42 @@ function runNextBuildFixture(appDir: string): string {
   );
   writeFileSync(path.join(appDir, "package.json"), JSON.stringify({ private: true, type: "module" }));
   writeFileSync(
-    path.join(appDir, "next.config.mjs"),
-    'import { loadTierEnv } from "./lib/tier-env.ts";\nloadTierEnv();\nexport default {};\n',
+    path.join(appDir, "vite.config.ts"),
+    'import { loadTierEnv } from "./lib/tier-env.ts";\n' +
+      "loadTierEnv();\n" +
+      'import { defineConfig } from "vite";\n' +
+      "export default defineConfig({\n" +
+      "  define: {\n" +
+      "    __SHARED_VAR__: JSON.stringify(process.env.SHARED_VAR ?? ''),\n" +
+      "    __STAG_ONLY_VAR__: JSON.stringify(process.env.STAG_ONLY_VAR ?? ''),\n" +
+      "  },\n" +
+      "});\n",
   );
   writeFileSync(
-    path.join(appDirectory, "layout.jsx"),
-    'export default function Layout({ children }) { return <html lang="en"><body>{children}</body></html>; }\n',
+    path.join(appDir, "index.html"),
+    '<!doctype html>\n<html lang="en">\n  <body>\n    <script type="module" src="/main.js"></script>\n  </body>\n</html>\n',
   );
   writeFileSync(
-    path.join(appDirectory, "page.jsx"),
-    'export default function Page() { return <main>{process.env.SHARED_VAR + "|" + process.env.STAG_ONLY_VAR}</main>; }\n',
+    path.join(appDir, "main.js"),
+    'export const buildValues = "BUILD_VALUES:" + __SHARED_VAR__ + "|" + __STAG_ONLY_VAR__;\n' +
+      "document.body.dataset.buildValues = buildValues;\n",
   );
   symlinkSync(path.join(workspaceRoot, "node_modules"), path.join(appDir, "node_modules"), "dir");
 
   const buildEnv: NodeJS.ProcessEnv = {
     ...process.env,
     APP_ENV: "stag",
-    NEXT_TELEMETRY_DISABLED: "1",
   };
   delete buildEnv.SHARED_VAR;
   delete buildEnv.STAG_ONLY_VAR;
-  execFileSync(path.join(workspaceRoot, "node_modules/.bin/next"), ["build", "--webpack"], {
+  execFileSync(path.join(workspaceRoot, "node_modules/.bin/vite"), ["build"], {
     cwd: appDir,
     env: buildEnv,
     stdio: "pipe",
-    timeout: 20_000,
+    timeout: 60_000,
   });
-  return readFileSync(path.join(appDir, ".next/server/app/index.html"), "utf8");
+  const assetFiles = readdirSync(path.join(appDir, "dist", "assets"));
+  return assetFiles.map((file) => readFileSync(path.join(appDir, "dist", "assets", file), "utf8")).join("\n");
 }
 
 function makeTmpAppDir(): string {
@@ -125,10 +141,10 @@ describeFeature(feature, ({ Scenario, ScenarioOutline }) => {
       writeEnvFile(appDir, ".env.stag", "SHARED_VAR=stag-value\nSTAG_ONLY_VAR=stag-only\n");
     });
 
-    When('"next build" runs with APP_ENV set to "stag"', () => {
+    When('"vite build" runs with APP_ENV set to "stag"', () => {
       env = { APP_ENV: "stag" };
       if (behaviourTestLayer === "integration") {
-        buildOutput = runNextBuildFixture(appDir);
+        buildOutput = runViteBuildFixture(appDir);
       } else {
         loadAtCurrentLayer(appDir, env);
       }
@@ -137,7 +153,7 @@ describeFeature(feature, ({ Scenario, ScenarioOutline }) => {
     // @covers specs/apps/wahidyankf-www/behaviours/env-loader.feature:wahidyankf-www builds against the staging tier
     Then('every variable consumed by the build resolves to its ".env.stag" value', () => {
       if (behaviourTestLayer === "integration") {
-        expect(buildOutput).toContain("stag-value|stag-only");
+        expect(buildOutput).toContain("BUILD_VALUES:stag-value|stag-only");
       } else {
         expect(env.SHARED_VAR).toBe("stag-value");
         expect(env.STAG_ONLY_VAR).toBe("stag-only");

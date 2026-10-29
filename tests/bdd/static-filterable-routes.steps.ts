@@ -4,25 +4,23 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { loadFeature, describeFeature } from "@amiceli/vitest-cucumber";
 import { cleanup, render, within } from "@testing-library/react";
 import { expect, vi } from "vitest";
-import robots from "@/app/robots";
-import sitemap from "@/app/sitemap";
-import Home from "@/app/page";
-import CV from "@/app/cv/page";
-import PersonalProjects from "@/app/personal-projects/page";
+import { buildRobots, buildSitemap } from "@/features/seo/core/seo";
+import { Route as IndexRoute } from "@/routes/index";
+import { Route as CvRoute } from "@/routes/cv";
+import { Route as ProjectsRoute } from "@/routes/personal-projects";
 import { CvContent } from "@/features/cv/shell/cv-content";
 
 const mockPush = vi.fn();
 const mockReplace = vi.fn();
-let mockSearchParams = new URLSearchParams();
 let renderedCv: HTMLElement | undefined;
 const publicPortfolioPages = [
-  { Component: Home, content: "Welcome to My Portfolio" },
-  { Component: CV, content: "Curriculum Vitae" },
-  { Component: PersonalProjects, content: "Independent Projects" },
+  { Component: IndexRoute.options.component, content: "Welcome to My Portfolio" },
+  { Component: CvRoute.options.component, content: "Curriculum Vitae" },
+  { Component: ProjectsRoute.options.component, content: "Independent Projects" },
 ] as const;
 let renderedStaticPortfolioPages: string[] = [];
-let crawlerRobots: ReturnType<typeof robots> | undefined;
-let crawlerSitemap: ReturnType<typeof sitemap> | undefined;
+let crawlerRobots: ReturnType<typeof buildRobots> | undefined;
+let crawlerSitemap: ReturnType<typeof buildSitemap> | undefined;
 
 function getRenderedCv(): HTMLElement {
   if (!renderedCv) {
@@ -32,10 +30,16 @@ function getRenderedCv(): HTMLElement {
   return renderedCv;
 }
 
-vi.mock("next/navigation", () => ({
-  useRouter: () => ({ push: mockPush, replace: mockReplace }),
-  useSearchParams: () => mockSearchParams,
-}));
+vi.mock("@tanstack/react-router", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("@tanstack/react-router")>();
+  return {
+    ...actual,
+    useRouter: () => ({ history: { push: mockPush, replace: mockReplace } }),
+    useLocation: () => ({ pathname: "/cv" }),
+    Link: ({ to, children, className }: { to: string; children: React.ReactNode; className?: string }) =>
+      React.createElement("a", { href: to, className }, children),
+  };
+});
 
 vi.mock("@/features/app-shell/shell/navigation", () => ({
   Navigation: () => React.createElement("div", { "data-testid": "navigation" }, "Navigation"),
@@ -93,7 +97,6 @@ describeFeature(feature, ({ Scenario, Background, AfterEachScenario }) => {
   });
   Background(({ Given }) => {
     Given("the app is running", () => {
-      mockSearchParams = new URLSearchParams();
       renderedCv = undefined;
       window.history.replaceState({}, "", "/cv");
     });
@@ -102,7 +105,6 @@ describeFeature(feature, ({ Scenario, Background, AfterEachScenario }) => {
   Scenario("Search-filtered portfolio routes are static yet still filterable", ({ When, Then, And }) => {
     When('a visitor opens the shared CV search URL for "TypeScript"', () => {
       window.history.replaceState({}, "", "/cv?search=TypeScript");
-      mockSearchParams = new URLSearchParams("search=TypeScript");
       const { container } = render(React.createElement(CvContent));
       renderedCv = container;
     });
@@ -127,7 +129,7 @@ describeFeature(feature, ({ Scenario, Background, AfterEachScenario }) => {
   Scenario("Public portfolio routes are available from the production server", ({ When, Then }) => {
     When("a visitor requests every public portfolio page", () => {
       renderedStaticPortfolioPages = publicPortfolioPages.map(({ Component }) =>
-        renderToStaticMarkup(React.createElement(Component)),
+        renderToStaticMarkup(React.createElement(Component as React.ComponentType)),
       );
     });
 
@@ -142,8 +144,8 @@ describeFeature(feature, ({ Scenario, Background, AfterEachScenario }) => {
 
   Scenario("Crawlers receive discovery directives for every public route", ({ When, Then, And }) => {
     When("a crawler requests the robots and sitemap routes", () => {
-      crawlerRobots = robots();
-      crawlerSitemap = sitemap();
+      crawlerRobots = buildRobots();
+      crawlerSitemap = buildSitemap();
     });
 
     Then("robots permits crawling and names the canonical sitemap", () => {

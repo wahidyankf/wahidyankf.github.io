@@ -1,6 +1,7 @@
-.next/
-out/
+.output/
+dist/
 coverage/
+src/routeTree.gen.ts
 playwright-report/
 test-results/
 node_modules/

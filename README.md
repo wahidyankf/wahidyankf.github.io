@@ -1,7 +1,7 @@
 # wahidyankf-www
 
 The personal site of Wahidyan Kresna Fridayoka: a CV, a projects listing, and search across both. It is a small,
-accessible Next.js application, and it holds the repository's single authoritative CV record in
+accessible TanStack Start application, and it holds the repository's single authoritative CV record in
 `src/features/cv/core/data.ts`.
 
 ## Run it locally
@@ -10,7 +10,7 @@ accessible Next.js application, and it holds the repository's single authoritati
 # Start at http://localhost:3201
 npm run dev
 
-# Create a static production build in out/
+# Create a static production build in .output/public/
 npm run build
 
 # Serve the completed static build (default http://localhost:3000)
@@ -71,8 +71,8 @@ Playwright skips, direct journey specs, undefined bindings, and unused steps.
 `test:coverage:unit` and `test:coverage:integration` each enforce a 99% line floor. `test:coverage:unit` counts `src/**`
 as the denominator, set explicitly in `vitest.config.ts`: without it only files some test imports would appear at all,
 and an untested module would vanish from the measurement rather than count against it. That include still leaves out
-`src/app/fonts/**`, `src/app/**/*.css`, and `src/test/**`, which are assets and test setup rather than code under test,
-along with configuration files and build output.
+stylesheets under `src/*.css`, and `src/test/**`, which are assets and test setup rather than code under test, along
+with configuration files and build output.
 
 `test:coverage:integration` replaces that include with `--coverage.include='src/features/cv/**/pdf.ts'`, so it counts
 only `src/features/cv/core/pdf.ts` and `src/features/cv/shell/pdf.ts`, the modules that touch the filesystem. Every
@@ -84,12 +84,12 @@ exercised only through its Gherkin binding and would otherwise report zero again
 
 ## Code map
 
-Routes in `src/app/` stay thin. The work lives in `src/features/`, where each feature separates pure data and decisions
-in `core/` from React and browser behaviour in `shell/`. Three modules that arrived as separate published libraries — a
-design system, its tokens, and an environment loader — are inlined here under `features/ui/`, `features/app-shell/`, and
-`features/env/`, because this repository publishes no libraries.
+Routes in `src/routes/` stay thin. The work lives in `src/features/`, where each feature separates pure data and
+decisions in `core/` from React and browser behaviour in `shell/`. Three modules that arrived as separate published
+libraries — a design system, its tokens, and an environment loader — are inlined here under `features/ui/`,
+`features/app-shell/`, and `features/env/`, because this repository publishes no libraries.
 
 ## Delivery boundary
 
-Production delivery is automated: pushing to `main` builds the static export and deploys `./out` to GitHub Pages via
-`.github/workflows/static.yml`. Do not deploy by hand.
+Production delivery is automated: pushing to `main` builds the static prerender and deploys `./.output/public` to GitHub
+Pages via `.github/workflows/static.yml`. Do not deploy by hand.

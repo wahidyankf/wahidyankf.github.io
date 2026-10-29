@@ -6,12 +6,17 @@ import { expect, vi } from "vitest";
 import { HomeContent } from "@/features/home/shell/home-content";
 
 const mockPush = vi.fn();
-let mockSearchParams = new URLSearchParams();
 
-vi.mock("next/navigation", () => ({
-  useRouter: () => ({ push: mockPush }),
-  useSearchParams: () => mockSearchParams,
-}));
+vi.mock("@tanstack/react-router", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("@tanstack/react-router")>();
+  return {
+    ...actual,
+    useRouter: () => ({ history: { push: mockPush, replace: vi.fn() } }),
+    useLocation: () => ({ pathname: "/" }),
+    Link: ({ to, children, className }: { to: string; children: React.ReactNode; className?: string }) =>
+      React.createElement("a", { href: to, className }, children),
+  };
+});
 
 vi.mock("@/features/app-shell/shell/navigation", () => ({
   Navigation: () => React.createElement("div", { "data-testid": "navigation" }, "Navigation"),
@@ -26,7 +31,6 @@ describeFeature(feature, ({ Scenario, Background, AfterEachScenario }) => {
   Background(({ Given }) => {
     Given("the app is running", () => {
       mockPush.mockClear();
-      mockSearchParams = new URLSearchParams();
       window.history.replaceState({}, "", "/");
     });
   });
@@ -44,16 +48,13 @@ describeFeature(feature, ({ Scenario, Background, AfterEachScenario }) => {
 
     // @covers specs/apps/wahidyankf-www/behaviours/search.feature:Typing a term updates the URL query string
     Then("the URL becomes /?search=TypeScript", () => {
-      expect(mockPush).toHaveBeenCalledWith("/?search=TypeScript", {
-        scroll: false,
-      });
+      expect(mockPush).toHaveBeenCalledWith("/?search=TypeScript");
     });
   });
 
   Scenario("Matching content is highlighted with a yellow mark", ({ When, Then }) => {
     When('a visitor opens the home page with search term "TypeScript"', () => {
       window.history.replaceState({}, "", "/?search=TypeScript");
-      mockSearchParams = new URLSearchParams("search=TypeScript");
       render(React.createElement(HomeContent));
     });
 
@@ -67,7 +68,6 @@ describeFeature(feature, ({ Scenario, Background, AfterEachScenario }) => {
   Scenario("Non-matching About Me shows a placeholder", ({ When, Then }) => {
     When('a visitor opens the home page with search term "NoSuchTerm"', () => {
       window.history.replaceState({}, "", "/?search=NoSuchTerm");
-      mockSearchParams = new URLSearchParams("search=NoSuchTerm");
       render(React.createElement(HomeContent));
     });
 

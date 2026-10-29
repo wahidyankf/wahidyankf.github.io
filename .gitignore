@@ -1,6 +1,5 @@
-# Next.js
-.next/
-out/
+# TanStack Start (Vite + Nitro)
+.output/
 
 # Node
 node_modules/
@@ -17,6 +16,11 @@ src/generated-contracts/
 
 # Build output
 dist/
+
+# Test output
+test-results/
+playwright-report/
+.features-gen/
 
 # Storybook
 storybook-static/

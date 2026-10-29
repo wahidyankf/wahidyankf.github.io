@@ -5,18 +5,17 @@ import { CvContent } from "@/features/cv/shell/cv-content";
 // Mock declarations
 const mockPush = vi.fn();
 const mockReplace = vi.fn();
-let mockSearchParams = new URLSearchParams();
 
 // Add this mock for window.scrollTo
 vi.stubGlobal("scrollTo", vi.fn());
 
-vi.mock("next/navigation", () => ({
-  useRouter: () => ({
-    push: mockPush,
-    replace: mockReplace,
-  }),
-  useSearchParams: () => mockSearchParams,
-}));
+vi.mock("@tanstack/react-router", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("@tanstack/react-router")>();
+  return {
+    ...actual,
+    useRouter: () => ({ history: { push: mockPush, replace: mockReplace } }),
+  };
+});
 
 vi.mock("@/features/app-shell/shell/navigation", () => ({
   Navigation: () => <div data-testid="navigation">Navigation</div>,
@@ -86,7 +85,6 @@ describe("CV component", () => {
   beforeEach(() => {
     vi.clearAllMocks();
     vi.mocked(window.scrollTo).mockReset();
-    mockSearchParams = new URLSearchParams();
     window.history.replaceState({}, "", "/cv");
   });
 
@@ -187,5 +185,25 @@ describe("CV component", () => {
     window.history.replaceState({}, "", "/cv?scrollTop=true");
     render(<CvContent />);
     expect(window.scrollTo).toHaveBeenCalledWith(0, 0);
+  });
+
+  it("cleans the scrollTop query with a relative history target", () => {
+    window.history.replaceState({}, "", "/cv?search=TypeScript&scrollTop=true");
+    render(<CvContent />);
+    // An absolute URL here would navigate the router away from the page
+    // instead of replacing the query on it.
+    expect(mockReplace).toHaveBeenCalledWith("/cv?search=TypeScript");
+  });
+});
+
+describe("CV page metadata", () => {
+  it("titles the tab and describes the page for search results", async () => {
+    const { Route } = await import("./cv");
+    const { routeMetadata } = await import("@/features/seo/core/seo");
+    const head = await Route.options.head?.({} as never);
+    expect(head?.meta).toEqual([
+      { title: routeMetadata["/cv"].title },
+      { name: "description", content: routeMetadata["/cv"].description },
+    ]);
   });
 });

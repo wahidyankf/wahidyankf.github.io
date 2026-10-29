@@ -14,7 +14,7 @@ One deployable application and one test-only E2E project bind the corpus.
 
 | Project                   | Role                                                                           |
 | ------------------------- | ------------------------------------------------------------------------------ |
-| `apps/wahidyankf-www`     | The Next.js application plus Unit and Integration adapters.                    |
+| `apps/wahidyankf-www`     | The TanStack Start application plus Unit and Integration adapters.             |
 | `apps/wahidyankf-www-e2e` | The test-only Playwright adapter; it depends one-way on the owner application. |
 
 ## People and External Systems
@@ -50,17 +50,17 @@ flowchart LR
 
 One container. There is no backend, no database, and no message bus; all content is TypeScript bundled at build time.
 
-| Container | Technology | Deployment     | Description                                                               |
-| --------- | ---------- | -------------- | ------------------------------------------------------------------------- |
-| `web`     | Next.js 16 | Vercel, static | The whole site: every route, the client-side search index, the CV record. |
+| Container | Technology       | Deployment           | Description                                                               |
+| --------- | ---------------- | -------------------- | ------------------------------------------------------------------------- |
+| `web`     | TanStack Start 1 | GitHub Pages, static | The whole site: every route, the client-side search index, the CV record. |
 
 ```mermaid
 flowchart LR
   accTitle: Container view of wahidyankf-www
   accDescr {
-    One Next.js container serves every route. The E2E project starts it over a local port.
+    One TanStack Start container serves every route. The E2E project starts it over a local port.
   }
-  V["Visitor (Person)"] -->|HTTPS| WEB["web (Next.js 16, static)"]
+  V["Visitor (Person)"] -->|HTTPS| WEB["web (TanStack Start 1, static)"]
   E2E["wahidyankf-www-e2e (test only)"] -->|starts and drives| WEB
   classDef default fill:#FFFFFF,stroke:#000000,color:#000000,stroke-width:2px
   classDef blue fill:#0173B2,stroke:#000000,color:#FFFFFF,stroke-width:2px
@@ -70,14 +70,14 @@ flowchart LR
   class WEB teal
 ```
 
-The E2E adapter is drawn because it is a real process boundary: it starts the application through `next start` and
-drives it over HTTP through a browser, which is a different toolchain from the in-process behaviour adapter. It is not a
-container, which is why the count above still reads one: it exists only at test time and is never deployed. The BDD
-policy requires this public boundary to live in its dedicated E2E project.
+The E2E adapter is drawn because it is a real process boundary: it starts the application by serving the static
+prerender output and drives it over HTTP through a browser, which is a different toolchain from the in-process behaviour
+adapter. It is not a container, which is why the count above still reads one: it exists only at test time and is never
+deployed. The BDD policy requires this public boundary to live in its dedicated E2E project.
 
 ## Components
 
-The application is organized by feature, each component under `src/features/<component>/`, with routes in `src/app/`.
+The application is organized by feature, each component under `src/features/<component>/`, with routes in `src/routes/`.
 
 | Component           | Responsibility                                                                  |
 | ------------------- | ------------------------------------------------------------------------------- |
@@ -127,9 +127,9 @@ migration deleted `cv/` and left this store as the single source.
 
 ## Boundaries
 
-**Process.** One at build time: Next.js reads the TypeScript sources and emits static output. One at test time: the E2E
-adapter starts a server process and speaks to it over a local port. None at request time — a served page runs no code of
-ours.
+**Process.** One at build time: Vite with TanStack Start prerenders the TypeScript sources and emits static output. One
+at test time: the E2E adapter starts a server process and speaks to it over a local port. None at request time — a
+served page runs no code of ours.
 
 **Network.** The visitor reaches Vercel's edge over HTTPS and nothing else. The application makes no outbound calls: no
 analytics, no API, no font or asset fetch from a third party. Fonts are bundled.

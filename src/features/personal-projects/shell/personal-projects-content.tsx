@@ -1,11 +1,9 @@
-"use client";
-
 import { Navigation } from "@/features/app-shell/shell/navigation";
 import { projects, filterProjects } from "@/features/personal-projects/core/projects";
 import { calculateDuration, formatDuration } from "@/features/cv/core/data";
 import { Code, Globe, Package, Sparkles, Star } from "lucide-react";
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@tanstack/react-router";
 import { SearchComponent, HighlightText } from "@/features/ui/shell";
 import { GithubIcon, YoutubeIcon } from "@/features/ui/shell/brand-icons";
 
@@ -42,7 +40,7 @@ function ProjectsContent() {
 
   const updateURL = (term: string) => {
     const newURL = term ? `/personal-projects?search=${encodeURIComponent(term)}` : "/personal-projects";
-    router.push(newURL, { scroll: false });
+    router.history.push(newURL);
   };
 
   const handleSkillClick = (skill: string) => {

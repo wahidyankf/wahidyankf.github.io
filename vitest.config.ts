@@ -35,15 +35,7 @@ export default defineConfig({
       // the 99% floor instead of vanishing from the report; without it the
       // gate measures what happened to be imported.
       include: ["src/**"],
-      exclude: [
-        "src/app/fonts/**",
-        "src/app/**/*.css",
-        "src/test/**",
-        "**/*.config.*",
-        "**/.next/**",
-        "**/dist/**",
-        "**/coverage/**",
-      ],
+      exclude: ["src/test/**", "**/*.css", "**/*.config.*", "**/.output/**", "**/dist/**", "**/coverage/**"],
       reporter: ["text", "json-summary", "lcov"],
       // The 99% line floor for unit scope (`test:coverage:unit` runs the
       // `unit` and `behaviour-unit` projects against this denominator).

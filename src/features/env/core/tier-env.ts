@@ -1,23 +1,23 @@
 /**
  * Loads exactly one `.env.<tier>` file per the repo-wide `APP_ENV` tier convention, selected by
  * `APP_ENV` (default `"local"`). The application wires `loadTierEnv()` as the very first
- * statement of its composition root — `next.config.ts`'s first import, before `./env.ts`. This
+ * statement of its composition root — `vite.config.ts`'s first import, before `./env.ts`. This
  * module never calls itself on import: a module that auto-loaded its own tier file would compete
  * silently with the composition root's explicit call, and which one won would depend on import
  * order rather than on anything written down.
  *
- * This module also owns one guard Next.js itself doesn't provide: Next's own env loader
- * (`@next/env`) auto-loads a bare `.env`, and in a production build also `.env.production`, IN
- * ADDITION to whatever tier file an app loads explicitly. Left unchecked, that silent extra file
- * would violate rule 2 below, so `loadTierEnv` throws if any stray file exists beside the tier file
+ * This module also owns one guard Vite itself doesn't provide: Vite's own env loader
+ * auto-loads a bare `.env`, and in a production build also `.env.production`, IN ADDITION to
+ * whatever tier file an app loads explicitly. Left unchecked, that silent extra file would
+ * violate rule 2 below, so `loadTierEnv` throws if any stray file exists beside the tier file
  * at a non-local tier (the "local" exemption is explained on `assertNoStrayEnvFile` below).
  *
- * `.env.local` is the sharpest of the three stray filenames: Next.js auto-loads it in EVERY
- * environment, not just production, and that auto-load runs before `next.config.ts` is even
- * evaluated — so its values are already in `process.env` by the time a consuming app's
- * `loadTierEnv()` call (with `override: false`) runs, silently winning over an explicit
- * `.env.stag`/`.env.prod` with no error. A developer testing a non-local tier locally (exactly the
- * scenario this guard protects) always has a `.env.local` on disk.
+ * `.env.local` is the sharpest of the three stray filenames: Vite auto-loads it in EVERY mode,
+ * not just production, and that auto-load runs before `vite.config.ts` is even evaluated — so
+ * its values are already in `process.env` by the time a consuming app's `loadTierEnv()` call
+ * (with `override: false`) runs, silently winning over an explicit `.env.stag`/`.env.prod`
+ * with no error. A developer testing a non-local tier locally (exactly the scenario this guard
+ * protects) always has a `.env.local` on disk.
  *
  * The five loader rules:
  *   1. Tier selector    — read APP_ENV; unset means "local".
@@ -26,7 +26,7 @@
  *                         replaced by a file value.
  *   4. Missing file is not an error — absence is the normal CI case.
  *   5. Fail loudly on required-but-absent config, not on the missing file itself — that's each
- *      app's own validation layer's job (e.g. zod's `createEnv()`), unchanged by this module.
+ *      app's own validation layer's job (this module's own `./env.ts`), unchanged by this module.
  */
 import { existsSync } from "node:fs";
 import path from "node:path";
@@ -34,7 +34,7 @@ import dotenv from "dotenv";
 
 const DEFAULT_TIER = "local";
 
-/** Files Next.js auto-loads that must never coexist with an explicit non-local tier file. */
+/** Files Vite auto-loads that must never coexist with an explicit non-local tier file. */
 const STRAY_ENV_FILENAMES = [".env", ".env.production", ".env.local"] as const;
 
 /** A `process.env`-shaped record: every entry is a string or absent. */
@@ -53,7 +53,7 @@ export function tierEnvFilePath(tier: string, appDir: string): string {
 
 /**
  * Throws if a stray auto-loaded env file sits beside the tier file at a non-local tier. Skipped
- * at "local": Next.js auto-loading a bare `.env` alongside an explicit `.env.local` tier file is
+ * at "local": Vite auto-loading a bare `.env` alongside an explicit `.env.local` tier file is
  * the one case this convention treats as safe, since local development is never a deploy target.
  */
 function assertNoStrayEnvFile(tier: string, appDir: string, fileExists: (filePath: string) => boolean): void {
@@ -65,7 +65,7 @@ function assertNoStrayEnvFile(tier: string, appDir: string, fileExists: (filePat
     if (fileExists(path.join(appDir, strayFilename))) {
       throw new Error(
         `env-loader: found stray auto-loaded env file "${strayFilename}" beside the tier file for ` +
-          `APP_ENV="${tier}". Next.js auto-loads "${strayFilename}" in addition to the explicit ` +
+          `APP_ENV="${tier}". Vite auto-loads "${strayFilename}" in addition to the explicit ` +
           `tier file, which breaks the "one file per tier" contract. Move its contents into ` +
           `".env.${tier}" and delete "${strayFilename}".`,
       );
