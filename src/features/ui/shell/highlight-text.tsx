@@ -25,10 +25,6 @@ export const highlightText = (
   );
 };
 
-export const HighlightText: React.FC<HighlightTextProps> = ({
-  text,
-  searchTerm,
-  highlightClassName,
-}) => {
+export const HighlightText: React.FC<HighlightTextProps> = ({ text, searchTerm, highlightClassName }) => {
   return <>{highlightText(text, searchTerm, highlightClassName)}</>;
 };

@@ -1,14 +1,6 @@
 "use client";
 
-import {
-  Briefcase,
-  FolderOpen,
-  Mail,
-  Sparkles,
-  Star,
-  Code,
-  Package,
-} from "lucide-react";
+import { Briefcase, FolderOpen, Mail, Sparkles, Star, Code, Package } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
@@ -53,10 +45,7 @@ export function HomeContent() {
   const [searchTerm, setSearchTerm] = useState("");
 
   const aboutMe = cvData.find((entry) => entry.type === "about");
-  const skillSources = [
-    ...cvData.filter((entry) => entry.type === "work"),
-    ...projects,
-  ];
+  const skillSources = [...cvData.filter((entry) => entry.type === "work"), ...projects];
   const topSkills = getTopSkillsLastFiveYears(skillSources);
   const topLanguages = getTopLanguagesLastFiveYears(skillSources);
   const topFrameworks = getTopFrameworksLastFiveYears(skillSources);
@@ -94,9 +83,7 @@ export function HomeContent() {
 
   useEffect(() => {
     const syncSearchTerm = () => {
-      setSearchTerm(
-        new URLSearchParams(window.location.search).get("search") ?? "",
-      );
+      setSearchTerm(new URLSearchParams(window.location.search).get("search") ?? "");
     };
 
     syncSearchTerm();
@@ -113,9 +100,7 @@ export function HomeContent() {
     ? {
         ...aboutMe,
         details:
-          filterItems([{ details: aboutMe.details.join("\n") }], searchTerm, [
-            "details",
-          ])[0]?.details.split("\n") || [],
+          filterItems([{ details: aboutMe.details.join("\n") }], searchTerm, ["details"])[0]?.details.split("\n") || [],
       }
     : null;
 
@@ -140,9 +125,7 @@ export function HomeContent() {
 
         {/* About Me section */}
         <section className="mb-8 border border-green-400 p-4">
-          <h2 className="mb-4 text-xl text-yellow-400 sm:text-2xl md:text-3xl">
-            About Me
-          </h2>
+          <h2 className="mb-4 text-xl text-yellow-400 sm:text-2xl md:text-3xl">About Me</h2>
           {filteredAboutMe && filteredAboutMe.details.length > 0 ? (
             filteredAboutMe.details.map((detail: string) => (
               <p key={detail} className="mb-4 text-green-300">
@@ -150,17 +133,13 @@ export function HomeContent() {
               </p>
             ))
           ) : (
-            <p className="text-center text-yellow-400">
-              No matching content in the About Me section.
-            </p>
+            <p className="text-center text-yellow-400">No matching content in the About Me section.</p>
           )}
         </section>
 
         {/* Skills & Expertise section */}
         <section className="mb-8 border border-green-400 p-4">
-          <h2 className="mb-4 text-xl text-yellow-400 sm:text-2xl md:text-3xl">
-            Skills & Expertise
-          </h2>
+          <h2 className="mb-4 text-xl text-yellow-400 sm:text-2xl md:text-3xl">Skills & Expertise</h2>
           <div className="space-y-4">
             {/* Top AI-Related Skills */}
             {filteredAISkills.length > 0 && (
@@ -190,9 +169,7 @@ export function HomeContent() {
             )}
             {/* Top Skills */}
             <div>
-              <h3 className="mb-2 text-lg font-semibold text-green-300">
-                Top Skills Used in The Last 5 Years
-              </h3>
+              <h3 className="mb-2 text-lg font-semibold text-green-300">Top Skills Used in The Last 5 Years</h3>
               <div className="flex flex-wrap gap-2">
                 {filteredSkills.map(({ name, duration }) => (
                   <button
@@ -259,9 +236,7 @@ export function HomeContent() {
 
         {/* Quick Links section */}
         <section className="mb-8 border border-green-400 p-4">
-          <h2 className="mb-4 text-xl text-yellow-400 sm:text-2xl md:text-3xl">
-            Quick Links
-          </h2>
+          <h2 className="mb-4 text-xl text-yellow-400 sm:text-2xl md:text-3xl">Quick Links</h2>
           <div className="flex flex-wrap gap-4">
             <Link
               href="/cv"
@@ -282,9 +257,7 @@ export function HomeContent() {
 
         {/* Connect With Me section */}
         <section className="mb-8 border border-green-400 p-4">
-          <h2 className="mb-4 text-xl text-yellow-400 sm:text-2xl md:text-3xl">
-            Connect With Me
-          </h2>
+          <h2 className="mb-4 text-xl text-yellow-400 sm:text-2xl md:text-3xl">Connect With Me</h2>
           <div className="flex flex-wrap gap-4">
             {aboutMe?.links &&
               Object.entries(aboutMe.links).map(([key, value]) => (
@@ -296,9 +269,7 @@ export function HomeContent() {
                   className="flex items-center text-yellow-400 transition-colors duration-200 hover:text-green-400"
                 >
                   {key === "github" && <GithubIcon className="mr-2 h-5 w-5" />}
-                  {key === "linkedin" && (
-                    <LinkedinIcon className="mr-2 h-5 w-5" />
-                  )}
+                  {key === "linkedin" && <LinkedinIcon className="mr-2 h-5 w-5" />}
                   {key === "email" && <Mail className="mr-2 h-5 w-5" />}
                   {key.charAt(0).toUpperCase() + key.slice(1)}
                 </a>

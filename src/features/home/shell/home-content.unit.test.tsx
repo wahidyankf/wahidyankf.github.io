@@ -16,8 +16,7 @@ vi.mock("next/navigation", () => ({
 }));
 
 vi.mock("@/features/app-shell/shell/navigation", () => ({
-  Navigation: () =>
-    React.createElement("div", { "data-testid": "navigation" }, "Navigation"),
+  Navigation: () => React.createElement("div", { "data-testid": "navigation" }, "Navigation"),
 }));
 
 const aiSkillsHeading = "Top AI-Related Skills Used in The Last 5 Years";
@@ -52,16 +51,12 @@ describe("HomeContent AI-related skills", () => {
   it("percent-encodes a skill name into the CV search query", () => {
     render(<HomeContent />);
     const heading = screen.getByText(aiSkillsHeading);
-    const pill = heading.nextElementSibling?.querySelector(
-      "button",
-    ) as HTMLButtonElement;
+    const pill = heading.nextElementSibling?.querySelector("button") as HTMLButtonElement;
     const label = pill.textContent ?? "";
     fireEvent.click(pill);
 
     const target = mockPush.mock.calls[0][0] as string;
-    const search = new URL(target, "https://example.test").searchParams.get(
-      "search",
-    );
+    const search = new URL(target, "https://example.test").searchParams.get("search");
     // Round-tripping through URL is what proves the encoding: a skill whose
     // name contains a space or an ampersand would otherwise produce a query
     // string that parses into something else.

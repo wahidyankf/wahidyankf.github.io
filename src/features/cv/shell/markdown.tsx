@@ -1,10 +1,7 @@
 import type React from "react";
 import { HighlightText } from "@/features/ui/shell";
 
-export const parseMarkdownLinks = (
-  text: string,
-  searchTerm: string,
-): React.ReactNode => {
+export const parseMarkdownLinks = (text: string, searchTerm: string): React.ReactNode => {
   const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
   const parts = text.split(linkRegex);
 

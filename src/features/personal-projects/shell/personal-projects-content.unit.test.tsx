@@ -14,8 +14,7 @@ vi.mock("next/navigation", () => ({
 }));
 
 vi.mock("@/features/app-shell/shell/navigation", () => ({
-  Navigation: () =>
-    React.createElement("div", { "data-testid": "navigation" }, "Navigation"),
+  Navigation: () => React.createElement("div", { "data-testid": "navigation" }, "Navigation"),
 }));
 
 const searchBox = () => screen.getByPlaceholderText("Search projects...");
@@ -28,10 +27,7 @@ describe("PersonalProjectsContent search URL", () => {
   it("routes to a filtered URL when a term is typed", () => {
     render(<PersonalProjectsContent />);
     fireEvent.change(searchBox(), { target: { value: "cli" } });
-    expect(mockPush).toHaveBeenCalledWith(
-      "/personal-projects?search=cli",
-      expect.objectContaining({ scroll: false }),
-    );
+    expect(mockPush).toHaveBeenCalledWith("/personal-projects?search=cli", expect.objectContaining({ scroll: false }));
   });
 
   it("routes back to the bare URL when the term is cleared", () => {
@@ -42,10 +38,7 @@ describe("PersonalProjectsContent search URL", () => {
     // Not "/personal-projects?search=" — an empty query parameter is a
     // different URL from no parameter, and it would leave the address bar
     // showing a filter the page is no longer applying.
-    expect(mockPush).toHaveBeenCalledWith(
-      "/personal-projects",
-      expect.objectContaining({ scroll: false }),
-    );
+    expect(mockPush).toHaveBeenCalledWith("/personal-projects", expect.objectContaining({ scroll: false }));
   });
 
   it("percent-encodes a term containing a space", () => {

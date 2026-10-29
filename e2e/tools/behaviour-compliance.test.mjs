@@ -22,31 +22,24 @@ test("accepts a feature with explicit When and Then steps", () => {
 });
 
 test("rejects missing declarations and scenarios", () => {
+  assert.ok(validateFeatureSource("example.feature", "Feature: Empty").some((error) => error.includes("at least one")));
   assert.ok(
-    validateFeatureSource("example.feature", "Feature: Empty").some((error) =>
-      error.includes("at least one"),
+    validateFeatureSource("example.feature", validFeature.replace("Feature:", "Subject:")).some((error) =>
+      error.includes("missing Feature"),
     ),
-  );
-  assert.ok(
-    validateFeatureSource(
-      "example.feature",
-      validFeature.replace("Feature:", "Subject:"),
-    ).some((error) => error.includes("missing Feature")),
   );
 });
 
 test("rejects missing When and Then steps", () => {
   assert.ok(
-    validateFeatureSource(
-      "example.feature",
-      validFeature.replace("    When an action occurs\n", ""),
-    ).some((error) => error.includes("requires a When")),
+    validateFeatureSource("example.feature", validFeature.replace("    When an action occurs\n", "")).some((error) =>
+      error.includes("requires a When"),
+    ),
   );
   assert.ok(
-    validateFeatureSource(
-      "example.feature",
-      validFeature.replace("    Then an outcome is observed", ""),
-    ).some((error) => error.includes("requires a Then")),
+    validateFeatureSource("example.feature", validFeature.replace("    Then an outcome is observed", "")).some(
+      (error) => error.includes("requires a Then"),
+    ),
   );
 });
 
@@ -61,41 +54,20 @@ test("accepts a documented higher-layer exemption", () => {
 });
 
 test("rejects legacy, unit, undocumented, and broad exemptions", () => {
-  for (const tag of [
-    "@unit",
-    "@integration",
-    "@e2e",
-    "@unit-exempt",
-    "@no-e2e",
-  ]) {
+  for (const tag of ["@unit", "@integration", "@e2e", "@unit-exempt", "@no-e2e"]) {
     const source = validFeature.replace(
       "  Scenario: Observable behaviour",
       `  ${tag}\n  Scenario: Observable behaviour`,
     );
-    assert.ok(
-      validateFeatureSource("example.feature", source).some((error) =>
-        error.includes("forbidden"),
-      ),
-    );
+    assert.ok(validateFeatureSource("example.feature", source).some((error) => error.includes("forbidden")));
   }
   const undocumented = validFeature.replace(
     "  Scenario: Observable behaviour",
     "  @integration-exempt\n  Scenario: Observable behaviour",
   );
-  assert.ok(
-    validateFeatureSource("example.feature", undocumented).some((error) =>
-      error.includes("preceding"),
-    ),
-  );
-  const broad = validFeature.replace(
-    "Feature: Compliance example",
-    "@e2e-exempt\nFeature: Compliance example",
-  );
-  assert.ok(
-    validateFeatureSource("example.feature", broad).some((error) =>
-      error.includes("only annotate"),
-    ),
-  );
+  assert.ok(validateFeatureSource("example.feature", undocumented).some((error) => error.includes("preceding")));
+  const broad = validFeature.replace("Feature: Compliance example", "@e2e-exempt\nFeature: Compliance example");
+  assert.ok(validateFeatureSource("example.feature", broad).some((error) => error.includes("only annotate")));
 });
 
 test("accepts independently documented integration and E2E exemptions", () => {
@@ -125,21 +97,14 @@ test("requires independent documentation for each exemption", () => {
 });
 
 test("rejects exemptions for unfinished, flaky, or costly work", () => {
-  for (const reason of [
-    "too flaky and not yet implemented",
-    "too expensive to implement",
-  ]) {
+  for (const reason of ["too flaky and not yet implemented", "too expensive to implement"]) {
     const source = validFeature.replace(
       "  Scenario: Observable behaviour",
       `  # Exemption(e2e): ${reason}; alternative-proof: example:test:integration / Observable behaviour\n` +
         "  @e2e-exempt\n" +
         "  Scenario: Observable behaviour",
     );
-    assert.ok(
-      validateFeatureSource("example.feature", source).some((error) =>
-        error.includes("cannot be"),
-      ),
-    );
+    assert.ok(validateFeatureSource("example.feature", source).some((error) => error.includes("cannot be")));
   }
 });
 
@@ -158,27 +123,14 @@ test("alternative proof must resolve to an existing target and scenario", () => 
     ),
     [],
   );
-  assert.equal(
-    validateAlternativeProofReferences(references.proofs, new Set(), new Set())
-      .length,
-    2,
-  );
+  assert.equal(validateAlternativeProofReferences(references.proofs, new Set(), new Set()).length, 2);
 });
 
 test("owner coverage requires Unit and non-exempt Integration markers", () => {
   const resourceName = "specs/apps/example/behaviours/example.feature";
-  const requirements = inspectOwnerCoverageRequirements(
-    resourceName,
-    validFeature,
-  );
-  const markers = inspectCoverageMarkers(
-    "tests/example.steps.ts",
-    `// @covers ${resourceName}:Observable behaviour`,
-  );
-  assert.deepEqual(
-    validateOwnerAdapterCoverage(requirements, markers, markers),
-    [],
-  );
+  const requirements = inspectOwnerCoverageRequirements(resourceName, validFeature);
+  const markers = inspectCoverageMarkers("tests/example.steps.ts", `// @covers ${resourceName}:Observable behaviour`);
+  assert.deepEqual(validateOwnerAdapterCoverage(requirements, markers, markers), []);
   assert.equal(validateOwnerAdapterCoverage(requirements, [], []).length, 2);
 });
 
@@ -190,13 +142,7 @@ test("integration exemptions forbid an Integration adapter marker", () => {
       "  @integration-exempt\n  Scenario: Observable behaviour",
   );
   const requirements = inspectOwnerCoverageRequirements(resourceName, tagged);
-  const markers = inspectCoverageMarkers(
-    "tests/example.steps.ts",
-    `// @covers ${resourceName}:Observable behaviour`,
-  );
+  const markers = inspectCoverageMarkers("tests/example.steps.ts", `// @covers ${resourceName}:Observable behaviour`);
   assert.deepEqual(validateOwnerAdapterCoverage(requirements, markers, []), []);
-  assert.equal(
-    validateOwnerAdapterCoverage(requirements, markers, markers).length,
-    1,
-  );
+  assert.equal(validateOwnerAdapterCoverage(requirements, markers, markers).length, 1);
 });

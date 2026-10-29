@@ -1,0 +1,7 @@
+.next/
+out/
+coverage/
+playwright-report/
+test-results/
+node_modules/
+public/wahidyankf-kresna-fridayoka-cv.pdf

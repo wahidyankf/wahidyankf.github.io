@@ -10,18 +10,13 @@ When("a visitor opens the personal projects page", async ({ page }) => {
 
 // @covers specs/apps/wahidyankf-www/behaviours/personal-projects.feature:Personal projects page renders the heading
 Then('the H1 shows "Independent Projects"', async ({ page }) => {
-  await expect(
-    page.getByRole("heading", { level: 1, name: /Independent Projects/ }),
-  ).toBeVisible();
+  await expect(page.getByRole("heading", { level: 1, name: /Independent Projects/ })).toBeVisible();
 });
 
 // @covers specs/apps/wahidyankf-www/behaviours/personal-projects.feature:Personal projects page renders a search input
-Then(
-  'a search input with placeholder "Search projects..." is visible',
-  async ({ page }) => {
-    await expect(page.getByPlaceholder(/Search projects/i)).toBeVisible();
-  },
-);
+Then('a search input with placeholder "Search projects..." is visible', async ({ page }) => {
+  await expect(page.getByPlaceholder(/Search projects/i)).toBeVisible();
+});
 
 // @covers specs/apps/wahidyankf-www/behaviours/personal-projects.feature:Personal projects page lists at least one project card
 Then("at least one project card is visible", async ({ page }) => {
@@ -37,71 +32,51 @@ Then(
     const count = await cards.count();
     expect(count).toBeGreaterThan(0);
     for (let index = 0; index < count; index += 1) {
-      const links = cards
-        .nth(index)
-        .getByRole("link", { name: /Repository|Website|YouTube/i });
+      const links = cards.nth(index).getByRole("link", { name: /Repository|Website|YouTube/i });
       const linkCount = await links.count();
       expect(linkCount).toBeGreaterThan(0);
       for (let linkIndex = 0; linkIndex < linkCount; linkIndex += 1) {
-        await expect(links.nth(linkIndex)).toHaveAttribute(
-          "href",
-          /^https:\/\//,
-        );
+        await expect(links.nth(linkIndex)).toHaveAttribute("href", /^https:\/\//);
         await expect(links.nth(linkIndex)).toHaveAttribute("target", "_blank");
-        await expect(links.nth(linkIndex)).toHaveAttribute(
-          "rel",
-          "noopener noreferrer",
-        );
+        await expect(links.nth(linkIndex)).toHaveAttribute("rel", "noopener noreferrer");
       }
     }
   },
 );
 
 // @covers specs/apps/wahidyankf-www/behaviours/personal-projects.feature:Each project card shows how long the project has been running
-Then(
-  "every project card shows a duration next to its start date",
-  async ({ page }) => {
-    const cards = page.locator('[id^="project-"]');
-    const count = await cards.count();
-    expect(count).toBeGreaterThan(0);
-    for (let i = 0; i < count; i += 1) {
-      await expect(
-        cards
-          .nth(i)
-          .getByText(/\(\d+\s+(year|month)/i)
-          .first(),
-      ).toBeVisible();
-    }
-  },
-);
+Then("every project card shows a duration next to its start date", async ({ page }) => {
+  const cards = page.locator('[id^="project-"]');
+  const count = await cards.count();
+  expect(count).toBeGreaterThan(0);
+  for (let i = 0; i < count; i += 1) {
+    await expect(
+      cards
+        .nth(i)
+        .getByText(/\(\d+\s+(year|month)/i)
+        .first(),
+    ).toBeVisible();
+  }
+});
 
 // @covers specs/apps/wahidyankf-www/behaviours/personal-projects.feature:Each project card exposes clickable skill tags
-Then(
-  "every project card exposes at least one clickable skill tag",
-  async ({ page }) => {
-    const cards = page.locator('[id^="project-"]');
-    const count = await cards.count();
-    expect(count).toBeGreaterThan(0);
-    for (let i = 0; i < count; i += 1) {
-      const buttonCount = await cards.nth(i).getByRole("button").count();
-      expect(buttonCount).toBeGreaterThan(0);
-    }
-  },
-);
+Then("every project card exposes at least one clickable skill tag", async ({ page }) => {
+  const cards = page.locator('[id^="project-"]');
+  const count = await cards.count();
+  expect(count).toBeGreaterThan(0);
+  for (let i = 0; i < count; i += 1) {
+    const buttonCount = await cards.nth(i).getByRole("button").count();
+    expect(buttonCount).toBeGreaterThan(0);
+  }
+});
 
-When(
-  'a visitor opens the personal projects page and clicks the "TypeScript" skill tag',
-  async ({ page }) => {
-    await page.goto("/personal-projects");
-    await page.waitForLoadState("load");
-    await page.getByRole("button", { name: "TypeScript" }).first().click();
-  },
-);
+When('a visitor opens the personal projects page and clicks the "TypeScript" skill tag', async ({ page }) => {
+  await page.goto("/personal-projects");
+  await page.waitForLoadState("load");
+  await page.getByRole("button", { name: "TypeScript" }).first().click();
+});
 
 // @covers specs/apps/wahidyankf-www/behaviours/personal-projects.feature:Clicking a skill tag filters the project list
-Then(
-  "the URL becomes \\/personal-projects?search=TypeScript",
-  async ({ page }) => {
-    await expect(page).toHaveURL(/\/personal-projects\?search=TypeScript/);
-  },
-);
+Then("the URL becomes \\/personal-projects?search=TypeScript", async ({ page }) => {
+  await expect(page).toHaveURL(/\/personal-projects\?search=TypeScript/);
+});

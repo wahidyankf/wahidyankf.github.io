@@ -10,47 +10,27 @@ When("a visitor opens the home page for the first time", async ({ page }) => {
 });
 
 Then('the html element has no "light-theme" class', async ({ page }) => {
-  const hasClass = await page.evaluate(() =>
-    document.documentElement.classList.contains("light-theme"),
-  );
+  const hasClass = await page.evaluate(() => document.documentElement.classList.contains("light-theme"));
   expect(hasClass).toBe(false);
 });
 
 // @covers specs/apps/wahidyankf-www/behaviours/theme.feature:Default theme is dark
-Then(
-  'the theme toggle aria-label is "Switch to light theme"',
-  async ({ page }) => {
-    await expect(
-      page.getByRole("button", { name: "Switch to light theme" }),
-    ).toBeVisible();
-  },
-);
+Then('the theme toggle aria-label is "Switch to light theme"', async ({ page }) => {
+  await expect(page.getByRole("button", { name: "Switch to light theme" })).toBeVisible();
+});
 
 When("the visitor clicks the theme toggle", async ({ page }) => {
-  await page
-    .getByRole("button", { name: /Switch to (light|dark) theme/ })
-    .click();
+  await page.getByRole("button", { name: /Switch to (light|dark) theme/ }).click();
 });
 
 Then('the html element has the "light-theme" class', async ({ page }) => {
-  await expect
-    .poll(() =>
-      page.evaluate(() =>
-        document.documentElement.classList.contains("light-theme"),
-      ),
-    )
-    .toBe(true);
+  await expect.poll(() => page.evaluate(() => document.documentElement.classList.contains("light-theme"))).toBe(true);
 });
 
 // @covers specs/apps/wahidyankf-www/behaviours/theme.feature:Clicking the toggle switches to light theme
-Then(
-  'the theme toggle aria-label is "Switch to dark theme"',
-  async ({ page }) => {
-    await expect(
-      page.getByRole("button", { name: "Switch to dark theme" }),
-    ).toBeVisible();
-  },
-);
+Then('the theme toggle aria-label is "Switch to dark theme"', async ({ page }) => {
+  await expect(page.getByRole("button", { name: "Switch to dark theme" })).toBeVisible();
+});
 
 When("the visitor navigates to the CV page", async ({ page }) => {
   await page.getByRole("link", { name: /^CV$/ }).first().click();
@@ -60,13 +40,7 @@ When("the visitor navigates to the CV page", async ({ page }) => {
 // @covers specs/apps/wahidyankf-www/behaviours/theme.feature:Theme persists across navigation
 // @covers specs/apps/wahidyankf-www/behaviours/theme.feature:Theme choice persists across reloads
 Then('the html element still has the "light-theme" class', async ({ page }) => {
-  await expect
-    .poll(() =>
-      page.evaluate(() =>
-        document.documentElement.classList.contains("light-theme"),
-      ),
-    )
-    .toBe(true);
+  await expect.poll(() => page.evaluate(() => document.documentElement.classList.contains("light-theme"))).toBe(true);
 });
 
 When("the visitor reloads the page", async ({ page }) => {

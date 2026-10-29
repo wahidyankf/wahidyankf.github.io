@@ -31,22 +31,13 @@ describe("HighlightText", () => {
   it("handles multiple occurrences of search term", () => {
     render(<HighlightText text="Hello, hello, hello!" searchTerm="hello" />);
     const highlightedTexts = screen.getAllByText((content, element) => {
-      return (
-        element?.tagName.toLowerCase() === "mark" &&
-        content.toLowerCase() === "hello"
-      );
+      return element?.tagName.toLowerCase() === "mark" && content.toLowerCase() === "hello";
     });
     expect(highlightedTexts).toHaveLength(3);
   });
 
   it("accepts custom highlightClassName override", () => {
-    render(
-      <HighlightText
-        text="Hello, world!"
-        searchTerm="world"
-        highlightClassName="custom-class"
-      />,
-    );
+    render(<HighlightText text="Hello, world!" searchTerm="world" highlightClassName="custom-class" />);
     const highlightedText = screen.getByText((content, element) => {
       return element?.tagName.toLowerCase() === "mark" && content === "world";
     });

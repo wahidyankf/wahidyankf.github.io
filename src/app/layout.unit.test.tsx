@@ -20,9 +20,7 @@ describe("RootLayout", () => {
       </RootLayout>,
     );
 
-    const bodyContent = screen
-      .getByText("Test content")
-      .closest(".body-content");
+    const bodyContent = screen.getByText("Test content").closest(".body-content");
     expect(bodyContent).toBeInTheDocument();
     expect(bodyContent).toHaveClass("body-content flex-grow");
 
@@ -48,9 +46,7 @@ describe("RootLayout", () => {
         height: 630,
       },
     ]);
-    expect(metadata.twitter?.images).toEqual([
-      "https://www.wahidyankf.com/og-image.jpg",
-    ]);
+    expect(metadata.twitter?.images).toEqual(["https://www.wahidyankf.com/og-image.jpg"]);
   });
 
   it("does not reference a Twitter handle", () => {

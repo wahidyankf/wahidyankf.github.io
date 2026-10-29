@@ -17,10 +17,6 @@
  */
 import { loadTierEnv } from "./features/env/core/tier-env";
 
-export {
-  loadTierEnv,
-  resolveTier,
-  tierEnvFilePath,
-} from "./features/env/core/tier-env";
+export { loadTierEnv, resolveTier, tierEnvFilePath } from "./features/env/core/tier-env";
 
 loadTierEnv();

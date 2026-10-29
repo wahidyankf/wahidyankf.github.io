@@ -74,9 +74,7 @@ vi.mock("@/features/cv/core/data", () => ({
     { name: "React", duration: 60 },
     { name: "Next.js", duration: 45 },
   ],
-  getTopAISkillsLastFiveYears: () => [
-    { name: "AI-Agent Orchestration", duration: 10 },
-  ],
+  getTopAISkillsLastFiveYears: () => [{ name: "AI-Agent Orchestration", duration: 10 }],
   formatDuration: (duration: number) => `${duration} months`,
 }));
 
@@ -127,9 +125,7 @@ describe("Home component", () => {
   it("renders quick links", () => {
     render(<HomeContent />);
     expect(screen.getByText("View My CV")).toBeInTheDocument();
-    expect(
-      screen.getByText("Browse My Independent Projects"),
-    ).toBeInTheDocument();
+    expect(screen.getByText("Browse My Independent Projects")).toBeInTheDocument();
   });
 
   it("renders connect with me links", () => {
@@ -141,9 +137,7 @@ describe("Home component", () => {
 
   it("updates search term when typing in the search component", () => {
     render(<HomeContent />);
-    const searchInput = screen.getByTestId(
-      "search-component",
-    ) as HTMLInputElement;
+    const searchInput = screen.getByTestId("search-component") as HTMLInputElement;
     fireEvent.change(searchInput, { target: { value: "React" } });
     expect(searchInput.value).toBe("React");
   });
@@ -167,9 +161,7 @@ describe("Home component", () => {
     render(<HomeContent />);
     const languageButton = screen.getByText("JavaScript");
     fireEvent.click(languageButton);
-    expect(mockPush).toHaveBeenCalledWith(
-      "/cv?search=JavaScript&scrollTop=true",
-    );
+    expect(mockPush).toHaveBeenCalledWith("/cv?search=JavaScript&scrollTop=true");
   });
 
   it("handles framework button click and navigates to CV page", () => {
@@ -181,9 +173,7 @@ describe("Home component", () => {
 
   it("updates URL when typing in search", () => {
     render(<HomeContent />);
-    const searchInput = screen.getByTestId(
-      "search-component",
-    ) as HTMLInputElement;
+    const searchInput = screen.getByTestId("search-component") as HTMLInputElement;
     fireEvent.change(searchInput, { target: { value: "TypeScript" } });
     expect(mockPush).toHaveBeenCalledWith("/?search=TypeScript", {
       scroll: false,
@@ -194,17 +184,13 @@ describe("Home component", () => {
     render(<HomeContent />);
     const languageButton = screen.getByText("TypeScript");
     fireEvent.click(languageButton);
-    expect(mockPush).toHaveBeenCalledWith(
-      "/cv?search=TypeScript&scrollTop=true",
-    );
+    expect(mockPush).toHaveBeenCalledWith("/cv?search=TypeScript&scrollTop=true");
   });
 });
 
 describe("Home page metadata", () => {
   it("names the site, because the root layout no longer carries a title", async () => {
     const { metadata } = await import("./page");
-    expect(metadata.title).toBe(
-      "Wahidyan Kresna Fridayoka | Engineering Leader — Digital Banking, Fintech & RegTech",
-    );
+    expect(metadata.title).toBe("Wahidyan Kresna Fridayoka | Engineering Leader — Digital Banking, Fintech & RegTech");
   });
 });

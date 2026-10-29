@@ -17,15 +17,9 @@ import {
 // directory, so `npm run test:coverage:behaviour:e2e` works from the
 // repository root: this checker lives at e2e/tools/, the e2e project at e2e/,
 // and the single-package workspace root one level above that.
-const projectRoot = path.resolve(
-  path.dirname(fileURLToPath(import.meta.url)),
-  "..",
-);
+const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const workspaceRoot = path.resolve(projectRoot, "..");
-const featureRoot = path.join(
-  workspaceRoot,
-  "specs/apps/wahidyankf-www/behaviours",
-);
+const featureRoot = path.join(workspaceRoot, "specs/apps/wahidyankf-www/behaviours");
 const testsRoot = path.join(projectRoot, "tests");
 const directSpecPattern = /\.spec\.(?:[cm]?[jt]s)$/u;
 
@@ -41,31 +35,21 @@ function runBddgen(args) {
 }
 
 async function main() {
-  const featureFiles = await findFiles(featureRoot, (fileName) =>
-    fileName.endsWith(".feature"),
-  );
-  if (featureFiles.length === 0)
-    throw new Error(`No feature files found below '${featureRoot}'.`);
+  const featureFiles = await findFiles(featureRoot, (fileName) => fileName.endsWith(".feature"));
+  if (featureFiles.length === 0) throw new Error(`No feature files found below '${featureRoot}'.`);
 
   const structuralErrors = await validateFeatureFiles(featureFiles);
   if (structuralErrors.length > 0) throw new Error(structuralErrors.join("\n"));
 
   const references = await Promise.all(
-    featureFiles.map(async (featureFile) =>
-      inspectFeatureReferences(
-        featureFile,
-        await readFile(featureFile, "utf8"),
-      ),
-    ),
+    featureFiles.map(async (featureFile) => inspectFeatureReferences(featureFile, await readFile(featureFile, "utf8"))),
   );
   // This repository is a single npm package: the former Nx `project:target`
   // references in the feature files resolve against its scripts. Each script
   // is registered under its own name plus the two legacy project prefixes,
   // so existing `alternative-proof` references validate unchanged.
   const projectTargets = new Set();
-  const rootPackage = JSON.parse(
-    await readFile(path.join(workspaceRoot, "package.json"), "utf8"),
-  );
+  const rootPackage = JSON.parse(await readFile(path.join(workspaceRoot, "package.json"), "utf8"));
   for (const target of Object.keys(rootPackage.scripts ?? {})) {
     projectTargets.add(target);
     projectTargets.add(`wahidyankf-www:${target}`);
@@ -97,17 +81,10 @@ async function main() {
     )),
     path.join(ownerRoot, "tests/integration/cv-pdf.integration.test.ts"),
   ].toSorted();
-  const sharedIntegrationAdapters = new Set([
-    "env-loader.steps.ts",
-    "tier-env.behaviour.test.ts",
-  ]);
+  const sharedIntegrationAdapters = new Set(["env-loader.steps.ts", "tier-env.behaviour.test.ts"]);
   const integrationAdapterFiles = [
-    ...(await findFiles(path.join(ownerRoot, "tests/integration"), (name) =>
-      /\.[cm]?[jt]sx?$/u.test(name),
-    )),
-    ...unitAdapterFiles.filter((file) =>
-      sharedIntegrationAdapters.has(path.basename(file)),
-    ),
+    ...(await findFiles(path.join(ownerRoot, "tests/integration"), (name) => /\.[cm]?[jt]sx?$/u.test(name))),
+    ...unitAdapterFiles.filter((file) => sharedIntegrationAdapters.has(path.basename(file))),
   ].toSorted();
   const readMarkers = async (files) =>
     (
@@ -125,30 +102,17 @@ async function main() {
     await readMarkers(unitAdapterFiles),
     await readMarkers(integrationAdapterFiles),
   );
-  if (ownerCoverageErrors.length > 0)
-    throw new Error(ownerCoverageErrors.join("\n"));
+  if (ownerCoverageErrors.length > 0) throw new Error(ownerCoverageErrors.join("\n"));
 
-  const directSpecs = await findFiles(testsRoot, (fileName) =>
-    directSpecPattern.test(fileName),
-  );
+  const directSpecs = await findFiles(testsRoot, (fileName) => directSpecPattern.test(fileName));
   if (directSpecs.length > 0) {
-    throw new Error(
-      `Direct Playwright journey specs are forbidden:\n${directSpecs.join("\n")}`,
-    );
+    throw new Error(`Direct Playwright journey specs are forbidden:\n${directSpecs.join("\n")}`);
   }
 
   runBddgen(["--config", "playwright.config.ts"]);
-  const unusedOutput = runBddgen([
-    "export",
-    "--config",
-    "playwright.config.ts",
-    "--unused-steps",
-  ]);
+  const unusedOutput = runBddgen(["export", "--config", "playwright.config.ts", "--unused-steps"]);
   const unusedCount = /Unused steps \((\d+)\):/u.exec(unusedOutput)?.[1];
-  if (unusedCount === undefined)
-    throw new Error(
-      `Could not determine unused-step count:\n${unusedOutput.trim()}`,
-    );
+  if (unusedCount === undefined) throw new Error(`Could not determine unused-step count:\n${unusedOutput.trim()}`);
   if (unusedCount !== "0") throw new Error(unusedOutput.trim());
 }
 

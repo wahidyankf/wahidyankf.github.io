@@ -34,8 +34,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://www.wahidyankf.com",
     siteName: "Wahidyan Kresna Fridayoka",
-    title:
-      "Wahidyan Kresna Fridayoka | Engineering Leader — Digital Banking, Fintech & RegTech",
+    title: "Wahidyan Kresna Fridayoka | Engineering Leader — Digital Banking, Fintech & RegTech",
     description:
       "Portfolio and CV of Wahidyan Kresna Fridayoka, an engineering leader with nearly nine years of experience in Sharia-compliant digital banking, fintech, and RegTech, leading cross-functional engineering teams and open-source work.",
     images: [
@@ -48,8 +47,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Wahidyan Kresna Fridayoka | Engineering Leader — Digital Banking, Fintech & RegTech",
+    title: "Wahidyan Kresna Fridayoka | Engineering Leader — Digital Banking, Fintech & RegTech",
     description:
       "Portfolio and CV of Wahidyan Kresna Fridayoka, an engineering leader with nearly nine years of experience in Sharia-compliant digital banking, fintech, and RegTech, leading cross-functional engineering teams and open-source work.",
     images: ["https://www.wahidyankf.com/og-image.jpg"],
@@ -74,11 +72,7 @@ export const metadata: Metadata = {
  * Next.js renders this around all other routes, so anything that must exist on
  * every page belongs here rather than being repeated in each one.
  */
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={inter.className}>
       <head>

@@ -178,13 +178,7 @@ export const cvData: CVEntry[] = [
       "Software Engineering",
       "Software Testing",
     ],
-    programmingLanguages: [
-      "JavaScript",
-      "Golang",
-      "ReasonML",
-      "TypeScript",
-      "SQL",
-    ],
+    programmingLanguages: ["JavaScript", "Golang", "ReasonML", "TypeScript", "SQL"],
     frameworks: ["React.js", "Next.js", "ReasonReact"],
   },
   {
@@ -207,13 +201,7 @@ export const cvData: CVEntry[] = [
       "Frontend Engineering",
       "Software Engineering",
     ],
-    programmingLanguages: [
-      "JavaScript",
-      "Golang",
-      "ReasonML",
-      "TypeScript",
-      "SQL",
-    ],
+    programmingLanguages: ["JavaScript", "Golang", "ReasonML", "TypeScript", "SQL"],
     frameworks: ["React.js", "React Native", "ReasonReact"],
   },
   {
@@ -232,14 +220,7 @@ export const cvData: CVEntry[] = [
       "Heavily involved in Ruangguru's new FE engineer hiring. This involvement results in a faster FE engineering hiring process while ensuring only technical and culturally fit candidates pass. I also streamlined the FE team's onboarding process by creating documents and guides, resulting in a faster, more precise, and smoother onboarding for the new engineers while making it more scalable and reproducible.",
     ],
     skills: ["Frontend Engineering", "Systems Design", "Software Engineering"],
-    programmingLanguages: [
-      "JavaScript",
-      "TypeScript",
-      "ReasonML",
-      "SQL",
-      "HTML",
-      "CSS",
-    ],
+    programmingLanguages: ["JavaScript", "TypeScript", "ReasonML", "SQL", "HTML", "CSS"],
     frameworks: ["React.js", "React Native", "ReasonReact"],
   },
   {
@@ -258,13 +239,7 @@ export const cvData: CVEntry[] = [
       "Became one of the pioneering engineers in Ruang Kerja's React Native app development. Resulting in more efficient engineering resource usage for Ruangguru by expanding the uses of its frontend engineers while theoretically cutting the cost of apps development down almost to 50% without losing any of native apps' development speed.",
     ],
     skills: ["Frontend Engineering", "Software Engineering"],
-    programmingLanguages: [
-      "JavaScript",
-      "TypeScript",
-      "ReasonML",
-      "HTML",
-      "CSS",
-    ],
+    programmingLanguages: ["JavaScript", "TypeScript", "ReasonML", "HTML", "CSS"],
     frameworks: ["React.js", "React Native", "ReasonReact"],
     type: "work",
   },
@@ -397,19 +372,14 @@ export const cvData: CVEntry[] = [
     title: "German Language Study",
     organization: "VHS Aachen, Germany",
     period: "October 2012 - October 2013",
-    details: [
-      "One year of German-language study ahead of postgraduate studies in Germany",
-    ],
+    details: ["One year of German-language study ahead of postgraduate studies in Germany"],
     type: "education",
   },
   {
     title: "Bachelor of Engineering (B.Eng.)",
     organization: "Institut Teknologi Bandung",
     period: "July 2005 - July 2011",
-    details: [
-      "Field of study: Electrical and Electronics Engineering",
-      "Grade: 3.0",
-    ],
+    details: ["Field of study: Electrical and Electronics Engineering", "Grade: 3.0"],
     type: "education",
   },
 ];
@@ -443,21 +413,16 @@ export const calculateDuration = (period: string): number => {
   const endDate = end === "Present" ? new Date() : parseDate(end);
 
   // Calculate full months
-  const months =
-    (endDate.getFullYear() - startDate.getFullYear()) * 12 +
-    (endDate.getMonth() - startDate.getMonth());
+  const months = (endDate.getFullYear() - startDate.getFullYear()) * 12 + (endDate.getMonth() - startDate.getMonth());
 
   // Add 1 to include both start and end months
   return months + 1;
 };
 
 // The calendar month a date falls in, as a single comparable integer.
-const toMonthIndex = (date: Date): number =>
-  date.getFullYear() * 12 + date.getMonth();
+const toMonthIndex = (date: Date): number => date.getFullYear() * 12 + date.getMonth();
 
-export const calculateTotalDuration = (
-  periods: { start: Date; end: Date }[],
-): number => {
+export const calculateTotalDuration = (periods: { start: Date; end: Date }[]): number => {
   if (periods.length === 0) return 0;
 
   // Each period is an inclusive [startMonth, endMonth] range. Merge the ranges
@@ -577,15 +542,11 @@ const topItemsLastFiveYears = (
 export const getTopSkillsLastFiveYears = (data: SkillSource[]): SkillTotal[] =>
   topItemsLastFiveYears(data, (entry) => entry.skills);
 
-export const getTopLanguagesLastFiveYears = (
-  data: SkillSource[],
-): SkillTotal[] =>
+export const getTopLanguagesLastFiveYears = (data: SkillSource[]): SkillTotal[] =>
   topItemsLastFiveYears(data, (entry) => entry.programmingLanguages);
 
-export const getTopFrameworksLastFiveYears = (
-  data: SkillSource[],
-): SkillTotal[] => topItemsLastFiveYears(data, (entry) => entry.frameworks);
+export const getTopFrameworksLastFiveYears = (data: SkillSource[]): SkillTotal[] =>
+  topItemsLastFiveYears(data, (entry) => entry.frameworks);
 
-export const getTopAISkillsLastFiveYears = (
-  data: SkillSource[],
-): SkillTotal[] => topItemsLastFiveYears(data, (entry) => entry.aiSkills);
+export const getTopAISkillsLastFiveYears = (data: SkillSource[]): SkillTotal[] =>
+  topItemsLastFiveYears(data, (entry) => entry.aiSkills);

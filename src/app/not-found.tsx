@@ -9,9 +9,7 @@ export default function NotFound() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-gray-900 p-4 text-green-400">
       <title>Page not found | Wahidyan Kresna Fridayoka</title>
-      <h1 className="text-2xl font-bold text-yellow-400">
-        404: This page could not be found.
-      </h1>
+      <h1 className="text-2xl font-bold text-yellow-400">404: This page could not be found.</h1>
     </main>
   );
 }

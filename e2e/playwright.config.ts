@@ -29,15 +29,10 @@ async function allocateRunPort(): Promise<number> {
 
 const inheritedRunPort = process.env.WAHIDYANKF_WWW_E2E_RUN_PORT;
 const isPlaywrightWorker = process.env.TEST_WORKER_INDEX !== undefined;
-if (
-  isPlaywrightWorker &&
-  (inheritedRunPort === undefined || !/^\d+$/.test(inheritedRunPort))
-) {
+if (isPlaywrightWorker && (inheritedRunPort === undefined || !/^\d+$/.test(inheritedRunPort))) {
   throw new Error("Playwright worker did not inherit its controller run port");
 }
-const e2ePort = isPlaywrightWorker
-  ? Number(inheritedRunPort)
-  : await allocateRunPort();
+const e2ePort = isPlaywrightWorker ? Number(inheritedRunPort) : await allocateRunPort();
 if (!Number.isInteger(e2ePort) || e2ePort < 1 || e2ePort > 65_535) {
   throw new Error("Playwright received an invalid inherited E2E run port");
 }

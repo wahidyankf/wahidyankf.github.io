@@ -24,8 +24,8 @@ jobs:
         run: npm run typecheck
       - name: Lint
         run: npm run lint
-      - name: Unit tests
-        run: npm run test:unit
+      - name: Unit tests with coverage
+        run: npm run test:coverage:unit
       - name: Static export
         run: npm run build
         env:

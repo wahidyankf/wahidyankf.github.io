@@ -8,11 +8,7 @@ export type SearchResult<T> = T[];
  * skills. An empty term returns the input untouched rather than nothing, so
  * clearing the box restores the full list instead of emptying it.
  */
-export function filterItems<T>(
-  items: T[],
-  searchTerm: string,
-  keys: (keyof T)[],
-): T[] {
+export function filterItems<T>(items: T[], searchTerm: string, keys: (keyof T)[]): T[] {
   if (!searchTerm) return items;
 
   const lowercasedTerm = searchTerm.toLowerCase();
@@ -24,11 +20,7 @@ export function filterItems<T>(
         return value.toLowerCase().includes(lowercasedTerm);
       }
       if (Array.isArray(value)) {
-        return value.some((v) =>
-          typeof v === "string"
-            ? v.toLowerCase().includes(lowercasedTerm)
-            : false,
-        );
+        return value.some((v) => (typeof v === "string" ? v.toLowerCase().includes(lowercasedTerm) : false));
       }
       return false;
     }),

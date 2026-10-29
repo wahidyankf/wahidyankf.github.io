@@ -12,21 +12,14 @@ import Head from "./head";
 describe("Head", () => {
   it("declares a favicon in both ICO and PNG form", () => {
     render(<Head />);
-    const icons = Array.from(
-      document.head.querySelectorAll<HTMLLinkElement>('link[rel="icon"]'),
-    );
-    expect(icons.map((link) => link.getAttribute("href"))).toEqual([
-      "/favicon.ico",
-      "/favicon.png",
-    ]);
+    const icons = Array.from(document.head.querySelectorAll<HTMLLinkElement>('link[rel="icon"]'));
+    expect(icons.map((link) => link.getAttribute("href"))).toEqual(["/favicon.ico", "/favicon.png"]);
     expect(icons[1].getAttribute("type")).toBe("image/png");
   });
 
   it("declares an apple touch icon for the iOS home screen", () => {
     render(<Head />);
-    const touch = document.head.querySelector<HTMLLinkElement>(
-      'link[rel="apple-touch-icon"]',
-    );
+    const touch = document.head.querySelector<HTMLLinkElement>('link[rel="apple-touch-icon"]');
     expect(touch?.getAttribute("href")).toBe("/favicon.png");
   });
 });
