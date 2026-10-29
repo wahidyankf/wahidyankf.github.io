@@ -8,10 +8,16 @@ import { projects } from "@/features/personal-projects/core/projects";
 
 const mockPush = vi.fn();
 
-vi.mock("next/navigation", () => ({
-  useRouter: () => ({ push: mockPush }),
-  useSearchParams: () => new URLSearchParams(),
-}));
+vi.mock("@tanstack/react-router", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("@tanstack/react-router")>();
+  return {
+    ...actual,
+    useRouter: () => ({ history: { push: mockPush, replace: vi.fn() } }),
+    useLocation: () => ({ pathname: "/personal-projects" }),
+    Link: ({ to, children, className }: { to: string; children: React.ReactNode; className?: string }) =>
+      React.createElement("a", { href: to, className }, children),
+  };
+});
 
 vi.mock("@/features/app-shell/shell/navigation", () => ({
   Navigation: () => React.createElement("div", { "data-testid": "navigation" }, "Navigation"),
@@ -141,7 +147,7 @@ describeFeature(feature, ({ Scenario, Background, AfterEachScenario }) => {
 
     // @covers specs/apps/wahidyankf-www/behaviours/personal-projects.feature:Clicking a skill tag filters the project list
     Then("the URL becomes /personal-projects?search=TypeScript", () => {
-      expect(mockPush).toHaveBeenCalledWith("/personal-projects?search=TypeScript", { scroll: false });
+      expect(mockPush).toHaveBeenCalledWith("/personal-projects?search=TypeScript");
     });
   });
 });

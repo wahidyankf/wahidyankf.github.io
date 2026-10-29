@@ -5,10 +5,16 @@ import { cleanup, render, screen, within } from "@testing-library/react";
 import { expect, vi } from "vitest";
 import { HomeContent } from "@/features/home/shell/home-content";
 
-vi.mock("next/navigation", () => ({
-  useRouter: () => ({ push: vi.fn() }),
-  useSearchParams: () => new URLSearchParams(),
-}));
+vi.mock("@tanstack/react-router", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("@tanstack/react-router")>();
+  return {
+    ...actual,
+    useRouter: () => ({ history: { push: vi.fn(), replace: vi.fn() } }),
+    useLocation: () => ({ pathname: "/" }),
+    Link: ({ to, children, className }: { to: string; children: React.ReactNode; className?: string }) =>
+      React.createElement("a", { href: to, className }, children),
+  };
+});
 
 vi.mock("@/features/app-shell/shell/navigation", () => ({
   Navigation: () => React.createElement("div", { "data-testid": "navigation" }, "Navigation"),

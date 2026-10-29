@@ -1,5 +1,3 @@
-"use client";
-
 import { Navigation } from "@/features/app-shell/shell/navigation";
 import { filterItems } from "@/features/search/core/search";
 import {
@@ -21,7 +19,7 @@ import {
 } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/features/ui/shell/brand-icons";
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@tanstack/react-router";
 import {
   type CVEntry,
   cvData,
@@ -560,13 +558,15 @@ export function CvContent() {
       window.scrollTo(0, 0);
       const newURL = new URL(window.location.href);
       newURL.searchParams.delete("scrollTop");
-      router.replace(newURL.toString(), { scroll: false });
+      // The history API takes a relative target: handing it the absolute URL
+      // above would navigate away from the page instead of cleaning the query.
+      router.history.replace(`${newURL.pathname}${newURL.search}${newURL.hash}`);
     }
   }, [router]);
 
   const updateURL = (term: string) => {
     const newURL = term ? `/cv?search=${encodeURIComponent(term)}` : "/cv";
-    router.push(newURL, { scroll: false });
+    router.history.push(newURL);
   };
 
   const handleItemClick = (item: string) => {

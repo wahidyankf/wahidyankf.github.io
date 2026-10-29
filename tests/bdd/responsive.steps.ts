@@ -7,11 +7,16 @@ import { ThemeToggle } from "@/features/ui/shell";
 import { Navigation } from "@/features/app-shell/shell/navigation";
 import { CvContent } from "@/features/cv/shell/cv-content";
 
-vi.mock("next/navigation", () => ({
-  usePathname: () => "/",
-  useRouter: () => ({ push: vi.fn(), replace: vi.fn() }),
-  useSearchParams: () => new URLSearchParams(),
-}));
+vi.mock("@tanstack/react-router", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("@tanstack/react-router")>();
+  return {
+    ...actual,
+    useRouter: () => ({ history: { push: vi.fn(), replace: vi.fn() } }),
+    useLocation: () => ({ pathname: "/" }),
+    Link: ({ to, children, className }: { to: string; children: React.ReactNode; className?: string }) =>
+      React.createElement("a", { href: to, className }, children),
+  };
+});
 
 vi.stubGlobal("scrollTo", vi.fn());
 

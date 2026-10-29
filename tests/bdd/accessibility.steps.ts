@@ -8,16 +8,22 @@ import { ThemeToggle } from "@/features/ui/shell";
 import { HomeContent } from "@/features/home/shell/home-content";
 import { CvContent } from "@/features/cv/shell/cv-content";
 import { PersonalProjectsContent } from "@/features/personal-projects/shell/personal-projects-content";
-import NotFound from "@/app/not-found";
+import { NotFound } from "@/routes/__root";
 
-// Navigation reads the current route via usePathname() and HomeContent/CvContent/
+// Navigation reads the current route via useLocation() and HomeContent/CvContent/
 // PersonalProjectsContent navigate via useRouter() — both need a router shim since
-// jsdom has no Next.js App Router context.
-vi.mock("next/navigation", () => ({
-  useRouter: () => ({ push: vi.fn(), replace: vi.fn() }),
-  usePathname: () => "/",
-  useSearchParams: () => new URLSearchParams(),
-}));
+// jsdom has no TanStack Router context. The real `Link` needs that context too,
+// so it is rendered as a plain anchor with the same destination.
+vi.mock("@tanstack/react-router", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("@tanstack/react-router")>();
+  return {
+    ...actual,
+    useRouter: () => ({ history: { push: vi.fn(), replace: vi.fn() } }),
+    useLocation: () => ({ pathname: "/" }),
+    Link: ({ to, children, className }: { to: string; children: React.ReactNode; className?: string }) =>
+      React.createElement("a", { href: to, className }, children),
+  };
+});
 
 // DOM cleanup runs after each scenario, so Then observes the accessibility
 // evidence produced by the page render in When.

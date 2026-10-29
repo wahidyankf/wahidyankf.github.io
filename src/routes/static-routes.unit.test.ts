@@ -3,9 +3,9 @@ import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 
 const routes = [
-  { pathname: "/", source: "page.tsx" },
-  { pathname: "/cv", source: "cv/page.tsx" },
-  { pathname: "/personal-projects", source: "personal-projects/page.tsx" },
+  { pathname: "/", source: "index.tsx" },
+  { pathname: "/cv", source: "cv.tsx" },
+  { pathname: "/personal-projects", source: "personal-projects.tsx" },
 ] as const;
 
 const declaresSearchParams = /function\s+\w+\s*\(\s*{\s*searchParams\b/;

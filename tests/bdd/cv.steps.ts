@@ -7,12 +7,17 @@ import { CvContent } from "@/features/cv/shell/cv-content";
 
 const mockPush = vi.fn();
 const mockReplace = vi.fn();
-let mockSearchParams = new URLSearchParams();
 
-vi.mock("next/navigation", () => ({
-  useRouter: () => ({ push: mockPush, replace: mockReplace }),
-  useSearchParams: () => mockSearchParams,
-}));
+vi.mock("@tanstack/react-router", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("@tanstack/react-router")>();
+  return {
+    ...actual,
+    useRouter: () => ({ history: { push: mockPush, replace: mockReplace } }),
+    useLocation: () => ({ pathname: "/cv" }),
+    Link: ({ to, children, className }: { to: string; children: React.ReactNode; className?: string }) =>
+      React.createElement("a", { href: to, className }, children),
+  };
+});
 
 vi.mock("@/features/app-shell/shell/navigation", () => ({
   Navigation: () => React.createElement("div", { "data-testid": "navigation" }, "Navigation"),
@@ -29,7 +34,6 @@ describeFeature(feature, ({ Scenario, Background, AfterEachScenario }) => {
   Background(({ Given }) => {
     Given("the app is running", () => {
       vi.mocked(window.scrollTo).mockClear();
-      mockSearchParams = new URLSearchParams();
       window.history.replaceState({}, "", "/cv");
     });
   });
@@ -73,7 +77,6 @@ describeFeature(feature, ({ Scenario, Background, AfterEachScenario }) => {
   Scenario("CV cross-linked via scrollTop query scrolls into the entries", ({ When, Then }) => {
     When('a visitor opens the CV page with search term "TypeScript" and scrollTop true', () => {
       window.history.replaceState({}, "", "/cv?search=TypeScript&scrollTop=true");
-      mockSearchParams = new URLSearchParams("search=TypeScript&scrollTop=true");
       render(React.createElement(CvContent));
     });
 

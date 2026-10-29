@@ -26,9 +26,7 @@ jobs:
         run: npm run lint
       - name: Unit tests with coverage
         run: npm run test:coverage:unit
-      - name: Static export
+      - name: Static prerender
         run: npm run build
-        env:
-          NEXT_TELEMETRY_DISABLED: 1
       - name: Validate static routes
         run: npm run validate:static-routes

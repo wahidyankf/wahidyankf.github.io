@@ -59,13 +59,13 @@ export default defineConfig({
     trace: "on-first-retry",
     screenshot: "only-on-failure",
   },
-  // The suite drives the static export (`next build` writes `out/`, and
-  // `npm run start` serves it) because `next start` cannot serve an
-  // `output: "export"` build. The port is allocated per run and passed
-  // through the application's prefixed port contract. This owned process
-  // builds before serving so the forced test tier applies to the build as
-  // well as the server; an outer prerequisite would start before this config
-  // can sanitize the tier.
+  // The suite drives the static prerender (`vite build` writes
+  // `.output/public`, and `npm run start` serves it) because there is no
+  // application server to start for a fully static site. The port is
+  // allocated per run and passed through the application's prefixed port
+  // contract. This owned process builds before serving so the forced test
+  // tier applies to the build as well as the server; an outer prerequisite
+  // would start before this config can sanitize the tier.
   //
   // Never reuse an existing listener. A process already bound to this run's selected port is
   // unverified external state, so Playwright must fail closed instead of treating it as this run's

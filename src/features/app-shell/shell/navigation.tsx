@@ -1,17 +1,14 @@
-"use client";
-
-import Link from "next/link";
+import { Link, useLocation } from "@tanstack/react-router";
 import { File, Folder } from "lucide-react";
 import type React from "react";
-import { usePathname } from "next/navigation";
 
 export const Navigation: React.FC = () => {
-  const pathname = usePathname();
+  const pathname = useLocation({ select: (location) => location.pathname });
 
   const navItems = [
-    { href: "/", label: "Home" },
-    { href: "/cv", label: "CV" },
-    { href: "/personal-projects", label: "Independent Projects" },
+    { to: "/", label: "Home" },
+    { to: "/cv", label: "CV" },
+    { to: "/personal-projects", label: "Independent Projects" },
   ];
 
   return (
@@ -22,7 +19,7 @@ export const Navigation: React.FC = () => {
         className="fixed right-0 bottom-0 left-0 z-50 flex justify-around border-t border-green-400 bg-gray-900 p-4 lg:hidden"
       >
         {navItems.map((item) => (
-          <NavLink key={item.href} href={item.href} isActive={pathname === item.href} label={item.label} />
+          <NavLink key={item.to} to={item.to} isActive={pathname === item.to} label={item.label} />
         ))}
       </nav>
 
@@ -32,7 +29,7 @@ export const Navigation: React.FC = () => {
         className="fixed top-0 bottom-0 left-0 z-50 hidden w-80 overflow-y-auto border-r border-green-400 bg-gray-900 p-4 lg:block"
       >
         <Link
-          href="/"
+          to="/"
           className="light-theme:text-light-primary light-theme:hover:text-light-accent mb-4 block p-4 transition-colors duration-200 hover:text-yellow-400"
         >
           <Folder className="mr-2 inline-block" />
@@ -41,7 +38,7 @@ export const Navigation: React.FC = () => {
         <hr className="light-theme:border-light-primary mx-4 mb-4 border-t border-green-400" />
         <ul className="pl-4">
           {navItems.map((item) => (
-            <NavItem key={item.href} href={item.href} isActive={pathname === item.href} label={item.label} />
+            <NavItem key={item.to} to={item.to} isActive={pathname === item.to} label={item.label} />
           ))}
         </ul>
       </nav>
@@ -51,12 +48,12 @@ export const Navigation: React.FC = () => {
 
 // Helper components
 const NavLink: React.FC<{
-  href: string;
+  to: string;
   isActive: boolean;
   label: string;
-}> = ({ href, isActive, label }) => (
+}> = ({ to, isActive, label }) => (
   <Link
-    href={href}
+    to={to}
     className={`flex flex-col items-center ${
       isActive ? "light-theme:text-light-accent text-yellow-400" : "light-theme:text-light-primary text-green-400"
     } transition-colors duration-200 hover:text-yellow-400`}
@@ -67,13 +64,13 @@ const NavLink: React.FC<{
 );
 
 const NavItem: React.FC<{
-  href: string;
+  to: string;
   isActive: boolean;
   label: string;
-}> = ({ href, isActive, label }) => (
+}> = ({ to, isActive, label }) => (
   <li className="mb-2">
     <Link
-      href={href}
+      to={to}
       className={`flex items-center ${
         isActive
           ? "light-theme:text-light-accent active-nav-item text-yellow-400"

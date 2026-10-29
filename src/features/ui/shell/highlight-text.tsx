@@ -13,9 +13,10 @@ export const highlightText = (
 ): React.ReactNode => {
   if (!searchTerm) return text;
   const regex = new RegExp(`(${searchTerm})`, "gi");
+  // Array indices are positional here: split() parts keep their order and a
+  // repeated word is a legitimate duplicate, so the index is the identity.
   return text.split(regex).map((part, index) =>
     regex.test(part) ? (
-      // biome-ignore lint/suspicious/noArrayIndexKey: split() parts are positional, and a repeated word is a legitimate duplicate
       <mark key={index} className={highlightClassName}>
         {part}
       </mark>

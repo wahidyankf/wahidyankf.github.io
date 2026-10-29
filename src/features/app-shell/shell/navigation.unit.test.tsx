@@ -1,22 +1,34 @@
+import type { ReactNode } from "react";
 import { render, screen, within } from "@testing-library/react";
 import { Navigation } from "./navigation";
-import { usePathname } from "next/navigation";
 import { describe, it, expect, vi, beforeEach } from "vitest";
 
-// Mock the usePathname hook
-vi.mock("next/navigation", () => ({
-  usePathname: vi.fn(),
-}));
+let mockPathname = "/";
+
+// The real `Link` needs a router context, so the mock keeps the module intact
+// and only swaps the two context-bound pieces: the pathname source and the
+// link itself, rendered as a plain anchor with the same destination.
+vi.mock("@tanstack/react-router", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("@tanstack/react-router")>();
+  return {
+    ...actual,
+    useLocation: () => ({ pathname: mockPathname }),
+    Link: ({ to, children, ...rest }: { to: string; children: ReactNode }) => (
+      <a href={to} {...rest}>
+        {children}
+      </a>
+    ),
+  };
+});
 
 describe("Navigation", () => {
   beforeEach(() => {
-    // Reset the mock before each test
-    vi.mocked(usePathname).mockReset();
+    mockPathname = "/";
   });
 
   describe("Mobile Navigation", () => {
     it("renders mobile navigation", () => {
-      vi.mocked(usePathname).mockReturnValue("/");
+      mockPathname = "/";
       render(<Navigation />);
 
       const mobileNav = screen.getByTestId("mobile-nav");
@@ -34,7 +46,7 @@ describe("Navigation", () => {
     });
 
     it("highlights active page in mobile navigation", () => {
-      vi.mocked(usePathname).mockReturnValue("/cv");
+      mockPathname = "/cv";
       render(<Navigation />);
 
       const mobileNav = screen.getByTestId("mobile-nav");
@@ -50,7 +62,7 @@ describe("Navigation", () => {
 
   describe("Desktop Navigation", () => {
     it("renders desktop navigation", () => {
-      vi.mocked(usePathname).mockReturnValue("/");
+      mockPathname = "/";
       render(<Navigation />);
 
       const desktopNav = screen.getByTestId("desktop-nav");
@@ -68,7 +80,7 @@ describe("Navigation", () => {
     });
 
     it("highlights active page in desktop navigation", () => {
-      vi.mocked(usePathname).mockReturnValue("/cv");
+      mockPathname = "/cv";
       render(<Navigation />);
 
       const desktopNav = screen.getByTestId("desktop-nav");

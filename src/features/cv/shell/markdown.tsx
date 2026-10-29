@@ -10,9 +10,10 @@ export const parseMarkdownLinks = (text: string, searchTerm: string): React.Reac
       // This is the link text
       const linkText = part;
       const linkUrl = parts[index + 1];
+      // Array indices are positional here: split() parts keep their order and
+      // the same link text may appear twice, so the index is the identity.
       return (
         <a
-          // biome-ignore lint/suspicious/noArrayIndexKey: split() parts are positional, and the same link text may appear twice
           key={index}
           href={linkUrl}
           target="_blank"
@@ -24,7 +25,8 @@ export const parseMarkdownLinks = (text: string, searchTerm: string): React.Reac
       );
     } else if (index % 3 === 0) {
       // This is regular text
-      // biome-ignore lint/suspicious/noArrayIndexKey: split() parts are positional, and the same text may appear twice
+      // Array indices are positional here: split() parts keep their order and
+      // the same text may appear twice, so the index is the identity.
       return <HighlightText key={index} text={part} searchTerm={searchTerm} />;
     }
     return null;

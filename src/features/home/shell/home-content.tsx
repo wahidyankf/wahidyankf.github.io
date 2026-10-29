@@ -1,8 +1,5 @@
-"use client";
-
 import { Briefcase, FolderOpen, Mail, Sparkles, Star, Code, Package } from "lucide-react";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { Link, useRouter } from "@tanstack/react-router";
 import {
   cvData,
   getTopSkillsLastFiveYears,
@@ -93,7 +90,7 @@ export function HomeContent() {
 
   const updateURL = (term: string) => {
     const newURL = term ? `/?search=${encodeURIComponent(term)}` : "/";
-    router.push(newURL, { scroll: false });
+    router.history.push(newURL);
   };
 
   const filteredAboutMe = aboutMe
@@ -105,7 +102,7 @@ export function HomeContent() {
     : null;
 
   const handleItemClick = (item: string) => {
-    router.push(`/cv?search=${encodeURIComponent(item)}&scrollTop=true`);
+    router.history.push(`/cv?search=${encodeURIComponent(item)}&scrollTop=true`);
   };
 
   return (
@@ -239,14 +236,14 @@ export function HomeContent() {
           <h2 className="mb-4 text-xl text-yellow-400 sm:text-2xl md:text-3xl">Quick Links</h2>
           <div className="flex flex-wrap gap-4">
             <Link
-              href="/cv"
+              to="/cv"
               className="flex items-center text-yellow-400 transition-colors duration-200 hover:text-green-400"
             >
               <Briefcase className="mr-2 h-5 w-5" />
               View My CV
             </Link>
             <Link
-              href="/personal-projects"
+              to="/personal-projects"
               className="flex items-center text-yellow-400 transition-colors duration-200 hover:text-green-400"
             >
               <FolderOpen className="mr-2 h-5 w-5" />
