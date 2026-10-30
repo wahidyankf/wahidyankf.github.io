@@ -93,3 +93,7 @@ libraries — a design system, its tokens, and an environment loader — are inl
 
 Production delivery is automated: pushing to `main` builds the static prerender and deploys `./.output/public` to GitHub
 Pages via `.github/workflows/static.yml`. Do not deploy by hand.
+
+## Contributing
+
+External contributions are currently closed. Forks remain welcome under the MIT license.
